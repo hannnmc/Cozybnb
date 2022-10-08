@@ -2,6 +2,8 @@ class Api::UsersController < ApplicationController
   wrap_parameters include: User.attribute_names + ['password']
 
   def create
+    # bdate = DateTime.parse(user_params.birthdate)
+    debugger
     @user = User.new(user_params)
 
     if @user.save
