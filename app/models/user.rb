@@ -38,15 +38,18 @@ class User < ApplicationRecord
   private 
 
   def generate_unique_session_token
-    
+    loop do
+      session_token = SecureRandom::urlsafe_base64(16)
+      return session_token unless User.exists?(session_token: session_token)
+    end
   end
 
   def ensure_session_token
-
+    self.session_token ||= generate_unique_session_token
   end
 
   def validate_age
-    if birth_date.present? && birth_date.to_i > 18.years.ago.to_i
+    if birth_date.present? && birth_date > 18.years.ago
         errors.add(:birth_date, "You must be 18 or older to use Cozybnb. Other people won't see your birthday.")
     end
   end
