@@ -35,6 +35,19 @@ class User < ApplicationRecord
   validates :username, :email, :first_name, :last_name, :birth_date, presence: true
   validate :validate_age
 
+  def self.find_by_credentials(credential, password)
+    field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
+    user = User.find_by(field => credential)
+    user&.authenticate(password)
+  end
+
+  
+  def reset_session_token!
+    self.session_token = generate_unique_session_token
+    self.save!
+    self.session_token
+  end
+
   private 
 
   def generate_unique_session_token
