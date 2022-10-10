@@ -18,7 +18,7 @@ function Navigation() {
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+        {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );
   }
@@ -27,8 +27,10 @@ function Navigation() {
     <ul>
       <li className='nav-bar'>
         <NavLink exact to="/">
-          <img className='logo-img' src={logoImg} alt="logo" />
-          <div className='logo-text'>Cozybnb</div> 
+          <div className='home-box'>
+            <img className='logo-img' src={logoImg} alt="logo" />
+            <div className='logo-text'>cozybnb</div> 
+          </div>
         </NavLink>
         {sessionLinks}
       </li>

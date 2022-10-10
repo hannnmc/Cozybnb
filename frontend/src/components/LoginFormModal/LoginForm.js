@@ -30,7 +30,11 @@ function LoginForm() {
 
   return (
     <>
-      <h1>Log In</h1>
+      <h2>login</h2>
+      <h2>sign up</h2>
+      <h2>host your home</h2>
+      <h2>host an experience</h2>
+      <h2>help</h2>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}

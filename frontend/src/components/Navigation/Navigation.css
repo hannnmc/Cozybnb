@@ -1,21 +1,55 @@
 .profile-dropdown {
     position: absolute;
-  }
+}
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  height: 10vh;
+  height: 73px;
+  align-items: center;
+  padding: 0 69px 0 69px;
+  border-bottom: 1px #DDDDDD solid;
+}
+
+.home-box {
+  display: flex;
+  height: 80px;
+  color: #FF385C;
+  font-family: manrope;
+  align-items: center;
 }
 
 .logo-img {
-  height: 90%;
+  align-items: center;
+  height: 48%;
+  padding-right: 3px;
 }
 
 .logo-text {
-  font-family: logofont;
+  font-size: 19.5px;
+  letter-spacing: -1px;
 }
 
 a {
   text-decoration: none;
 }
+
+.profile-button {
+  display: inline-flex;
+  vertical-align: middle;
+  border-radius: 21px;
+  background-color: #ffffff00;
+  border: 1px #DDDDDD solid;
+  align-items: center;
+  padding: 5px 5px 5px 11px;
+  height: 38px;
+  cursor: pointer;
+}
+
+.profile-button:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+}
+
+.profile-icon {
+  padding-left: 11px;
+} 
