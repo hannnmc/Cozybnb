@@ -2,8 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-// import LoginFormModal from '../LoginFormModal';
+import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
+import logoImg from '../../assets/images/cozybnb_logo.png';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
@@ -16,7 +17,7 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        {/* <LoginFormModal /> */}
+        <LoginFormModal />
         <NavLink to="/signup">Sign Up</NavLink>
       </>
     );
@@ -24,8 +25,11 @@ function Navigation() {
 
   return (
     <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+      <li className='nav-bar'>
+        <NavLink exact to="/">
+          <img className='logo-img' src={logoImg} alt="logo" />
+          <div className='logo-text'>Cozybnb</div> 
+        </NavLink>
         {sessionLinks}
       </li>
     </ul>
