@@ -1,3 +1,21 @@
 .profile-dropdown {
     position: absolute;
   }
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+}
+
+.logo-img {
+  height: 90%;
+}
+
+.logo-text {
+  font-family: logofont;
+}
+
+a {
+  text-decoration: none;
+}
