@@ -9,10 +9,6 @@ import logoImg from '../../assets/images/cozybnb_logo.png';
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
 
-  // const toggleMenu = () => {
-  //   setMenu(open => !open);
-  // }
-
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -22,7 +18,6 @@ function Navigation() {
     sessionLinks = (
       <>
         <LoginFormModal/>
-        {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );
   }

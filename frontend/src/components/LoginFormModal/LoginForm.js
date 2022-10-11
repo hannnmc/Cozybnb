@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import './LoginForm.css';
 
 function LoginForm() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -30,13 +29,19 @@ function LoginForm() {
 
   return (
     <>
-
+      <div className="login-modal">
+      <header>
+        <div><i class="fa-sharp fa-solid fa-xmark"></i></div>
+        <div className="header-login">Log in</div>
+        <div></div>
+      </header>
       <form onSubmit={handleSubmit}>
+        <h3>Welcome to Cozybnb</h3>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
         <label>
-          Username or Email
+          Email
           <input
             type="text"
             value={credential}
@@ -55,6 +60,8 @@ function LoginForm() {
         </label>
         <button type="submit">Log In</button>
       </form>
+      </div>
+      
     </>
   );
 }
