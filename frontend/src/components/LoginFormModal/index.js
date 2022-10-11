@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
-import profileImg from '../../assets/images/profile.png'
 import SignUpForm from '../SignUpModal/SignupForm';
 
 
 function LoginFormModal() {
-  const [showModal, setShowModal] = useState(false);
-  const [showModalS, setShowModalS] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignupModal, setShowSignupModal] = useState(false);
 
   const toggleMenu = () => {
     setMenu(open => !open);
@@ -26,28 +25,22 @@ function LoginFormModal() {
       </button>
 
       {menu && (
-          <ul className="profile-dropdown">
-              <li onClick={()=> {
-                setShowModal(true);
-                setShowModalS(false);
-                }}>Log in</li>
-              <li id='dropdown-divider' onClick={()=> { 
-                setShowModalS(true);
-                setShowModal(false);
-                }}>Sign up</li>
+          <ul className="profile-dropdown" onClick={() => setMenu(false)}>
+              <li onClick={()=> setShowLoginModal(true)}>Log in</li>
+              <li id='dropdown-divider' onClick={()=> setShowSignupModal(true)}>Sign up</li>
               <li>Host your home</li>
               <li>Host an experience</li>
               <li>Help</li>
           </ul>
       )}
 
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
+      {showLoginModal && (
+        <Modal onClose={() => setShowLoginModal(false)}>
           <LoginForm />
         </Modal>
       )}
-      {showModalS && (
-        <Modal onClose={() => setShowModalS(false)}>
+      {showSignupModal && (
+        <Modal onClose={() => setShowSignupModal(false)}>
           <SignUpForm />
         </Modal>
       )}
