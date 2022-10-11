@@ -31,7 +31,7 @@ function LoginForm() {
     <>
       <div className="login-modal">
       <header>
-        <div><i class="fa-sharp fa-solid fa-xmark"></i></div>
+        <div><span class="material-symbols-outlined">close</span></div>
         <div className="header-login">Log in</div>
         <div></div>
       </header>

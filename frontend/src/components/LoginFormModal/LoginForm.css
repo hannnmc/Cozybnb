@@ -177,3 +177,6 @@ input:not(:focus):valid ~ .ps-floating-label{
     border-radius: 8px;
 }
 
+.material-symbols-outlined {
+    font-weight: 200;
+}
