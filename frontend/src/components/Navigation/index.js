@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -9,15 +9,19 @@ import logoImg from '../../assets/images/cozybnb_logo.png';
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
 
+  // const toggleMenu = () => {
+  //   setMenu(open => !open);
+  // }
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <ProfileButton user={sessionUser}/>
     );
   } else {
     sessionLinks = (
       <>
-        <LoginFormModal />
+        <LoginFormModal/>
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );
