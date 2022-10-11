@@ -49,6 +49,12 @@ table {
 }
 
 @font-face {
+    /* font-family: manropebold;
+    src: url(./assets/font/Manrope-Bold.ttf); */
     font-family: manrope;
-    src: url(./assets/font/Manrope-Bold.ttf);
+    src: url(./assets/font/Manrope-VariableFont_wght.ttf);
+}
+
+body {
+    font-family: manrope;
 }
