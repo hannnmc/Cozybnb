@@ -35,33 +35,37 @@ function LoginForm() {
         <div className="header-login">Log in</div>
         <div></div>
       </header>
-      <form onSubmit={handleSubmit}>
+      <div>
         <h3>Welcome to Cozybnb</h3>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
-        <div>
-        <label>
-          Email
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="email-input-div">
           <input
+            className="email-input"
+            placeholder="Email"
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Password
+          <span className="email-floating-label">Email</span>
+        </div>
+        <div className="ps-input-div">
           <input
+          className="ps-input"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            placeholder="Password"
           />
-        </label>
+          <span className="ps-floating-label">Password</span>
         </div>
-
-        <button type="submit">Log In</button>
+        <ul>
+          {errors.map(error => <li key={error}>{error}</li>)}
+        </ul>
+        <button 
+        type="submit">Log In</button>
       </form>
       </div>
       
