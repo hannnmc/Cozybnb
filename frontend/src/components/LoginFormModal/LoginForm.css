@@ -55,5 +55,7 @@ h3 {
 }
 
 .login-modal {
-
+    height: 660px;
+    width: 550px;
+    border-radius: 12px;
 }
