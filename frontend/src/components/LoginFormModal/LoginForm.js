@@ -86,6 +86,7 @@ function LoginForm() {
           </div>
           <div>
           <img className="google-icon" src={googleIcon} alt={<i class="fa-brands fa-google"></i>} />
+ 
             <span>Continue with Google</span>
             <div></div>
           </div>
