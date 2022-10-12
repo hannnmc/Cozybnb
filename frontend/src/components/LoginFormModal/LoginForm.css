@@ -255,3 +255,33 @@ input:not(:focus):valid ~ .ps-floating-label{
     display: flex;
     justify-content: space-between;
 }
+.fa-facebook {
+    color: #1876f1;
+    font-size: 21px;
+}
+
+.fa-brands {
+    font-size: 21px;
+}
+
+/* .fa-google {
+    font-size: 18px;
+    background: conic-gradient(red,orange,green,blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+
+.google-icon {
+    margin-left: -6px;
+    height: 30px;
+    width:30px;
+}
+
+
+.fa-apple {
+    margin-left: 2px;
+}
+
+#mail-icon{
+    margin-left: -3px;
+}

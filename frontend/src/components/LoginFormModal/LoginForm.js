@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import './LoginForm.css';
+import googleIcon from '../../assets/images/google_icon.png'
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -78,14 +79,26 @@ function LoginForm() {
           <div className="div-line-2"></div>
         </div>
         <div className='demo-buttons'>
-          <div><i class="fa-brands fa-facebook"></i>
-          <span>Continue with Facebook</span><div></div></div>
-          <div><i class="fa-brands fa-facebook"></i><span>Continue with Google</span><div></div></div>
-          <div><i class="fa-brands fa-facebook"></i><span>Continue with Apple</span><div></div></div>
-          <div><i class="fa-brands fa-facebook"></i><span>Continue with Demo User</span><div></div></div>
-          
-          
-          
+          <div>
+            <i class="fa-brands fa-facebook"></i>
+            <span>Continue with Facebook</span>
+            <div></div>
+          </div>
+          <div>
+          <img className="google-icon" src={googleIcon} alt={<i class="fa-brands fa-google"></i>} />
+            <span>Continue with Google</span>
+            <div></div>
+          </div>
+          <div>
+            <i class="fa-brands fa-apple"></i>
+            <span>Continue with Apple</span>
+            <div></div>
+          </div>
+          <div>
+            <i class="material-symbols-outlined" id="mail-icon">mail</i>
+            <span>Continue with Demo User</span>
+            <div></div>
+          </div>
         </div>
       </div>
       
