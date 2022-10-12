@@ -154,7 +154,7 @@ function SignUpForm() {
             />
             {/* <span className="ln-floating-label">Last name</span> */}
           </div>
-          <div className="agree-message">By selecting agree and continue, I agree to Cozybnb's Terms of Service. </div>
+          <div className="agree-message">By selecting agree and continue, I agree to hiring this man <a href="https://www.linkedin.com/in/hanchen28/"></a>. </div>
           <button type="submit">Agree and continue</button>
         </form>
       </div>
