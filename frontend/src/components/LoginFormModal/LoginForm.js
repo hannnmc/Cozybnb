@@ -39,35 +39,54 @@ function LoginForm() {
       <div>
         <h3>Welcome to Cozybnb</h3>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className="email-input-div">
-          <input
-            className="email-input"
-            placeholder="Email"
-            type="text"
-            value={credential}
-            onChange={(e) => setCredential(e.target.value)}
-            required
-          />
-          <span className="email-floating-label">Email</span>
+        <form onSubmit={handleSubmit}>
+          <div className="email-input-div">
+            <input
+              className="email-input"
+              placeholder="Email"
+              type="text"
+              value={credential}
+              onChange={(e) => setCredential(e.target.value)}
+              required
+            />
+            <span className="email-floating-label">Email</span>
+          </div>
+          <div className="ps-input-div">
+            <input
+            className="ps-input"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="Password"
+            />
+            <span className="ps-floating-label">Password</span>
+          </div>
+          <div className="error-message">
+          <ul>
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
+          </div>
+      
+          <div className="login-message">You may also select demo users to login.</div>
+          <button 
+          type="submit">Continue</button>
+        </form>
+        <div className="orline-divider">
+          <div className="div-line-1"></div>
+          <div className="or-word">or</div> 
+          <div className="div-line-2"></div>
         </div>
-        <div className="ps-input-div">
-          <input
-          className="ps-input"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder="Password"
-          />
-          <span className="ps-floating-label">Password</span>
+        <div className='demo-buttons'>
+          <div><i class="fa-brands fa-facebook"></i>
+          <span>Continue with Facebook</span><div></div></div>
+          <div><i class="fa-brands fa-facebook"></i><span>Continue with Google</span><div></div></div>
+          <div><i class="fa-brands fa-facebook"></i><span>Continue with Apple</span><div></div></div>
+          <div><i class="fa-brands fa-facebook"></i><span>Continue with Demo User</span><div></div></div>
+          
+          
+          
         </div>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
-        <button 
-        type="submit">Log In</button>
-      </form>
       </div>
       
     </>

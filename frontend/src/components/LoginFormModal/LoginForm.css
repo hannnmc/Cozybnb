@@ -62,7 +62,6 @@ header .header-login {
 .login-modal form {
     display: flex;
     flex-direction: column;
-    height: 50%;
     align-items: center;
     font-weight: 300;
 }
@@ -83,10 +82,13 @@ header .header-login {
     height: 34px;
     font-size: 15px;
     border-radius: 8px 8px 0 0;
+    padding-top: 26px;
+    padding-left: 12px;
+    margin-right: -6px;
+    color: rgb(113, 113, 113);
     width: 97.22%;
     border: 1px solid #bababa;
     border-bottom: none;
-    padding: 16px 0 0 12px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
 }
@@ -106,7 +108,10 @@ header .header-login {
     font-size: 16px;
     height: 34px;
     border-radius: 0 0 8px 8px;
-    padding: 16px 0 0 12px;
+    padding-top: 26px;
+    padding-left: 12px;
+    margin-right: -6px;
+    color: rgb(113, 113, 113);
     width: 97.22%;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -125,7 +130,7 @@ header .header-login {
 
 input:focus ~ .email-floating-label,
 input:not(:focus):valid ~ .email-floating-label{
-  top: 142px;
+  top: 147px;
   bottom: 10px;
   left: 41.5px;
   font-size: 11px;
@@ -135,14 +140,14 @@ input:not(:focus):valid ~ .email-floating-label{
   position: absolute;
   pointer-events: none;
   left: 41px;
-  top: 150px;
+  top: 156px;
   color: #717171;
   transition: 0.2s ease all;
 }
 
 input:focus ~ .ps-floating-label,
 input:not(:focus):valid ~ .ps-floating-label{
-  top: 193px;
+  top: 199px;
   bottom: 10px;
   left: 41.5px;
   font-size: 11px;
@@ -152,9 +157,23 @@ input:not(:focus):valid ~ .ps-floating-label{
     position: absolute;
     pointer-events: none;
     left: 41px;
-    top: 202px;
+    top: 208px;
     color: #717171;
     transition: 0.2s ease all;
+}
+
+.error-message {
+    margin-top: 4px;
+    font-size: 12px;
+    color: darkred;
+    margin-bottom: -4px;
+}
+
+.login-message {
+    font-weight: 400;
+    font-size: 12.3px;
+    color: rgb(34, 34, 34);
+    margin-top: 8px;
 }
 
 .login-modal button {
@@ -164,8 +183,11 @@ input:not(:focus):valid ~ .ps-floating-label{
     position: relative;
     text-align: center;
     touch-action: manipulation;
+    font-size: 16px;
     margin-top: 16px;
-    padding: 16px 24px;
+    height: 48px;
+    font-weight: bold;
+    width: 520px;
     border:none;
     background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
     color: rgb(255, 255, 255);
@@ -174,4 +196,62 @@ input:not(:focus):valid ~ .ps-floating-label{
 
 .material-symbols-outlined {
     font-weight: 200;
+}
+
+.orline-divider {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 16px 0px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 25px;
+}
+
+.or-word {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.div-line-1 {
+    content: "fdf";
+    flex: 1 1;
+    border-bottom: 1px solid #bababa;
+    margin: auto;
+    margin: 0 17px 0 35px;
+}
+
+.div-line-2 {
+    content: "fdf";
+    flex: 1 1;
+    border-bottom: 1px solid #bababa;
+    margin: auto;
+    margin: 0 35px 0 17px;
+}
+
+.demo-buttons {
+    -webkit-box-pack: justify;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.demo-buttons>div{
+    border: 1px solid #222222;
+    border-radius: 8px;
+    padding: 13px 23px;
+    font-size: 14.5px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #222222;
+    text-align: center;
+    width: 82%;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
 }
