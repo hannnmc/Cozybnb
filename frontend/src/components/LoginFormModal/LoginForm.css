@@ -1,56 +1,50 @@
 header {
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0 24px;
     border-bottom: 1px solid rgb(235, 235, 235);
+    color: rgb(34, 34, 34);
+    font-size: 16px;
     line-height: 20px;
-    min-height: 59px;
-    justify-content: space-between;
-    font-variation-settings: 'wght' 700;
+    min-height: 64px;
+    font-weight: 700;
 }
 
 header .header-login {
     display: block;
+    -webkit-box-flex: 0;
+    flex: 0 1 auto;
     text-align: center;
     margin-left: 16px;
     margin-right: 16px;
-    overflow: hidden;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 1.1em;
 }
 
-header div:first-child {
+.login-x-button {
     box-sizing: border-box;
-    display: block;
+    position: absolute;
+    display: flex;
+    top: 24px;
+    left: 24px;
     color: rgb(34, 34, 34);
-    font-size: 18px;
     line-height: 20px;
     border-radius: 50%;
-    border: none;
-    background-color: hwb(0 100% 0%);
-    height: 27px;
-    width: 27px;
-    text-align: center;
-    padding-top: 3.5px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1;
 }
 
-header div:last-child{
-    flex: 0 0 16px;
-    text-align: right;
-    box-sizing: border-box;
-    display: block;
-}
-
-header div:first-child:hover{
-    background-color: #fff7f7;
+.login-x-button:hover {
+    background-color: rgb(246, 246, 246);
 }
 
 .login-modal h3 {
-    font-size: 21px;
+    font-size: 22px;
     line-height: 26px;
     color: rgb(34, 34, 34);
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 8px;
     box-sizing: border-box;
     display: block;
@@ -61,8 +55,8 @@ header div:first-child:hover{
 }
 
 .login-modal {
-    height: 550px;
-    width: 550px;
+    height: 682px;
+    width: 568px;
 }
 
 .login-modal form {

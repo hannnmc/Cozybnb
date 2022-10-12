@@ -30,8 +30,9 @@ function LoginForm() {
   return (
     <>
       <div className="login-modal">
+        <div className="login-x-button"><span class="material-symbols-outlined">close</span></div>
       <header>
-        <div><span class="material-symbols-outlined">close</span></div>
+        <div></div>
         <div className="header-login">Log in</div>
         <div></div>
       </header>
