@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import LoginFormModal from '../LoginFormModal';
+import LoginDropDown from '../LoginDropdown';
 import './Navigation.css';
 import logoImg from '../../assets/images/cozybnb_logo.png';
 
@@ -16,9 +16,7 @@ function Navigation() {
     );
   } else {
     sessionLinks = (
-      <>
-        <LoginFormModal/>
-      </>
+        <LoginDropDown/>
     );
   }
 

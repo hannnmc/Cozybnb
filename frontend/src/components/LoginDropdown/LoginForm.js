@@ -28,6 +28,35 @@ function LoginForm() {
       });
   };
 
+  const loginDemoUser = (e) => {
+    console.log('sdfsd');
+    return dispatch(sessionActions.login({    
+      credential: 'hanmikechen@gmail.com', 
+      password: 'password'
+    }));
+  };
+  const loginFacebookUser = (e) => {
+    console.log('sdfsd');
+    return dispatch(sessionActions.login({    
+      credential: 'facebookUser@fb.com', 
+      password: 'password'
+    }));
+  };
+  const loginGoogleUser = (e) => {
+    console.log('sdfsd');
+    return dispatch(sessionActions.login({    
+      credential: 'googleuser@gmail.com', 
+      password: 'password'
+    }));
+  };
+  const loginAppleUser = (e) => {
+    console.log('sdfsd');
+    return dispatch(sessionActions.login({    
+      credential: 'appleuser@icloud.com', 
+      password: 'password'
+    }));
+  };
+
   return (
     <>
       <div className="login-modal">
@@ -79,23 +108,23 @@ function LoginForm() {
           <div className="div-line-2"></div>
         </div>
         <div className='demo-buttons'>
-          <div>
+          <div onClick={() => loginFacebookUser()}>
             <i class="fa-brands fa-facebook"></i>
             <span>Continue with Facebook</span>
             <div></div>
           </div>
-          <div>
+          <div onClick={() => loginGoogleUser()}>
           <img className="google-icon" src={googleIcon} alt={<i class="fa-brands fa-google"></i>} />
  
             <span>Continue with Google</span>
             <div></div>
           </div>
-          <div>
+          <div onClick={() => loginAppleUser()}>
             <i class="fa-brands fa-apple"></i>
             <span>Continue with Apple</span>
             <div></div>
           </div>
-          <div>
+          <div  onClick={() => loginDemoUser()}>
             <i class="material-symbols-outlined" id="mail-icon">mail</i>
             <span>Continue with Demo User</span>
             <div></div>

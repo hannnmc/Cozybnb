@@ -10,13 +10,38 @@ ApplicationRecord.transaction do
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     User.create!(
-      username: 'Demo-lition', 
-      email: 'demo@user.io', 
+      username: 'DevHan', 
+      email: 'hanmikechen@gmail.com', 
       password: 'password',
-      first_name: 'john',
-      last_name: 'sun',
-      birth_date: '11/10/2000'
+      first_name: 'Han',
+      last_name: 'Chen',
+      birth_date: '28/10/1991'
     )
+    User.create!(
+      username: 'FacebookUser', 
+      email: 'facebookUser@fb.com', 
+      password: 'password',
+      first_name: 'Facebook',
+      last_name: 'User',
+      birth_date: '01/01/1991'
+    )
+    User.create!(
+      username: 'GoogleUser', 
+      email: 'googleuser@gmail.com', 
+      password: 'password',
+      first_name: 'Google',
+      last_name: 'User',
+      birth_date: '01/01/1991'
+    )
+    User.create!(
+      username: 'AppleUser', 
+      email: 'appleuser@icloud.com', 
+      password: 'password',
+      first_name: 'Apple',
+      last_name: 'User',
+      birth_date: '01/01/1991'
+    )
+
   
     10.times do 
       User.create!({
