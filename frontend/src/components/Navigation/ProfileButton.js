@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import profileImg from '../../assets/images/profile.png'
+import profileImg from '../../assets/images/profile_icon.jpg'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
+  const toggleMenu = () => {
+    setShowMenu(open => !open);
   };
   
   useEffect(() => {
@@ -31,15 +30,25 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <img src={profileImg} alt="Profile"/>
+        <button className='profile-button' onClick={toggleMenu}>
+        <svg className='profile-burger' width={16} height={16} viewBox="0 0 32 32" fill={'#222222'} stroke={'#222222'} strokeWidth={3}>
+          <g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g>
+        </svg>
+        <img className="profile-avatar" src={profileImg} alt="profile-icon" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
           <li>{user.email}</li>
+          <li><a className="linkin-tag" href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a></li>
+          <li ><a className="linkin-tag" href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li className="dropdown-divider"></li>
+          <li>Host your home</li>
+          <li>Host an experience</li>
+          <li>Account</li>
+          <li className="dropdown-divider"></li>
+          <li>Help</li>
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button className="logout-button" onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}

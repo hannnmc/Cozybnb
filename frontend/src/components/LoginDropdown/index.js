@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import SignUpForm from '../SignUpModal/SignupForm';
 
 
-function LoginFormModal() {
+function LoginDropDown() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
 
@@ -49,4 +49,4 @@ function LoginFormModal() {
   );
 }
 
-export default LoginFormModal;
+export default LoginDropDown;
