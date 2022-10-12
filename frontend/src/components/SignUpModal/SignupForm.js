@@ -91,7 +91,7 @@ function SignUpForm() {
       </header>
       <div className="signup-div">
         <form onSubmit={handleSubmit}>
-          <div id="input-div">
+          <div className="input-div">
             <input
               className="firstname-input"
               placeholder="First name"
@@ -102,7 +102,7 @@ function SignUpForm() {
             />
             {/* <span className="fn-floating-label">First name</span> */}
           </div>
-          <div id="input-div">
+          <div className="input-div">
             <input
             className="lastname-input"
               type="password"
@@ -119,7 +119,7 @@ function SignUpForm() {
             {errors.map(error => <li key={error}>{error}</li>)}
           </ul>
           </div>
-          <div id="input-div">
+          <div className="input-div">
             <input
             className="birthdate-input"
               type="password"
@@ -130,9 +130,10 @@ function SignUpForm() {
             />
             {/* <span className="ln-floating-label">Last name</span> */}
           </div>
-          <div id="input-div">
+          <div className="birthdate-message">By selecting agree and continue, I agree to Cozybnb's Terms of Service. </div>
+          <div className="input-div">
             <input
-            className="email-input"
+            className="birthdate-input"
               type="password"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -141,9 +142,10 @@ function SignUpForm() {
             />
             {/* <span className="ln-floating-label">Last name</span> */}
           </div>
-          <div id="input-div">
+          <div className="email-message">We'll email you trip confirmations and receipts.</div>
+          <div className="input-div">
             <input
-            className="lastname-input"
+            className="birthdate-input"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -153,8 +155,7 @@ function SignUpForm() {
             {/* <span className="ln-floating-label">Last name</span> */}
           </div>
           <div className="agree-message">By selecting agree and continue, I agree to Cozybnb's Terms of Service. </div>
-          <button 
-          type="submit">Agree and continue</button>
+          <button type="submit">Agree and continue</button>
         </form>
       </div>
       </div>
