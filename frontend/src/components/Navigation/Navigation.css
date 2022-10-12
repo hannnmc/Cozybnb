@@ -3,48 +3,65 @@
 }
 
 .profile-dropdown {
-    position: fixed;
-    display: flex;
+    position: absolute;
+    display: block;
     padding: 8px 0;
     margin-top: 34px;
     top: 50%;
     border-radius: 12px;
     box-shadow: 0 2px 16px rgba(0 0 0 / 12%);
-    height: 210px;
-    width: 220px;
-    flex-direction: column;
-    justify-content: space-evenly;
+    min-width: 240px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    z-index: 2;
+    --navigation-bar-offset: 144px;
     color: black;
     background-color: white;
-    font-size: 13px;
-    top: 30px;
-    right: 4%;
-    font-weight: 300;
-    z-index: 100;
+    top: 40px;
+    right: 80px;
 }
 
 .profile-dropdown li {
-  padding: 12px 0 14px 17px;
+  padding: 12px 16px;
+  font-size: 14.5px;
   cursor: pointer;
+  color: #222222;
+  overflow: visible;
+  line-height: 18px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .profile-dropdown li:first-child{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .profile-dropdown li:hover{
   background-color: #f7f7f7;
 }
 
+.profile-dropdown .dropdown-divider {
+  background-color: white;
+  margin: 8px 0;
+  height: 1px;
+  /* display: block; */
+  background: #DDDDDD;
+  padding: 0 0 0 0;
+}
+.profile-dropdown .dropdown-divider:hover {
+  background: #DDDDDD;
+  cursor: default;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  height: 73px;
+  height: 80px;
   align-items: center;
-  padding: 0 69px 0 5%;
+  padding: 0 80px 0 80px;
   border-bottom: 1px #DDDDDD solid;
-  z-index: -100;
 }
 
 .home-box {
@@ -54,18 +71,18 @@
   font-family: manrope;
   align-items: center;
   font-variation-settings: "wght" 650;
-  padding-left: 69px;
 }
 
 .logo-img {
   align-items: center;
-  height: 48%;
+  height: 50%;
   padding-right: 3px;
 }
 
 .logo-text {
-  font-size: 19.5px;
-  letter-spacing: -1.6px;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -.7px;
 }
 
 a {
@@ -80,7 +97,8 @@ a {
   border: 1px #DDDDDD solid;
   align-items: center;
   padding: 5px 5px 5px 11px;
-  height: 38px;
+  height: 42px;
+  width: 77px;
   cursor: pointer;
 }
 
@@ -91,6 +109,9 @@ a {
 .profile-icon {
   padding-left: 11px;
 } 
+.profile-burger {
+  padding-left: 2px;
+}
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -98,4 +119,18 @@ a {
   'wght' 300,
   'GRAD' 0,
   'opsz' 19
+}
+
+@media (max-width: 1440px) {
+  .nav-bar {
+    padding: 0 40px 0 40px;
+  }
+  .profile-dropdown {
+    right: 40px;
+  }
+}
+@media (max-width: 1127px) {
+  .logo-text {
+    display: none;
+  }
 }
