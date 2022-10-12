@@ -17,9 +17,10 @@ header .header-login {
     margin-right: 16px;
     overflow: hidden;
     font-size: 15px;
+    font-weight: 600;
 }
 
-header > div:first-child {
+header div:first-child {
     box-sizing: border-box;
     display: block;
     color: rgb(34, 34, 34);
@@ -134,7 +135,7 @@ input:not(:focus):valid ~ .email-floating-label{
   bottom: 10px;
   left: 41.5px;
   font-size: 11px;
-  opacity: .8;
+  opacity: 1;
 }
 .email-floating-label {
   position: absolute;
