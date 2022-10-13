@@ -14,7 +14,6 @@ function SignUpForm() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
-    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [birthdate, setBirthdate] = useState("");
 
@@ -22,7 +21,7 @@ function SignUpForm() {
         e.preventDefault();
         if (password) {
         setErrors([]);
-        return dispatch(sessionActions.signup({ email, username, password }))
+        return dispatch(sessionActions.signup({ email, password, birthdate, email, firstName, lastName }))
             .catch(async (res) => {
             let data;
             try {
@@ -41,9 +40,6 @@ function SignUpForm() {
 
 
     if (sessionUser) return <Redirect to="/" />;
-
-    
-
 
   return (
     <>

@@ -3,20 +3,18 @@ class Api::UsersController < ApplicationController
 
   def create
     # bdate = DateTime.parse(user_params.birthdate)
-    # debugger
     @user = User.new(user_params)
-
-    if @user.save
+    if @user.save!
       login!(@user)
       render :show
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
-    end
+    end 
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :birth_date, :phone_number)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :birth_date)
   end
 end
