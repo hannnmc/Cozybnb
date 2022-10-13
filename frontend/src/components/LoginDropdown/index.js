@@ -37,12 +37,12 @@ function LoginDropDown() {
 
       {showLoginModal && (
         <Modal onClose={() => setShowLoginModal(false)}>
-          <LoginForm />
+          <LoginForm setShowLoginModal={setShowLoginModal}/>
         </Modal>
       )}
       {showSignupModal && (
         <Modal onClose={() => setShowSignupModal(false)}>
-          <SignUpForm showSignupModal={showSignupModal} setShowSignupModal={setShowSignupModal}/>
+          <SignUpForm setShowSignupModal={setShowSignupModal}/>
         </Modal>
       )}
     </>
