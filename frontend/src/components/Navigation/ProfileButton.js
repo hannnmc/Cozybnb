@@ -38,7 +38,7 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.email}</li>
+          <li className="dropdown-email">{user.email}</li>
           <li><a className="linkin-tag" href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a></li>
           <li ><a className="linkin-tag" href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li className="dropdown-divider"></li>
