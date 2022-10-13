@@ -4,11 +4,12 @@ import { useDispatch } from "react-redux";
 import './LoginForm.css';
 import googleIcon from '../../assets/images/google_icon.png'
 
-function LoginForm() {
+function LoginForm(props) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const { setShowLoginModal } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +57,7 @@ function LoginForm() {
   return (
     <>
       <div className="login-modal">
-        <div className="login-x-button"><span class="material-symbols-outlined">close</span></div>
+        <div onClick={()=>setShowLoginModal(false)} className="login-x-button"><span class="material-symbols-outlined">close</span></div>
       <header>
         <div></div>
         <div className="header-login">Log in</div>
