@@ -177,7 +177,7 @@ input:focus ~ .fn-floating-label,
 input:not(:focus):valid ~ .fn-floating-label{
   top: 99px;
   bottom: 10px;
-  left: 36px;
+  left: 37px;
   font-size: 11px;
   opacity: 1;
 }

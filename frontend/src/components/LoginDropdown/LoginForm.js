@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
-import './LoginForm.css';
 import googleIcon from '../../assets/images/google_icon.png'
 
 function LoginForm(props) {
