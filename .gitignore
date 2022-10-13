@@ -19,7 +19,9 @@
 !/tmp/pids/.keep
 
 .byebug_history
-/public
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore manifest files
+/public 
