@@ -7,11 +7,10 @@ import profileImg from '../../assets/images/profile_icon.jpg'
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-  
+
   const toggleMenu = () => {
     setShowMenu(open => !open);
   };
-  
   useEffect(() => {
     if (!showMenu) return;
 
@@ -20,12 +19,12 @@ function ProfileButton({ user }) {
     };
 
     document.addEventListener('click', closeMenu);
-  
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
   const logout = (e) => {
     e.preventDefault();
+    console.log('logout')
     dispatch(sessionActions.logout());
   };
 

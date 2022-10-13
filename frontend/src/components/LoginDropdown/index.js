@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
 import SignUpForm from '../SignUpModal/SignupForm';
@@ -12,6 +12,17 @@ function LoginDropDown() {
     setMenu(open => !open);
   };
   const [menu, setMenu] = useState(false);
+
+  useEffect(() => {
+    if (!menu) return;
+
+    const closeMenu = () => {
+      setMenu(false);
+    };
+
+    document.addEventListener('click', closeMenu);
+    return () => document.removeEventListener("click", closeMenu);
+  }, [menu]);
 
   return (
     <>
