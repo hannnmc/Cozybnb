@@ -10,9 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_08_152945) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_13_211334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "listings", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.float "lat", null: false
+    t.float "lng", null: false
+    t.integer "price", null: false
+    t.integer "guests", null: false
+    t.integer "bedrooms", null: false
+    t.integer "beds", null: false
+    t.integer "baths", null: false
+    t.string "address", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.boolean "wifi", default: false, null: false
+    t.boolean "parking", default: false, null: false
+    t.boolean "kitchen", default: false, null: false
+    t.boolean "dedicated_workspace", default: false, null: false
+    t.boolean "pets_allowed", default: true, null: false
+    t.bigint "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_listings_on_users_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -29,4 +53,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_08_152945) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "listings", "users", column: "users_id"
 end
