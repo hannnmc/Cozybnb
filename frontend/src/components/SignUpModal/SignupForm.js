@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -9,37 +9,7 @@ function SignUpForm() {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
 
-  const loginDemoUser = (e) => {
-    console.log('sdfsd');
-    return dispatch(sessionActions.login({    
-      credential: 'hanmikechen@gmail.com', 
-      password: 'password'
-    }));
-  };
-  const loginFacebookUser = (e) => {
-    console.log('sdfsd');
-    return dispatch(sessionActions.login({    
-      credential: 'facebookUser@fb.com', 
-      password: 'password'
-    }));
-  };
-  const loginGoogleUser = (e) => {
-    console.log('sdfsd');
-    return dispatch(sessionActions.login({    
-      credential: 'googleuser@gmail.com', 
-      password: 'password'
-    }));
-  };
-  const loginAppleUser = (e) => {
-    console.log('sdfsd');
-    return dispatch(sessionActions.login({    
-      credential: 'appleuser@icloud.com', 
-      password: 'password'
-    }));
-  };
-
-
-
+  const sessionUser = useSelector(state => state.session.user);
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -70,13 +40,8 @@ function SignUpForm() {
 
 
 
-// function SignUpForm() {
-//     const dispatch = useDispatch();
-//     const sessionUser = useSelector(state => state.session.user);
+    if (sessionUser) return <Redirect to="/" />;
 
-//     const [errors, setErrors] = useState([]);
-
-//     if (sessionUser) return <Redirect to="/" />;
     
 
 
@@ -84,9 +49,9 @@ function SignUpForm() {
     <>
       <div className="signup-modal">
         <div className="login-x-button"><span class="material-symbols-outlined">close</span></div>
-      <header>
+      <header className="signup-header">
         <div></div>
-        <div className="header-login">Finish signing up</div>
+        <div >Finish signing up</div>
         <div></div>
       </header>
       <div className="signup-div">
@@ -100,18 +65,17 @@ function SignUpForm() {
               onChange={(e) => setFirstName(e.target.value)}
               required
             />
-            {/* <span className="fn-floating-label">First name</span> */}
+            <span className="fn-floating-label">First name</span>
           </div>
           <div className="input-div">
             <input
             className="lastname-input"
-              type="password"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
               placeholder="Last name"
             />
-            {/* <span className="ln-floating-label">Last name</span> */}
+            <span className="ln-floating-label">Last name</span>
           </div>
           <div className="matchname-message">Make sure it matches the name on your government ID.</div>
           <div className="error-message">
@@ -122,25 +86,23 @@ function SignUpForm() {
           <div className="input-div">
             <input
             className="birthdate-input"
-              type="password"
               value={birthdate}
               onChange={(e) => setBirthdate(e.target.value)}
               required
               placeholder="Birthdate"
             />
-            {/* <span className="ln-floating-label">Last name</span> */}
+            <span className="bd-floating-label">Birthdate</span>
           </div>
-          <div className="birthdate-message">By selecting agree and continue, I agree to Cozybnb's Terms of Service. </div>
+          <div className="birthdate-message">To sign up, you need to be at least 18. Your birthday won't be shared with other people who use Cozybnb. </div>
           <div className="input-div">
             <input
             className="birthdate-input"
-              type="password"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Email"
             />
-            {/* <span className="ln-floating-label">Last name</span> */}
+            <span className="signupemail-floating-label">Email</span>
           </div>
           <div className="email-message">We'll email you trip confirmations and receipts.</div>
           <div className="input-div">
@@ -152,60 +114,20 @@ function SignUpForm() {
               required
               placeholder="Password"
             />
-            {/* <span className="ln-floating-label">Last name</span> */}
+            <span className="su-password-floating-label">Password</span>
           </div>
-          <div className="agree-message">By selecting agree and continue, I agree to hiring this man <a href="https://www.linkedin.com/in/hanchen28/"></a>. </div>
+          <div className="agree-message">By selecting 
+          <span className="bold">  Agree and continue</span>, I agree to Cozybnb's 
+          <span className="bold2">Term of Service</span>. 
+          <a href="https://www.linkedin.com/in/hanchen28/">LinkIn</a>
+          <a href="https://github.com/hannnmc">Github</a>
+           </div>
           <button type="submit">Agree and continue</button>
         </form>
       </div>
       </div>
       
     </>
-    // <>
-
-    //     <form onSubmit={handleSubmit}>
-    //     <ul>
-    //         {errors.map(error => <li key={error}>{error}</li>)}
-    //     </ul>
-    //     <label>
-    //         Email
-    //         <input
-    //         type="text"
-    //         value={email}
-    //         onChange={(e) => setEmail(e.target.value)}
-    //         required
-    //         />
-    //     </label>
-    //     <label>
-    //         Username
-    //         <input
-    //         type="text"
-    //         value={username}
-    //         onChange={(e) => setUsername(e.target.value)}
-    //         required
-    //         />
-    //     </label>
-    //     <label>
-    //         Password
-    //         <input
-    //         type="password"
-    //         value={password}
-    //         onChange={(e) => setPassword(e.target.value)}
-    //         required
-    //         />
-    //     </label>
-    //     <label>
-    //         Confirm Password
-    //         <input
-    //         type="password"
-    //         value={confirmPassword}
-    //         onChange={(e) => setConfirmPassword(e.target.value)}
-    //         required
-    //         />
-    //     </label>
-    //     <button type="submit">Sign Up</button>
-    //     </form>
-    // </>
   );
 }
 
