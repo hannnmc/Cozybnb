@@ -29,28 +29,24 @@ function LoginForm() {
   };
 
   const loginDemoUser = (e) => {
-    console.log('sdfsd');
     return dispatch(sessionActions.login({    
       credential: 'hanmikechen@gmail.com', 
       password: 'password'
     }));
   };
   const loginFacebookUser = (e) => {
-    console.log('sdfsd');
     return dispatch(sessionActions.login({    
       credential: 'facebookUser@fb.com', 
       password: 'password'
     }));
   };
   const loginGoogleUser = (e) => {
-    console.log('sdfsd');
     return dispatch(sessionActions.login({    
       credential: 'googleuser@gmail.com', 
       password: 'password'
     }));
   };
   const loginAppleUser = (e) => {
-    console.log('sdfsd');
     return dispatch(sessionActions.login({    
       credential: 'appleuser@icloud.com', 
       password: 'password'

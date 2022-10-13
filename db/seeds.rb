@@ -10,7 +10,6 @@ ApplicationRecord.transaction do
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     User.create!(
-      username: 'DevHan', 
       email: 'hanmikechen@gmail.com', 
       password: 'password',
       first_name: 'Han',
@@ -18,7 +17,6 @@ ApplicationRecord.transaction do
       birth_date: '28/10/1991'
     )
     User.create!(
-      username: 'FacebookUser', 
       email: 'facebookUser@fb.com', 
       password: 'password',
       first_name: 'Facebook',
@@ -26,7 +24,6 @@ ApplicationRecord.transaction do
       birth_date: '01/01/1991'
     )
     User.create!(
-      username: 'GoogleUser', 
       email: 'googleuser@gmail.com', 
       password: 'password',
       first_name: 'Google',
@@ -34,7 +31,6 @@ ApplicationRecord.transaction do
       birth_date: '01/01/1991'
     )
     User.create!(
-      username: 'AppleUser', 
       email: 'appleuser@icloud.com', 
       password: 'password',
       first_name: 'Apple',
@@ -45,7 +41,6 @@ ApplicationRecord.transaction do
   
     10.times do 
       User.create!({
-        username: Faker::Internet.unique.username(specifier: 3),
         email: Faker::Internet.unique.email,
         password: 'password',
         first_name: Faker::Name.first_name,
