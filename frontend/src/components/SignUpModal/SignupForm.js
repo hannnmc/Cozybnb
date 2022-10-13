@@ -5,9 +5,10 @@ import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
 
-function SignUpForm() {
+function SignUpForm(props) {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
+  const { setShowSignupModal } = props;
 
   const sessionUser = useSelector(state => state.session.user);
 
@@ -37,14 +38,13 @@ function SignUpForm() {
         return setErrors(['Confirm Password field must be the same as the Password field']);
     };
 
-
-
     if (sessionUser) return <Redirect to="/" />;
 
   return (
     <>
       <div className="signup-modal">
-        <div className="login-x-button"><span class="material-symbols-outlined">close</span></div>
+        <div 
+        onClick={() => setShowSignupModal(false)} className="login-x-button"><span class="material-symbols-outlined">close</span></div>
       <header className="signup-header">
         <div></div>
         <div >Finish signing up</div>
