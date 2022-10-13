@@ -6,7 +6,7 @@ import googleIcon from '../../assets/images/google_icon.png'
 
 function LoginForm(props) {
   const dispatch = useDispatch();
-  const [credential, setCredential] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const { setShowLoginModal } = props;
@@ -14,7 +14,7 @@ function LoginForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ credential, password }))
+    return dispatch(sessionActions.login({ email, password }))
       .catch(async (res) => {
         let data;
         try {
@@ -31,25 +31,25 @@ function LoginForm(props) {
 
   const loginDemoUser = (e) => {
     return dispatch(sessionActions.login({    
-      credential: 'hanmikechen@gmail.com', 
+      email: 'hanmikechen@gmail.com', 
       password: 'password'
     }));
   };
   const loginFacebookUser = (e) => {
     return dispatch(sessionActions.login({    
-      credential: 'facebookUser@fb.com', 
+      email: 'facebookUser@fb.com', 
       password: 'password'
     }));
   };
   const loginGoogleUser = (e) => {
     return dispatch(sessionActions.login({    
-      credential: 'googleuser@gmail.com', 
+      email: 'googleuser@gmail.com', 
       password: 'password'
     }));
   };
   const loginAppleUser = (e) => {
     return dispatch(sessionActions.login({    
-      credential: 'appleuser@icloud.com', 
+      email: 'appleuser@icloud.com', 
       password: 'password'
     }));
   };
@@ -72,8 +72,8 @@ function LoginForm(props) {
               className="email-input"
               placeholder="Email"
               type="text"
-              value={credential}
-              onChange={(e) => setCredential(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <span className="email-floating-label">Email</span>

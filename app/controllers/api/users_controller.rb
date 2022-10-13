@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  wrap_parameters include: User.attribute_names + ['password']
+  wrap_parameters include: User.attribute_names + ['password' , 'firstName', 'lastName', 'birthDate']
 
   def create
     # bdate = DateTime.parse(user_params.birthdate)
