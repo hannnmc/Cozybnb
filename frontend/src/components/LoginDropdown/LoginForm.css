@@ -130,6 +130,7 @@ header .header-login {
 input:focus ~ .email-floating-label,
 input:not(:focus):valid ~ .email-floating-label{
   top: 153px;
+  /* top: 144px; */
   bottom: 10px;
   left: 41.5px;
   font-size: 11px;
@@ -140,6 +141,7 @@ input:not(:focus):valid ~ .email-floating-label{
   pointer-events: none;
   left: 41px;
   top: 163px;
+  /* top: 154px; */
   color: #717171;
   transition: 0.2s ease all;
   font-size: 18px;
@@ -149,6 +151,7 @@ input:not(:focus):valid ~ .email-floating-label{
 input:focus ~ .ps-floating-label,
 input:not(:focus):valid ~ .ps-floating-label{
   top: 215px;
+  /* top: 206px; */
   bottom: 10px;
   left: 41.5px;
   font-size: 11px;
@@ -159,6 +162,7 @@ input:not(:focus):valid ~ .ps-floating-label{
     pointer-events: none;
     left: 41px;
     top: 225px;
+    /* top:216px; */
     color: #717171;
     transition: 0.2s ease all;
     font-size: 18px;
