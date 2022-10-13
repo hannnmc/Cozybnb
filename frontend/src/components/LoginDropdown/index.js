@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
 import SignUpForm from '../SignUpModal/SignupForm';
-
+import './LoginForm.css';
 
 function LoginDropDown() {
   const [showLoginModal, setShowLoginModal] = useState(false);

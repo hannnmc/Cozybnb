@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
+import { NavLink } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 import profileImg from '../../assets/images/profile_icon.jpg'
 
@@ -44,7 +45,7 @@ function ProfileButton({ user }) {
           <li className="dropdown-divider"></li>
           <li>Host your home</li>
           <li>Host an experience</li>
-          <li>Account</li>
+          <li><NavLink exact to="/profile">Profile</NavLink></li>
           <li className="dropdown-divider"></li>
           <li>Help</li>
           <li>
