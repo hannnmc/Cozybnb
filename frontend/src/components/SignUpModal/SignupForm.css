@@ -5,6 +5,12 @@
 
 .signup-header {
     margin-bottom: 3px;
+    font-weight: 650;
+    font-size: 16.3px;
+}
+
+.finish-signup {
+    margin-left: -3px;
 }
 
 .signup-div {

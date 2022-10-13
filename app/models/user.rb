@@ -31,9 +31,8 @@ class User < ApplicationRecord
   validates :email, :first_name, :last_name, :birth_date, presence: true
   validate :validate_age
 
-  def self.find_by_credentials(credential, password)
-    field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
-    user = User.find_by(field => credential)
+  def self.find_by_credentials(email, password)
+    user = User.find_by(:email => email)
     user&.authenticate(password)
   end
 

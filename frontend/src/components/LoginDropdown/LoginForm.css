@@ -17,8 +17,6 @@ header .header-login {
     -webkit-box-flex: 0;
     flex: 0 1 auto;
     text-align: center;
-    margin-left: 16px;
-    margin-right: 16px;
     font-size: 1em;
 }
 
@@ -26,8 +24,9 @@ header .header-login {
     box-sizing: border-box;
     position: absolute;
     display: flex;
-    top: 24px;
+    top: 21px;
     left: 24px;
+    padding-left: 1px;
     color: rgb(34, 34, 34);
     line-height: 20px;
     border-radius: 50%;
@@ -79,10 +78,10 @@ header .header-login {
 }
 
 .email-input {
-    height: 34px;
+    height: 47px;
     font-size: 15px;
     border-radius: 8px 8px 0 0;
-    padding-top: 26px;
+    padding-top: 13px;
     padding-left: 12px;
     margin-right: -6px;
     color: rgb(113, 113, 113);
@@ -106,9 +105,9 @@ header .header-login {
 
 .ps-input {
     font-size: 16px;
-    height: 34px;
+    height: 47px;
     border-radius: 0 0 8px 8px;
-    padding-top: 26px;
+    padding-top: 13px;
     padding-left: 12px;
     margin-right: -6px;
     color: rgb(113, 113, 113);

@@ -12,17 +12,17 @@ function SignUpForm(props) {
 
   const sessionUser = useSelector(state => state.session.user);
 
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
+    const [first_name, setFirstname] = useState("");
+    const [last_name, setLastname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [birthdate, setBirthdate] = useState("");
+    const [birth_date, setBirthdate] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password) {
         setErrors([]);
-        return dispatch(sessionActions.signup({ email, password, birthdate, email, firstName, lastName }))
+        return dispatch(sessionActions.signup({ email, password, birth_date, email, first_name, last_name }))
             .catch(async (res) => {
             let data;
             try {
@@ -47,7 +47,7 @@ function SignUpForm(props) {
         onClick={() => setShowSignupModal(false)} className="login-x-button"><span class="material-symbols-outlined">close</span></div>
       <header className="signup-header">
         <div></div>
-        <div >Finish signing up</div>
+        <div className="finish-signup">Finish signing up</div>
         <div></div>
       </header>
       <div className="signup-div">
@@ -57,8 +57,8 @@ function SignUpForm(props) {
               className="firstname-input"
               placeholder="First name"
               type="text"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={first_name}
+              onChange={(e) => setFirstname(e.target.value)}
               required
             />
             <span className="fn-floating-label">First name</span>
@@ -66,8 +66,8 @@ function SignUpForm(props) {
           <div className="input-div">
             <input
             className="lastname-input"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              value={last_name}
+              onChange={(e) => setLastname(e.target.value)}
               required
               placeholder="Last name"
             />
@@ -75,14 +75,11 @@ function SignUpForm(props) {
           </div>
           <div className="matchname-message">Make sure it matches the name on your government ID.</div>
           <div className="error-message">
-          <ul>
-            {errors.map(error => <li key={error}>{error}</li>)}
-          </ul>
           </div>
           <div className="input-div">
             <input
             className="birthdate-input"
-              value={birthdate}
+              value={birth_date}
               onChange={(e) => setBirthdate(e.target.value)}
               required
               placeholder="Birthdate"
@@ -115,9 +112,12 @@ function SignUpForm(props) {
           <div className="agree-message">By selecting 
           <span className="bold">  Agree and continue</span>, I agree to Cozybnb's 
           <span className="bold2">Term of Service</span>. 
-          <a href="https://www.linkedin.com/in/hanchen28/">LinkIn</a>
-          <a href="https://github.com/hannnmc">Github</a>
+          <a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkIn</a>
+          <a href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a>
            </div>
+          <ul className="error-message">
+            {errors.map(error => <li key={error}>{error}</li>)}
+          </ul>
           <button type="submit">Agree and continue</button>
         </form>
       </div>
