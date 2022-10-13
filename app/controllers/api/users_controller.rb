@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
 
   def create
     # bdate = DateTime.parse(user_params.birthdate)
-    debugger
+    # debugger
     @user = User.new(user_params)
 
     if @user.save
