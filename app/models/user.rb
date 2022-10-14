@@ -31,6 +31,8 @@ class User < ApplicationRecord
   validates :email, :first_name, :last_name, :birth_date, presence: true
   validate :validate_age
 
+  has_one_attached :photo
+
   def self.find_by_credentials(email, password)
     user = User.find_by(:email => email)
     user&.authenticate(password)
