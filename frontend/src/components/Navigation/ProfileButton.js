@@ -36,7 +36,8 @@ function ProfileButton({ user }) {
         <svg className='profile-burger' width={16} height={16} viewBox="0 0 32 32" fill={'#222222'} stroke={'#222222'} strokeWidth={3}>
           <g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g>
         </svg>
-        <img className="profile-avatar" src={profileImg} alt="profile-icon" />
+        <img className="profile-avatar" src={user.photoUrl} />
+
       </button>
       {showMenu && (
         <ul className="profile-dropdown">

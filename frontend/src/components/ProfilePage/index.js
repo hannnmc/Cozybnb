@@ -2,27 +2,26 @@ import './ProfilePage.css'
 import ProfileEditForm from './ProfileEditForm';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import defaultPhoto from "../../../../frontend/src/assets/images/default_user_photo.png";
 
 const ProfilePage = () => {
     const [ showProfileEditForm, setShowProfileEditForm ] = useState(false);
     const user = useSelector(({session}) => session.user );
 
-    // const initialState = { 
-    //     user: JSON.parse(sessionStorage.getItem("currentUser"))
-    // };
-    // const {user} = props;
     const openEditProfile = () => {
 
     };
 
     if (!user) return null;
 
+    console.log(user.photo)
+
     return (
         <>
         <div className='profile-container'>
             <div className='profile-card'>
-                <div>
-                    <img src={user.photoUrl} />
+                <div className='profile-card-header'>
+                    <img className='profile-picture' src={user.photoUrl} />
                 </div>
                 <div>Update photo</div>
                 <div>
