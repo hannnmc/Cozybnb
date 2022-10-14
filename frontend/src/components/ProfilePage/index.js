@@ -12,12 +12,14 @@ const ProfilePage = () => {
     const openEditProfile = () => {
 
     };
-    console.log(user.photo)
+    console.log(user.photoUrl)
     return (
         <>
         <div className='profile-container'>
             <div className='profile-card'>
-                <div>Profile Photo</div>
+                <div>
+                    <img src={user.photoUrl} />
+                </div>
                 <div>Update photo</div>
                 <div>
                     <svg className='badge-icon' width={24} height={24} viewBox="0 0 32 32" >
