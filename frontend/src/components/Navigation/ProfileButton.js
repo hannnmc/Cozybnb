@@ -4,9 +4,12 @@ import { NavLink } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 import profileImg from '../../assets/images/profile_icon.jpg'
 
+
+
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+
 
   const toggleMenu = () => {
     setShowMenu(open => !open);
@@ -24,7 +27,6 @@ function ProfileButton({ user }) {
 
   const logout = (e) => {
     e.preventDefault();
-    console.log('logout')
     dispatch(sessionActions.logout());
   };
 

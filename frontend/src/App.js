@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import ProfilePage from "./components/ProfilePage";
 
@@ -11,6 +11,7 @@ function App() {
           <Route path="/profile">
             <ProfilePage />
           </Route>
+          <Route path="/"></Route>
         </Switch>
     </>
   );
