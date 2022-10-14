@@ -30,6 +30,7 @@ class Listing < ApplicationRecord
 
     belongs_to :users
 
+    validates :guests, inclusion: {in: 1..16, message: "Number of guests must be between 1 to 16"}
     validates :title, :description, :lat, :lng, :price, :guests, 
     :bedrooms, :beds, :bedrooms, :beds, :baths, :address, :city, :state, :wifi, presence: true
 
