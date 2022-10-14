@@ -15,9 +15,9 @@ json.extract! listing,
   :city,
   :state,
   :wifi
-  
-if listing.photo.attached?
-  json.photo_url url_for(listing.photo) 
+
+if @listing.photo.attached?
+    json.photoUrl @listing.photo.url
 else
-  json.photo_url "/listing_placeholder.png"
+    json.photoUrl "/listing_placeholder.png"
 end

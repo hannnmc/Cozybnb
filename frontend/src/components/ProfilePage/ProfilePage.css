@@ -21,4 +21,17 @@
     padding: 24px;
     display: block;
     height: 535px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-card-header {
+    display:flex;
+    justify-content: center;
+}
+
+.profile-picture {
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
 }
