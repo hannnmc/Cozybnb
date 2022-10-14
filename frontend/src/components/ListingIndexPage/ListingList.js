@@ -1,20 +1,20 @@
 import React from "react";
-import BenchListItem from "./BenchListItem";
+import ListItem from "./ListItem";
 
-function BenchList({ benches, highlightedBench, setHighlightedBench }) {
+function ListingList({ listings, highlightedListing, setHighlightedListing }) {
   return (
-    <div className="bench-list">
-      <h1>Benches: </h1>
-      {benches.map((bench) => (
-        <BenchListItem
-          key={bench.id}
-          bench={bench}
-          isHighlighted={highlightedBench === bench.id}
-          setHighlightedBench={setHighlightedBench}
+    <div className="listings-list">
+      <h1>Listings: </h1>
+      {listings.map((listing) => (
+        <ListItem
+          key={listing.id}
+          listing={listing}
+          isHighlighted={highlightedListing === listing.id}
+          setHighlightedListing={setHighlightedListing}
         />
       ))}
     </div>
   );
 }
 
-export default BenchList;
+export default ListingList;
