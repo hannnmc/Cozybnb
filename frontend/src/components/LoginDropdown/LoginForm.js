@@ -56,7 +56,7 @@ function LoginForm(props) {
   return (
     <>
       <div className="login-modal">
-        <div onClick={()=>setShowLoginModal(false)} className="login-x-button"><span class="material-symbols-outlined">close</span></div>
+        <div onClick={()=>setShowLoginModal(false)} className="login-x-button"><span className="material-symbols-outlined">close</span></div>
       <header>
         <div></div>
         <div className="header-login">Log in</div>
