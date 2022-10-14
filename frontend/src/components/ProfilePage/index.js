@@ -1,7 +1,6 @@
 import './ProfilePage.css'
 import ProfileEditForm from './ProfileEditForm';
 import { useState } from 'react';
-import badge from '../../assets/images/badge.png'
 
 const ProfilePage = () => {
     const [ showProfileEditForm, setShowProfileEditForm ] = useState(false);
@@ -13,6 +12,7 @@ const ProfilePage = () => {
     const openEditProfile = () => {
 
     };
+    console.log(user.photo)
     return (
         <>
         <div className='profile-container'>

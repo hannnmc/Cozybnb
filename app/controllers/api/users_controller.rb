@@ -12,6 +12,11 @@ class Api::UsersController < ApplicationController
     end 
   end
 
+  def show
+    @user = User.find(user_params[:id])
+    render :show
+  end
+
   private
 
   def user_params
