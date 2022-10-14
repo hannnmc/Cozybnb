@@ -2,13 +2,15 @@ ApplicationRecord.transaction do
     puts "Destroying tables..."
 
     User.destroy_all
-  
+    Listing.destroy_all
+
     puts "Resetting primary keys..."
-    # For easy testing, so that after seeding, the first `User` has `id` of 1
+
     ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('listings')
   
     puts "Creating users..."
-    # Create one user with an easy to remember username, email, and password:
+
     User.create!(
       email: 'hanmikechen@gmail.com', 
       password: 'password',
@@ -48,6 +50,29 @@ ApplicationRecord.transaction do
         birth_date: Faker::Date.between(from: '2000-09-23', to: '2003-09-25')
       }) 
     end
+
+    puts "Creating listings..."
+
+    Listing.create!({
+      title: 'Cozy & Sustainable Catskills Cabin',
+      description: "The Black A-frame is a two bed two bath 1961 cabin set on a private road in the heart of the Catskills in Kerhonkson, NY. It was named the \"Coolest A-frame in NY\" by the New York Post in 2020. Relax in the open dinning room with original wood ceilings and beams and enjoy a home cooked meal made in the renovated chef's kitchen, or walk outdoors to soak in the magic of the Catskills through the endless wooded views from the back yard!",
+      price: Faker::Number.within(range: 11..999),
+      guests: Faker::Number.within(range:1..8),
+      bedrooms: Faker::Number.within(range:1..4),
+      beds: Faker::Number.within(range:1..6),
+      baths: Faker::Number.within(range:1..3),
+      address: '163 West Rd.',
+      city: 'Kerhonkson',
+      state: 'NY',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      pets_allowed: true,
+      users_id: 1,
+      lat: 40.73370750852567,
+      lng: -73.98195562597553
+    })
 
     puts "Done!"
 end

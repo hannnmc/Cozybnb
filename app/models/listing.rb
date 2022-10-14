@@ -26,7 +26,19 @@
 #
 class Listing < ApplicationRecord
 
-    has_many_attached :photo
+    has_one_attached :photo
+
+    belongs_to :users
+
+    validates :title, :description, :lat, :lng, :price, :guests, 
+    :bedrooms, :beds, :bedrooms, :beds, :baths, :address, :city, :state, :wifi, presence: true
+
+    def self.in_bounds(bounds)
+        lower_lat, lower_lng, upper_lat, upper_lng = bounds
+        where(lat: lower_lat..upper_lat, lng: lower_lng..upper_lng)
+    end
+
+    validates :price, inclusion: { in: 10...5000, message: "must be between $10 and $5000" }
 
 
 end
