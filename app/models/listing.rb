@@ -31,6 +31,11 @@ class Listing < ApplicationRecord
     belongs_to :users
 
     validates :guests, inclusion: {in: 1..16, message: "Number of guests must be between 1 to 16"}
+    validates :price, inclusion: { in: 10..5000, message: "Price must be between $10 and $5000" }
+    validates :bedrooms, inclusion: {in: 1..8, message: "Number of bedrooms must be between 1 to 8"}
+    validates :beds, inclusion: {in: 1..12, message: "Number of beds must be between 1 to 12"}
+    validates :baths, inclusion: {in: 1..5, message: "Number of bathrooms must be between 1 to 5"}
+
     validates :title, :description, :lat, :lng, :price, :guests, 
     :bedrooms, :beds, :bedrooms, :beds, :baths, :address, :city, :state, :wifi, presence: true
 
@@ -39,7 +44,7 @@ class Listing < ApplicationRecord
         where(lat: lower_lat..upper_lat, lng: lower_lng..upper_lng)
     end
 
-    validates :price, inclusion: { in: 10...5000, message: "must be between $10 and $5000" }
+
 
 
 end
