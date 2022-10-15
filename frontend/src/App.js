@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import { Redirect, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import ProfilePage from "./components/ProfilePage";
+import ListingIndexPage from './components/ListingIndexPage';
 import csrfFetch from './store/csrf';
 import { useSelector } from 'react-redux';
 function App() {
@@ -37,9 +38,10 @@ function App() {
         <Switch>
           <Route path="/profile">
             {loggedIn ? <ProfilePage/> : <Redirect to="/" />}
-            {/* <ProfilePage /> */}
           </Route>
-          <Route path="/"></Route>
+          <Route path="/">
+          <ListingIndexPage />
+          </Route>
         </Switch>
     </>
   );
