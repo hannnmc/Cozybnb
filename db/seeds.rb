@@ -53,7 +53,7 @@ ApplicationRecord.transaction do
 
     puts "Creating listings..."
 
-    Listing.create!({
+    listing1 = Listing.create!({
       title: 'Cozy & Sustainable Catskills Cabin',
       description: "The Black B-frame is a two bed two bath 1961 cabin set on a private road in the heart of the Catskills in Kerhonkson, NY. It was named the \"Coolest B-frame in NY\" by the New York Post in 2020. Relax in the open dinning room with original wood ceilings and beams and enjoy a home cooked meal made in the renovated chef's kitchen, or walk outdoors to soak in the magic of the Catskills through the endless wooded views from the back yard!",
       price: Faker::Number.within(range: 11..999),
@@ -74,7 +74,7 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    Listing.create!({
+    listing2 = Listing.create!({
       title: "Tiny Cabin at Pocono Mountains",
       description: "Welcome to Spice Tiny Cabin;2bedroom/1 bathroom natural home filled with wood, earth palette colors& boho vibes. We are located in the heart of Pocono Mountains in quiet neighborhood close to all attraction: skiing, hiking, kayaking, waterfalls, waterparks.The cabin is perfect gateway from busy city life.Best suited for couples.If you are homebody its perfect for you, relax in front of fireplace or at the cozy loft or venture out to explore the Pocono Mountains.",
       price: Faker::Number.within(range: 11..999),
@@ -95,7 +95,7 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    Listing.create!({
+    listing3 = Listing.create!({
       title: 'Moon View Yurt - Sleep Under the Moon and Stars!',
       description: "A simple yurt with a custom clear ceiling for a full view of the vast open skies. Gaze upon the stunning starry nights and fall asleep under the moonlight. Experience the peace and tranquility on top of a hill in the middle of an open field surrounded by wild flowers and nature's bounty in complete privacy.",
       price: Faker::Number.within(range: 11..999),
@@ -116,7 +116,7 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    Listing.create!({
+    listing4 = Listing.create!({
       title: 'Cozy & Sustainable Catskills Cabin',
       description: "The Black A-frame is a two bed two bath 1961 cabin set on a private road in the heart of the Catskills in Kerhonkson, NY. It was named the \"Coolest A-frame in NY\" by the New York Post in 2020. Relax in the open dinning room with original wood ceilings and beams and enjoy a home cooked meal made in the renovated chef's kitchen, or walk outdoors to soak in the magic of the Catskills through the endless wooded views from the back yard!",
       price: Faker::Number.within(range: 11..999),
@@ -137,7 +137,7 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    Listing.create!({
+    listing5 =Listing.create!({
       title: 'Owl Bear Cabin at Stone Mountain Farm',
       description: "Owl Bear cabin is nestled in a forest glen on Stone Mountain Farm. Miles of hiking trails, flower filled fields, cliffs, ponds, streams and a mini Stone Henge are all a stones throw away. A diverse valley, one mile long and half a mile wide, there's plenty of privacy but lots of room for adventure- At any time you may discover a group of children building fairy houses, stumble upon a flying trapeze or Tai Chi Class class, or wander into the Rail Trail cafe for music under the trees.",
       price: Faker::Number.within(range: 11..999),
@@ -158,7 +158,7 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    Listing.create!({
+    listing6 = Listing.create!({
       title: 'Spacious cabin with full amenities',
       description: "Its a secluded cabin and we kept it small and pristine for a reason. We also just planted cherry trees and apple tree...We kept it pristine so one can feel nature. And we dont have internet or Tv there otherwize it would be like being in the city. Get a feel for what it is like to be in a cabin in the woods. There is a whole flourishing ecosystem there with family of rabits, foxes, humming birds, bees, butterflies and birds. We are planting a garden so in the future you can pick some veggies.",
       price: Faker::Number.within(range: 11..999),
@@ -179,7 +179,7 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    Listing.create!({
+    listing7 = Listing.create!({
       title: 'Tiny house on the Esopus creek',
       description: "Our Tiny house is your own private, cozy adventure steps from your private access to our dock where you can explore the Esopus creek. Kayaks are available for your use or try out the fishing for some trout. Enjoy the fire pit outside your tiny home or choose to lounge in the hot tub which is available at anytime during your stay. We hope you will enjoy the charming and rustic feel of this unique home.",
       price: Faker::Number.within(range: 11..999),
@@ -200,7 +200,7 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    Listing.create!({
+    listing8 = Listing.create!({
       title: 'Beeboobap House',
       description: "You know who we are.",
       price: Faker::Number.within(range: 11..999),
@@ -221,7 +221,7 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    Listing.create!({
+    listing9 = Listing.create!({
       title: 'Starlight Moonshine Roof Top',
       description: "King Room with Rooftop Views in Luxury Building",
       price: Faker::Number.within(range: 11..999),
@@ -242,7 +242,7 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    Listing.create!({
+    listing10 = Listing.create!({
       title: 'Enchanted Tiny Tower nestled in the Berkshires',
       description: "Whimsical and romantic tower on the Santarella Estate in the heart of the Berkshires. Live out your own fairytale in this two-story unique, tiny home. First floor offers 3 rooms in one with kitchenette, sitting area, and dining room looking out on to the babbling brook. Upper bedchamber with canopied bed provides amazing views of sky and trees through massive, mill windows. Perfect destination for a relaxing getaway or special stay while exploring all the Berkshires has to offer.",
       price: Faker::Number.within(range: 11..999),
@@ -266,14 +266,73 @@ ApplicationRecord.transaction do
     puts "Attaching photos..."
 
     user1 = User.first
-    user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg")
-    user1.photo.attach(io: user1_photo, filename:"profile_icon.jpg")
-    user1.save!
-
     listing1 = Listing.first
-    listing1photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing1.photo.attach(io: listing1photo1, filename:"photo1.jpg")
+
+    user1.photo.purge
+    listing1.photo.purge
+    listing2.photo.purge
+    listing3.photo.purge
+    listing4.photo.purge
+    listing5.photo.purge
+    listing6.photo.purge
+    listing7.photo.purge
+    listing8.photo.purge
+    listing9.photo.purge
+    listing10.photo.purge
+
+    # user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg")
+    # user1.photo.attach(io: user1_photo, filename:"profile_icon.jpg")
+    # user1.save!
+
+    user1.photo.attach(
+      io: URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg"),
+      filename: "profile_icon.jpg"
+    )
+
+    listing1_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing1.photo.attach(io: listing1_photo1, filename:"photo1.jpg")
     listing1.save!
+
+    listing2_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing2.photo.attach(io: listing2_photo1, filename:"photo1.jpg")
+    listing2.save!
+
+    listing3_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing3.photo.attach(io: listing3_photo1, filename:"photo1.jpg")
+    listing3.save!
+
+    listing4_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing4.photo.attach(io: listing4_photo1, filename:"photo1.jpg")
+    listing4.save!
+    
+    listing5_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing5.photo.attach(io: listing5_photo1, filename:"photo1.jpg")
+    listing6.save!
+
+    listing6_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing6.photo.attach(io: listing6_photo1, filename:"photo1.jpg")
+    listing6.save!
+
+    listing7_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing7.photo.attach(io: listing7_photo1, filename:"photo1.jpg")
+    listing7.save!
+
+    listing8_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing8.photo.attach(io: listing8_photo1, filename:"photo1.jpg")
+    listing8.save!
+
+    listing9_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing9.photo.attach(io: listing9_photo1, filename:"photo1.jpg")
+    listing9.save!
+    
+    listing10_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing10.photo.attach(io: listing10_photo1, filename:"photo1.jpg")
+    listing10.save!
 
     puts "Done!"
 end
+
+# user1.photo.attach(
+#   io: URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg"),
+#   filename: "profile_icon.jpg"
+# )

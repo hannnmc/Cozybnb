@@ -6,9 +6,11 @@ Rails.application.routes.draw do
 
   post 'api/test', to: 'application#test'
 
+  # root "static_pages#root"
+
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [ :create, :show, :update, :destroy ]
-    resources :listings, only: [:index, :create, :show, :update, :destroy ]
+    resources :users
+    resources :listings
     resource :session, only: [:show, :create, :destroy ]
   end
 
