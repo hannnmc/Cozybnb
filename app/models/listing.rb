@@ -28,7 +28,8 @@ class Listing < ApplicationRecord
 
     has_one_attached :photo
 
-    belongs_to :users
+    belongs_to :users,
+    class_name: "User"
 
     validates :guests, inclusion: {in: 1..16, message: "Number of guests must be between 1 to 16"}
     validates :price, inclusion: { in: 10..5000, message: "Price must be between $10 and $5000" }

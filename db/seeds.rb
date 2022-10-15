@@ -16,7 +16,8 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'Han',
       last_name: 'Chen',
-      birth_date: '28/10/1991'
+      birth_date: '28/10/1991',
+      photoUrl: "https://thecozybnb-dev.s3.amazonaws.com/frc47yk43z91x5ur81bfnraqf7hh"
     )
     User.create!(
       email: 'facebookUser@fb.com', 
