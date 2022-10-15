@@ -38,7 +38,7 @@ class Listing < ApplicationRecord
     validates :baths, inclusion: {in: 1..5, message: "Number of bathrooms must be between 1 to 5"}
 
     validates :title, :description, :lat, :lng, :price, :guests, 
-    :bedrooms, :beds, :bedrooms, :beds, :baths, :address, :city, :state, :wifi, presence: true
+    :bedrooms, :beds, :bedrooms, :beds, :baths, :address, :city, :state, presence: true
 
     def self.in_bounds(bounds)
         lower_lat, lower_lng, upper_lat, upper_lng = bounds
