@@ -265,9 +265,14 @@ ApplicationRecord.transaction do
 
     puts "Attaching photos"...
 
-    listing1 = Listing.first
+    user1 = User.first
     user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/frc47yk43z91x5ur81bfnraqf7hh")
-    listing1.photo.attach(io: user1_photo, filename:"frc47yk43z91x5ur81bfnraqf7hh")
+    user1.photo.attach(io: user1_photo, filename:"frc47yk43z91x5ur81bfnraqf7hh")
+    user1.save!
+
+    listing1 = Listing.first
+    listing1photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/g0ltg2f13dhcr88e905c8gxs3j8y")
+    listing1.photo.attach(io: listing1photo1, filename:"g0ltg2f13dhcr88e905c8gxs3j8y")
     listing1.save!
 
     puts "Done!"
