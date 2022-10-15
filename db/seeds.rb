@@ -263,16 +263,16 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
-    puts "Attaching photos"...
+    puts "Attaching photos..."
 
     user1 = User.first
-    user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/frc47yk43z91x5ur81bfnraqf7hh")
-    user1.photo.attach(io: user1_photo, filename:"frc47yk43z91x5ur81bfnraqf7hh")
+    user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg")
+    user1.photo.attach(io: user1_photo, filename:"profile_icon.jpg")
     user1.save!
 
     listing1 = Listing.first
-    listing1photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/g0ltg2f13dhcr88e905c8gxs3j8y")
-    listing1.photo.attach(io: listing1photo1, filename:"g0ltg2f13dhcr88e905c8gxs3j8y")
+    listing1photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing1.photo.attach(io: listing1photo1, filename:"photo1.jpg")
     listing1.save!
 
     puts "Done!"
