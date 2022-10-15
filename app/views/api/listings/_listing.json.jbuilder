@@ -14,11 +14,14 @@ json.extract! listing,
   :address,
   :city,
   :state,
-  :wifi,
-  :photo
-
+  :wifi
+  
 if listing.photo.attached?
-    json.photoUrl listing.photo.url
+  # json.photoUrl listing.photo.url
+  json.photoUrl "https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg"
+
 else
-    json.photoUrl "/listing_placeholder.png"
+  json.photoUrl "/listing_placeholder.png" 
 end
+    
+# json.photoUrl "https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg" 
