@@ -1,50 +1,67 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Wrapper } from "@googlemaps/react-wrapper";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useHistory } from "react-router-dom";
 import './ListingMap.css';
 
 
 function ListingMap({ 
-    listing, 
+    listings, 
     highlightedListing,
     mapOptions = {}, 
     mapEventHandlers = {}, 
     markerEventHandlers = {}
-  }) {
-    const [map, setMap] = useState(null);
-    const mapRef = useRef(null);
-    const markers = useRef({});
-    const history = useHistory();
+}) {
+    const center = {lat: 44, lng: -80}
+    return (
+        <GoogleMap zoom={13} center={center} mapContainerClassName='map-container'>
+            <Marker position={center}/>
+        </GoogleMap>
+    );
+  }
+function ListingMapWrapper() {
+    const { isLoaded } = useLoadScript({
+        googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY
+    });
+    if (!isLoaded ) return <div>Loading...</div> 
+    return <ListingMap />;
+}
+ 
+export default ListingMapWrapper;
+    // const [map, setMap] = useState(null);
+    // const mapRef = useRef(null);
+    // const markers = useRef({});
+    // const history = useHistory();
   
     // Create the map
-    useEffect(() => {
-      if (!map) {
-        setMap(new window.google.maps.Map(mapRef.current, {
-          center: {
-            lat: 37.773972,
-            lng: -122.431297
-          }, // San Francisco coordinates
-          zoom: 13,
-          clickableIcons: false,
-          ...mapOptions,
-        }));
-      }
-    }, [mapRef, map, mapOptions]);
+    // useEffect(() => {
+    //   if (!map) {
+    //     setMap(new window.google.maps.Map(mapRef.current, {
+    //       center: {
+    //         lat: 37.773972,
+    //         lng: -122.431297
+    //       }, // San Francisco coordinates
+    //       zoom: 13,
+    //       clickableIcons: false,
+    //       ...mapOptions,
+    //     }));
+    //   }
+    // }, [mapRef, map, mapOptions]);
   
     // Add event handlers to map
-    useEffect(() => {
-      if (map) {
-        const listeners = Object.entries(mapEventHandlers).map(([event, handler]) => 
-          window.google.maps.event.addListener(
-            map, 
-            event, 
-            (...args) => handler(...args, map)
-          )
-        );
+    // useEffect(() => {
+    //   if (map) {
+    //     const listeners = Object.entries(mapEventHandlers).map(([event, handler]) => 
+    //       window.google.maps.event.addListener(
+    //         map, 
+    //         event, 
+    //         (...args) => handler(...args, map)
+    //       )
+    //     );
   
-        return () => listeners.forEach(window.google.maps.event.removeListener);
-      }
-    }, [map, mapEventHandlers]);
+    //     return () => listeners.forEach(window.google.maps.event.removeListener);
+    //   }
+    // }, [map, mapEventHandlers]);
   
     // Update map markers whenever `listing` changes
     // Add markers for new listing
@@ -113,13 +130,31 @@ function ListingMap({
 //       }
 //     });
 //   }, [markers, highlightedListing]);
-}
-const ListingMapWrapper = (props) => {
-    return (
-        <Wrapper apiKey={process.env.AIzaSyBw2_pShdQslBf5kxkwNvbr_Mr1uEx44k4}>
-            <ListingMap {...props} />
-        </Wrapper>
-    );
-}
+//     return (
+//         <div ref={mapRef} className="map">
+//         Map
+//         </div>
+//     );
+// }
+
+// const ListingMapWrapper = (props) => {
+
+//     const { isLoaded } = useLoadScript({
+//         googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY
+//     });
  
-export default ListingMapWrapper;
+//     if (!isLoaded ) return <div>Loading...</div> 
+//     return <MAP />;
+
+//     return (
+//         <Wrapper apiKey={process.env.AIzaSyBw2_pShdQslBf5kxkwNvbr_Mr1uEx44k4}>
+//             <ListingMap {...props} />
+//         </Wrapper>
+//     );
+// }
+
+
+// export default ListingMapWrapper;
+
+
+
