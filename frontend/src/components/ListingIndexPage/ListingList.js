@@ -25,7 +25,6 @@ function ListingList({ listings, highlightedListing, setHighlightedListing }) {
               isHighlighted={highlightedListing === listing.id}
               setHighlightedListing={setHighlightedListing}
             />
-            {/* <h1>hello from listings</h1> */}
           </div>
         ))}
       </div>

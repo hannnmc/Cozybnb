@@ -16,17 +16,17 @@ function ListItem({ listing, isHighlighted, setHighlightedListing }) {
       {photoUrl && <div className="listing-image-box"> <img className="listing-image" src={photoUrl} alt='Listing'/></div>}
 
       <div className="text-info-box">
-        <h2>{title}</h2>
+        <h2  className="list-item-copy">{title}</h2>
         <div className="list-item-fields">
-          <div className="info-field">
+          <div className="top-info-field">
             <span className="list-item-category">Average Rating:</span>
-            <span className="list-item-copy">
-              {averageRating || 'No reviews yet'}
+            <span className="list-item-review">
+              {averageRating || ' No reviews yet'}
             </span>
           </div>
-          <div className="info-field">
-            <span className="list-item-category">Price:</span>
+          <div className="bot-info-field">
             <span className="list-item-copy">${price}</span>
+            <span className="list-item-category"> night</span>
           </div>
         </div>
       </div>

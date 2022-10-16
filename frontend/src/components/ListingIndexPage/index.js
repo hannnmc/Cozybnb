@@ -34,7 +34,6 @@ function ListingIndexPage() {
   return (
     <div className="listing-index-page">
       <div className="list-index-map-container">
-        <h1>HELLO FROM MAP</h1>
         <ListingMap
           listings={listings}
           mapEventHandlers={mapEventHandlers}
