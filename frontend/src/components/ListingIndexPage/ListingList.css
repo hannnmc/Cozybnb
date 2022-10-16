@@ -74,10 +74,35 @@
     max-width: 310px;
     justify-content: center;
     align-self: center;
+    margin-top: 15px;
 }
 
 .list-index-map-container {
     width: 1500px;
+    height: 100vh;
     /* min-width: 800px; */
     max-width: 2000px;
+    /* position: fixed; */
+    /* z-index: 3; */
+}
+
+.list-item-copy {
+    font-weight: 500;
+}
+
+.top-info-field {
+    margin-top: 5px;
+}
+
+.bot-info-field {
+    margin-top: 10px;
+}
+
+.map {
+    position: fixed;
+    /* display: fixed; */
+    background: blue;
+    z-index: 1;
+    width: 50vw;
+    height: 100vh;
 }

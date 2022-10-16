@@ -24,6 +24,7 @@ function ListingMap({
           lng: -122.431297
         }, // San Francisco coordinates
         zoom: 13,
+        mapId: "49aa6f67e21bd8eb",
         clickableIcons: false,
         ...mapOptions,
       }));
@@ -115,7 +116,6 @@ function ListingMap({
 
   return (
     <div ref={mapRef} className="map">
-        <h1>inside map ref</h1>
       Map
     </div>
   );
