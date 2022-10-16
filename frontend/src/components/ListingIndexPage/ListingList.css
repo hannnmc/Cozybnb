@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     flex-direction: row-reverse;
-    
+    overflow-y: scroll;
+    height: calc(100vh - 80px);
 }
 
 .listing-list-container {
@@ -13,8 +14,7 @@
     flex-direction: column;
     /* z-index: 600; */
     /* border: 1px solid black; */
-    overflow-y: scroll;
-    height: calc(100vh - 80px);
+
 }
 
 .listing-box {
@@ -51,7 +51,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* width: 80%; */
+    width: 100%;
 }
 
 .listing-image-box {
@@ -94,46 +94,93 @@
 }
 
 .list-index-map-container {
-    /* width: 1500px; */
-    height: calc(100vh - 80px);
-    /* min-width: 800px; */
-    min-width: 316px;
-    max-width: 1440px;
-    width: 70vw;
     /* position: fixed; */
-    /* z-index: 3; */
+    /* width: 1500px; */
+    /* min-width: 800px; */
+    display: flex;
+    min-width: 316px;
+    max-width: 1000px;
+    width: 70vw;
+    height: 100%;
+    /* position: fixed; */
+    z-index: 3;
 }
 
 .map {
-    position: fixed;
+    display: flex;
+    /* position: fixed; */
     /* display: fixed; */
-    background: blue;
-    z-index: 1;
+    /* background: blue; */
+    z-index: 3;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: 100%;
     bottom: 0;
     right: 0;
-    min-width: 1440px;
+    /* min-width: 1440px; */
 }
 
 .filter-form {
     margin-top: 30px;
+    padding: 0 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
 }
 
-@media (max-width: 800px) {
+.filter-button {
+    cursor: pointer;
+    /* background-color: blue; */
+    height: 40px;
+    width: 94.3px;
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column; */
+    /* border: 1px solid #DDDDDD;
+    border-radius: 12px; */
+}
+
+.filter-button button{
+    padding: 7px 0;
+    border: 1px solid #DDDDDD;
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.filter-button span {
+    width: 100%;
+    margin-left: -15px;
+}
+
+@media (max-width: 947px) {
     .listing-index-page {
+        display: block;
         flex-direction: column-reverse;
     }
 }
 
-@media (max-width: 400px) {
+
+@media (max-width: 947px) {
     .listing-list-container {
         width: 100vw;
     }
 }
 
-@media (max-width: 800px) {
-    .listing-list-container {
+@media (max-width: 947px) {
+    .list-index-map-container {
         width: 100vw;
+        height: 500px;
+    }
+}
+@media (max-width: 947px) {
+    .map {
+        width: 100vw;
+    }
+}
+@media (max-width: 947px) {
+    .filter-form {
+        display: none;
     }
 }
