@@ -22,18 +22,18 @@ function ListingIndexPage() {
     }
   }, [minGuests, maxGuests, bounds, dispatch]);
 
-  const mapEventHandlers = useMemo(() => ({
-    click: event => {
-      const search = new URLSearchParams(event.latLng.toJSON()).toString();
-      history.push({ pathname: '/listings/new', search });
-    },
-    idle: map => setBounds(map.getBounds().toUrlValue())
-  }), [history]);
+  // const mapEventHandlers = useMemo(() => ({
+  //   click: event => {
+  //     const search = new URLSearchParams(event.latLng.toJSON()).toString();
+  //     history.push({ pathname: '/listings/new', search });
+  //   },
+  //   idle: map => setBounds(map.getBounds().toUrlValue())
+  // }), [history]);
 
   return (
     <div className="listing-index-page">
       <div className="list-index-map-container">
-        <ListingMap
+        {/* <ListingMap
           listings={listings}
           mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
@@ -42,7 +42,8 @@ function ListingIndexPage() {
             mouseout: () => setHighlightedListing(null)
           }}
           highlightedListing={highlightedListing} 
-        />
+        /> */}
+        
       </div>
       <div className="listing-list-container">
         {/* <FilterForm

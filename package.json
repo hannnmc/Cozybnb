@@ -21,5 +21,8 @@
   "homepage": "https://github.com/hannnmc/Cozybnb#readme",
   "engines": {
     "node": "16.x"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.13.1"
   }
 }
