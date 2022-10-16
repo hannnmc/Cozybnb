@@ -3,7 +3,8 @@ class Api::ListingsController < ApplicationController
 
     def index
         @listings = Listing.all
-        @listings = @listings.where(seating: seating_range) if seating_range
+        @listings = @listings.where(guests: guests_range) if guests_range
+        @listings = @listings.where(price: price_range) if price_range
         render :index
     end
     
@@ -50,10 +51,13 @@ class Api::ListingsController < ApplicationController
         )
     end
     
-    def seating_range
-        return nil unless params[:min_seating] && params[:max_seating]
-        params[:min_seating]..params[:max_seating]
+    def guests_range
+        return nil unless params[:min_guests] && params[:max_guests]
+        params[:min_guests]..params[:max_guests]
     end
 
-
+    def price_range
+        return nil unless params[:min_price] && params[:max_price]
+        params[:min_price]..params[:max_price]
+    end
 end

@@ -70,7 +70,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       pets_allowed: true,
       users_id: 1,
-      lat: 41.7834011,
+      lat: 41.7134011,
       lng: -74.3092264
     })
 
