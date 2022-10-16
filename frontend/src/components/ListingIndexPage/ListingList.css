@@ -1,13 +1,16 @@
 .listing-index-page {
     display: flex;
     justify-content: center;
+    flex-direction: row-reverse;
+    
 }
 
 .listing-list-container {
-    width: 95%;
+    /* width: 95%; */
     /* background-color: yellow; */
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .listing-box {
@@ -71,4 +74,10 @@
     max-width: 310px;
     justify-content: center;
     align-self: center;
+}
+
+.list-index-map-container {
+    width: 1500px;
+    min-width: 800px;
+    max-width: 2000px;
 }
