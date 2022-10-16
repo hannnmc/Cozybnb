@@ -105,23 +105,23 @@ function LoginForm(props) {
         </div>
         <div className='demo-buttons'>
           <div onClick={() => loginFacebookUser()}>
-            <i class="fa-brands fa-facebook"></i>
+            <i className="fa-brands fa-facebook"></i>
             <span>Continue with Facebook</span>
             <div></div>
           </div>
           <div onClick={() => loginGoogleUser()}>
-          <img className="google-icon" src={googleIcon} alt={<i class="fa-brands fa-google"></i>} />
+          <img className="google-icon" src={googleIcon} alt={<i className="fa-brands fa-google"></i>} />
  
             <span>Continue with Google</span>
             <div></div>
           </div>
           <div onClick={() => loginAppleUser()}>
-            <i class="fa-brands fa-apple"></i>
+            <i className="fa-brands fa-apple"></i>
             <span>Continue with Apple</span>
             <div></div>
           </div>
           <div  onClick={() => loginDemoUser()}>
-            <i class="material-symbols-outlined" id="mail-icon">mail</i>
+            <i className="material-symbols-outlined" id="mail-icon">mail</i>
             <span>Continue with Demo User</span>
             <div></div>
           </div>

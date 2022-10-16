@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchListings } from "../../store/listings";
 import ListingList from "./ListingList";
-import ListingMap from "../ListingMap";
+import ListingMap from "../ListingMap"
+import FilterForm from "./FilterForm";
 
 import './ListingList.css';
 
@@ -22,18 +23,19 @@ function ListingIndexPage() {
     }
   }, [minGuests, maxGuests, bounds, dispatch]);
 
-  // const mapEventHandlers = useMemo(() => ({
-  //   click: event => {
-  //     const search = new URLSearchParams(event.latLng.toJSON()).toString();
-  //     history.push({ pathname: '/listings/new', search });
-  //   },
-  //   idle: map => setBounds(map.getBounds().toUrlValue())
-  // }), [history]);
+  const mapEventHandlers = useMemo(() => ({
+    click: event => {
+      const search = new URLSearchParams(event.latLng.toJSON()).toString();
+      history.push({ pathname: '/listings/new', search });
+    },
+    idle: map => setBounds(map.getBounds().toUrlValue())
+  }), [history]);
 
   return (
     <div className="listing-index-page">
       <div className="list-index-map-container">
-        {/* <ListingMap
+        <h1>HELLO FROM MAP</h1>
+        <ListingMap
           listings={listings}
           mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
@@ -42,16 +44,15 @@ function ListingIndexPage() {
             mouseout: () => setHighlightedListing(null)
           }}
           highlightedListing={highlightedListing} 
-        /> */}
-        
+        />
       </div>
       <div className="listing-list-container">
-        {/* <FilterForm
+        <FilterForm
           minGuests={minGuests}
           maxGuests={maxGuests}
           setMinGuests={setMinGuests}
           setMaxGuests={setMaxGuests}
-        /> */}
+        />
         <ListingList 
           listings={listings} 
           highlightedListing={highlightedListing} 
