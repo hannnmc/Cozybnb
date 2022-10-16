@@ -1,12 +1,74 @@
-.listing-box {
+.listing-index-page {
+    display: flex;
+    justify-content: center;
+}
 
-    height: 50px;
-    width: 50px;
+.listing-list-container {
+    width: 95%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+}
+
+.listing-box {
+    justify-content: center;
+    /* width: 100%; */
+    /* min-width: 255px;
+    max-width: 310px; */
+    /* background-color: purple;
+    border: 2px solid teal; */
+}
+
+.list-item {
+    display: flex;
+    /* background-color: orange;
+    border: 1px solid black; */
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.list-item-info {
+    display: flex;
+    margin: 30px 30px 30px 30px;
+    width: 100%;
+    min-width: 255px;
+    max-width: 310px;
+    display: block;
+    flex-direction: column;
+    /* background-color: blue;    */
+    justify-content: center;
 }
 
 .listings-list {
-    width: 90%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* width: 100%; */
+}
+
+.listing-image-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 255px;
+    max-width: 310px;
     
+}
+
+.listing-image {
+    border-radius: 12px;
+    width: 100%;
+    min-width: 255px;
+    max-width: 310px;
+    object-fit: cover;
+    aspect-ratio: 1054/1000;
+}
+
+.text-info-box {
+    width: 100%;
+    min-width: 255px;
+    max-width: 310px;
+    justify-content: center;
+    align-self: center;
 }

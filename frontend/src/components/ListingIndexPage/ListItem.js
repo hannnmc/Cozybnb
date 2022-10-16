@@ -13,6 +13,9 @@ function ListItem({ listing, isHighlighted, setHighlightedListing }) {
       onMouseLeave={() => setHighlightedListing(null)}
     >
       <div className="list-item-info">
+      {photoUrl && <div className="listing-image-box"> <img className="listing-image" src={photoUrl} alt='Listing'/></div>}
+
+      <div className="text-info-box">
         <h2>{title}</h2>
         <div className="list-item-fields">
           <div className="info-field">
@@ -27,7 +30,9 @@ function ListItem({ listing, isHighlighted, setHighlightedListing }) {
           </div>
         </div>
       </div>
-      {photoUrl && <img src={photoUrl} alt='Listing'/>}
+
+        
+      </div>
     </div>
   );
 }
