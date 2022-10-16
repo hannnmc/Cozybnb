@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchListings } from "../../store/listings";
 import ListingList from "./ListingList";
-// import ListingMap from 
+import ListingMap from "../ListingMap";
 
 import './ListingList.css';
 
@@ -33,7 +33,7 @@ function ListingIndexPage() {
   return (
     <div className="listing-index-page">
       <div className="list-index-map-container">
-        {/* <ListingMap
+        <ListingMap
           listings={listings}
           mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
@@ -42,7 +42,7 @@ function ListingIndexPage() {
             mouseout: () => setHighlightedListing(null)
           }}
           highlightedListing={highlightedListing} 
-        /> */}
+        />
       </div>
       <div className="listing-list-container">
         {/* <FilterForm

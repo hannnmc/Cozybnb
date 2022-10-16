@@ -263,6 +263,50 @@ ApplicationRecord.transaction do
       lng: -73.98195562597553
     })
 
+    listing11 = Listing.create!({
+      title: 'The Step by 128 Cabin Co.',
+      description: "Reconnect with nature at this unforgettable escape. Located in the Hudson Valley, The Step is a little piece of paradise built on 78 acre's of operating farm land just stone through from the River. It is an off the grid 'glamping' experience equipped with the luxury of a queen size memory foam mattress for a good nights sleep. The Step is a secluded get away where you can explore our farm land, show off your scrabble skills, gaze at the stars, and be woken up by the sun through your windows.",
+      price: Faker::Number.within(range: 11..999),
+      guests: Faker::Number.within(range:1..8),
+      bedrooms: Faker::Number.within(range:1..4),
+      beds: Faker::Number.within(range:1..6),
+      baths: Faker::Number.within(range:1..3),
+      address: '2 Montgomery Rd.',
+      city: 'Montgomery',
+      state: 'NY',
+      wifi: false,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      pets_allowed: true,
+      users_id: 2,
+      lat: 40.73370750852567,
+      lng: -73.98195562597553
+    })
+
+    listing12 = Listing.create!({
+      title: 'Architectural wonder in the forest',
+      description: "Unique experience, secluded.
+      Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometric masterpiece on 30 preserved acres just minutes from all that Rhinebeck and the Hudson Valley have to offer.
+      The house is an open plan, and though it has zero bedrooms, it can sleep 3!",
+      price: Faker::Number.within(range: 11..999),
+      guests: Faker::Number.within(range:1..8),
+      bedrooms: Faker::Number.within(range:1..4),
+      beds: Faker::Number.within(range:1..6),
+      baths: Faker::Number.within(range:1..3),
+      address: '3 Rhino Dr.',
+      city: 'Rhinebeck',
+      state: 'NY',
+      wifi: false,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      pets_allowed: true,
+      users_id: 1,
+      lat: 40.73370750852567,
+      lng: -73.98195562597553
+    })
+
     puts "Attaching photos..."
 
     user1 = User.first
@@ -328,6 +372,14 @@ ApplicationRecord.transaction do
     listing10_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
     listing10.photo.attach(io: listing10_photo1, filename:"photo1.jpg")
     listing10.save!
+
+    listing11_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing11.photo.attach(io: listing11_photo1, filename:"photo1.jpg")
+    listing11.save!
+
+    listing12_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing12.photo.attach(io: listing12_photo1, filename:"photo1.jpg")
+    listing12.save!
 
     puts "Done!"
 end
