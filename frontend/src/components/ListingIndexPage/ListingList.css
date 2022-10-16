@@ -78,6 +78,6 @@
 
 .list-index-map-container {
     width: 1500px;
-    min-width: 800px;
+    /* min-width: 800px; */
     max-width: 2000px;
 }

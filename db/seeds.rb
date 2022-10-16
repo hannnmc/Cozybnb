@@ -11,28 +11,28 @@ ApplicationRecord.transaction do
   
     puts "Creating users..."
 
-    User.create!(
+    user1 = User.create!(
       email: 'hanmikechen@gmail.com', 
       password: 'password',
       first_name: 'Han',
       last_name: 'Chen',
       birth_date: '28/10/1991'
     )
-    User.create!(
+    user2 = User.create!(
       email: 'facebookUser@fb.com', 
       password: 'password',
       first_name: 'Facebook',
       last_name: 'User',
       birth_date: '01/01/1991'
     )
-    User.create!(
+    user3 = User.create!(
       email: 'googleuser@gmail.com', 
       password: 'password',
       first_name: 'Google',
       last_name: 'User',
       birth_date: '01/01/1991'
     )
-    User.create!(
+    user4 = User.create!(
       email: 'appleuser@icloud.com', 
       password: 'password',
       first_name: 'Apple',
@@ -309,8 +309,8 @@ ApplicationRecord.transaction do
 
     puts "Attaching photos..."
 
-    user1 = User.first
-    listing1 = Listing.first
+    # user1 = User.first
+    # listing1 = Listing.first
 
     user1.photo.purge
     listing1.photo.purge
@@ -324,14 +324,15 @@ ApplicationRecord.transaction do
     listing9.photo.purge
     listing10.photo.purge
 
-    # user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg")
-    # user1.photo.attach(io: user1_photo, filename:"profile_icon.jpg")
-    # user1.save!
+    user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg")
+    user1.photo.attach(io: user1_photo, filename:"profile_icon.jpg")
+    user1.save!
 
-    user1.photo.attach(
-      io: URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg"),
-      filename: "profile_icon.jpg"
-    )
+    # user1.photo.attach(
+    #   io: URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg"),
+    #   filename: "profile_icon.jpg"
+    # )
+    # user1.save!
 
     listing1_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
     listing1.photo.attach(io: listing1_photo1, filename:"photo1.jpg")

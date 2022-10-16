@@ -3,8 +3,8 @@ json.user do
 
     if @user.photo.attached?
         # json.photoUrl "https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg"
-        # json.photoUrl @user.photo.url
-        json.photoUrl url_for(@user.photo) 
+        json.photoUrl @user.photo.url
+        # json.photoUrl url_for(@user.photo) 
         
     else
         json.photoUrl "https://thecozybnb-dev.s3.amazonaws.com/default_user_photo.png"
