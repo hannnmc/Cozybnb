@@ -20,11 +20,12 @@ function ListingMap({
     if (!map) {
       setMap(new window.google.maps.Map(mapRef.current, {
         center: {
-          lat: 37.773972,
-          lng: -122.431297
+          lat: 40.78472823202327,
+          lng: -73.92906983512931
         }, // San Francisco coordinates
-        zoom: 13,
+        zoom: 11,
         mapId: "49aa6f67e21bd8eb",
+        gestureHandling: "greedy",
         clickableIcons: false,
         ...mapOptions,
       }));

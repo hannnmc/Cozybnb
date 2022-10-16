@@ -8,18 +8,22 @@
 .listing-list-container {
     /* width: 95%; */
     /* background-color: yellow; */
-    display: flex;
+    width: 50vw;
     justify-content: center;
     flex-direction: column;
+    /* z-index: 600; */
+    /* border: 1px solid black; */
+    overflow-y: scroll;
+    height: calc(100vh - 80px);
 }
 
 .listing-box {
     justify-content: center;
-    /* width: 100%; */
-    /* min-width: 255px;
-    max-width: 310px; */
+    width: 100%;
+    min-width: 316px;
+    max-width: 370px;
     /* background-color: purple;
-    border: 2px solid teal; */
+    border: 3px solid teal; */
 }
 
 .list-item {
@@ -28,7 +32,7 @@
     border: 1px solid black; */
     width: 100%;
     min-width: 300px;
-    max-width: 600px;
+    max-width: 400px;
 }
 
 .list-item-info {
@@ -47,7 +51,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* width: 100%; */
+    /* width: 80%; */
 }
 
 .listing-image-box {
@@ -77,15 +81,6 @@
     margin-top: 15px;
 }
 
-.list-index-map-container {
-    width: 1500px;
-    height: 100vh;
-    /* min-width: 800px; */
-    max-width: 2000px;
-    /* position: fixed; */
-    /* z-index: 3; */
-}
-
 .list-item-copy {
     font-weight: 500;
 }
@@ -98,11 +93,47 @@
     margin-top: 10px;
 }
 
+.list-index-map-container {
+    /* width: 1500px; */
+    height: calc(100vh - 80px);
+    /* min-width: 800px; */
+    min-width: 316px;
+    max-width: 1440px;
+    width: 70vw;
+    /* position: fixed; */
+    /* z-index: 3; */
+}
+
 .map {
     position: fixed;
     /* display: fixed; */
     background: blue;
     z-index: 1;
-    width: 50vw;
-    height: 100vh;
+    width: 100%;
+    height: calc(100vh - 80px);
+    bottom: 0;
+    right: 0;
+    min-width: 1440px;
+}
+
+.filter-form {
+    margin-top: 30px;
+}
+
+@media (max-width: 800px) {
+    .listing-index-page {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 400px) {
+    .listing-list-container {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .listing-list-container {
+        width: 100vw;
+    }
 }
