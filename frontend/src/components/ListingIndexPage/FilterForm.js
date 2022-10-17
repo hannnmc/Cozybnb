@@ -3,7 +3,7 @@ import { Input } from '../Forms';
 import './FilterForm.css';
 import { Modal } from '../../context/Modal';
 
-function FilterForm({ minGuests, maxGuests, minPrice, maxPrice, setMinGuests, setMaxGuests, setMinPrice, setMaxPrice }) {
+function FilterForm({ listings, minGuests, maxGuests, minPrice, maxPrice, setMinGuests, setMaxGuests, setMinPrice, setMaxPrice }) {
     const parseValue = val => val === '' ? val : parseInt(val);   
     const [ showFilterModal, setShowFilterModal ] = useState(false);
 
@@ -11,7 +11,6 @@ function FilterForm({ minGuests, maxGuests, minPrice, maxPrice, setMinGuests, se
         e.preventDefault();
         setShowFilterModal(true);
     }
-    
 
   return (
     <div className="filter-form">
@@ -29,7 +28,7 @@ function FilterForm({ minGuests, maxGuests, minPrice, maxPrice, setMinGuests, se
                         </div>
                     </button>
                 </div>
-                <div className='number-homes'>Over 11 homes</div>
+                <div className='number-homes'>{`${listings.length}`} homes</div>
             </div>
                 {showFilterModal && (
                     <Modal onClose={() => setShowFilterModal(false)}>
@@ -54,31 +53,23 @@ function FilterForm({ minGuests, maxGuests, minPrice, maxPrice, setMinGuests, se
                             />
                             </div>
                         </div>
-                        {/* <div className='slider'>
-                            <div className="slider">
-                            <div className="progress"></div>
-                            </div>
+                        <div className='slider'>
                             <div className="range-input">
-                                <input type="range" className="range-min" min="100" max="2900" value={minPrice} step="any"
-                                onChange={e => setMinPrice(parseValue(e.target.value))}
-                                />
-                                <input type="range" className="range-max" min="101" max="3000" value={maxPrice} step="any" 
-                                onChange={e => setMaxPrice(parseValue(e.target.value))}
-                                />
+                            <input className="range-min"
+                                type="range"  
+                                min="100" max="999" 
+                                value={minPrice} 
+                                step="any" 
+                                onChange={e => setMinPrice(parseValue(e.target.value))} />
+                                <input className="range-max"
+                                type="range"  
+                                min="101" max="1000" 
+                                value={maxPrice} 
+                                step="any" 
+                                onChange={e => setMaxPrice(parseValue(e.target.value))} />
                             </div>
-                        </div> */}
-                        <input className="range-min"
-                        type="range"  
-                        min="100" max="999" 
-                        value={minPrice} 
-                        step="any" 
-                        onChange={e => setMinPrice(parseValue(e.target.value))} />
-                        <input className="range-max"
-                        type="range"  
-                        min="101" max="1000" 
-                        value={maxPrice} 
-                        step="any" 
-                        onChange={e => setMaxPrice(parseValue(e.target.value))} />
+                        </div>
+
                     </div>
                     </Modal>
                 )}
