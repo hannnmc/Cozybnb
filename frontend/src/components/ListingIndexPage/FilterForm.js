@@ -24,8 +24,7 @@ function FilterForm({ minGuests, maxGuests, setMinGuests, setMaxGuests }) {
             onChange={e => setMaxGuests(parseValue(e.target.value))}
             />
       <header>
-        <h2>Price Range</h2>
-        <p>Use slider or enter min and max Guests</p>
+
       </header>
       <div class="price-input">
         <div class="field">
@@ -35,19 +34,19 @@ function FilterForm({ minGuests, maxGuests, setMinGuests, setMaxGuests }) {
         <div class="separator">-</div>
         <div class="field">
           <span>Max</span>
-          <input type="number" class="input-max" value="16"/>
+          <input type="number" class="input-max" value={maxGuests}/>
         </div>
       </div>
       <div class="slider">
         <div class="progress"></div>
       </div>
       <div class="range-input">
-        <input type="range" class="range-min" min="0" max="10000" value="2500" step="100"/>
-        <input type="range" class="range-max" min="100" max="16" value={maxGuests} step="16"/>
+        <input type="range" class="range-min" min="100" max="2900" value={minGuests} step="30"/>
+        <input type="range" class="range-max" min="101" max="3000" value={maxGuests} step="30"/>
       </div>
         </div>
 
-    </div>
+
 
       <div className='filter-button'>
         <button>
@@ -58,6 +57,7 @@ function FilterForm({ minGuests, maxGuests, setMinGuests, setMaxGuests }) {
                 <span>Filters</span>
             </div>
         </button>
+      </div>
       </div>
     </div>
   )
