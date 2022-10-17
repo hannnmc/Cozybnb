@@ -15,7 +15,7 @@ function ListingIndexPage() {
   const [minGuests, setMinGuests] = useState(1);
   const [maxGuests, setMaxGuests] = useState(16);
   const [minPrice, setMinPrice] = useState(100);
-  const [maxPrice, setMaxPrice] = useState(2000);
+  const [maxPrice, setMaxPrice] = useState(1000);
   const [highlightedListing, setHighlightedListing] = useState(null);
   const [bounds, setBounds] = useState(null);
 
@@ -61,6 +61,7 @@ function ListingIndexPage() {
           maxPrice={maxPrice}
           setMinPrice={setMinPrice}
           setMaxPrice={setMaxPrice}
+          listings={listings}
         />
         <ListingList 
           listings={listings} 

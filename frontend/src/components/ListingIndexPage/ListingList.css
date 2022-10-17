@@ -16,7 +16,7 @@
 .listing-box {
     cursor: pointer;
     width: 40%;
-    margin: 5px;
+    margin: 10px;
     aspect-ratio: 1054/1000;
     padding: 5px;
     min-width: 225px;
@@ -76,6 +76,8 @@
 
 .list-item-copy {
     font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .top-info-field {
@@ -114,10 +116,18 @@
 
 .number-homes {
     align-self: center;
-    padding-left: 40px;
+    padding-left: 50px;
     font-weight: 500;
     font-size: 15.5px;
 }
+
+.filter-top {
+    margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      /* width: 100%; */
+  }
 
 @media (max-width: 947px) {
     .listing-index-page {
@@ -178,6 +188,46 @@
 }
 
 @media (max-width: 3000px) {
+    .listing-box {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1700px) {
+    .list-index-map-container {
+        width: 55vw;
+    }
+}
+@media (min-width: 1700px) {
+    .listings-list {
+        width: 45vw;
+    }
+}
+
+@media (min-width: 1700px) {
+    .filter-top {
+        width: 45vw;
+    }
+}
+
+@media (min-width: 1100px) {
+    .listing-box {
+        width: 40%;
+        margin: 10px;
+        aspect-ratio: 1054/1000;
+        padding: 5px;
+        min-width: 225px;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 820px) {
+    .listing-box {
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px)  {
     .listing-box {
         width: 100%;
     }
