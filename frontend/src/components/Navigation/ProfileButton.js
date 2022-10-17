@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import * as sessionActions from '../../store/session';
-import profileImg from '../../assets/images/profile_icon.jpg'
+// import profileImg from '../../assets/images/profile_icon.jpg'
 
 
 
@@ -36,7 +36,7 @@ function ProfileButton({ user }) {
         <svg className='profile-burger' width={16} height={16} viewBox="0 0 32 32" fill={'#222222'} stroke={'#222222'} strokeWidth={3}>
           <g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g>
         </svg>
-        <img className="profile-avatar" src={user.photoUrl} />
+        <img className="profile-avatar" src={user.photoUrl} alt=""/>
 
       </button>
       {showMenu && (

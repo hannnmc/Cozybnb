@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useDispatch} from "react-redux";
+// import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -10,7 +10,7 @@ function SignUpForm(props) {
   const [errors, setErrors] = useState([]);
   const { setShowSignupModal } = props;
 
-  const sessionUser = useSelector(state => state.session.user);
+  // const sessionUser = useSelector(state => state.session.user);
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -22,7 +22,7 @@ function SignUpForm(props) {
         e.preventDefault();
         if (password) {
         setErrors([]);
-        return dispatch(sessionActions.signup({ email, password, birthDate, email, firstName, lastName }))
+        return dispatch(sessionActions.signup({ email, password, birthDate, firstName, lastName }))
             .catch(async (res) => {
             let data;
             try {

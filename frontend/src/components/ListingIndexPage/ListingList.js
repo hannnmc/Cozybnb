@@ -11,9 +11,8 @@ function ListingList({ listings, highlightedListing, setHighlightedListing }) {
 
   useEffect(() => {
     dispatch(fetchListings())
-  },[dispatch])
+  },[dispatch, fetchListings])
   
-  // dispatch(fetchListings());
   return (
     <>
       <div className="listings-list">

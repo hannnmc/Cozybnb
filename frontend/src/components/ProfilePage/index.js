@@ -2,14 +2,15 @@ import './ProfilePage.css'
 import ProfileEditForm from './ProfileEditForm';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import defaultPhoto from "../../../../frontend/src/assets/images/default_user_photo.png";
+// import defaultPhoto from "../../../../frontend/src/assets/images/default_user_photo.png";
 
 const ProfilePage = () => {
     const [ showProfileEditForm, setShowProfileEditForm ] = useState(false);
     const user = useSelector(({session}) => session.user );
 
-    const openEditProfile = () => {
-
+    const openEditProfile = (e) => {
+        e.preventDefault();
+        setShowProfileEditForm(open => !open)
     };
 
     if (!user) return null;
@@ -21,7 +22,7 @@ const ProfilePage = () => {
         <div className='profile-container'>
             <div className='profile-card'>
                 <div className='profile-card-header'>
-                    <img className='profile-picture' src={user.photoUrl} />
+                    <img className='profile-picture' src={user.photoUrl} alt="profile" />
                 </div>
                 <div>Update photo</div>
                 <div>
@@ -44,7 +45,7 @@ const ProfilePage = () => {
             <div>
                 <h1>Hi, I'm {`${ user.firstName }`}</h1>
                 <div>Joined in {`${user.createdAt.slice(0,4)}`}</div>
-                <div onClick={() => setShowProfileEditForm(true)}>Edit Profile</div>
+                <div onClick={openEditProfile}>Edit Profile</div>
                 {showProfileEditForm && (
                     <>
                         <ProfileEditForm setShowProfileEditForm={setShowProfileEditForm}/>
