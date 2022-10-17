@@ -112,7 +112,12 @@
     width: 50%;
 }
 
-
+.number-homes {
+    align-self: center;
+    padding-left: 40px;
+    font-weight: 500;
+    font-size: 15.5px;
+}
 
 @media (max-width: 947px) {
     .listing-index-page {
