@@ -19,17 +19,17 @@ function ListingIndexPage() {
   const [highlightedListing, setHighlightedListing] = useState(null);
   const [bounds, setBounds] = useState(null);
 
-  useEffect(() => {
-    if (minGuests && maxGuests && bounds) {
-      dispatch(fetchListings({ minGuests, maxGuests, bounds }));
-    }
-  }, [minGuests, maxGuests, bounds, dispatch]);
+  // useEffect(() => {
+  //   if (minGuests && maxGuests && bounds) {
+  //     dispatch(fetchListings({ minGuests, maxGuests, bounds }));
+  //   }
+  // }, [minGuests, maxGuests, bounds, dispatch]);
 
   useEffect(() => {
     if (minPrice && maxPrice && bounds) {
       dispatch(fetchListings({ minPrice, maxPrice, bounds }));
     }
-  }, [minPrice, maxPrice, bounds, dispatch]);
+  }, [minPrice, maxPrice]);
 
   const mapEventHandlers = useMemo(() => ({
     click: event => {

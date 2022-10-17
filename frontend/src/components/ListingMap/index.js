@@ -123,6 +123,7 @@ function ListingMap({
 }
 
 function ListingMapWrapper(props) {
+  console.log(process.env.REACT_APP_MAPS_API_KEY)
   return (
     <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
       <ListingMap {...props} />

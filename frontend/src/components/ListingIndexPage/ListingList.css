@@ -16,11 +16,12 @@
 .listing-box {
     cursor: pointer;
     width: 40%;
-    margin: 10px;
+    /* margin: 5px; */
     aspect-ratio: 1054/1000;
-    padding: 5px;
+    /* padding: 5px; */
     min-width: 225px;
     max-width: 380px;
+    margin-bottom: 10px;
 }
 
 
@@ -116,18 +117,22 @@
 
 .number-homes {
     align-self: center;
-    padding-left: 50px;
+    padding-left: 40px;
     font-weight: 500;
     font-size: 15.5px;
 }
 
 .filter-top {
-    margin-top: 10px;
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row-reverse;
-      /* width: 100%; */
-  }
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+}
+
+.filter-bot {
+    height: 120px;
+}
 
 @media (max-width: 947px) {
     .listing-index-page {
@@ -141,6 +146,9 @@
 @media (max-width: 947px) {
     .listing-list-container {
         width: 100vw;
+        padding-top: 25px;
+        border-radius: 20px;
+
     }
 }
 
@@ -167,11 +175,8 @@
 }
 @media (max-width: 947px) {
     .listings-list {
-        border-radius: 20px;
         width: 100vw;
         background-color: white;
-
-        padding-top: 20px;
     }
 }
 
@@ -213,9 +218,7 @@
 @media (min-width: 1100px) {
     .listing-box {
         width: 40%;
-        margin: 10px;
         aspect-ratio: 1054/1000;
-        padding: 5px;
         min-width: 225px;
         max-width: 380px;
     }
@@ -230,5 +233,17 @@
 @media (max-width: 600px)  {
     .listing-box {
         width: 100%;
+    }
+}
+
+@media (min-width: 947px)  {
+    .filter-button{
+        padding-right: 7%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .filter-button {
+        padding-right: 9%;
     }
 }

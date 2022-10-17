@@ -34,39 +34,36 @@ function FilterForm({ listings, minGuests, maxGuests, minPrice, maxPrice, setMin
                     <Modal onClose={() => setShowFilterModal(false)}>
                     <div className='filter-modal'>
                         <div className='filter-modal-header'> Filter</div>
-                        <div className="price-input">
-                            <div>Price</div>
-                            <div className="field">
-                            <Input
-                            label="Min:"
-                            type="number"
-                            value={minPrice}
-                            onChange={e => setMinPrice(parseValue(e.target.value))}
-                            />
+                        <div className='filter-bot'>
+                            <div className="price-input">
+                                <div>Price</div>
+                                <div className="field">
+                                <Input
+                                label="Min:"
+                                type="number"
+                                value={minPrice}
+                                onChange={e => setMinPrice(parseValue(e.target.value))}
+                                />
+                                </div>
+                                <div className='price-divider'> - </div>
+                                <div className="field">
+                                <Input
+                                label="Max:"
+                                type="number"
+                                value={maxPrice}
+                                onChange={e => setMaxPrice(parseValue(e.target.value))}
+                                />
+                                </div>
                             </div>
-                            <div className="field">
-                            <Input
-                            label="Max:"
-                            type="number"
-                            value={maxPrice}
-                            onChange={e => setMaxPrice(parseValue(e.target.value))}
-                            />
-                            </div>
-                        </div>
-                        <div className='slider'>
-                            <div className="range-input">
-                            <input className="range-min"
-                                type="range"  
-                                min="100" max="999" 
-                                value={minPrice} 
-                                step="any" 
-                                onChange={e => setMinPrice(parseValue(e.target.value))} />
-                                <input className="range-max"
-                                type="range"  
-                                min="101" max="1000" 
-                                value={maxPrice} 
-                                step="any" 
-                                onChange={e => setMaxPrice(parseValue(e.target.value))} />
+                            <div className='slider'>
+                                <div className="range-input">
+                                    <input className="range-max"
+                                    type="range"  
+                                    min="100" max="1000" 
+                                    value={maxPrice} 
+                                    step="any" 
+                                    onChange={e => setMaxPrice(parseValue(e.target.value))} />
+                                </div>
                             </div>
                         </div>
 
