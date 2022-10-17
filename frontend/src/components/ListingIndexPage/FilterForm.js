@@ -3,7 +3,7 @@ import { Input } from '../Forms';
 import './FilterForm.css';
 import { Modal } from '../../context/Modal';
 
-function FilterForm({ listings, minGuests, maxGuests, minPrice, maxPrice, setMinGuests, setMaxGuests, setMinPrice, setMaxPrice }) {
+function FilterForm({ listings, minPrice, maxPrice, setMinPrice, setMaxPrice }) {
     const parseValue = val => val === '' ? val : parseInt(val);   
     const [ showFilterModal, setShowFilterModal ] = useState(false);
 
