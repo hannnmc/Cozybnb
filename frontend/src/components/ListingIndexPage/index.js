@@ -38,9 +38,9 @@ function ListingIndexPage() {
           listings={listings}
           mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
-            click: (listing) => history.push(`/listings/${listing.id}`),
-            mouseover: (listing) => setHighlightedListing(listing.id),
-            mouseout: () => setHighlightedListing(null)
+            // click: (listing) => history.push(`/listings/${listing.id}`),
+            click: (listing) => setHighlightedListing(listing.id),
+            // mouseout: () => setHighlightedListing(null)
           }}
           highlightedListing={highlightedListing} 
         />

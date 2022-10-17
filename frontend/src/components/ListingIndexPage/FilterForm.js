@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input } from '../Forms';
+import './FilterForm.css';
 
 function FilterForm({ minGuests, maxGuests, setMinGuests, setMaxGuests }) {
   const parseValue = val => val === '' ? val : parseInt(val);
@@ -7,20 +8,47 @@ function FilterForm({ minGuests, maxGuests, setMinGuests, setMaxGuests }) {
   return (
     <div className="filter-form">
       <div className="filter-fields">
-        <Input
-          label="Minimum Guests:"
-          type="number"
-          value={minGuests}
-          onChange={e => setMinGuests(parseValue(e.target.value))}
-        />
-        <br />
-        <Input
-          label="Maximum Guests:"
-          type="number"
-          value={maxGuests}
-          onChange={e => setMaxGuests(parseValue(e.target.value))}
-        />
+
+        <div class="wrapper">
+            <Input
+            label="Minimum Guests:"
+            type="number"
+            value={minGuests}
+            onChange={e => setMinGuests(parseValue(e.target.value))}
+            />
+            <br />
+            <Input
+            label="Maximum Guests:"
+            type="number"
+            value={maxGuests}
+            onChange={e => setMaxGuests(parseValue(e.target.value))}
+            />
+      <header>
+        <h2>Price Range</h2>
+        <p>Use slider or enter min and max Guests</p>
+      </header>
+      <div class="price-input">
+        <div class="field">
+          <span>Min</span>
+          <input type="number" class="input-min" value="1"/>
+        </div>
+        <div class="separator">-</div>
+        <div class="field">
+          <span>Max</span>
+          <input type="number" class="input-max" value="16"/>
+        </div>
       </div>
+      <div class="slider">
+        <div class="progress"></div>
+      </div>
+      <div class="range-input">
+        <input type="range" class="range-min" min="0" max="10000" value="2500" step="100"/>
+        <input type="range" class="range-max" min="100" max="16" value={maxGuests} step="16"/>
+      </div>
+        </div>
+
+    </div>
+
       <div className='filter-button'>
         <button>
             <div>

@@ -76,7 +76,7 @@ function ListingMap({
             fillOpacity: 1,
             fillColor: 'white',
             strokeColor: 'black',
-            strokeWeight: 1,
+            strokeWeight: 0,
             scale: 15,
             labelOrigin: new window.google.maps.Point(1.5, 1),
             anchor: new window.google.maps.Point(1.5, 1)
@@ -107,10 +107,10 @@ function ListingMap({
 
       if (parseInt(listingId) === highlightedListing) {
         marker.setLabel({ ...label, color: 'white' });
-        marker.setIcon({ ...icon, fillColor: 'black' });
+        marker.setIcon({ ...icon, fillColor: 'rgb(34,34,34)' });
       } else {
         marker.setLabel({ ...label, color: 'black' });
-        marker.setIcon({ ...icon, fillColor: 'white' });
+        marker.setIcon({ ...icon, fillColor: 'white', strokeWeight: 0 });
       }
     });
   }, [markers, highlightedListing]);
