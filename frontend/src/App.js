@@ -1,9 +1,9 @@
-import { React, useState, useEffect } from 'react';
+import React from 'react';
 import { Redirect, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import ProfilePage from "./components/ProfilePage";
 import ListingIndexPage from './components/ListingIndexPage';
-import csrfFetch from './store/csrf';
+// import csrfFetch from './store/csrf';
 import { useSelector } from 'react-redux';
 function App() {
 
