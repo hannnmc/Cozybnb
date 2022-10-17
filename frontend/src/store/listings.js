@@ -15,7 +15,7 @@ export const addListing = listing => ({
 });
 
 export const fetchListings = filters => async dispatch => {
-    // const filterParams = new URLSearchParams(filters);
+    const filterParams = new URLSearchParams(filters);
     const response = await csrfFetch(`/api/listings`);
     const data = await response.json();
     dispatch(setListings(data.listings));

@@ -1,19 +1,15 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 
 function ListItem({ listing, isHighlighted, setHighlightedListing }) {
   const { title, photoUrl, price, averageRating } = listing;
-  const history = useHistory(); 
 
   return (
     <div
       className={"list-item" + (isHighlighted ? " highlighted" : "")}
-      onClick={() => history.push(`/listings/${listing.id}`)}
-      onMouseEnter={() => setHighlightedListing(listing.id)}
-      onMouseLeave={() => setHighlightedListing(null)}
+      onClick={() => setHighlightedListing(listing.id)}
     >
       <div className="list-item-info">
-      {photoUrl && <div className="listing-image-box"> <img className="listing-image" src={photoUrl} alt='Listing'/></div>}
+      {photoUrl && ( <div className="listing-image-box"> <img className="listing-image" src={photoUrl} alt='Listing'/></div> )}
 
       <div className="text-info-box">
         <h2  className="list-item-copy">{title}</h2>

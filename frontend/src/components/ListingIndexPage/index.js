@@ -27,9 +27,9 @@ function ListingIndexPage() {
 
   useEffect(() => {
     if (minPrice && maxPrice && bounds) {
-      dispatch(fetchListings({ minGuests, maxGuests, bounds }));
+      dispatch(fetchListings({ minPrice, maxPrice, bounds }));
     }
-  }, [minGuests, maxGuests, bounds, dispatch]);
+  }, [minPrice, maxPrice, bounds, dispatch]);
 
   const mapEventHandlers = useMemo(() => ({
     click: event => {
@@ -59,6 +59,10 @@ function ListingIndexPage() {
           maxGuests={maxGuests}
           setMinGuests={setMinGuests}
           setMaxGuests={setMaxGuests}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          setMinPrice={setMinPrice}
+          setMaxPrice={setMaxPrice}
         />
         <ListingList 
           listings={listings} 
