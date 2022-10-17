@@ -5,7 +5,7 @@ function ListItem({ listing, isHighlighted, setHighlightedListing }) {
 
   return (
     <div
-      className={"list-item" + (isHighlighted ? " highlighted" : "")}
+      className={"listing-box" + (isHighlighted ? " highlighted" : "")}
       onClick={() => setHighlightedListing(listing.id)}
     >
       <div className="list-item-info">
