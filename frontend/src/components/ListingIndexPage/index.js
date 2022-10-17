@@ -11,14 +11,14 @@ import './ListingList.css';
 function ListingIndexPage() {
   const history = useHistory(); 
   const dispatch = useDispatch();
-  const listings = useSelector(state => Object.values(state.listings));
+  let listings = useSelector(state => Object.values(state.listings));
   const [minGuests, setMinGuests] = useState(1);
   const [maxGuests, setMaxGuests] = useState(16);
   const [minPrice, setMinPrice] = useState(100);
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(300);
   const [highlightedListing, setHighlightedListing] = useState(null);
   const [bounds, setBounds] = useState(null);
-
+  const [listingsArray, setListingsArray ] = useState(listings);
   // useEffect(() => {
   //   if (minGuests && maxGuests && bounds) {
   //     dispatch(fetchListings({ minGuests, maxGuests, bounds }));
@@ -26,10 +26,13 @@ function ListingIndexPage() {
   // }, [minGuests, maxGuests, bounds, dispatch]);
 
   useEffect(() => {
-    if (minPrice && maxPrice && bounds) {
-      dispatch(fetchListings({ minPrice, maxPrice, bounds }));
-    }
+    // if (minPrice && maxPrice && bounds) {
+    //   dispatch(fetchListings({ minPrice, maxPrice, bounds }));
+    // }
+
+    setListingsArray(listings.filter(listing => listing.price > minPrice && listing.price < maxPrice))
   }, [minPrice, maxPrice]);
+  
 
   const mapEventHandlers = useMemo(() => ({
     click: event => {
@@ -43,7 +46,7 @@ function ListingIndexPage() {
     <div className="listing-index-page">
       <div className="list-index-map-container">
         <ListingMap
-          listings={listings}
+          listings={listingsArray}
           mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
             click: (listing) => setHighlightedListing(listing.id),
@@ -61,10 +64,10 @@ function ListingIndexPage() {
           maxPrice={maxPrice}
           setMinPrice={setMinPrice}
           setMaxPrice={setMaxPrice}
-          listings={listings}
+          listings={listingsArray}
         />
         <ListingList 
-          listings={listings} 
+          listings={listingsArray} 
           highlightedListing={highlightedListing} 
           setHighlightedListing={setHighlightedListing} 
         />
