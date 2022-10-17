@@ -32,7 +32,7 @@ class Listing < ApplicationRecord
     class_name: "User"
 
     validates :guests, inclusion: {in: 1..16, message: "Number of guests must be between 1 to 16"}
-    validates :price, inclusion: { in: 10..5000, message: "Price must be between $10 and $5000" }
+    validates :price, inclusion: { in: 100..3000, message: "Price must be between $10 and $3000" }
     validates :bedrooms, inclusion: {in: 1..8, message: "Number of bedrooms must be between 1 to 8"}
     validates :beds, inclusion: {in: 1..12, message: "Number of beds must be between 1 to 12"}
     validates :baths, inclusion: {in: 1..5, message: "Number of bathrooms must be between 1 to 5"}
