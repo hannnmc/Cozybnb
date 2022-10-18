@@ -54,18 +54,18 @@ function ListingShowPage() {
       </div>
       <div className="listing-show-visuals">
         <div className='first-col-photo'>
-            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image-main"/>}
+            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image-main"/>}
         </div>
         <div className='second-col-photos'>
-            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
-            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image"/>}
         </div>
         <div className='third-col-photos'>
-            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
-            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image"/>}
         </div>
       </div>
-      <section className="listing-show-section listing-details">
+      <section className="listing-details">
         <h2>Hosted by {`${user.firstName}`}</h2>
         <span>{`${guests} guests `}</span>
         <span className='hosted-dot'>·</span>
@@ -74,53 +74,57 @@ function ListingShowPage() {
         <span>{`${beds} `}{beds > 1 ? 'beds' : 'bed'}</span>
         <span className='hosted-dot'>·</span>
         <span>{`${baths} `}{baths > 1 ? 'baths' : 'bath'}</span>
+
+        <div className='showpage-divider'></div>
+        <div className='listing-features'>
+            <span>Dedicated workspace</span>
+            <span>A common area with wifi that’s well-suited for working.</span>
+        </div>
+        <div className='showpage-divider'></div>
         <p>
           {description}
         </p>
-        <ul>
-          <li><span className='info-category'>Guests: </span>{guests}</li>
-          <li><span className='info-category'>Latitude: </span>{lat}</li>
-          <li><span className='info-category'>Longitude: </span>{lng}</li>
-        </ul>
-      </section>
-      <section className="listing-show-section">
-        <h2>Reviews</h2>
-        <span className="average-rating">
-          Average Rating: {averageRating || 'No reviews yet'}
-        </span>
-        <div className="reviews">
-          {/* {reviews.map(review => (
-            <div className="review" key={review.id}>
-              <h3>Rating: {review.rating}</h3>
-              <span>{review.author}</span>
-              <p>{review.body}</p>
-              {review.authorId === sessionUser?.id && (
-                <button 
-                //   onClick={() => dispatch(destroyReview(review.id))} 
-                  className='delete-icon'
-                >
-                  <i className="fa-solid fa-rectangle-xmark" />
-              </button>
-              )}
+
+        </section>
+            <div className='showpage-divider'></div>
+        <section className="listing-show-section">
+            <h2>Reviews</h2>
+            <span className="average-rating">
+            Average Rating: {averageRating || 'No reviews yet'}
+            </span>
+            <div className="reviews">
+            {/* {reviews.map(review => (
+                <div className="review" key={review.id}>
+                <h3>Rating: {review.rating}</h3>
+                <span>{review.author}</span>
+                <p>{review.body}</p>
+                {review.authorId === sessionUser?.id && (
+                    <button 
+                    //   onClick={() => dispatch(destroyReview(review.id))} 
+                    className='delete-icon'
+                    >
+                    <i className="fa-solid fa-rectangle-xmark" />
+                </button>
+                )}
+                </div>
+            ))} */}
             </div>
-          ))} */}
+            {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
+        </section>
+        <section className='map-section'>
+            <div className='show-map'>
+                <ListingMap
+                    listings={[listing]}
+                    mapOptions={{ 
+                    center: { lat: listing.lat, lng: listing.lng }, 
+                    zoom: 17, 
+                    mapId: "49aa6f67e21bd8eb",
+                    gestureHandling: "none"
+                    }}
+                />
+            </div>
+        </section>
         </div>
-        {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
-      </section>
-      <section className='map-section'>
-      <div className='show-map'>
-        <ListingMap
-            listings={[listing]}
-            mapOptions={{ 
-            center: { lat: listing.lat, lng: listing.lng }, 
-            zoom: 17, 
-            mapId: "49aa6f67e21bd8eb",
-            gestureHandling: "none"
-        }}
-        />
-        </div>
-      </section>
-    </div>
   );
 };
 
