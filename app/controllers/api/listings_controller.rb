@@ -1,5 +1,5 @@
 class Api::ListingsController < ApplicationController
-    wrap_parameters include: User.attribute_names + []
+    wrap_parameters include: User.attribute_names + ['photoUrl']
 
     def index
         @listings = Listing.all

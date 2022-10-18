@@ -128,6 +128,10 @@
     color: #717171;
 }
 
+.showpage-divider {
+    border-bottom: 1px solid #EAEAEA;
+}
+
 @media (max-width: 1127px) {
     .listing-show-visuals {
         width: 90.5%;
@@ -141,5 +145,25 @@
 @media (max-width: 1127px) {
     .listing-show-header{
         width: 90.5%;
+    }
+}
+.listing-details {
+    font-size: 16px;
+    width: 54%;
+    margin-left: 6.84%;
+}
+.listing-details h2 {
+    font-size: 22px;
+}
+
+.listing-details span {
+}
+.listing-features {
+    font-weight: 500;
+}
+
+@media (max-width: 1127px) {
+    .listing-details {
+        margin-left: 4.75%;
     }
 }

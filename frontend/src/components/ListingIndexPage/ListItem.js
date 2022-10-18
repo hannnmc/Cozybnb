@@ -13,7 +13,7 @@ function ListItem({ listing, isHighlighted, setSelectedListing }) {
       onMouseLeave={() => setSelectedListing(null)}
     >
       <div className="list-item-info">
-      {photoUrl && ( <div className="listing-image-box"> <img className="listing-image" src={photoUrl} alt='Listing'/></div> )}
+      {photoUrl && ( <div className="listing-image-box"> <img className="listing-image" src={photoUrl} alt='Loading...'/></div> )}
 
       <div className="text-info-box">
         <h2  className="list-item-copy">{title}</h2>
