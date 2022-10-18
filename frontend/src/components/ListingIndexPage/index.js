@@ -15,24 +15,23 @@ function ListingIndexPage() {
   const [minGuests, setMinGuests] = useState(1);
   const [maxGuests, setMaxGuests] = useState(16);
   const [minPrice, setMinPrice] = useState(100);
-  const [maxPrice, setMaxPrice] = useState(300);
+  const [maxPrice, setMaxPrice] = useState(1000);
   const [highlightedListing, setHighlightedListing] = useState(null);
   const [bounds, setBounds] = useState(null);
   const [listingsArray, setListingsArray ] = useState(listings);
+  // if (minPrice && maxPrice && bounds) {
+  //   dispatch(fetchListings({ minPrice, maxPrice, bounds }));
+  // }
+
+  useEffect(() => {
+    setListingsArray(listings.filter(listing => listing.price > minPrice && listing.price < maxPrice))
+  }, [minPrice, maxPrice, bounds]);
+
   // useEffect(() => {
   //   if (minGuests && maxGuests && bounds) {
   //     dispatch(fetchListings({ minGuests, maxGuests, bounds }));
   //   }
   // }, [minGuests, maxGuests, bounds, dispatch]);
-
-  useEffect(() => {
-    // if (minPrice && maxPrice && bounds) {
-    //   dispatch(fetchListings({ minPrice, maxPrice, bounds }));
-    // }
-
-    setListingsArray(listings.filter(listing => listing.price > minPrice && listing.price < maxPrice))
-  }, [minPrice, maxPrice]);
-  
 
   const mapEventHandlers = useMemo(() => ({
     click: event => {

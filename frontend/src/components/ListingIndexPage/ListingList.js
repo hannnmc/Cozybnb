@@ -4,15 +4,15 @@ import * as listingActions from "../../store/listings";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
-function ListingList({ listings, highlightedListing, setHighlightedListing }) {
+function ListingList({ listings, minPrice, maxPrice, bounds, highlightedListing, setHighlightedListing }) {
 
   const { fetchListings } = listingActions;
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchListings())
-  },[dispatch])
-  
+  },[dispatch, minPrice, maxPrice, bounds])
+
   return (
     <>
       <div className="listings-list">
