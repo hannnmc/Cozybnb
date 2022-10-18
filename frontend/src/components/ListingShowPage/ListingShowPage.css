@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-self: center;
+    color: #222222;
 }
 
 .body {
@@ -23,18 +24,23 @@
 }
 
 .listing-show-visuals {
+    padding-top: 24px;
     max-width: 1120px;
     min-width: 650px;
     display: flex;
     width: 86.32%;
     align-self: center;
+    justify-content: space-between;
     aspect-ratio: 2/1;
 }
-
 
 .first-col-photo {
     height: 100%;
     width: 50%;
+}
+.first-col-photo img{
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
 }
 .second-col-photos {
     display: flex;
@@ -42,6 +48,7 @@
     height: 100%;
     width: 25%;
     justify-content: space-between;
+    align-items: center;
 }
 .third-col-photos {
     display: flex;
@@ -49,17 +56,25 @@
     height: 100%;
     width: 25%;
     justify-content: space-between;
+    align-items: flex-end;
 }
+.third-col-photos img:first-child {
+    border-top-right-radius: 12px;
+}
+.third-col-photos img:last-child {
+    border-bottom-right-radius: 12px;
+}
+
 .listing-show-image-main {
     height: 100%;
-    width: 98.5%;
+    width: 98.9%;
     object-fit: cover;
     aspect-ratio: 1;
 }
 
 .listing-show-image {
-    height: 49.3%;
-    width: 96.9%;
+    height: 49.25%;
+    width: 97.8%;
     object-fit: cover;
     overflow: hidden;
     aspect-ratio: 1;
@@ -73,9 +88,58 @@
     width: 86.32%;
     align-self: center;
     flex-direction: column;
+    padding-top: 24px;
+    justify-content: center;
 }
 
 .listing-show-header h1 {
-    font-size: 26px;
-    padding-top: 24px;
+    font-size: 26.5px;
+    font-weight: 450;
+    letter-spacing: +0.3px;
+    line-height: 15px;
+    height: 27px;
+    padding-top: 7px;
+}
+
+.show-info-reviews {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.show-header-info {
+    font-size: 14px;
+    height: 24px;
+    display: flex;
+    align-items:flex-end;
+    padding-top: 3px;
+    padding-bottom: 6px;
+}
+.svg-star {
+    margin-right: 5px;
+    margin-bottom: 1px;
+}
+.show-header-info span:last-child {
+    text-decoration: underline;
+    font-weight: 500;
+}
+.divider-dot {
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #717171;
+}
+
+@media (max-width: 1127px) {
+    .listing-show-visuals {
+        width: 90.5%;
+    }
+}
+@media (max-width: 1127px) {
+    .show-map{
+        width: 90.5%;
+    }
+}
+@media (max-width: 1127px) {
+    .listing-show-header{
+        width: 90.5%;
+    }
 }

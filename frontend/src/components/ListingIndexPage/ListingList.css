@@ -161,12 +161,7 @@
         top: 0;
     }
 }
-/* @media (max-width: 920px) {
-    .map {
-        width: 100vw;
-        z-index: 0;
-    }
-} */
+
 @media (max-width: 920px) {
     .filter-form {
         display: none;
