@@ -20,6 +20,9 @@ function App() {
           <Route path="/">
             <ListingIndexPage />
           </Route>
+          <Route path="/listings/new">
+          {/* <NewListingPage /> */}
+          </Route>
           <Route path="/listings/:listingId">
             <ListingShowPage />
           </Route>

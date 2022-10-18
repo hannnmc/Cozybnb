@@ -16,7 +16,7 @@ function ListingIndexPage() {
   const [maxGuests, setMaxGuests] = useState(16);
   const [minPrice, setMinPrice] = useState(100);
   const [maxPrice, setMaxPrice] = useState(1000);
-  const [highlightedListing, setHighlightedListing] = useState(null);
+  const [selectedListing, setSelectedListing] = useState(null);
   const [bounds, setBounds] = useState(null);
   const [listingsArray, setListingsArray ] = useState(listings);
   // if (minPrice && maxPrice && bounds) {
@@ -48,9 +48,12 @@ function ListingIndexPage() {
           listings={listingsArray}
           mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
-            click: (listing) => setHighlightedListing(listing.id),
+            click: (listing) => setSelectedListing(listing.id),
+            click: (listing) => history.push(`/listings/${listing.id}`),
+            mouseover: (listing) => setSelectedListing(listing.id),
+            mouseout: () => setSelectedListing(null)
           }}
-          highlightedListing={highlightedListing} 
+          selectedListing={selectedListing} 
         />
       </div>
       <div className="listing-list-container">
@@ -67,8 +70,8 @@ function ListingIndexPage() {
         />
         <ListingList 
           listings={listingsArray} 
-          highlightedListing={highlightedListing} 
-          setHighlightedListing={setHighlightedListing} 
+          selectedListing={selectedListing} 
+          setSelectedListing={setSelectedListing} 
         />
       </div>
   </div>

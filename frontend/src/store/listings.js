@@ -22,10 +22,22 @@ export const fetchListings = filters => async dispatch => {
     return response;
 }
 
+export const fetchListing = listingId => async dispatch => {
+    const response = await csrfFetch(`/api/listings/${listingId}`);
+    const data = await response.json();
+    dispatch(addListing(data.listing));
+    // dispatch(addUsers(data.users));
+    // dispatch(addReviews(data.reviews));
+    return response;
+}
+
 function listingsReducer(state = {}, action) {
     switch (action.type) {
       case SET_LISTINGS:
         return action.payload;
+    case ADD_LISTING:
+        const listing = action.payload;
+        return { ...state, [listing.id]: listing };
       default:
         return state;
     }

@@ -1,5 +1,5 @@
 json.listing do
-    json.partial! '/api/listinges/listing', listing: @listing
+    json.partial! '/api/listings/listing', listing: @listing
   end
   
   @listing.reviews.includes(:user).each do |review|

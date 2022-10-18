@@ -118,6 +118,8 @@ input[type="range"]::-moz-range-thumb{
 
 body {
   overflow: hidden;
+  scrollbar-gutter: stable;
+
 }
 
 .filter-button {
