@@ -17,11 +17,11 @@
     cursor: pointer;
     width: 40%;
     /* margin: 5px; */
-    aspect-ratio: 1054/1000;
+    aspect-ratio: 1053/1000;
     /* padding: 5px; */
     min-width: 225px;
     max-width: 380px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 
@@ -49,7 +49,7 @@
     width: 50%;
     min-width: 300px;
     flex-wrap: wrap;
-
+    max-width: 900px;
 }
 
 .listing-image-box {
@@ -65,7 +65,7 @@
     aspect-ratio: 1/0.9;
     border: 0;
     border-radius: 12px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .text-info-box {
@@ -135,7 +135,7 @@
     height: 120px;
 }
 
-@media (max-width: 947px) {
+@media (max-width: 920px) {
     .listing-index-page {
         display: block;
         flex-direction: column-reverse;
@@ -187,20 +187,20 @@
     }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1600px) {
     .list-index-map-container {
-        width: 60vw;
+        width: 55vw;
     }
 }
-@media (min-width: 1700px) {
+@media (min-width: 1600px) {
     .listings-list {
-        width: 40vw;
+        width: 45vw;
     }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1600px) {
     .filter-top {
-        width: 40vw;
+        width: 45vw;
     }
 }
 @media (max-width: 1100px) {
@@ -217,25 +217,19 @@
 
 @media (max-width: 1100px) {
     .listing-box {
-        width: 35%;
+        width: 43vw;
     }
 }
 @media (min-width: 920px) {
     .listing-box {
-        width: 50%;
-    }
-}
-
-@media (max-width: 3000px) {
-    .listing-box {
-        width: 100%;
+        width: 50vw;
     }
 }
 
 @media (min-width: 900px) {
     .listing-box {
         width: 45%;
-        aspect-ratio: 1054/1000;
+        aspect-ratio: 1053/1000;
         min-width: 225px;
         max-width: 380px;
     }
@@ -243,7 +237,7 @@
 
 @media (max-width: 820px) {
     .listing-box {
-        width: 45%;
+        width: 43%;
     }
 }
 
@@ -253,8 +247,36 @@
     }
 }
 
-@media (min-width: 1870px) {
-    .listing-box {
-        width: 30%;
+@media (min-width: 1800px) {
+    .listings-list {
+        width: 38vw;
+    }
+}
+
+@media (min-width: 1800px) {
+    .list-index-map-container {
+        width: 62vw;
+    }
+}
+@media (min-width: 1800px) {
+    .filter-top {
+        width: 38vw;
+    }
+}
+
+@media (min-width: 2400px) {
+    .listings-list {
+        width: 35vw;
+    }
+}
+
+@media (min-width: 2400px) {
+    .list-index-map-container {
+        width: 65vw;
+    }
+}
+@media (min-width: 2400px) {
+    .filter-top {
+        width: 35vw;
     }
 }

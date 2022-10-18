@@ -5,7 +5,7 @@ import './ListingMap.css';
 
 function ListingMap({ 
   listings, 
-  highlightedListing,
+  selectedListing,
   mapOptions = {}, 
   mapEventHandlers = {}, 
   markerEventHandlers = {}
@@ -105,7 +105,7 @@ function ListingMap({
       const label = marker.getLabel();
       const icon = marker.getIcon();
 
-      if (parseInt(listingId) === highlightedListing) {
+      if (parseInt(listingId) === selectedListing) {
         marker.setLabel({ ...label, color: 'white' });
         marker.setIcon({ ...icon, fillColor: 'rgb(34,34,34)' });
       } else {
@@ -113,7 +113,7 @@ function ListingMap({
         marker.setIcon({ ...icon, fillColor: 'white', strokeWeight: 0 });
       }
     });
-  }, [markers, highlightedListing]);
+  }, [markers, selectedListing]);
 
   return (
     <div ref={mapRef} className="map">
