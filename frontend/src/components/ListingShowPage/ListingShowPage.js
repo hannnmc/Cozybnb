@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-
 import ListingMap from '../ListingMap';
 // import ReviewForm from './ReviewForm';
 import { useDispatch, useSelector } from 'react-redux';
@@ -34,11 +33,17 @@ function ListingShowPage() {
         <Link to="/">Back to Listings Index</Link>
       </div>
       <div className="listing-show-visuals">
-        {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
-        <ListingMap
-          listings={[listing]}
-          mapOptions={{ center: { lat: listing.lat, lng: listing.lng }}}
-        />
+        <div className='first-col-photo'>
+            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
+        </div>
+        <div className='second-col-photos'>
+            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
+        </div>
+        <div className='third-col-photos'>
+            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
+        </div>
       </div>
       <section className="listing-show-section listing-details">
         <h2>Details</h2>
@@ -74,6 +79,14 @@ function ListingShowPage() {
           ))} */}
         </div>
         {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
+      </section>
+      <section className='map-section'>
+      <div className='show-map'>
+        <ListingMap
+          listings={[listing]}
+          mapOptions={{ center: { lat: listing.lat, lng: listing.lng }}}
+        />
+        </div>
       </section>
     </div>
   );
