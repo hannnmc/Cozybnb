@@ -77,8 +77,9 @@
 
 .list-item-copy {
     font-weight: 500;
-    overflow: hidden;
     white-space: nowrap;
+    overflow-x:hidden;
+    height: 18px;
 }
 
 .top-info-field {
@@ -117,7 +118,7 @@
 
 .number-homes {
     align-self: center;
-    padding-left: 40px;
+    padding-left: 4%;
     font-weight: 500;
     font-size: 15.5px;
 }
@@ -143,7 +144,7 @@
 }
 
 
-@media (max-width: 947px) {
+@media (max-width: 920px) {
     .listing-list-container {
         width: 100vw;
         padding-top: 25px;
@@ -152,7 +153,7 @@
     }
 }
 
-@media (max-width: 947px) {
+@media (max-width: 920px) {
     .list-index-map-container {
         width: 100vw;
         height: 45vh;
@@ -162,31 +163,64 @@
         top: 0;
     }
 }
-@media (max-width: 947px) {
+@media (max-width: 920px) {
     .map {
         width: 100vw;
         z-index: 0;
     }
 }
-@media (max-width: 947px) {
+@media (max-width: 920px) {
     .filter-form {
         display: none;
     }
 }
-@media (max-width: 947px) {
+@media (max-width: 920px) {
     .listings-list {
         width: 100vw;
         background-color: white;
     }
 }
 
-@media (max-width: 947px) {
+@media (max-width: 920px) {
     .listing-index-page {
         width: 100vw;
     }
 }
 
-@media (min-width: 947px) {
+@media (min-width: 1700px) {
+    .list-index-map-container {
+        width: 60vw;
+    }
+}
+@media (min-width: 1700px) {
+    .listings-list {
+        width: 40vw;
+    }
+}
+
+@media (min-width: 1700px) {
+    .filter-top {
+        width: 40vw;
+    }
+}
+@media (max-width: 1100px) {
+    .filter-button {
+        padding-right: 4%;
+    }
+}
+
+@media (min-width: 947px)  {
+    .filter-button{
+        padding-right: 4%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .listing-box {
+        width: 35%;
+    }
+}
+@media (min-width: 920px) {
     .listing-box {
         width: 50%;
     }
@@ -198,26 +232,9 @@
     }
 }
 
-@media (min-width: 1700px) {
-    .list-index-map-container {
-        width: 55vw;
-    }
-}
-@media (min-width: 1700px) {
-    .listings-list {
-        width: 45vw;
-    }
-}
-
-@media (min-width: 1700px) {
-    .filter-top {
-        width: 45vw;
-    }
-}
-
-@media (min-width: 1100px) {
+@media (min-width: 900px) {
     .listing-box {
-        width: 40%;
+        width: 45%;
         aspect-ratio: 1054/1000;
         min-width: 225px;
         max-width: 380px;
@@ -230,20 +247,14 @@
     }
 }
 
-@media (max-width: 600px)  {
+@media (max-width: 450px)  {
     .listing-box {
         width: 100%;
     }
 }
 
-@media (min-width: 947px)  {
-    .filter-button{
-        padding-right: 7%;
-    }
-}
-
-@media (max-width: 1100px) {
-    .filter-button {
-        padding-right: 9%;
+@media (min-width: 1870px) {
+    .listing-box {
+        width: 30%;
     }
 }

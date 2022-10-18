@@ -12,6 +12,7 @@
   width: 100%;
   border-bottom: 1px solid #DDDDDD;
   text-align: center;
+  font-weight: 600;
 }
 
 .price-input{

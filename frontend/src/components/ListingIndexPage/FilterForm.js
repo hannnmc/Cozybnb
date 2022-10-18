@@ -33,7 +33,7 @@ function FilterForm({ listings, minPrice, maxPrice, setMinPrice, setMaxPrice }) 
                 {showFilterModal && (
                     <Modal onClose={() => setShowFilterModal(false)}>
                     <div className='filter-modal'>
-                        <div className='filter-modal-header'> Filter</div>
+                        <div className='filter-modal-header'>Filters</div>
                         <div className='filter-bot'>
                             <div className="price-input">
                                 <div>Price</div>
