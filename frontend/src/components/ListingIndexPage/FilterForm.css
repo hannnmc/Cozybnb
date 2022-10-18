@@ -117,7 +117,7 @@ input[type="range"]::-moz-range-thumb{
 }
 
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
   scrollbar-gutter: stable;
 
 }

@@ -1,0 +1,49 @@
+.listing-show {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.map-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.show-map {
+    width: 87.44%;   
+    height: 500px;
+    max-width: 1120px;
+}
+
+.listing-show-visuals {
+    max-width: 1120px;
+    
+    display: flex;
+    width: 92.7%;
+    align-self: center;
+}
+
+
+.first-col-photo {
+    height: 100%;
+    width: 50%;
+}
+.second-col-photos {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 25%;
+}
+.third-col-photos {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 25%;
+}
+
+.listing-show-image {
+    height: 100%;
+    width: 100%;
+}
