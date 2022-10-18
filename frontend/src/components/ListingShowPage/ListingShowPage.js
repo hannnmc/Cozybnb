@@ -15,35 +15,29 @@ function ListingShowPage() {
     // const sessionUser = useSelector(state => state.session.user);
     const listing = useSelector(state => state.listings[listingId]);
     const users = useSelector(state => state.users);
-
-    // debugger
-
-    // const owner = users.filter(user => user.id === listing.user_id);
-    // state => state.users.filter(user => user.id === listing.userId) )
-
+    
     //   const reviews = useSelector(getListingReviews(parseInt(listingId)));
         
     useEffect(() => {
         dispatch(fetchListing(listingId));
-        // dispatch(fetchUsers());
+        dispatch(fetchUsers());
     }, [listingId, dispatch]);
 
-    if (!listing) {
+    if (!listing || !users) {
         return null;
     }
     
+    const { userId, description, guests, lat, lng, averageRating, photoUrl } = listing;
 
-  const { userId, description, guests, lat, lng, averageRating, photoUrl } = listing;
-//   const user = users.filter(user => user.id === listing.userId);
-
-// let ownerName;
-//     if(users.userId) {
-//         ownerName = users.listingId;
-//     }
+    // console.log(listingId);
+    // const user = users.listingId;
+    // console.log(user);
+    
+    const user = users[listingId];
 
     //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
 
-  return (
+  if(user) return (
     <div className="listing-show">
       <div className="listing-show-header">
         <h1>{listing.title}</h1>
@@ -72,7 +66,7 @@ function ListingShowPage() {
         </div>
       </div>
       <section className="listing-show-section listing-details">
-        <h2>hosted by {`${listingId}`}</h2>
+        <h2>hosted by {`${user.firstName}`}</h2>
         <p>
           {description}
         </p>
