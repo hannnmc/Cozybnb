@@ -5,6 +5,10 @@
     align-self: center;
 }
 
+.body {
+    overflow: hidden;
+}
+
 .map-section {
     display: flex;
     justify-content: center;
@@ -12,17 +16,19 @@
 }
 
 .show-map {
-    width: 87.44%;   
+    width: 86.32%;   
     height: 500px;
     max-width: 1120px;
+    min-width: 650px;
 }
 
 .listing-show-visuals {
     max-width: 1120px;
-    
+    min-width: 650px;
     display: flex;
-    width: 92.7%;
+    width: 86.32%;
     align-self: center;
+    aspect-ratio: 2/1;
 }
 
 
@@ -35,15 +41,41 @@
     flex-direction: column;
     height: 100%;
     width: 25%;
+    justify-content: space-between;
 }
 .third-col-photos {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 25%;
+    justify-content: space-between;
+}
+.listing-show-image-main {
+    height: 100%;
+    width: 98.5%;
+    object-fit: cover;
+    aspect-ratio: 1;
 }
 
 .listing-show-image {
-    height: 100%;
+    height: 49.3%;
+    width: 96.9%;
+    object-fit: cover;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.listing-show-header {
     width: 100%;
+    max-width: 1120px;
+    min-width: 650px;
+    display: flex;
+    width: 86.32%;
+    align-self: center;
+    flex-direction: column;
+}
+
+.listing-show-header h1 {
+    font-size: 26px;
+    padding-top: 24px;
 }

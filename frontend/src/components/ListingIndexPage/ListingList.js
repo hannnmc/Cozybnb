@@ -9,9 +9,9 @@ function ListingList({ listings, minPrice, maxPrice, bounds, selectedListing, se
   const { fetchListings } = listingActions;
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchListings())
-  },[dispatch, minPrice, maxPrice, bounds])
+  // useEffect(() => {
+  //   dispatch(fetchListings())
+  // },[dispatch, minPrice, maxPrice, bounds])
 
   return (
     <>

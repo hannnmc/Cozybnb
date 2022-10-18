@@ -30,11 +30,13 @@ function ListingShowPage() {
     <div className="listing-show">
       <div className="listing-show-header">
         <h1>{listing.title}</h1>
-        <Link to="/">Back to Listings Index</Link>
+        {/* <Link to="/">Back to Listings Index</Link> */}
+        <span>{averageRating || 'No reviews yet'}</span>
+        <span>{`${listing.city}, ${listing.state}, ${listing.country}`}</span>
       </div>
       <div className="listing-show-visuals">
         <div className='first-col-photo'>
-            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image-main"/>}
         </div>
         <div className='second-col-photos'>
             {photoUrl && <img src={photoUrl} alt='Listing' className="listing-show-image"/>}
@@ -84,7 +86,7 @@ function ListingShowPage() {
       <div className='show-map'>
         <ListingMap
           listings={[listing]}
-          mapOptions={{ center: { lat: listing.lat, lng: listing.lng }}}
+          mapOptions={{ center: { lat: listing.lat, lng: listing.lng }, zoom: 17}}
         />
         </div>
       </section>
