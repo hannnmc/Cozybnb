@@ -14,17 +14,17 @@ function App() {
     <>
       <Navigation />
         <Switch>
-          <Route path="/profile">
+          {/* <Route path="/listings/new">
+          <NewListingPage />
+          </Route> */}
+          <Route exact path="/listings/:listingId">
+            <ListingShowPage />
+          </Route>
+          <Route exact path="/profile">
             {loggedIn ? <ProfilePage/> : <Redirect to="/" />}
           </Route>
           <Route path="/">
             <ListingIndexPage />
-          </Route>
-          {/* <Route path="/listings/new">
-          <NewListingPage />
-          </Route> */}
-          <Route path="/listings/:listingId">
-            <ListingShowPage />
           </Route>
         </Switch>
     </>
