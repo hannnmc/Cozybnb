@@ -97,7 +97,7 @@
     overflow: hidden;
     height: 100%;
     width: 50%;
-    top: 80px;
+    top: 81px;
     right: 0px;
 }
 
@@ -120,7 +120,7 @@
     align-self: center;
     padding-left: 4%;
     font-weight: 500;
-    font-size: 15.5px;
+    font-size: 15px;
 }
 
 .filter-top {
@@ -128,7 +128,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-
+    margin-bottom: 8px;
 }
 
 .filter-bot {

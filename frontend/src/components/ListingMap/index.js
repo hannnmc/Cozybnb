@@ -27,6 +27,7 @@ function ListingMap({
         mapId: "49aa6f67e21bd8eb",
         gestureHandling: "greedy",
         clickableIcons: false,
+        disableDefaultUI: true,
         ...mapOptions,
       }));
     }

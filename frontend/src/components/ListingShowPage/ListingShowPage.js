@@ -24,7 +24,7 @@ function ListingShowPage() {
     return null;
   }
 
-  const { description, seating, lat, lng, averageRating, photoUrl } = listing;
+  const { description, guests, lat, lng, averageRating, photoUrl } = listing;
 //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
   
   return (
@@ -46,7 +46,7 @@ function ListingShowPage() {
           {description}
         </p>
         <ul>
-          <li><span className='info-category'>Seats: </span>{seating}</li>
+          <li><span className='info-category'>Guests: </span>{guests}</li>
           <li><span className='info-category'>Latitude: </span>{lat}</li>
           <li><span className='info-category'>Longitude: </span>{lng}</li>
         </ul>
