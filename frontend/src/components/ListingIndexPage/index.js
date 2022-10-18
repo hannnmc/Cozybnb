@@ -24,6 +24,10 @@ function ListingIndexPage() {
   // }
 
   useEffect(() => {
+    dispatch(fetchListings())
+  },[]);
+
+  useEffect(() => {
     setListingsArray(listings.filter(listing => listing.price > minPrice && listing.price < maxPrice))
   }, [minPrice, maxPrice, bounds]);
 
@@ -34,12 +38,14 @@ function ListingIndexPage() {
   // }, [minGuests, maxGuests, bounds, dispatch]);
 
   const mapEventHandlers = useMemo(() => ({
-    click: event => {
-      const search = new URLSearchParams(event.latLng.toJSON()).toString();
-      history.push({ pathname: '/listings/new', search });
-    },
+    // click: event => {
+    //   const search = new URLSearchParams(event.latLng.toJSON()).toString();
+    //   history.push({ pathname: '/listings/new', search });
+    // },
     idle: map => setBounds(map.getBounds().toUrlValue())
   }), [history]);
+
+  if(listings.length === 0) return null;
 
   return (
     <div className="listing-index-page">

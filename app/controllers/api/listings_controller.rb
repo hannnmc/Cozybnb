@@ -47,6 +47,7 @@ class Api::ListingsController < ApplicationController
             :address,
             :city,
             :state,
+            :country,
             :wifi,
             :photo
         )
