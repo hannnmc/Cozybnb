@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Redirect, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import ProfilePage from "./components/ProfilePage";
 import ListingIndexPage from './components/ListingIndexPage';
 import ListingShowPage from './components/ListingShowPage/ListingShowPage';
-import { useSelector } from 'react-redux';
-function App() {
+import { useSelector, useDispatch } from 'react-redux';
+// import { fetchUsers } from './store/users';
 
+
+function App() {
+  // const dispatch = useDispatch();
+  // useEffect(()=> {
+  //   dispatch(fetchUsers());
+  // },[])
 
   const user = useSelector(({session}) => session.user);
+
   const loggedIn = !!user;
+
   return (
     <>
       <Navigation />

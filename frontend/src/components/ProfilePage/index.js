@@ -15,8 +15,6 @@ const ProfilePage = () => {
 
     if (!user) return null;
 
-    console.log(user.photo)
-
     return (
         <>
         <div className='profile-container'>
