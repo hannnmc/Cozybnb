@@ -14,7 +14,7 @@ const ProfilePage = () => {
     };
 
     if (!user) return null;
-
+    
     return (
         <>
         <div className='profile-container'>
