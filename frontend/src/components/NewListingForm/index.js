@@ -75,7 +75,7 @@ function NewListingForm(props) {
       else setErrors([res.statusText]);
       });
   };
-
+  console.log(wifi)
   return (
     <>
       <div className="signup-modal">
@@ -219,8 +219,26 @@ function NewListingForm(props) {
               />
               <span className="bathrooms-floating-label">Bathrooms</span>
             </div>
+          </div>
+
+          <div className='new-listing-description'>
+            <textarea 
+            className='new-description'
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder='Tell us about your new listing.'
+            required />
 
           </div>
+
+          <div className='new-checkboxes'>
+            <label htmlFor="wifi-checkbox">Wifi</label>
+            <input 
+            id='wifi-checkbox'
+            type="checkbox" 
+            onChange={()=>setWifi(!wifi)}/>
+          </div>
+
           {/* <div className="agree-message">By selecting 
           <span className="bold">  Agree and continue</span>, I agree to Cozybnb's 
           <span className="bold2">Term of Service</span>. 

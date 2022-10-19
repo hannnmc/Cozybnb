@@ -1,5 +1,5 @@
 .listing-specs {
-    width: 100%;
+    width: calc(100% -2px);
     display: flex;
     justify-content: space-between;
 }
@@ -44,7 +44,7 @@
     font-size: 15px;
     height: 100%;
     color: rgb(113, 113, 113);
-    outline-color: black;
+    outline-color: #222222;
 }
 
 .new-dropdown > div {
@@ -69,7 +69,7 @@
     color: transparent;
 }
 .address-input:focus {
-    outline-color: black;
+    outline-color: #222222;
 }
 .address-input:focus::placeholder{
     color: #717171f9;
@@ -112,7 +112,7 @@ input:not(:focus):valid ~ .address-floating-label{
     color: transparent;
 }
 .guests-input:focus {
-    outline-color: black;
+    outline-color: #222222;
 }
 .guests-input:focus::placeholder{
     color: #717171f9;
@@ -155,7 +155,7 @@ input:not(:focus):valid ~ .guests-floating-label{
     color: transparent;
 }
 .bedrooms-input:focus {
-    outline-color: black;
+    outline-color: #222222;
 }
 .bedrooms-input:focus::placeholder{
     color: #717171f9;
@@ -198,7 +198,7 @@ input:not(:focus):valid ~ .bedrooms-floating-label{
     color: transparent;
 }
 .beds-input:focus {
-    outline-color: black;
+    outline-color: #222222;
 }
 .beds-input:focus::placeholder{
     color: #717171f9;
@@ -228,7 +228,7 @@ input:not(:focus):valid ~ .beds-floating-label{
     font-size: 15px;
     border-radius: 8px;
     color: rgb(113, 113, 113);
-    width: 100%;
+    width: 99%;
     height: 46px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -241,7 +241,7 @@ input:not(:focus):valid ~ .beds-floating-label{
     color: transparent;
 }
 .bathrooms-input:focus {
-    outline-color: black;
+    outline-color: #222222;
 }
 .bathrooms-input:focus::placeholder{
     color: #717171f9;
@@ -265,7 +265,33 @@ input:not(:focus):valid ~ .bathrooms-floating-label{
   font-weight: 350;
 }
 
+.new-listing-description {
+    margin-top: 26px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.new-description {
+    border: 1px solid #BABABA;
+    border-radius: 8px;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    padding: 0;
+    padding: 10px;
+    color: rgb(113, 113, 113);
+    outline-color: #222222;
+}
 
 #new-listing-button {
     margin-top: 100px;
+}
+
+.new-checkboxes {
+    color: rgb(113, 113, 113);
 }
