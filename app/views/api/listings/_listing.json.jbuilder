@@ -14,6 +14,7 @@ json.extract! listing,
   :state,
   :country,
   :prop_type,
+  :users_id,
   :wifi
   
 if listing.photo.attached?

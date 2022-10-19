@@ -27,13 +27,13 @@ function ListingShowPage() {
         return null;
     }
     
-    const { userId, description, beds, bedrooms, baths, guests, lat, lng, averageRating, photoUrl } = listing;
+    const { usersId, description, beds, bedrooms, baths, guests, lat, lng, averageRating, photoUrl } = listing;
 
     // console.log(listingId);
     // const user = users.listingId;
     // console.log(user);
     
-    const user = users[listingId];
+    const user = users[usersId];
     if (user) console.log(user)
     //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
 
@@ -85,7 +85,7 @@ function ListingShowPage() {
         <div className='showpage-divider'></div>
         <div className='listing-features'>
             <span>Dedicated workspace</span>
-            <span>A common area with wifi that’s well-suited for working.</span>
+            <span>A common area with wifi that's well-suited for working.</span>
         </div>
         <div className='showpage-divider'></div>
         <p> {description} </p>
