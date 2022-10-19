@@ -1,0 +1,46 @@
+.listing-specs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listing-specs > div {
+    width: 22.9%;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    /* padding-left: 0; */
+}
+
+.listing-specs .birthdate-input {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.new-dropdown {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 57px;
+}
+
+.new-dropdown select {
+    font-size: 15px;
+    height: 100%;
+    color: rgb(113, 113, 113);
+    width: 100%;
+    text-align: center;
+    border: 1px solid #BABABA;
+}
+.new-dropdown input {
+    font-size: 15px;
+    height: 100%;
+    color: rgb(113, 113, 113);
+    outline-color: black;
+}
+
+.new-dropdown > div {
+    width: 30%;
+}
+
+

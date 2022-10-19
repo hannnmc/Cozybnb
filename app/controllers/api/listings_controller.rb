@@ -1,5 +1,5 @@
 class Api::ListingsController < ApplicationController
-    wrap_parameters include: User.attribute_names + [:photo, :dedicated_workspace, :prop_type, :users_id, ], format: :multipart_form
+    wrap_parameters include: User.attribute_names + [:photo, "dedicatedWorkspace", "propType", "usersId", "petsAllowed" ], format: :multipart_form
 
     def index
         @listings = Listing.all
