@@ -46,7 +46,7 @@ function NewListingForm(props) {
         onClick={() => setNewListingForm(false)} className="login-x-button"><span class="material-symbols-outlined">close</span></div>
       <header className="signup-header">
         <div></div>
-        <div className="finish-signup">Finish signing up</div>
+        <div className="finish-signup">Create New Listing</div>
         <div></div>
       </header>
       <div className="signup-div">
