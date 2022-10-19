@@ -2,13 +2,11 @@ import React, { useState, useEffect} from 'react';
 import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
 import SignUpForm from '../SignUpModal/SignupForm';
-import NewListingForm from '../NewListingForm';
 import './LoginForm.css';
 
 function LoginDropDown() {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
-  const [newListingModal, setNewListingModal] = useState(false); 
 
   const toggleMenu = () => {
     setMenu(open => !open);
@@ -41,7 +39,7 @@ function LoginDropDown() {
               <li onClick={()=> setShowLoginModal(true)}>Log in</li>
               <li onClick={()=> setShowSignupModal(true)}>Sign up</li>
               <li className='dropdown-divider'></li>
-              <li onClick={()=> setNewListingModal(true)}>Host your home</li>
+              {/* <li onClick={()=> setNewListingModal(true)}>Host your home</li> */}
               <li>Host an experience</li>
               <li>Help</li>
           </ul>
@@ -55,11 +53,6 @@ function LoginDropDown() {
       {showSignupModal && (
         <Modal onClose={() => setShowSignupModal(false)}>
           <SignUpForm setShowSignupModal={setShowSignupModal}/>
-        </Modal>
-      )}
-      {newListingModal && (
-        <Modal onClose={() => setNewListingModal(false)}>
-          <NewListingForm setNewListingModal={setNewListingModal} setShowLoginModal={setShowLoginModal}/>
         </Modal>
       )}
     </>
