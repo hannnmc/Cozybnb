@@ -44,7 +44,7 @@ function SignUpForm(props) {
     <>
       <div className="signup-modal">
         <div 
-        onClick={() => setShowSignupModal(false)} className="login-x-button"><span class="material-symbols-outlined">close</span></div>
+        onClick={() => setShowSignupModal(false)} className="login-x-button"><span className="material-symbols-outlined">close</span></div>
       <header className="signup-header">
         <div></div>
         <div className="finish-signup">Finish signing up</div>
