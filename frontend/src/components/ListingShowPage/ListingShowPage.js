@@ -27,7 +27,7 @@ function ListingShowPage() {
         return null;
     }
     
-    const { usersId, description, beds, bedrooms, baths, guests, lat, lng, averageRating, photoUrl } = listing;
+    const { usersId, description, beds, bedrooms, baths, guests, propType, lat, lng, averageRating, photoUrl } = listing;
 
     // console.log(listingId);
     // const user = users.listingId;
@@ -68,7 +68,7 @@ function ListingShowPage() {
       <section className="listing-details">
         <div className='listing-detail-header'>
             <div className='listing-detail-specs'>
-                <h2>Hosted by {`${user.firstName}`}</h2>
+                <h2>{propType} hosted by {`${user.firstName}`}</h2>
                 <span>{`${guests} guests`}</span>
                 <span className='hosted-dot'>·</span>
                 <span>{`${bedrooms}`}{bedrooms > 1 ? ' bedrooms' : ' bedroom'}</span>
