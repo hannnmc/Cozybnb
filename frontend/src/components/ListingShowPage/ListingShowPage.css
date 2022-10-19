@@ -161,6 +161,14 @@
     margin-bottom: 10px;
 }
 
+.listing-detail-specs {
+    font-size: 16.4px;
+}
+
+.hosted-dot {
+    padding: 0 5px 0 5px;
+}
+
 .owner-avatar {
     height: 56px;
     aspect-ratio: 1;

@@ -69,13 +69,13 @@ function ListingShowPage() {
         <div className='listing-detail-header'>
             <div className='listing-detail-specs'>
                 <h2>Hosted by {`${user.firstName}`}</h2>
-                <span>{`${guests} guests `}</span>
+                <span>{`${guests} guests`}</span>
                 <span className='hosted-dot'>·</span>
-                <span>{`${bedrooms} `}{bedrooms > 1 ? 'bedrooms' : 'bedroom'}</span>
+                <span>{`${bedrooms}`}{bedrooms > 1 ? ' bedrooms' : ' bedroom'}</span>
                 <span className='hosted-dot'>·</span>
-                <span>{`${beds} `}{beds > 1 ? 'beds' : 'bed'}</span>
+                <span>{`${beds}`} {beds > 1 ? 'beds' : 'bed'}</span>
                 <span className='hosted-dot'>·</span>
-                <span>{`${baths} `}{baths > 1 ? 'baths' : 'bath'}</span>
+                <span>{`${baths}`} {baths > 1 ? 'baths' : 'bath'}</span>
             </div>
             <div className='listing-detail-avatar'>
             <img className='owner-avatar' src={user.photoUrl} alt="avatar" />
