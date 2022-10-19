@@ -294,4 +294,5 @@ input:not(:focus):valid ~ .bathrooms-floating-label{
 
 .new-checkboxes {
     color: rgb(113, 113, 113);
+    
 }
