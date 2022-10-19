@@ -47,10 +47,13 @@ function ProfileButton({ user }) {
           <li className="dropdown-divider"></li>
           <li>Host your home</li>
           <li>Host an experience</li>
-          <li><NavLink className="profile-link" exact to="/profile">Profile</NavLink></li>
+          <NavLink className="profile-link" exact to="/profile">
+            <li id="profile-link">Profile</li>
+          </NavLink>
+          
           <li className="dropdown-divider"></li>
           <li>Help</li>
-          <li>
+          <li  onClick={logout}>
             <button className="logout-button" onClick={logout}>Log Out</button>
           </li>
         </ul>

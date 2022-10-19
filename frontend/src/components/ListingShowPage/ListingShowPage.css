@@ -11,6 +11,7 @@
 .body {
     overflow: hidden;
     display: flex;
+    color: #222222;
 }
 
 #root {
@@ -109,6 +110,7 @@
     line-height: 15px;
     height: 27px;
     padding-top: 7px;
+    font-family: circular-bold;
 }
 
 .show-info-reviews {
@@ -180,12 +182,17 @@
 .listing-features span:first-child{
     font-weight: 500;
 }
+.listing-show-section{
+    margin-bottom: 30px;
+}
 
 @media (max-width: 1127px) {
     .listing-show {
         width: 90.5vw;
     }
 }
+
+
 
 /* @media (min-width: 940px) {
     .listing-show {
