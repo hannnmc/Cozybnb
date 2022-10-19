@@ -99,17 +99,23 @@ export default listingsReducer;
 
 
 
-
-
+//         title:'dasffadsf',
+//         description:'dsfsdf',
 //         lat:44,
 //         lng:33,
 //         price:333,
-
-
+//         guests:2,
+//         bedrooms:2,
+//         beds:2,
+//         baths:2,
+//         address:'2323232',
+//         city:'sdfds',
+//         state:'dsfd',
+//         country:'sdfsd',
 //         wifi:true,
+//         propType:'Entire home',
 //         parking:true,
 //         kitchen:true,
 //         dedicatedWorkspace:true,
 //         petsAllowed:true,
-
-//         usersId:2 ***
+//         usersId:2

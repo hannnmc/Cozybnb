@@ -17,7 +17,7 @@ function NewListingForm(props) {
   
   const [errors, setErrors] = useState([]);
   const [title, setTitle] = useState("");
-  const [price, setPrice] = useState(100);
+  const [price, setPrice] = useState('');
   const [description, setDescription] = useState("");
   const [guests, setGuests] = useState("");
   const [beds, setBeds] = useState("");
@@ -75,12 +75,12 @@ function NewListingForm(props) {
       else setErrors([res.statusText]);
       });
   };
-  console.log(wifi)
+  // console.log(wifi,parking, kitchen,dedicatedWorkspace,petsAllowed)
   return (
     <>
       <div className="signup-modal">
         <div 
-        onClick={() => setNewListingForm(false)} className="login-x-button"><span class="material-symbols-outlined">close</span></div>
+        onClick={() => setNewListingForm(false)} className="login-x-button"><span className="material-symbols-outlined">close</span></div>
       <header className="signup-header">
         <div></div>
         <div className="finish-signup">Create a new listing</div>
@@ -91,6 +91,7 @@ function NewListingForm(props) {
         <form onSubmit={handleSubmit}>
           <div className="input-div">
             <input
+              maxLength="73"
               className="firstname-input"
               placeholder="Title"
               value={title}
@@ -106,7 +107,7 @@ function NewListingForm(props) {
                   value={propType}
                   onChange={(e) => setPropType(e.target.value)}
                   required>
-                  <option selected='true' disabled='true' value="">Property type</option>
+                  <option disabled value="">Property type</option>
                   <option value="Entire home">Entire home</option>
                   <option value="Partial space">Partial space</option>
                   <option value="Tree house">Tree house</option>
@@ -119,7 +120,7 @@ function NewListingForm(props) {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 required>
-                  <option disabled='true' selected='true' value="">City</option>
+                  <option disabled value="">City</option>
                   <option value="Astoria">Astoria</option>
                   <option value="Bushwick">Bushwick</option>
                   <option value="Flushing">Flushing</option>
@@ -137,7 +138,7 @@ function NewListingForm(props) {
                 value={state}
                 onChange={(e) => setState(e.target.value)}
                 required>
-                  <option selected='true' disabled='true' value="">State</option>
+                  <option disabled value="">State</option>
                   <option value="CA">CA</option>
                   <option value="CT">CT</option>
                   <option value="DE">DE</option>
@@ -151,14 +152,15 @@ function NewListingForm(props) {
                 </select>
               </div>
               <div className='country-input'>
-                <select disabled='true'>
-                  <option selected='true' value="United States">United States</option>
+                <select disabled>
+                  <option disabled value="United States">United States</option>
                 </select>
               </div>
             </div>
             <div className="input-div">
               <input
               className="address-input"
+                maxLength="50"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 required
@@ -181,6 +183,8 @@ function NewListingForm(props) {
                 type="number"
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
+                min="0"
+                max="16"
                 required
               />
               <span className="guests-floating-label">Guests</span>
@@ -192,6 +196,8 @@ function NewListingForm(props) {
                 type="number"
                 value={bedrooms}
                 onChange={(e) => setBedrooms(e.target.value)}
+                min="0"
+                max="8"
                 required
               />
               <span className="bedrooms-floating-label">Bedrooms</span>
@@ -203,6 +209,8 @@ function NewListingForm(props) {
                 type="number"
                 value={beds}
                 onChange={(e) => setBeds(e.target.value)}
+                min="0"
+                max="12"
                 required
               />
               <span className="beds-floating-label">Beds</span>
@@ -211,10 +219,12 @@ function NewListingForm(props) {
             {/* <div className="email-message">We'll email you trip confirmations and receipts.</div> */}
             <div className="bathrooms-div">
               <input
-              className="bathrooms-input"
+                className="bathrooms-input"
                 type="number"
                 value={baths}
                 onChange={(e) => setBaths(e.target.value)}
+                min="0"
+                max="5"
                 required
               />
               <span className="bathrooms-floating-label">Bathrooms</span>
@@ -223,6 +233,7 @@ function NewListingForm(props) {
 
           <div className='new-listing-description'>
             <textarea 
+            maxLength="1000"
             className='new-description'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -231,14 +242,76 @@ function NewListingForm(props) {
 
           </div>
 
-          <div className='new-checkboxes'>
-            <label htmlFor="wifi-checkbox">Wifi</label>
-            <input 
-            id='wifi-checkbox'
-            type="checkbox" 
-            onChange={()=>setWifi(!wifi)}/>
+          
+          <div className='coord-price'>
+            <div className='coord-input-div'>
+              <input 
+              className='lat-input'
+              type="number" 
+              value={lat}
+              onChange={(e) => setLat(e.target.value)}
+              placeholder="Latitude"
+              required/>
+              <input 
+              className='lng-input'
+              type="number" 
+              value={lng}
+              onChange={(e) => setLng(e.target.value)}
+              placeholder="Longitude"
+              required/>
+            </div>
+            <div className='price-input-div'>
+              <input 
+                className='new-price-input'
+                type="number" 
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                step="50"
+                min="0"
+                max="1000"
+                required/>
+                <span className="price-floating-label">Price</span>
+                <span className="night-floating-label">per night</span>
+            </div>
           </div>
-
+          
+          <div className='new-checkboxes'>
+            <div className='wifi-checkbox'>
+              <label htmlFor="wifi-checkbox">Wifi</label>
+              <input 
+              id='wifi-checkbox'
+              type="checkbox" 
+              onChange={()=>setWifi(!wifi)}/>
+            </div>
+            <div className='parking-checkbox'>
+              <label htmlFor="parking-checkbox">Parking</label>
+              <input 
+              id='parking-checkbox'
+              type="checkbox" 
+              onChange={()=>setParking(!parking)}/>
+            </div>
+            <div className='kitchen-checkbox'>
+              <label htmlFor="kitchen-checkbox">Kitchen</label>
+              <input 
+              id='kitchen-checkbox'
+              type="checkbox" 
+              onChange={()=>setKitchen(!kitchen)}/>
+            </div>
+            <div className='workspace-checkbox'>
+              <label htmlFor="workspace-checkbox">Dedicated workspace</label>
+              <input 
+              id='workspace-checkbox'
+              type="checkbox" 
+              onChange={()=>setDedicatedWorkspace(!dedicatedWorkspace)}/>
+            </div>
+            <div className='pets-checkbox'>
+              <label htmlFor="pets-checkbox">Pets allowed</label>
+              <input 
+              id='pets-checkbox'
+              type="checkbox" 
+              onChange={()=>setPetsAllowed(!petsAllowed)}/>
+            </div>
+          </div>
           {/* <div className="agree-message">By selecting 
           <span className="bold">  Agree and continue</span>, I agree to Cozybnb's 
           <span className="bold2">Term of Service</span>. 
