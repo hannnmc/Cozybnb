@@ -59,7 +59,7 @@ function LoginDropDown() {
       )}
       {newListingModal && (
         <Modal onClose={() => setNewListingModal(false)}>
-          <NewListingForm setNewListingModal={setNewListingModal}/>
+          <NewListingForm setNewListingModal={setNewListingModal} setShowLoginModal={setShowLoginModal}/>
         </Modal>
       )}
     </>

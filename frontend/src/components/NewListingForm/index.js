@@ -7,7 +7,7 @@ import * as sessionActions from "../../store/session";
 function NewListingForm(props) {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
-  const { setNewListingForm } = props;
+  const { setNewListingForm, setLoginFormModal } = props;
 
   // const sessionUser = useSelector(state => state.session.user);
 
@@ -29,11 +29,13 @@ function NewListingForm(props) {
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
     const [usersId, setUsersId] = useState("");
+    const [country, setCountry] = useState("");
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password) {
-        setErrors([]);
+        setErrors([]);z
         return dispatch(sessionActions.signup({ email, password, birthDate, firstName, lastName }))
             .catch(async (res) => {
             let data;
@@ -50,7 +52,10 @@ function NewListingForm(props) {
         return setErrors(['Please complete the necessary fields.']);
     };
 
-    if (!sessionUser) return <Redirect to="/" />;
+    if (!sessionUser) {
+      setNewListingForm(false);
+      setLoginFormModal(true);  
+    };
 
   return (
     <>
@@ -62,6 +67,7 @@ function NewListingForm(props) {
         <div className="finish-signup">Create a new listing</div>
         <div></div>
       </header>
+
       <div className="signup-div">
         <form onSubmit={handleSubmit}>
           <div className="input-div">

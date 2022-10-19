@@ -31,6 +31,58 @@ export const fetchListing = listingId => async dispatch => {
     return response;
 }
 
+export const createListing = (listing) => async (dispatch) => {
+    const { title,
+        description, 
+        lat, 
+        lng, 
+        price,
+        guests, 
+        bedrooms,
+        beds,
+        baths,
+        address,
+        city,
+        state,
+        country,
+        wifi,
+        propType,
+        parking,
+        kitchen,
+        dedicatedWorkspace,
+        petsAllowed,
+        usersId
+    } = listing;
+    const response = await csrfFetch("/api/listings", {
+        method: "POST",
+        body: JSON.stringify({
+            title,
+            description, 
+            lat, 
+            lng, 
+            price,
+            guests, 
+            bedrooms,
+            beds,
+            baths,
+            address,
+            city,
+            state,
+            country,
+            wifi,
+            propType,
+            parking,
+            kitchen,
+            dedicatedWorkspace,
+            petsAllowed,
+            usersId
+        })
+    });
+    const data = await response.json();
+    dispatch(createListing(data.listing));
+    return response;
+};
+
 function listingsReducer(state = {}, action) {
     switch (action.type) {
       case SET_LISTINGS:
