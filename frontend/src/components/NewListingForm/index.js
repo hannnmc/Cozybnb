@@ -11,11 +11,24 @@ function NewListingForm(props) {
 
   // const sessionUser = useSelector(state => state.session.user);
 
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [birthDate, setBirthDate] = useState("");
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [guests, setGuests] = useState("");
+    const [beds, setBeds] = useState("");
+    const [bedrooms, setBedrooms] = useState("");
+    const [baths, setBaths] = useState("");
+    const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [wifi, setWifi] = useState(false);
+    const [parking, setParking] = useState(false);
+    const [kitchen, setKitchen] = useState(false);
+    const [dedicatedWorkspace, setDedicatedWorkspace] = useState(false);
+    const [petsAllowed, setPetsAllowed] = useState(false);
+    const [propType, setPropType] = useState("");
+    const [lat, setLat] = useState("");
+    const [lng, setLng] = useState("");
+    const [usersId, setUsersId] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,10 +47,10 @@ function NewListingForm(props) {
             else setErrors([res.statusText]);
         });
         }
-        return setErrors(['Confirm Password field must be the same as the Password field']);
+        return setErrors(['Please complete the necessary fields.']);
     };
 
-    // if (sessionUser) return <Redirect to="/" />;
+    if (!sessionUser) return <Redirect to="/" />;
 
   return (
     <>
@@ -46,7 +59,7 @@ function NewListingForm(props) {
         onClick={() => setNewListingForm(false)} className="login-x-button"><span class="material-symbols-outlined">close</span></div>
       <header className="signup-header">
         <div></div>
-        <div className="finish-signup">Finish signing up</div>
+        <div className="finish-signup">Create a new listing</div>
         <div></div>
       </header>
       <div className="signup-div">

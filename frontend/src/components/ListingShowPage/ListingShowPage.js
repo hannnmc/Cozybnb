@@ -34,7 +34,7 @@ function ListingShowPage() {
     // console.log(user);
     
     const user = users[usersId];
-    if (user) console.log(user)
+    // if (user) console.log(user)
     //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
 
   if(user) return (
