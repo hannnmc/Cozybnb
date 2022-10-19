@@ -79,7 +79,7 @@ export const createListing = (listing) => async (dispatch) => {
         })
     });
     const data = await response.json();
-    dispatch(createListing(data.listing));
+    dispatch(addListing(data.listing));
     return response;
 };
 

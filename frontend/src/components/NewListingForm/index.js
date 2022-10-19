@@ -35,7 +35,7 @@ function NewListingForm(props) {
   const [lat, setLat] = useState("");
   const [lng, setLng] = useState("");
   const [usersId, setUsersId] = useState("");
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("United States");
     
 
   const handleSubmit = (e) => {
@@ -152,8 +152,8 @@ function NewListingForm(props) {
                 </select>
               </div>
               <div className='country-input'>
-                <select disabled>
-                  <option disabled value="United States">United States</option>
+                <select disabled defaultValue={country}>
+                  <option value="United States">United States</option>
                 </select>
               </div>
             </div>
@@ -266,7 +266,6 @@ function NewListingForm(props) {
                 type="number" 
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
-                step="50"
                 min="0"
                 max="1000"
                 required/>
@@ -312,19 +311,10 @@ function NewListingForm(props) {
               onChange={()=>setPetsAllowed(!petsAllowed)}/>
             </div>
           </div>
-          {/* <div className="agree-message">By selecting 
-          <span className="bold">  Agree and continue</span>, I agree to Cozybnb's 
-          <span className="bold2">Term of Service</span>. 
-          <a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a>
-           </div> */}
+
           <ul className="error-message">
             {errors.map(error => {
-              if (error.includes('Birth date')) {
-                return <li key={error}>{error.slice(11)}</li> 
-              } else {
                 return <li key={error}>{error}</li> 
-              }
             })}
           </ul>
           <button id='new-listing-button' type="submit">Create</button>

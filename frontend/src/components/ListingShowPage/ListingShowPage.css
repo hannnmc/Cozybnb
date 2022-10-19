@@ -19,12 +19,6 @@
     flex-direction: column;
 }
 
-.map-section {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* width: 100%; */
-}
-
 .show-map {
     /* width: 86.32%;    */
     height: 480px;
