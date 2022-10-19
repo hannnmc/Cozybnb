@@ -34,7 +34,7 @@ function ListingShowPage() {
     // console.log(user);
     
     const user = users[listingId];
-
+    if (user) console.log(user)
     //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
 
   if(user) return (
@@ -66,14 +66,21 @@ function ListingShowPage() {
         </div>
       </div>
       <section className="listing-details">
-        <h2>Hosted by {`${user.firstName}`}</h2>
-        <span>{`${guests} guests `}</span>
-        <span className='hosted-dot'>·</span>
-        <span>{`${bedrooms} `}{bedrooms > 1 ? 'bedrooms' : 'bedroom'}</span>
-        <span className='hosted-dot'>·</span>
-        <span>{`${beds} `}{beds > 1 ? 'beds' : 'bed'}</span>
-        <span className='hosted-dot'>·</span>
-        <span>{`${baths} `}{baths > 1 ? 'baths' : 'bath'}</span>
+        <div className='listing-detail-header'>
+            <div className='listing-detail-specs'>
+                <h2>Hosted by {`${user.firstName}`}</h2>
+                <span>{`${guests} guests `}</span>
+                <span className='hosted-dot'>·</span>
+                <span>{`${bedrooms} `}{bedrooms > 1 ? 'bedrooms' : 'bedroom'}</span>
+                <span className='hosted-dot'>·</span>
+                <span>{`${beds} `}{beds > 1 ? 'beds' : 'bed'}</span>
+                <span className='hosted-dot'>·</span>
+                <span>{`${baths} `}{baths > 1 ? 'baths' : 'bath'}</span>
+            </div>
+            <div className='listing-detail-avatar'>
+            <img className='owner-avatar' src={user.photoUrl} alt="avatar" />
+            </div>
+        </div>
 
         <div className='showpage-divider'></div>
         <div className='listing-features'>
@@ -81,9 +88,7 @@ function ListingShowPage() {
             <span>A common area with wifi that’s well-suited for working.</span>
         </div>
         <div className='showpage-divider'></div>
-        <p>
-          {description}
-        </p>
+        <p> {description} </p>
 
         </section>
             <div className='showpage-divider'></div>

@@ -16,12 +16,12 @@ json.extract! listing,
   :wifi
   
 if listing.photo.attached?
-  json.photoUrl listing.photo.url
+  json.photo_url listing.photo.url
   # json.photoUrl "https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg"
   # json.photoUrl @user.photo.url
 
 else
-  json.photoUrl "/listing_placeholder.png" 
+  json.photo_url "/listing_placeholder.png" 
 end
     
 # json.photoUrl "https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg" 
