@@ -155,14 +155,16 @@
 }
 
 
-.listing-detail-header h2 {
+.listing-detail-specs h2 {
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
-.listing-detail-specs {
-    font-size: 16.4px;
+.listing-detail-specs span {
+    font-size: 16.8px;
+    font-family: circular-light;
+    letter-spacing: 0.2px;
 }
 
 .hosted-dot {
@@ -175,12 +177,6 @@
     border-radius: 50%;
 }
 
-.listing-details h2 {
-
-}
-
-.listing-details span {
-}
 .listing-features span:first-child{
     font-weight: 500;
 }
