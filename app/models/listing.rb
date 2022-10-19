@@ -23,6 +23,8 @@
 #  users_id            :bigint           not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  country             :string           not null
+#  prop_type           :string           not null
 #
 class Listing < ApplicationRecord
 
