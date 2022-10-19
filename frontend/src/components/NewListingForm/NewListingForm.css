@@ -11,10 +11,14 @@
     /* padding-left: 0; */
 }
 
-.listing-specs .birthdate-input {
+.listing-specs input {
     padding-left: 0;
     padding-right: 0;
     text-align: center;
+}
+.country-input {
+    margin-right: -1px;
+    border-right: 1px solid #BABABA;
 }
 
 .new-dropdown {
@@ -25,13 +29,17 @@
 }
 
 .new-dropdown select {
-    font-size: 15px;
+    font-size: 17px;
     height: 100%;
     color: rgb(113, 113, 113);
     width: 100%;
     text-align: center;
-    border: 1px solid #BABABA;
+    border-left: 1px solid #BABABA;
+    border-top: 1px solid #BABABA;
+    border-bottom: 1px solid #BABABA;
+    border-right: none;
 }
+
 .new-dropdown input {
     font-size: 15px;
     height: 100%;
@@ -43,4 +51,221 @@
     width: 30%;
 }
 
+.address-input {
+    font-size: 16px;
+    border-radius: 0 0 8px 8px;
+    color: rgb(113, 113, 113);
+    width: 100%;
+    height: 46px;
+    border: 1px solid #bababa;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-left: 11px;
+    border-top: none;
+}
 
+.address-input::placeholder{
+    color: transparent;
+}
+.address-input:focus {
+    outline-color: black;
+}
+.address-input:focus::placeholder{
+    color: #717171f9;
+}
+input:focus ~ .address-floating-label,
+input:not(:focus):valid ~ .address-floating-label{
+  top: 213px;
+  bottom: 10px;
+  left: 37px;
+  font-size: 11px;
+  opacity: 1;
+}
+.address-floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 37px;
+  top: 223px;
+  color: #717171;
+  transition: 0.2s ease all;
+  font-size: 18px;
+  font-weight: 350;
+}
+
+.guests-input {
+    display: flex;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 8px;
+    color: rgb(113, 113, 113);
+    width: 100%;
+    height: 46px;
+    border: 1px solid #bababa;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    padding-left: 11px;
+    padding-top: 10px;
+}
+
+.guests-input::placeholder{
+    color: transparent;
+}
+.guests-input:focus {
+    outline-color: black;
+}
+.guests-input:focus::placeholder{
+    color: #717171f9;
+}
+input:focus ~ .guests-floating-label,
+input:not(:focus):valid ~ .guests-floating-label{
+  top: 285px;
+  bottom: 10px;
+  left: 37px;
+  font-size: 11px;
+  opacity: 1;
+}
+.guests-floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 55px;
+  top: 295px;
+  color: #717171;
+  transition: 0.2s ease all;
+  font-size: 18px;
+  font-weight: 350;
+}
+
+.bedrooms-input {
+    display: flex;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 8px;
+    color: rgb(113, 113, 113);
+    width: 100%;
+    height: 46px;
+    border: 1px solid #bababa;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    padding-left: 11px;
+    padding-top: 10px;
+}
+
+.bedrooms-input::placeholder{
+    color: transparent;
+}
+.bedrooms-input:focus {
+    outline-color: black;
+}
+.bedrooms-input:focus::placeholder{
+    color: #717171f9;
+}
+input:focus ~ .bedrooms-floating-label,
+input:not(:focus):valid ~ .bedrooms-floating-label{
+  top: 285px;
+  bottom: 10px;
+  left: 167px;
+  font-size: 11px;
+  opacity: 1;
+}
+.bedrooms-floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 177px;
+  top: 295px;
+  color: #717171;
+  transition: 0.2s ease all;
+  font-size: 18px;
+  font-weight: 350;
+}
+
+.beds-input {
+    display: flex;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 8px;
+    color: rgb(113, 113, 113);
+    width: 100%;
+    height: 46px;
+    border: 1px solid #bababa;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    padding-left: 11px;
+    padding-top: 10px;
+}
+
+.beds-input::placeholder{
+    color: transparent;
+}
+.beds-input:focus {
+    outline-color: black;
+}
+.beds-input:focus::placeholder{
+    color: #717171f9;
+}
+input:focus ~ .beds-floating-label,
+input:not(:focus):valid ~ .beds-floating-label{
+  top: 285px;
+  bottom: 10px;
+  left: 308px;
+  font-size: 11px;
+  opacity: 1;
+}
+.beds-floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 332px;
+  top: 295px;
+  color: #717171;
+  transition: 0.2s ease all;
+  font-size: 18px;
+  font-weight: 350;
+}
+
+.bathrooms-input {
+    display: flex;
+    margin-top: 20px;
+    font-size: 15px;
+    border-radius: 8px;
+    color: rgb(113, 113, 113);
+    width: 100%;
+    height: 46px;
+    border: 1px solid #bababa;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    padding-left: 11px;
+    padding-top: 10px;
+}
+
+.bathrooms-input::placeholder{
+    color: transparent;
+}
+.bathrooms-input:focus {
+    outline-color: black;
+}
+.bathrooms-input:focus::placeholder{
+    color: #717171f9;
+}
+input:focus ~ .bathrooms-floating-label,
+input:not(:focus):valid ~ .bathrooms-floating-label{
+  top: 285px;
+  bottom: 10px;
+  left: 434px;
+  font-size: 11px;
+  opacity: 1;
+}
+.bathrooms-floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 443px;
+  top: 295px;
+  color: #717171;
+  transition: 0.2s ease all;
+  font-size: 18px;
+  font-weight: 350;
+}
+
+
+#new-listing-button {
+    margin-top: 100px;
+}

@@ -120,16 +120,16 @@ function NewListingForm(props) {
                 onChange={(e) => setCity(e.target.value)}
                 required>
                   <option disabled='true' selected='true' value="">City</option>
-                  <option value="New York City">Astoria</option>
-                  <option value="New York City">Bushwick</option>
-                  <option value="New York City">Flushing</option>
-                  <option value="New York City">Fort Lee</option>
-                  <option value="New York City">Long Island City</option>
-                  <option value="New York City">Los Angeles</option>
+                  <option value="Astoria">Astoria</option>
+                  <option value="Bushwick">Bushwick</option>
+                  <option value="Flushing">Flushing</option>
+                  <option value="Fort Lee">Fort Lee</option>
+                  <option value="Long Island City">Long Island City</option>
+                  <option value="Los Angeles">Los Angeles</option>
                   <option value="New York City">New York City</option>
-                  <option value="New York City">San Diego</option>
-                  <option value="New York City">San Francisco</option>
-                  <option value="New York City">Seattle</option>
+                  <option value="San Diego">San Diego</option>
+                  <option value="San Francisco">San Francisco</option>
+                  <option value="Seattle">Seattle</option>
                 </select>
               </div>
               <div className='state-input'>
@@ -150,7 +150,7 @@ function NewListingForm(props) {
                   <option value="WA">WA</option>
                 </select>
               </div>
-              <div className='Country'>
+              <div className='country-input'>
                 <select disabled='true'>
                   <option selected='true' value="United States">United States</option>
                 </select>
@@ -158,14 +158,14 @@ function NewListingForm(props) {
             </div>
             <div className="input-div">
               <input
-              className="lastname-input"
+              className="address-input"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 required
                 placeholder="Address"
               />
 
-              <span className="ln-floating-label">Property type</span>
+              <span className="address-floating-label">Address</span>
             </div>
           </div>
           
@@ -177,51 +177,47 @@ function NewListingForm(props) {
 
             <div className="input-div">
               <input
-                className="birthdate-input"
+                className="guests-input"
                 type="number"
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
                 required
-                placeholder="Guests"
               />
-              <span className="bd-floating-label">Guests</span>
+              <span className="guests-floating-label">Guests</span>
             </div>
             {/* <div className="birthdate-message">To sign up, you need to be at least 18. Your birthday won't be shared with other people who use Cozybnb. </div> */}
             <div className="input-div">
               <input
-                className="birthdate-input"
+                className="bedrooms-input"
                 type="number"
                 value={bedrooms}
                 onChange={(e) => setBedrooms(e.target.value)}
                 required
-                placeholder="Bedrooms"
               />
-              <span className="signupemail-floating-label">Bedrooms</span>
+              <span className="bedrooms-floating-label">Bedrooms</span>
             </div>
 
             <div className="input-div">
               <input
-                className="birthdate-input"
+                className="beds-input"
                 type="number"
                 value={beds}
                 onChange={(e) => setBeds(e.target.value)}
                 required
-                placeholder="Beds"
               />
-              <span className="signupemail-floating-label">Bedrooms</span>
+              <span className="beds-floating-label">Beds</span>
             </div>
 
             {/* <div className="email-message">We'll email you trip confirmations and receipts.</div> */}
-            <div className="input-div">
+            <div className="bathrooms-div">
               <input
-              className="birthdate-input"
+              className="bathrooms-input"
                 type="number"
                 value={baths}
                 onChange={(e) => setBaths(e.target.value)}
                 required
-                placeholder="Bathrooms"
               />
-              <span className="su-password-floating-label">Bathrooms</span>
+              <span className="bathrooms-floating-label">Bathrooms</span>
             </div>
 
           </div>
@@ -240,7 +236,7 @@ function NewListingForm(props) {
               }
             })}
           </ul>
-          <button type="submit">Create</button>
+          <button id='new-listing-button' type="submit">Create</button>
         </form>
       </div>
       </div>
