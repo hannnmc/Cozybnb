@@ -23,7 +23,7 @@ if listing.photo.attached?
   # json.photoUrl @user.photo.url
 
 else
-  json.photo_url "/listing_placeholder.png" 
+  json.photo_url "https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg" 
 end
 
 

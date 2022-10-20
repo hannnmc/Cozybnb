@@ -30,7 +30,7 @@
 }
 
 .new-dropdown select {
-    font-size: 17px;
+    font-size: 15px;
     height: 100%;
     color: rgb(113, 113, 113);
     width: 100%;
@@ -54,7 +54,7 @@
 }
 
 .address-input {
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 0 0 8px 8px;
     color: rgb(113, 113, 113);
     width: 100%;
@@ -91,7 +91,7 @@ input:not(:focus):valid ~ .address-floating-label{
   top: 223px;
   color: rgb(113, 113, 113);
   transition: 0.2s ease all;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 350;
 }
 
@@ -130,11 +130,11 @@ input:not(:focus):valid ~ .guests-floating-label{
 .guests-floating-label {
   position: absolute;
   pointer-events: none;
-  left: 55px;
+  left: 61px;
   top: 295px;
   color: rgb(113, 113, 113);
   transition: 0.2s ease all;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 350;
 }
 
@@ -173,11 +173,11 @@ input:not(:focus):valid ~ .bedrooms-floating-label{
 .bedrooms-floating-label {
   position: absolute;
   pointer-events: none;
-  left: 177px;
+  left: 183px;
   top: 295px;
   color: rgb(113, 113, 113);
   transition: 0.2s ease all;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 350;
 }
 
@@ -209,18 +209,18 @@ input:focus ~ .beds-floating-label,
 input:not(:focus):valid ~ .beds-floating-label{
   top: 285px;
   bottom: 10px;
-  left: 305px;
+  left: 304px;
   font-size: 11px;
   opacity: 1;
 }
 .beds-floating-label {
   position: absolute;
   pointer-events: none;
-  left: 332px;
+  left: 335px;
   top: 295px;
   color: rgb(113, 113, 113);
   transition: 0.2s ease all;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 350;
 }
 
@@ -259,11 +259,11 @@ input:not(:focus):valid ~ .bathrooms-floating-label{
 .bathrooms-floating-label {
   position: absolute;
   pointer-events: none;
-  left: 443px;
+  left: 450px;
   top: 295px;
   color: rgb(113, 113, 113);
   transition: 0.2s ease all;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 350;
 }
 
@@ -282,37 +282,41 @@ input:not(:focus):valid ~ .bathrooms-floating-label{
     padding-top: 10px;
 }
 
-.new-price-input::placeholder{
-    color: transparent;
-}
+
 .new-price-input:focus {
     outline-color: #222222;
 }
-.new-price-input:focus::placeholder{
+.new-price-input::placeholder {
     color: rgb(113, 113, 113);
+}
+.new-price-input:focus::placeholder{
+    color: transparent;
 }
 input:focus ~ .price-floating-label,
 input:not(:focus):valid ~ .price-floating-label{
-  top: 483px;
+  top: 481px;
   bottom: 10px;
-  left: 330px;
+  left: 360px;
   font-size: 17px;
   opacity: 1;
+  color: rgb(113, 113, 113);
 }
 .price-floating-label {
   position: absolute;
   pointer-events: none;
   left: 390px;
-  top: 484px;
-  color: rgb(113, 113, 113);
+  top: 481px;
+  color: transparent;
   transition: 0.2s ease all;
   font-size: 17px;
   font-weight: 350;
+
 }
+
 
 input:focus ~ .night-floating-label,
 input:not(:focus):valid ~ .night-floating-label{
-  top: 483px;
+  top: 481px;
   bottom: 10px;
   left: 440px;
   font-size: 17px;
@@ -323,7 +327,7 @@ input:not(:focus):valid ~ .night-floating-label{
   position: absolute;
   pointer-events: none;
   left: 390px;
-  top: 484px;
+  top: 481px;
   color: transparent;
   transition: 0.2s ease all;
   font-size: 17px;

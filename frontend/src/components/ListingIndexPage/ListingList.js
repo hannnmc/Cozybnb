@@ -6,8 +6,8 @@ import { useEffect } from "react";
 
 function ListingList({ listings, minPrice, maxPrice, bounds, selectedListing, setSelectedListing }) {
 
-  const { fetchListings } = listingActions;
-  const dispatch = useDispatch();
+  // const { fetchListings } = listingActions;
+  // const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch(fetchListings())

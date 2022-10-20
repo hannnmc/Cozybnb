@@ -123,8 +123,7 @@ function ListingShowPage() {
                     mapOptions={{ 
                     center: { lat: listing.lat, lng: listing.lng }, 
                     zoom: 17, 
-                    mapId: "49aa6f67e21bd8eb",
-                    gestureHandling: "none"
+                    mapId: "49aa6f67e21bd8eb"
                     }}
                 />
             </div>
