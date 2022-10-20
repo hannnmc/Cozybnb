@@ -21,7 +21,7 @@
     /* margin: 5px; */
     aspect-ratio: 1053/1000;
     /* padding: 5px; */
-    min-width: 225px;
+    min-width: 50px;
     max-width: 414px;
     margin-bottom: 30px;
 }
@@ -49,7 +49,7 @@
     justify-content: space-evenly;
     align-self: flex-start;
     width: 50vw;
-    min-width: 300px;
+    min-width: 50px;
     flex-wrap: wrap;
     max-width: 720px;
 }
@@ -214,12 +214,6 @@
         position: absolute;
         width: 100%;
         left: 721px;
-    }
-}
-
-@media (max-width: 950px) {
-    .listing-box {
-        width: 43%;
     }
 }
 
