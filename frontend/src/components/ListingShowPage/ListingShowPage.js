@@ -7,6 +7,7 @@ import { fetchListing } from '../../store/listings';
 import { fetchUsers } from '../../store/users';
 // import { destroyReview, getListingReviews } from '../../store/reviews';
 import './ListingShowPage.css';
+import listing1photo1 from '../../assets/images/listing1/photo1.jpg'
 
 function ListingShowPage() {
     const dispatch = useDispatch();
@@ -27,7 +28,7 @@ function ListingShowPage() {
         return null;
     }
     
-    const { usersId, description, beds, bedrooms, baths, guests, propType, lat, lng, averageRating, photoUrl } = listing;
+    const { usersId, description, beds, bedrooms, baths, guests, propType, lat, lng, averageRating, photoUrls } = listing;
 
     // console.log(listingId);
     // const user = users.listingId;
@@ -54,15 +55,15 @@ function ListingShowPage() {
       </div>
       <div className="listing-show-visuals">
         <div className='first-col-photo'>
-            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image-main"/>}
+        {photoUrls && <img src={photoUrls[0]} alt='loading...' className="listing-show-image main"/>}
         </div>
         <div className='second-col-photos'>
-            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image"/>}
-            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image"/>}
+            {photoUrls && <img src={photoUrls[1]} alt='loading...' className="listing-show-image"/>}
+            {photoUrls && <img src={photoUrls[2]} alt='loading...' className="listing-show-image"/>}
         </div>
         <div className='third-col-photos'>
-            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image"/>}
-            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image"/>}
+            {photoUrls && <img src={photoUrls[3]} alt='loading...' className="listing-show-image"/>}
+            {photoUrls && <img src={photoUrls[4]} alt='loading...' className="listing-show-image"/>}
         </div>
       </div>
       <section className="listing-details">

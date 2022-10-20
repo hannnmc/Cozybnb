@@ -43,7 +43,7 @@ const ProfilePage = () => {
             <div>
                 <h1>Hi, I'm {`${ user.firstName }`}</h1>
                 <div>Joined in {`${user.createdAt.slice(0,4)}`}</div>
-                <div onClick={openEditProfile}>Edit Profile</div>
+                <div className='edit-profile-button' onClick={openEditProfile}>Edit Profile</div>
                 {showProfileEditForm && (
                     <>
                         <ProfileEditForm setShowProfileEditForm={setShowProfileEditForm}/>

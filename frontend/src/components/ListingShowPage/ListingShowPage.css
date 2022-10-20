@@ -90,6 +90,14 @@
     aspect-ratio: 1;
 }
 
+.listing-show-visuals .main {
+    height: 100%;
+    width: 97.8%;
+    object-fit: cover;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
 .listing-show-header {
     width: 100%;
     max-width: 1120px;
@@ -191,27 +199,6 @@
     }
 }
 
-
-
-/* @media (min-width: 940px) {
-    .listing-show {
-        width: 89%;
-    }
+#github-help {
+    font-weight: 400;
 }
-
-@media (max-width: 987px) {
-    .listing-show {
-        width: 89%;
-    }
-} */
-
-/* @media (max-width: 1127px) {
-    .show-map{
-        width: 90.5%;
-    }
-} */
-/* @media (max-width: 1127px) {
-    .listing-show-header{
-        width: 90.5%;
-    }
-} */

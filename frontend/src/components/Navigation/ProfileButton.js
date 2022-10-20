@@ -52,13 +52,13 @@ function ProfileButton({ user }) {
           <li ><a className="linkin-tag" href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li className="dropdown-divider"></li>
           <li onClick={()=> setNewListingModal(true)}>Host your home</li>
-          <li>Host an experience</li>
+          {/* <li>Host an experience</li> */}
           <NavLink className="profile-link" exact to="/profile">
             <li id="profile-link">Profile</li>
           </NavLink>
           
           <li className="dropdown-divider"></li>
-          <li>Help</li>
+          <a  href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer"><li id='github-help'>Help</li></a> 
           <li  onClick={logout}>
             <button className="logout-button" onClick={logout}>Log Out</button>
           </li>

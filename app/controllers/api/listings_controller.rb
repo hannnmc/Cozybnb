@@ -52,7 +52,7 @@ class Api::ListingsController < ApplicationController
             :pets_allowed,
             :kitchen,
             :parking,
-            :photo
+            :photos
         )
     end
     
