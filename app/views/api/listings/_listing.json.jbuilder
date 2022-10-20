@@ -25,5 +25,6 @@ if listing.photo.attached?
 else
   json.photo_url "/listing_placeholder.png" 
 end
-    
+
+
 # json.photoUrl "https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg" 
