@@ -31,6 +31,58 @@ export const fetchListing = listingId => async dispatch => {
     return response;
 }
 
+export const createListing = (listing) => async (dispatch) => {
+    const { title,
+        description, 
+        lat, 
+        lng, 
+        price,
+        guests, 
+        bedrooms,
+        beds,
+        baths,
+        address,
+        city,
+        state,
+        country,
+        wifi,
+        propType,
+        parking,
+        kitchen,
+        dedicatedWorkspace,
+        petsAllowed,
+        usersId
+    } = listing;
+    const response = await csrfFetch("/api/listings", {
+        method: "POST",
+        body: JSON.stringify({
+            title,
+            description, 
+            lat, 
+            lng, 
+            price,
+            guests, 
+            bedrooms,
+            beds,
+            baths,
+            address,
+            city,
+            state,
+            country,
+            wifi,
+            propType,
+            parking,
+            kitchen,
+            dedicatedWorkspace,
+            petsAllowed,
+            usersId
+        })
+    });
+    const data = await response.json();
+    dispatch(addListing(data.listing));
+    return response;
+};
+
 function listingsReducer(state = {}, action) {
     switch (action.type) {
       case SET_LISTINGS:
@@ -44,3 +96,26 @@ function listingsReducer(state = {}, action) {
 }
 
 export default listingsReducer;
+
+
+
+//         title:'dasffadsf',
+//         description:'dsfsdf',
+//         lat:44,
+//         lng:33,
+//         price:333,
+//         guests:2,
+//         bedrooms:2,
+//         beds:2,
+//         baths:2,
+//         address:'2323232',
+//         city:'sdfds',
+//         state:'dsfd',
+//         country:'sdfsd',
+//         wifi:true,
+//         propType:'Entire home',
+//         parking:true,
+//         kitchen:true,
+//         dedicatedWorkspace:true,
+//         petsAllowed:true,
+//         usersId:2
