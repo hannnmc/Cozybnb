@@ -1,5 +1,5 @@
 class Api::ListingsController < ApplicationController
-    wrap_parameters include: User.attribute_names + [:photo, :dedicated_workspace, :prop_type, :users_id, ], format: :multipart_form
+    wrap_parameters include: Listing.attribute_names + ["photo", "dedicatedWorkspace", "propType", "usersId", "petsAllowed" ]
 
     def index
         @listings = Listing.all
@@ -15,7 +15,7 @@ class Api::ListingsController < ApplicationController
 
     def create
         @listing = Listing.new(listing_params)
-
+        @listing.users_id = current_user.id
         if @listing.save
             render :show
         else 
@@ -39,10 +39,8 @@ class Api::ListingsController < ApplicationController
             :lng, 
             :price,
             :guests, 
-            :bedrooms,
             :beds,
             :bedrooms,
-            :beds,
             :baths,
             :address,
             :city,
@@ -50,6 +48,10 @@ class Api::ListingsController < ApplicationController
             :country,
             :wifi,
             :prop_type,
+            :dedicated_workspace,
+            :pets_allowed,
+            :kitchen,
+            :parking,
             :photo
         )
     end

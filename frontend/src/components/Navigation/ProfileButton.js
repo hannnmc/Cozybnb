@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import * as sessionActions from '../../store/session';
-
+import { Modal } from "../../context/Modal";
+import NewListingForm from '../NewListingForm';
 
 
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-
+  const [newListingModal, setNewListingModal] = useState(false); 
 
   const toggleMenu = () => {
     setShowMenu(open => !open);
@@ -39,13 +40,18 @@ function ProfileButton({ user }) {
         <img className="profile-avatar" src={user.photoUrl} alt=""/>
 
       </button>
+      {newListingModal && (
+        <Modal onClose={() => setNewListingModal(false)}>
+          <NewListingForm setNewListingModal={setNewListingModal} />
+        </Modal>
+      )}
       {showMenu && (
         <ul className="profile-dropdown">
           <li className="dropdown-email">{user.email}</li>
           <li><a className="linkin-tag" href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a></li>
           <li ><a className="linkin-tag" href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li className="dropdown-divider"></li>
-          <li>Host your home</li>
+          <li onClick={()=> setNewListingModal(true)}>Host your home</li>
           <li>Host an experience</li>
           <NavLink className="profile-link" exact to="/profile">
             <li id="profile-link">Profile</li>

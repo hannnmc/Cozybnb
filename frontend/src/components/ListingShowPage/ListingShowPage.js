@@ -34,7 +34,7 @@ function ListingShowPage() {
     // console.log(user);
     
     const user = users[usersId];
-    if (user) console.log(user)
+    // if (user) console.log(user)
     //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
 
   if(user) return (
@@ -54,15 +54,15 @@ function ListingShowPage() {
       </div>
       <div className="listing-show-visuals">
         <div className='first-col-photo'>
-            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image-main"/>}
+            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image-main"/>}
         </div>
         <div className='second-col-photos'>
-            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image"/>}
-            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image"/>}
         </div>
         <div className='third-col-photos'>
-            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image"/>}
-            {photoUrl && <img src={photoUrl} alt='Loading...' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image"/>}
+            {photoUrl && <img src={photoUrl} alt='loading...' className="listing-show-image"/>}
         </div>
       </div>
       <section className="listing-details">

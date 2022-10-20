@@ -23,6 +23,8 @@
 #  users_id            :bigint           not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  country             :string           not null
+#  prop_type           :string           not null
 #
 class Listing < ApplicationRecord
 
@@ -36,9 +38,9 @@ class Listing < ApplicationRecord
     validates :bedrooms, inclusion: {in: 1..8, message: "Number of bedrooms must be between 1 to 8"}
     validates :beds, inclusion: {in: 1..12, message: "Number of beds must be between 1 to 12"}
     validates :baths, inclusion: {in: 1..5, message: "Number of bathrooms must be between 1 to 5"}
-    validates :prop_type, inclusion: {in: ['Entire home', 'Part of place', 'Tree house', 'Apartment', 'Loft']}
+    validates :prop_type, inclusion: {in: ['Entire home', 'Partial space', 'Tree house', 'Apartment', 'Loft']}
 
-    validates :title, :description, :lat, :lng, :price, :guests, :prop_type, :bedrooms, :beds, :bedrooms, :beds, :baths, :address, :city, :state, presence: true
+    validates :title, :description, :lat, :lng, :price, :guests, :prop_type, :beds, :bedrooms, :beds, :baths, :address, :city, :state, :country, presence: true
 
     def self.in_bounds(bounds)
         lower_lat, lower_lng, upper_lat, upper_lng = bounds

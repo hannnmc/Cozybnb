@@ -95,7 +95,7 @@ header .header-login {
     color: transparent;
 }
 .email-input:focus {
-    outline-color: black;
+    outline-color: #222222;
     border-bottom: 1px solid black;
 }
 .email-input:focus::placeholder{
@@ -120,7 +120,7 @@ header .header-login {
     color: transparent;
 }
 .ps-input:focus {
-    outline-color: black;
+    outline-color: #222222;
 }
 .ps-input:focus::placeholder{
     color: #717171f9;

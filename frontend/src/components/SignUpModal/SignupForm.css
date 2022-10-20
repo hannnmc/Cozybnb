@@ -90,7 +90,7 @@ span.bold2 {
     color: transparent;
 }
 .firstname-input:focus {
-    outline-color: black;
+    outline-color: #222222;
     border-bottom: 1px solid black;
     height: 42px;
 }
@@ -115,7 +115,7 @@ span.bold2 {
     color: transparent;
 }
 .lastname-input:focus {
-    outline-color: black;
+    outline-color: #222222;
 }
 .lastname-input:focus::placeholder{
     color: #717171f9;
@@ -140,7 +140,7 @@ span.bold2 {
     color: transparent;
 }
 .birthdate-input:focus {
-    outline-color: black;
+    outline-color: #222222;
 }
 .birthdate-input:focus::placeholder{
     color: #717171f9;

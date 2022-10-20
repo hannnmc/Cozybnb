@@ -59,9 +59,9 @@ function FilterForm({ listings, minPrice, maxPrice, setMinPrice, setMaxPrice }) 
                                 <div className="range-input">
                                     <input className="range-max"
                                     type="range"  
-                                    min="100" max="1000" 
+                                    min="0" max="1000" 
                                     value={maxPrice} 
-                                    step="any" 
+                                    step="10" 
                                     onChange={e => setMaxPrice(parseValue(e.target.value))} />
                                 </div>
                             </div>
