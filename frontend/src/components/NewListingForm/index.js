@@ -8,13 +8,13 @@ function NewListingForm(props) {
 
   
   const dispatch = useDispatch();
-  const { setNewListingForm, setLoginFormModal } = props;
+  const { setNewListingModal } = props;
   const sessionUser = useSelector(state => state.session.user);
   if (!sessionUser) {
     // setNewListingForm(false);
     // setLoginFormModal(open => true);  
   };
-  
+
   const [errors, setErrors] = useState([]);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState('');
@@ -41,6 +41,7 @@ function NewListingForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+    setNewListingModal(false);
     return dispatch(listingActions.createListing({
       title,
       description, 
@@ -80,10 +81,10 @@ function NewListingForm(props) {
     <>
       <div className="signup-modal">
         <div 
-        onClick={() => setNewListingForm(false)} className="login-x-button"><span className="material-symbols-outlined">close</span></div>
+        onClick={() => setNewListingModal(false)} className="login-x-button"><span className="material-symbols-outlined">close</span></div>
       <header className="signup-header">
         <div></div>
-        <div className="finish-signup">Finish signing up</div>
+        <div className="finish-signup">Create a new listing</div>
         <div></div>
       </header>
 
@@ -98,7 +99,7 @@ function NewListingForm(props) {
               onChange={(e) => setTitle(e.target.value)}
               required
             />
-            <span className="fn-floating-label">Title</span>
+            <span className="fn-floating-label new-listing-title">Title</span>
           </div>
           <div>
             <div className='new-dropdown'>
@@ -247,6 +248,8 @@ function NewListingForm(props) {
             <div className='coord-input-div'>
               <input 
               className='lat-input'
+              min="-90"
+              max="90"
               type="number" 
               value={lat}
               onChange={(e) => setLat(e.target.value)}
@@ -254,6 +257,8 @@ function NewListingForm(props) {
               required/>
               <input 
               className='lng-input'
+              min="-180"
+              max="180"
               type="number" 
               value={lng}
               onChange={(e) => setLng(e.target.value)}
@@ -268,8 +273,9 @@ function NewListingForm(props) {
                 onChange={(e) => setPrice(e.target.value)}
                 min="0"
                 max="1000"
+                placeholder='Price'
                 required/>
-                <span className="price-floating-label">Price</span>
+                <span className="price-floating-label">$</span>
                 <span className="night-floating-label">per night</span>
             </div>
           </div>

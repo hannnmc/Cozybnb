@@ -8,6 +8,11 @@
     justify-self: center;
 }
 
+.new-listing-title {
+    font-size: 15px;
+    margin-top: 2px;
+}
+
 .body {
     overflow: hidden;
     display: flex;

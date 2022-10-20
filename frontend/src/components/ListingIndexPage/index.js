@@ -28,8 +28,8 @@ function ListingIndexPage() {
   },[]);
 
   useEffect(() => {
-    setListingsArray(listings.filter(listing => listing.price > minPrice && listing.price < maxPrice))
-  }, [minPrice, maxPrice, bounds]);
+    setListingsArray(listings.filter(listing => listing.price >= minPrice && listing.price <= maxPrice))
+  }, [minPrice, maxPrice, Object.keys(listings).length, bounds]);
 
   // useEffect(() => {
   //   if (minGuests && maxGuests && bounds) {
