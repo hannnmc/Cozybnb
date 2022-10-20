@@ -319,3 +319,33 @@ input:not(:focus):valid ~ .ps-floating-label{
     padding: 0;
     cursor: pointer;
 }
+
+@media (max-width: 570px) {
+    .login-modal {
+        width: 100%;
+    }
+}
+
+@media (max-width: 570px) {
+    #modal-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 570px) {
+    .email-input {
+        padding-left: 0;
+        text-indent: 1.75em;
+    }
+}
+@media (max-width: 570px) {
+    .ps-input {
+        padding-left: 0;
+        text-indent: 1.75em;
+    }
+}
+@media (max-width: 570px) {
+    .demo-buttons>div {
+        width: 76%;
+    }
+}
