@@ -17,8 +17,8 @@ json.extract! listing,
   :users_id,
   :wifi
   
-if listing.photo.attached?
-  json.photo_url listing.photo.url
+if listing.photos.attached?
+  json.photo_url listing.photos.first.url
   # json.photoUrl "https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg"
   # json.photoUrl @user.photo.url
 

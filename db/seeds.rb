@@ -72,7 +72,7 @@ ApplicationRecord.transaction do
       prop_type: 'Loft',
       pets_allowed: true,
       users_id: 1,
-      lat: 40.76732546060237
+      lat: 40.76732546060237,
       lng: -73.968918005597
     })
 
@@ -94,8 +94,8 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type:'Entire home',
       pets_allowed: true,
-      users_id: 1,
-      lat: 40.773506142037114
+      users_id: 5,
+      lat: 40.773506142037114,
       lng: -73.96588646726212
     })
 
@@ -117,7 +117,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: false,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
+      users_id: 6,
       lat: 41.6450129,
       lng: -73.7742898
     })
@@ -140,7 +140,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
+      users_id: 6,
       lat: 41.7737011,
       lng: -74.3093264
     })
@@ -163,7 +163,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
+      users_id: 8,
       lat: 42.212258,
       lng: -74.2346391
     })
@@ -186,7 +186,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 10,
+      users_id: 5,
       lat: 40.7558606730357,
       lng: -74.00159449170306
     })
@@ -211,7 +211,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
+      users_id: 7,
       lat: 40.76646487964552, 
       lng: -73.96690756454522
     })
@@ -234,7 +234,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
+      users_id: 7,
       lat: 41.7134011,
       lng: -74.3092264
     })
@@ -257,7 +257,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
+      users_id: 6,
       lat: 40.7591212,
       lng: -74.0043361
     })
@@ -280,7 +280,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
+      users_id: 5,
       lat: 42.1981401,
       lng: -73.5000085
     })
@@ -303,7 +303,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 2,
+      users_id: 7,
       lat: 41.5209172,
       lng: -74.2457012
     })
@@ -313,7 +313,7 @@ ApplicationRecord.transaction do
       description: "Unique experience, secluded.
       Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometric masterpiece on 30 preserved acres just minutes from all that Rhinebeck and the Hudson Valley have to offer.
       The house is an open plan, and though it has zero bedrooms, it can sleep 3!",
-      price: Faker::Number.within(range: 100..600),
+      price: Faker::Number.within(range: 300..500),
       guests: 4,
       bedrooms: 1,
       beds: 2,
@@ -328,7 +328,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 16,
+      users_id: 1,
       lat: 41.924556784593946,
       lng: -73.90491596080538
     })
@@ -339,16 +339,16 @@ ApplicationRecord.transaction do
     # listing1 = Listing.first
 
     user1.photo.purge
-    listing1.photo.purge
-    listing2.photo.purge
-    listing3.photo.purge
-    listing4.photo.purge
-    listing5.photo.purge
-    listing6.photo.purge
-    listing7.photo.purge
-    listing8.photo.purge
-    listing9.photo.purge
-    listing10.photo.purge
+    listing1.photos.purge
+    listing2.photos.purge
+    listing3.photos.purge
+    listing4.photos.purge
+    listing5.photos.purge
+    listing6.photos.purge
+    listing7.photos.purge
+    listing8.photos.purge
+    listing9.photos.purge
+    listing10.photos.purge
 
     user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg")
     user1.photo.attach(io: user1_photo, filename:"profile_icon.jpg")
@@ -361,51 +361,51 @@ ApplicationRecord.transaction do
     # user1.save!
 
     listing1_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing1.photo.attach(io: listing1_photo1, filename:"photo1.jpg")
+    listing1.photos.attach(io: listing1_photo1, filename:"photo1.jpg")
     listing1.save!
 
     listing2_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing2.photo.attach(io: listing2_photo1, filename:"photo1.jpg")
+    listing2.photos.attach(io: listing2_photo1, filename:"photo1.jpg")
     listing2.save!
 
     listing3_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing3.photo.attach(io: listing3_photo1, filename:"photo1.jpg")
+    listing3.photos.attach(io: listing3_photo1, filename:"photo1.jpg")
     listing3.save!
 
     listing4_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing4.photo.attach(io: listing4_photo1, filename:"photo1.jpg")
+    listing4.photos.attach(io: listing4_photo1, filename:"photo1.jpg")
     listing4.save!
     
     listing5_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing5.photo.attach(io: listing5_photo1, filename:"photo1.jpg")
+    listing5.photos.attach(io: listing5_photo1, filename:"photo1.jpg")
     listing6.save!
 
     listing6_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing6.photo.attach(io: listing6_photo1, filename:"photo1.jpg")
+    listing6.photos.attach(io: listing6_photo1, filename:"photo1.jpg")
     listing6.save!
 
     listing7_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing7.photo.attach(io: listing7_photo1, filename:"photo1.jpg")
+    listing7.photos.attach(io: listing7_photo1, filename:"photo1.jpg")
     listing7.save!
 
     listing8_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing8.photo.attach(io: listing8_photo1, filename:"photo1.jpg")
+    listing8.photos.attach(io: listing8_photo1, filename:"photo1.jpg")
     listing8.save!
 
     listing9_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing9.photo.attach(io: listing9_photo1, filename:"photo1.jpg")
+    listing9.photos.attach(io: listing9_photo1, filename:"photo1.jpg")
     listing9.save!
     
     listing10_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing10.photo.attach(io: listing10_photo1, filename:"photo1.jpg")
+    listing10.photos.attach(io: listing10_photo1, filename:"photo1.jpg")
     listing10.save!
 
     listing11_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing11.photo.attach(io: listing11_photo1, filename:"photo1.jpg")
+    listing11.photos.attach(io: listing11_photo1, filename:"photo1.jpg")
     listing11.save!
 
     listing12_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing12.photo.attach(io: listing12_photo1, filename:"photo1.jpg")
+    listing12.photos.attach(io: listing12_photo1, filename:"photo1.jpg")
     listing12.save!
 
     puts "Done!"
