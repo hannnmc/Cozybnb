@@ -86,4 +86,5 @@ Rails.application.configure do
 
 
   config.active_storage.service = :amazon_prod
+  config.active_storage.replace_on_assign_to_many = false
 end

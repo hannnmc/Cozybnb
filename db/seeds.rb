@@ -1,5 +1,5 @@
+require "open-uri"
 ApplicationRecord.transaction do 
-
     puts "Destroying tables..."
 
     User.destroy_all
@@ -54,7 +54,7 @@ ApplicationRecord.transaction do
 
     puts "Creating listings..."
     
-    listing1 = Listing.create!({
+    listing1 = Listing.create({
       title: "Time Square Manhattan Luxury Loft",
       description: "Have fun with the whole family at this stylish place.  Two bedroom 2 bathroom,  fully stock kitchen, washer and dryer.  Walk to Time Square, Central Park and Madison Square Garden and many more.  The best shopping and dinning in the city.",
       price: Faker::Number.within(range: 300..600),
@@ -241,16 +241,16 @@ ApplicationRecord.transaction do
     })
 
     listing9 = Listing.create!({
-      title: 'Starlight Moonshine Roof Top',
-      description: "King Room with Rooftop Views in Luxury Building",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '1 East Rd.',
+      title: 'Classic Townhouse on Millionaire\'s Row',
+      description: "Bring the whole family to this huge 3 story private townhouse with lots of room for fun. Features a commercial grade Arcade, expansive dining room and bar.  Minutes from Central Park, The Metropolitan and Guggenheim Museums",
+      price: Faker::Number.within(range: 600..1000),
+      guests: 8,
+      bedrooms: 3,
+      beds: 4,
+      baths: 2,
+      address: '65 Miller St.',
       city: 'Manhattan',
-      state: 'New York',
+      state: 'NY',
       country: 'United States',
       wifi: true,
       parking: false,
@@ -259,54 +259,54 @@ ApplicationRecord.transaction do
       prop_type: 'Entire home',
       pets_allowed: true,
       users_id: 6,
-      lat: 40.7591212,
-      lng: -74.0043361
+      lat: 40.79325173439996,
+      lng: -73.97320465661757
     })
 
     listing10 = Listing.create!({
-      title: 'Enchanted Tiny Tower nestled in the Berkshires',
-      description: "Whimsical and romantic tower on the Santarella Estate in the heart of the Berkshires. Live out your own fairytale in this two-story unique, tiny home. First floor offers 3 rooms in one with kitchenette, sitting area, and dining room looking out on to the babbling brook. Upper bedchamber with canopied bed provides amazing views of sky and trees through massive, mill windows. Perfect destination for a relaxing getaway or special stay while exploring all the Berkshires has to offer.",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '1 Berkshires Rd.',
-      city: 'Berkshires',
-      state: 'New York',
+      title: 'Central Park Panoramic View - World Class Service',
+      description: "This 2 bedroom, 2.5 bath luxury condo is perfect for high end travelers, short and long-term renters who are looking for accommodations in the Upper West Side, Midtown, Theater District, or Lincoln Center areas of Manhattan. The central location of our unit is perfect for exploring all that New York has to offer. The condo location is in Trump International Hotel & Tower and guest of ours will have full access to all the hotel's amenities.",
+      price: Faker::Number.within(range: 850..1000),
+      guests: 6,
+      bedrooms: 2,
+      beds: 3,
+      baths: 3,
+      address: '65 Miller St.',
+      city: 'Manhattan',
+      state: 'NY',
       country: 'United States',
-      wifi: false,
-      parking: true,
+      wifi: true,
+      parking: false,
       kitchen: true,
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 5,
-      lat: 42.1981401,
-      lng: -73.5000085
+      users_id: 1,
+      lat: 40.79325173439996,
+      lng: -73.97320465661757
     })
 
     listing11 = Listing.create!({
-      title: 'The Step by 128 Cabin Co.',
-      description: "Reconnect with nature at this unforgettable escape. Located in the Hudson Valley, The Step is a little piece of paradise built on 78 acre's of operating farm land just stone through from the River. It is an off the grid 'glamping' experience equipped with the luxury of a queen size memory foam mattress for a good nights sleep. The Step is a secluded get away where you can explore our farm land, show off your scrabble skills, gaze at the stars, and be woken up by the sun through your windows.",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '2 Montgomery Rd.',
-      city: 'Montgomery',
-      state: 'New York',
+      title: 'Spacious Penthouse With Great Skyline view',
+      description: "Welcome to this Morden luxury Loft, The whole group will be comfortable in this spacious unique space. For small gatherings contact me so we can go over pricing",
+      price: Faker::Number.within(range: 400..600),
+      guests: 10,
+      bedrooms: 2,
+      beds: 2,
+      baths: 2,
+      address: '22 Belmont Rd.',
+      city: 'East Orange',
+      state: 'NJ',
       country: 'United States',
-      wifi: false,
+      wifi: true,
       parking: true,
       kitchen: true,
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
       users_id: 7,
-      lat: 41.5209172,
-      lng: -74.2457012
+      lat: 40.76308748165343,
+      lng: -74.17333254874063
     })
 
     listing12 = Listing.create!({
@@ -340,103 +340,193 @@ ApplicationRecord.transaction do
     # listing1 = Listing.first
 
     user1.photo.purge
-    listing1.photos.purge
-    listing2.photos.purge
-    listing3.photos.purge
-    listing4.photos.purge
-    listing5.photos.purge
-    listing6.photos.purge
-    listing7.photos.purge
-    listing8.photos.purge
-    listing9.photos.purge
-    listing10.photos.purge
-
+    # listing1.photos.purge
+    # listing2.photos.purge
+    # listing3.photos.purge
+    # listing4.photos.purge
+    # listing5.photos.purge
+    # listing6.photos.purge
+    # listing7.photos.purge
+    # listing8.photos.purge
+    # listing9.photos.purge
+    # listing10.photos.purge
+    # listing11.photos.purge
+    # listing12.photos.purge
+    
     user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg")
     user1.photo.attach(io: user1_photo, filename:"profile_icon.jpg")
-    user1.save!
 
-    listing1_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing1.photos.attach(io: listing1_photo1, filename:"photo1.jpg")
-    listing1.save!
 
-    listing1_photo2 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo2.webp")
-    listing1.photos.attach(io: listing1_photo2, filename:"photo2.webp")
-    listing1.save!
+    l1p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing1/photo1.jpg")
+    l1p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing1/photo2.webp")
+    l1p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing1/photo3.webp")
+    l1p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing1/photo4.webp")
+    l1p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing1/photo5.webp")
 
-    listing1_photo3 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo3.webp")
-    listing1.photos.attach(io: listing1_photo3, filename:"photo3.webp")
-    listing1.save!
+    listing1.photos.attach(
+      [io: l1p1, filename:"photo1"],
+      [io: l1p2, filename:"photo2"],
+      [io: l1p3, filename:"photo3"],
+      [io: l1p4, filename:"photo4"],
+      [io: l1p5, filename:"photo5"]
+    )
 
-    listing1_photo4 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo4.webp")
-    listing1.photos.attach(io: listing1_photo4, filename:"photo4.webp")
-    listing1.save!
+    l2p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing2/photo1.jpg")
+    l2p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing2/photo2.webp")
+    l2p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing2/photo3.webp")
+    l2p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing2/photo4.webp")
+    l2p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing2/photo5.webp")
 
-    listing1_photo5 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo5.webp")
-    listing1.photos.attach(io: listing1_photo5, filename:"photo5.webp")
-    listing1.save!
+    listing2.photos.attach(
+      [io: l2p1, filename:"photo1"],
+      [io: l2p2, filename:"photo2"],
+      [io: l2p3, filename:"photo3"],
+      [io: l2p4, filename:"photo4"],
+      [io: l2p5, filename:"photo5"]
+    )
+    l3p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing3/photo1.jpg")
+    l3p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing3/photo2.webp")
+    l3p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing3/photo3.webp")
+    l3p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing3/photo4.webp")
+    l3p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing3/photo5.webp")
 
-    listing2_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo1.jpg")
-    listing2.photos.attach(io: listing2_photo1, filename:"photo1.jpg")
-    listing2.save!
+    listing3.photos.attach(
+      [io: l3p1, filename:"photo1"],
+      [io: l3p2, filename:"photo2"],
+      [io: l3p3, filename:"photo3"],
+      [io: l3p4, filename:"photo4"],
+      [io: l3p5, filename:"photo5"]
+    )
+    l4p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing4/photo1.jpg")
+    l4p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing4/photo2.webp")
+    l4p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing4/photo3.webp")
+    l4p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing4/photo4.webp")
+    l4p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing4/photo5.webp")
 
-    listing2_photo2 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo2.webp")
-    listing2.photos.attach(io: listing2_photo2, filename:"photo2.webp")
-    listing2.save!
+    listing4.photos.attach(
+      [io: l4p1, filename:"photo1"],
+      [io: l4p2, filename:"photo2"],
+      [io: l4p3, filename:"photo3"],
+      [io: l4p4, filename:"photo4"],
+      [io: l4p5, filename:"photo5"]
+    )
+    l5p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing5/photo1.jpg")
+    l5p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing5/photo2.webp")
+    l5p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing5/photo3.webp")
+    l5p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing5/photo4.webp")
+    l5p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing5/photo5.webp")
 
-    listing2_photo3 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo3.webp")
-    listing2.photos.attach(io: listing2_photo3, filename:"photo3.webp")
-    listing2.save!
+    listing5.photos.attach(
+      [io: l5p1, filename:"photo1"],
+      [io: l5p2, filename:"photo2"],
+      [io: l5p3, filename:"photo3"],
+      [io: l5p4, filename:"photo4"],
+      [io: l5p5, filename:"photo5"]
+    )
+    l6p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing6/photo1.jpg")
+    l6p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing6/photo2.webp")
+    l6p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing6/photo3.webp")
+    l6p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing6/photo4.webp")
+    l6p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing6/photo5.webp")
 
-    listing2_photo4 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo4.webp")
-    listing2.photos.attach(io: listing2_photo4, filename:"photo4.webp")
-    listing2.save!
+    listing6.photos.attach(
+      [io: l6p1, filename:"photo1"],
+      [io: l6p2, filename:"photo2"],
+      [io: l6p3, filename:"photo3"],
+      [io: l6p4, filename:"photo4"],
+      [io: l6p5, filename:"photo5"]
+    )
+    l7p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing7/photo1.jpg")
+    l7p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing7/photo2.webp")
+    l7p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing7/photo3.webp")
+    l7p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing7/photo4.webp")
+    l7p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing7/photo5.webp")
 
-    listing2_photo5 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo5.webp")
-    listing2.photos.attach(io: listing2_photo5, filename:"photo5.webp")
-    listing2.save!
+    listing7.photos.attach(
+      [io: l7p1, filename:"photo1"],
+      [io: l7p2, filename:"photo2"],
+      [io: l7p3, filename:"photo3"],
+      [io: l7p4, filename:"photo4"],
+      [io: l7p5, filename:"photo5"]
+    )
+    l8p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing8/photo1.jpg")
+    l8p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing8/photo2.webp")
+    l8p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing8/photo3.webp")
+    l8p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing8/photo4.webp")
+    l8p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing8/photo5.webp")
 
-    listing3_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing3.photos.attach(io: listing3_photo1, filename:"photo1.jpg")
-    listing3.save!
+    listing8.photos.attach(
+      [io: l8p1, filename:"photo1"],
+      [io: l8p2, filename:"photo2"],
+      [io: l8p3, filename:"photo3"],
+      [io: l8p4, filename:"photo4"],
+      [io: l8p5, filename:"photo5"]
+    )
+    l9p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing9/photo1.jpg")
+    l9p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing9/photo2.webp")
+    l9p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing9/photo3.webp")
+    l9p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing9/photo4.webp")
+    l9p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing9/photo5.webp")
 
-    listing4_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing4.photos.attach(io: listing4_photo1, filename:"photo1.jpg")
-    listing4.save!
+    listing9.photos.attach(
+      [io: l9p1, filename:"photo1"],
+      [io: l9p2, filename:"photo2"],
+      [io: l9p3, filename:"photo3"],
+      [io: l9p4, filename:"photo4"],
+      [io: l9p5, filename:"photo5"]
+    )
+    l10p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing10/photo1.jpg")
+    l10p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing10/photo2.webp")
+    l10p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing10/photo3.webp")
+    l10p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing10/photo4.webp")
+    l10p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing10/photo5.webp")
+
+    listing10.photos.attach(
+      [io: l10p1, filename:"photo1"],
+      [io: l10p2, filename:"photo2"],
+      [io: l10p3, filename:"photo3"],
+      [io: l10p4, filename:"photo4"],
+      [io: l10p5, filename:"photo5"]
+    )
+    l11p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing11/photo1.jpg")
+    l11p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing11/photo2.webp")
+    l11p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing11/photo3.webp")
+    l11p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing11/photo4.webp")
+    l11p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing11/photo5.webp")
+
+    listing11.photos.attach(
+      [io: l11p1, filename:"photo1"],
+      [io: l11p2, filename:"photo2"],
+      [io: l11p3, filename:"photo3"],
+      [io: l11p4, filename:"photo4"],
+      [io: l11p5, filename:"photo5"]
+    )
+    l12p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing12/photo1.jpg")
+    l12p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing12/photo2.webp")
+    l12p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing12/photo3.webp")
+    l12p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing12/photo4.webp")
+    l12p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing12/photo5.webp")
+
+    listing12.photos.attach(
+      [io: l12p1, filename:"photo1"],
+      [io: l12p2, filename:"photo2"],
+      [io: l12p3, filename:"photo3"],
+      [io: l12p4, filename:"photo4"],
+      [io: l12p5, filename:"photo5"]
+    )
+    # listing1.photos.attach(io: l1p1, filename:"photo1.jpg")
     
-    listing5_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing5.photos.attach(io: listing5_photo1, filename:"photo1.jpg")
-    listing6.save!
-
-    listing6_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing6.photos.attach(io: listing6_photo1, filename:"photo1.jpg")
-    listing6.save!
-
-    listing7_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing7.photos.attach(io: listing7_photo1, filename:"photo1.jpg")
-    listing7.save!
-
-    listing8_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing8.photos.attach(io: listing8_photo1, filename:"photo1.jpg")
-    listing8.save!
-
-    listing9_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing9.photos.attach(io: listing9_photo1, filename:"photo1.jpg")
-    listing9.save!
+    # listing1.photos.attach(io: l1p2, filename:"photo2.webp")
     
-    listing10_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing10.photos.attach(io: listing10_photo1, filename:"photo1.jpg")
-    listing10.save!
-
-    listing11_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing11.photos.attach(io: listing11_photo1, filename:"photo1.jpg")
-    listing11.save!
-
-    listing12_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
-    listing12.photos.attach(io: listing12_photo1, filename:"photo1.jpg")
-    listing12.save!
-
+    # listing1.photos.attach(io: l1p3, filename:"photo3.webp")
+    
+    # listing1.photos.attach(io: l1p4, filename:"photo4.webp")
+    
+    # listing1.photos.attach(io: l1p5, filename:"photo5.webp")
+    
+    listing1.save
     puts "Done!"
-end
+  end
 
 # user1.photo.attach(
 #   io: URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg"),

@@ -4,6 +4,11 @@
     flex-direction: row-reverse;
     overflow-y: scroll;
     height: calc(100vh - 81px);
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .listing-list-container {
@@ -296,8 +301,9 @@
     .list-index-map-container {
         width: 100%;
         display: inline-block;
-        position: initial;
+        position: sticky;
         /* left:initial; */
+        top: 0px;
     }
 }
 

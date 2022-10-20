@@ -70,8 +70,8 @@ GEM
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
     aws-eventstream (1.2.0)
-    aws-partitions (1.645.0)
-    aws-sdk-core (3.160.0)
+    aws-partitions (1.649.0)
+    aws-sdk-core (3.163.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.525.0)
       aws-sigv4 (~> 1.1)
@@ -79,7 +79,7 @@ GEM
     aws-sdk-kms (1.58.0)
       aws-sdk-core (~> 3, >= 3.127.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.114.0)
+    aws-sdk-s3 (1.115.0)
       aws-sdk-core (~> 3, >= 3.127.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.4)
@@ -130,11 +130,9 @@ GEM
     net-smtp (0.3.2)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.8-arm64-darwin)
+    nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
-    nokogiri (1.13.8-x86_64-linux)
-      racc (~> 1.4)
-    pg (1.4.3)
+    pg (1.4.4)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -185,7 +183,6 @@ GEM
     zeitwerk (2.6.1)
 
 PLATFORMS
-  arm64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
