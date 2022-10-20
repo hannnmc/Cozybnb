@@ -69,6 +69,8 @@ input[type="number"]::-webkit-inner-spin-button {
 .range-input{
   position: relative;
   width: 100%;
+  margin-top: 12px;
+  margin-left: 7px;
 }
 /* width: 100%; */
 

@@ -102,15 +102,15 @@ ApplicationRecord.transaction do
 
     listing3 = Listing.create!({
       title: 'Moon View Yurt - Sleep Under the Moon and Stars!',
-      description: "A simple yurt with a custom clear ceiling for a full view of the vast open skies. Gaze upon the stunning starry nights and fall asleep under the moonlight. Experience the peace and tranquility on top of a hill in the middle of an open field surrounded by wild flowers and nature's bounty in complete privacy.",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: 'Central Plains Circle 8',
-      city: 'Lagrangeville',
-      state: 'New York',
+      description: "One of the best views of the city if not the best view of the city.  A newer luxury condo in the heart of the city.  Enjoyed everything the city has to offer,   Broadway plays walk to with in mins,  Madison Square Garden, Center Park,  high end shopping of 5th Ave and the best restaurant in the world unless you feel like a $1.00 slice of pizza Manhattan has that for you to.  Perfect home away from home for you and the family.",
+      price: Faker::Number.within(range: 500..900),
+      guests: 5,
+      bedrooms: 2,
+      beds: 2,
+      baths: 2,
+      address: '12 Broadway st.',
+      city: 'Manhattan',
+      state: 'NY',
       country: 'United States',
       wifi: true,
       parking: true,
@@ -119,21 +119,25 @@ ApplicationRecord.transaction do
       prop_type: 'Entire home',
       pets_allowed: true,
       users_id: 6,
-      lat: 41.6450129,
-      lng: -73.7742898
+      lat: 40.721525397897885,
+      lng: -73.99980873460277
     })
 
     listing4 = Listing.create!({
-      title: 'Cozy & Sustainable Catskills Cabin',
-      description: "The Black A-frame is a two bed two bath 1961 cabin set on a private road in the heart of the Catskills in Kerhonkson, NY. It was named the \"Coolest A-frame in NY\" by the New York Post in 2020. Relax in the open dinning room with original wood ceilings and beams and enjoy a home cooked meal made in the renovated chef's kitchen, or walk outdoors to soak in the magic of the Catskills through the endless wooded views from the back yard!",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '100 South East Rd.',
-      city: 'Kerhonkson',
-      state: 'New York',
+      title: 'Warm Contemporary Penthouse with Rooftop',
+      description: "Meet Casa Caeli by Cocoon Flex Spaces.
+
+      Casa Caeli is a quiet haven in the heart of Greenpoint, Brooklyn.
+      Our bestseller 3,000 square-foot penthouse loft offers an open layout on two floors, an abundance of natural light, unbeatable views of the Brooklyn and Manhattan Skyline, and possesses a bright and warm character with high-quality finishes that exude an elevated elegance.
+      ",
+      price: Faker::Number.within(range: 300..700),
+      guests: 16,
+      bedrooms: 3,
+      beds: 3,
+      baths: 3,
+      address: '100 Dumbo St.',
+      city: 'Dumbo',
+      state: 'NY',
       country: 'United States',
       wifi: true,
       parking: true,
@@ -142,31 +146,31 @@ ApplicationRecord.transaction do
       prop_type: 'Entire home',
       pets_allowed: true,
       users_id: 6,
-      lat: 41.7737011,
-      lng: -74.3093264
+      lat: 40.70376570566167, 
+      lng: -73.9897054035584
     })
 
-    listing5 =Listing.create!({
-      title: 'Owl Bear Cabin at Stone Mountain Farm',
-      description: "Owl Bear cabin is nestled in a forest glen on Stone Mountain Farm. Miles of hiking trails, flower filled fields, cliffs, ponds, streams and a mini Stone Henge are all a stones throw away. A diverse valley, one mile long and half a mile wide, there's plenty of privacy but lots of room for adventure- At any time you may discover a group of children building fairy houses, stumble upon a flying trapeze or Tai Chi Class class, or wander into the Rail Trail cafe for music under the trees.",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '99 Bombard St.',
-      city: 'Hunter',
-      state: 'New York',
+    listing5 = Listing.create({
+      title: "Time Square Manhattan Luxury Loft",
+      description: "Have fun with the whole family at this stylish place.  Two bedroom 2 bathroom,  fully stock kitchen, washer and dryer.  Walk to Time Square, Central Park and Madison Square Garden and many more.  The best shopping and dinning in the city.",
+      price: Faker::Number.within(range: 300..600),
+      guests: 4,
+      bedrooms: 2,
+      beds: 2,
+      baths: 2,
+      address: '5 Madison Ave.',
+      city: 'Manhattan',
+      state: 'NY',
       country: 'United States',
       wifi: true,
       parking: true,
       kitchen: true,
       dedicated_workspace: true,
-      prop_type: 'Entire home',
+      prop_type: 'Loft',
       pets_allowed: true,
-      users_id: 8,
-      lat: 42.212258,
-      lng: -74.2346391
+      users_id: 1,
+      lat: 40.76732546060237,
+      lng: -73.968918005597
     })
 
     listing6 = Listing.create!({
@@ -213,21 +217,26 @@ ApplicationRecord.transaction do
       prop_type: 'Entire home',
       pets_allowed: true,
       users_id: 7,
-      lat: 40.76646487964552, 
-      lng: -73.96690756454522
+      lat: 40.75060397737184, 
+      lng: -73.9784142135405
     })
 
     listing8 = Listing.create!({
-      title: 'Cozy & Sustainable Catskills Cabin',
-      description: "The Black B-frame is a two bed two bath 1961 cabin set on a private road in the heart of the Catskills in Kerhonkson, NY. It was named the \"Coolest B-frame in NY\" by the New York Post in 2020. Relax in the open dinning room with original wood ceilings and beams and enjoy a home cooked meal made in the renovated chef's kitchen, or walk outdoors to soak in the magic of the Catskills through the endless wooded views from the back yard!",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '163 West Rd.',
-      city: 'Kerhonkson',
-      state: 'New York',
+      title: 'Pink Paradise Pavilion: NYC Most Insta-Worthy Spot',
+      description: "The Pink Paradise is the ultimate home for luxury and relaxation.
+
+      Perfect For:
+      Intimate Social Gatherings, Birthdays, Intimate Weddings, PR Events, Showrooms, Cocktails, Corporate Meetings & Photo/Film Shoots.
+      
+      The Pink Paradise is a luxury within reach for people who know quality and want to indulge themselves in a beautiful space they deserve.",
+      price: Faker::Number.within(range: 400..600),
+      guests: 16,
+      bedrooms: 2,
+      beds: 10,
+      baths: 2,
+      address: '163 58th st.',
+      city: 'Astoria',
+      state: 'NY',
       country: 'United States',
       wifi: true,
       parking: true,
@@ -236,8 +245,8 @@ ApplicationRecord.transaction do
       prop_type: 'Entire home',
       pets_allowed: true,
       users_id: 7,
-      lat: 41.7134011,
-      lng: -74.3092264
+      lat: 40.77141356013632, 
+      lng: -73.93364049975207
     })
 
     listing9 = Listing.create!({
