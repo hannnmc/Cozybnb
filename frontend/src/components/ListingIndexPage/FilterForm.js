@@ -17,6 +17,8 @@ function FilterForm({ listings, minPrice, maxPrice, setMinPrice, setMaxPrice }) 
       <div className="filter-fields">
 
         <div className="wrapper">
+            <div className='mobile-overlap'></div>
+            <div className='filter-form-knob'>_______</div>
             <div className='filter-top'>
                 <div className='filter-button' onClick={toggleFilter}>
                     <button>
