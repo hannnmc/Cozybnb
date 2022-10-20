@@ -5,7 +5,7 @@ function ListItem({ listing, isHighlighted, setSelectedListing }) {
   // console.log(listing)
   const { title, photoUrls, price, averageRating } = listing;
   const history = useHistory(); 
-  // console.log(photoUrls)
+  console.log(photoUrls)
 
   return (
     <div

@@ -18,12 +18,12 @@ json.extract! listing,
   :wifi
   
 if listing.photos.attached?
-  json.photo_urls listing.photos.map { |photo| photo.url }
+  json.photo_urls listing.photos.map { |photo| photo.url} 
   # json.photoUrl "https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg"
   # json.photoUrl @user.photo.url
 
-# else
-#   json.photo_urls listing.photos.map { |photo| "https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg"  } 
+else
+  json.photo_urls listing.photos.map { |photo| "https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg"  } 
 end
 
 
