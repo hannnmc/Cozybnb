@@ -28,7 +28,7 @@
 #
 class Listing < ApplicationRecord
 
-    has_one_attached :photo
+    has_many_attached :photo
 
     belongs_to :users,
     class_name: "User"

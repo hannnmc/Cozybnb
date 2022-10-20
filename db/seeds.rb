@@ -52,51 +52,51 @@ ApplicationRecord.transaction do
     end
 
     puts "Creating listings..."
-
+    
     listing1 = Listing.create!({
-      title: 'Beeboobap House',
-      description: "You know who we are.",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '1 Worldpeace Rd..',
-      city: 'Forest Hills',
-      state: 'New York',
-      country: 'United States',
-      wifi: true,
-      parking: true,
-      kitchen: false,
-      dedicated_workspace: false,
-      prop_type:'Entire home',
-      pets_allowed: true,
-      users_id: 1,
-      lat: 40.7222749,
-      lng: -73.8528222
-    })
-
-    listing2 = Listing.create!({
-      title: "Tiny Cabin at Pocono Mountains",
-      description: "Welcome to Spice Tiny Cabin;2bedroom/1 bathroom natural home filled with wood, earth palette colors& boho vibes. We are located in the heart of Pocono Mountains in quiet neighborhood close to all attraction: skiing, hiking, kayaking, waterfalls, waterparks.The cabin is perfect gateway from busy city life.Best suited for couples.If you are homebody its perfect for you, relax in front of fireplace or at the cozy loft or venture out to explore the Pocono Mountains.",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '144 F Rd.',
-      city: 'Poconos',
-      state: 'New York',
+      title: "Time Square Manhattan Luxury Loft",
+      description: "Have fun with the whole family at this stylish place.  Two bedroom 2 bathroom,  fully stock kitchen, washer and dryer.  Walk to Time Square, Central Park and Madison Square Garden and many more.  The best shopping and dinning in the city.",
+      price: Faker::Number.within(range: 300..600),
+      guests: 4,
+      bedrooms: 2,
+      beds: 2,
+      baths: 2,
+      address: '5 Madison Ave.',
+      city: 'Manhattan',
+      state: 'NY',
       country: 'United States',
       wifi: true,
       parking: true,
       kitchen: true,
       dedicated_workspace: true,
-      prop_type: 'Entire home',
+      prop_type: 'Loft',
       pets_allowed: true,
       users_id: 1,
-      lat: 41.106501,
-      lng: -75.712232
+      lat: 40.76732546060237
+      lng: -73.968918005597
+    })
+
+    listing2 = Listing.create!({
+      title: '3 BD Manhattan High Life',
+      description: "Living the life of luxury in Manhattan Penthouse, with the best views of the city.",
+      price: Faker::Number.within(range: 500..800),
+      guests: 6,
+      bedrooms: 3,
+      beds: 4,
+      baths: 2,
+      address: '1 Park Ave',
+      city: 'Manhattan',
+      state: 'NY',
+      country: 'United States',
+      wifi: true,
+      parking: false,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type:'Entire home',
+      pets_allowed: true,
+      users_id: 1,
+      lat: 40.773506142037114
+      lng: -73.96588646726212
     })
 
     listing3 = Listing.create!({
@@ -169,49 +169,51 @@ ApplicationRecord.transaction do
     })
 
     listing6 = Listing.create!({
-      title: 'Spacious cabin with full amenities',
-      description: "Its a secluded cabin and we kept it small and pristine for a reason. We also just planted cherry trees and apple tree...We kept it pristine so one can feel nature. And we dont have internet or Tv there otherwize it would be like being in the city. Get a feel for what it is like to be in a cabin in the woods. There is a whole flourishing ecosystem there with family of rabits, foxes, humming birds, bees, butterflies and birds. We are planting a garden so in the future you can pick some veggies.",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '55 Cherry Rd.',
-      city: 'Poconos',
-      state: 'New York',
+      title: 'Hudson Yards 2BR Luxury Views',
+      description: "Georgeous apartment unit with modern styling.  Great views of the city and gets plenty of sunlight all year round.",
+      price: 525,
+      guests: 4,
+      bedrooms: 2,
+      beds: 2,
+      baths: 2,
+      address: '199 Hudson Blvd.',
+      city: 'Manhattan',
+      state: 'NY',
       country: 'United States',
       wifi: true,
-      parking: true,
+      parking: false,
       kitchen: true,
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
-      lat: 41.1226801,
-      lng: -75.732132
+      users_id: 10,
+      lat: 40.7558606730357,
+      lng: -74.00159449170306
     })
 
     listing7 = Listing.create!({
-      title: 'Tiny house on the Esopus creek',
-      description: "Our Tiny house is your own private, cozy adventure steps from your private access to our dock where you can explore the Esopus creek. Kayaks are available for your use or try out the fishing for some trout. Enjoy the fire pit outside your tiny home or choose to lounge in the hot tub which is available at anytime during your stay. We hope you will enjoy the charming and rustic feel of this unique home.",
-      price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
-      address: '163 North Rd.',
-      city: 'Scarsdale',
-      state: 'New York',
+      title: 'Park Avenue Quintessential 4BD/4BATH',
+      description: "The Triplex on Park is part of a historic landmark building that personifies Park Avenue's poise, elegance & spirit.
+
+      Our story began in 2016 when our building, built in 1910, embarked on a complete renovation to further enrich our hosting experience in NY.",
+      price: Faker::Number.within(range: 700..1000),
+      guests: 8,
+      bedrooms: 4,
+      beds: 4,
+      baths: 4,
+      address: '5 Park Ave',
+      city: 'Manhattan',
+      state: 'NY',
       country: 'United States',
       wifi: true,
-      parking: true,
+      parking: false,
       kitchen: true,
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
       users_id: 1,
-      lat: 40.9893461,
-      lng: -73.7950325
+      lat: 40.76646487964552, 
+      lng: -73.96690756454522
     })
 
     listing8 = Listing.create!({
@@ -312,23 +314,23 @@ ApplicationRecord.transaction do
       Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometric masterpiece on 30 preserved acres just minutes from all that Rhinebeck and the Hudson Valley have to offer.
       The house is an open plan, and though it has zero bedrooms, it can sleep 3!",
       price: Faker::Number.within(range: 100..600),
-      guests: Faker::Number.within(range:1..8),
-      bedrooms: Faker::Number.within(range:1..4),
-      beds: Faker::Number.within(range:1..6),
-      baths: Faker::Number.within(range:1..3),
+      guests: 4,
+      bedrooms: 1,
+      beds: 2,
+      baths: 2,
       address: '3 Rhino Dr.',
       city: 'Rhinebeck',
-      state: 'New York',
+      state: 'NY',
       country: 'United States',
-      wifi: false,
+      wifi: true,
       parking: true,
-      kitchen: true,
+      kitchen: false,
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
-      lat: 41.9270535,
-      lng: -73.9647959
+      users_id: 16,
+      lat: 41.924556784593946,
+      lng: -73.90491596080538
     })
 
     puts "Attaching photos..."
