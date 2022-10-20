@@ -1,4 +1,5 @@
 ApplicationRecord.transaction do 
+
     puts "Destroying tables..."
 
     User.destroy_all
@@ -41,7 +42,7 @@ ApplicationRecord.transaction do
     )
 
   
-    10.times do 
+    4.times do 
       User.create!({
         email: Faker::Internet.unique.email,
         password: 'password',
@@ -354,18 +355,44 @@ ApplicationRecord.transaction do
     user1.photo.attach(io: user1_photo, filename:"profile_icon.jpg")
     user1.save!
 
-    # user1.photo.attach(
-    #   io: URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg"),
-    #   filename: "profile_icon.jpg"
-    # )
-    # user1.save!
-
     listing1_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
     listing1.photos.attach(io: listing1_photo1, filename:"photo1.jpg")
     listing1.save!
 
-    listing2_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")
+    listing1_photo2 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo2.webp")
+    listing1.photos.attach(io: listing1_photo2, filename:"photo2.webp")
+    listing1.save!
+
+    listing1_photo3 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo3.webp")
+    listing1.photos.attach(io: listing1_photo3, filename:"photo3.webp")
+    listing1.save!
+
+    listing1_photo4 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo4.webp")
+    listing1.photos.attach(io: listing1_photo4, filename:"photo4.webp")
+    listing1.save!
+
+    listing1_photo5 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo5.webp")
+    listing1.photos.attach(io: listing1_photo5, filename:"photo5.webp")
+    listing1.save!
+
+    listing2_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo1.jpg")
     listing2.photos.attach(io: listing2_photo1, filename:"photo1.jpg")
+    listing2.save!
+
+    listing2_photo2 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo2.webp")
+    listing2.photos.attach(io: listing2_photo2, filename:"photo2.webp")
+    listing2.save!
+
+    listing2_photo3 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo3.webp")
+    listing2.photos.attach(io: listing2_photo3, filename:"photo3.webp")
+    listing2.save!
+
+    listing2_photo4 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo4.webp")
+    listing2.photos.attach(io: listing2_photo4, filename:"photo4.webp")
+    listing2.save!
+
+    listing2_photo5 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing2/photo5.webp")
+    listing2.photos.attach(io: listing2_photo5, filename:"photo5.webp")
     listing2.save!
 
     listing3_photo1 = URI.open("https://thecozybnb-dev.s3.amazonaws.com/listing1/photo1.jpg")

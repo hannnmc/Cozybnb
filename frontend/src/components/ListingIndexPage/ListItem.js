@@ -2,8 +2,10 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 function ListItem({ listing, isHighlighted, setSelectedListing }) {
-  const { title, photoUrl, price, averageRating } = listing;
+  // console.log(listing)
+  const { title, photoUrls, price, averageRating } = listing;
   const history = useHistory(); 
+  // console.log(photoUrls)
 
   return (
     <div
@@ -13,7 +15,7 @@ function ListItem({ listing, isHighlighted, setSelectedListing }) {
       onMouseLeave={() => setSelectedListing(null)}
     >
       <div className="list-item-info">
-      {photoUrl && ( <div className="listing-image-box"> <img className="listing-image" src={photoUrl} alt='loading...'/></div> )}
+      {photoUrls && ( <div className="listing-image-box"> <img className="listing-image" src={photoUrls[0]} alt='loading...'/></div> )}
 
       <div className="text-info-box">
         <h2  className="list-item-copy">{title}</h2>
