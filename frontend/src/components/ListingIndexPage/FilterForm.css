@@ -41,10 +41,7 @@
   text-align: center;
   border: 1px solid #999;
 }
-/* input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-} */
+
 ::selection{
     color: #fff;
     background: #13b1c9;
@@ -72,7 +69,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-top: 12px;
   margin-left: 7px;
 }
-/* width: 100%; */
+
 
 .range-max {
   margin: 0 0 0 0;
@@ -81,14 +78,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 .range-input input{
-  /* position: absolute; */
   height: 5px;
   top: -5px;
   background: none;
-  /* pointer-events: none; */
   -webkit-appearance: none;
   -moz-appearance: none;
-  /* background: #13b1c9; */
   background-color: #DDDDDD;
   border-radius: 5px;
   z-index: -5;
@@ -119,7 +113,6 @@ input[type="range"]::-moz-range-thumb{
 }
 
 body {
-  /* overflow: hidden; */
   scrollbar-gutter: stable;
 
 }

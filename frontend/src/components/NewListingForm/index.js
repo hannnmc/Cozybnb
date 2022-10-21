@@ -76,7 +76,7 @@ function NewListingForm(props) {
       else setErrors([res.statusText]);
       });
   };
-  // console.log(wifi,parking, kitchen,dedicatedWorkspace,petsAllowed)
+
   return (
     <>
       <div className="signup-modal">
@@ -172,7 +172,6 @@ function NewListingForm(props) {
             </div>
           </div>
           
-          {/* <div className="matchname-message">Make sure it matches the name on your government ID.</div> */}
           <div className="error-message">
           </div>
 
@@ -190,7 +189,7 @@ function NewListingForm(props) {
               />
               <span className="guests-floating-label">Guests</span>
             </div>
-            {/* <div className="birthdate-message">To sign up, you need to be at least 18. Your birthday won't be shared with other people who use Cozybnb. </div> */}
+
             <div className="input-div">
               <input
                 className="bedrooms-input"
@@ -217,7 +216,6 @@ function NewListingForm(props) {
               <span className="beds-floating-label">Beds</span>
             </div>
 
-            {/* <div className="email-message">We'll email you trip confirmations and receipts.</div> */}
             <div className="bathrooms-div">
               <input
                 className="bathrooms-input"
@@ -323,6 +321,12 @@ function NewListingForm(props) {
                 return <li key={error}>{error}</li> 
             })}
           </ul>
+          <div className="agree-message">By selecting 
+          <span className="bold">  Continue</span>, I agree to Cozybnb's 
+          <span className="bold2">Term of Service</span>. 
+          <a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a>
+           </div>
           <button id='new-listing-button' type="submit">Create</button>
         </form>
       </div>

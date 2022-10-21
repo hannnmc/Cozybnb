@@ -191,8 +191,8 @@ ApplicationRecord.transaction do
       prop_type: 'Loft',
       pets_allowed: true,
       users_id: 1,
-      lat: 40.76732546060237,
-      lng: -73.968918005597
+      lat: 40.73732546060237,
+      lng: -73.928918005597
     })
 
     listing6 = Listing.create!({
@@ -313,8 +313,8 @@ ApplicationRecord.transaction do
       prop_type: 'Entire home',
       pets_allowed: true,
       users_id: 1,
-      lat: 40.79325173439996,
-      lng: -73.97320465661757
+      lat: 40.79525173439996,
+      lng: -73.97220465661757
     })
 
     listing11 = Listing.create!({

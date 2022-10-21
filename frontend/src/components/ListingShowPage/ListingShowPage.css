@@ -25,7 +25,6 @@
 }
 
 .show-map {
-    /* width: 86.32%;    */
     height: 480px;
     max-width: 1120px;
     min-width: 650px;
@@ -36,9 +35,6 @@
     max-width: 1120px;
     min-width: 650px;
     display: flex;
-    /* width: 86.32%; */
-    /* height: 100%; */
-    /* align-self: center; */
     justify-content: space-between;
     aspect-ratio: 2/1;
 }
@@ -103,7 +99,6 @@
     max-width: 1120px;
     min-width: 650px;
     display: flex;
-    /* width: 86.32%; */
     align-self: center;
     flex-direction: column;
     padding-top: 24px;
@@ -214,7 +209,6 @@
 
 .listing-features {
     width: 100%;
-    /* background-color: blue; */
     padding: 32px 0;
     display: flex;
     flex-direction: column;
