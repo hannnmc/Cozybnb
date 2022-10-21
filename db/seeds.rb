@@ -99,7 +99,7 @@ ApplicationRecord.transaction do
       parking: false,
       kitchen: true,
       dedicated_workspace: true,
-      prop_type: 'Entire home',
+      prop_type: 'Loft',
       pets_allowed: true,
       users_id: 5,
       lat: 40.7558606730357,
