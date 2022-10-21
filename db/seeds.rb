@@ -75,29 +75,29 @@ ApplicationRecord.transaction do
   
 
     puts "Creating listings..."
-    
-    listing1 = Listing.create({
-      title: "Time Square Manhattan Luxury Loft",
-      description: "Have fun with the whole family at this stylish place.  Two bedroom 2 bathroom,  fully stock kitchen, washer and dryer.  Walk to Time Square, Central Park and Madison Square Garden and many more.  The best shopping and dinning in the city.",
-      price: Faker::Number.within(range: 300..600),
+    listing6 = Listing.create!({
+      title: 'Hudson Yards 2BR Luxury Views',
+      description: "Georgeous apartment unit with modern styling.  Great views of the city and gets plenty of sunlight all year round.",
+      price: 525,
       guests: 4,
       bedrooms: 2,
       beds: 2,
       baths: 2,
-      address: '5 Madison Ave.',
+      address: '199 Hudson Blvd.',
       city: 'Manhattan',
       state: 'NY',
       country: 'United States',
       wifi: true,
-      parking: true,
+      parking: false,
       kitchen: true,
       dedicated_workspace: true,
-      prop_type: 'Loft',
+      prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
-      lat: 40.76732546060237,
-      lng: -73.968918005597
+      users_id: 5,
+      lat: 40.7558606730357,
+      lng: -74.00159449170306
     })
+
 
     listing2 = Listing.create!({
       title: '3 BD Manhattan High Life',
@@ -195,27 +195,27 @@ ApplicationRecord.transaction do
       lng: -73.928918005597
     })
 
-    listing6 = Listing.create!({
-      title: 'Hudson Yards 2BR Luxury Views',
-      description: "Georgeous apartment unit with modern styling.  Great views of the city and gets plenty of sunlight all year round.",
-      price: 525,
+    listing1 = Listing.create({
+      title: "Time Square Manhattan Luxury Loft",
+      description: "Have fun with the whole family at this stylish place.  Two bedroom 2 bathroom,  fully stock kitchen, washer and dryer.  Walk to Time Square, Central Park and Madison Square Garden and many more.  The best shopping and dinning in the city.",
+      price: Faker::Number.within(range: 300..600),
       guests: 4,
       bedrooms: 2,
       beds: 2,
       baths: 2,
-      address: '199 Hudson Blvd.',
+      address: '5 Madison Ave.',
       city: 'Manhattan',
       state: 'NY',
       country: 'United States',
       wifi: true,
-      parking: false,
+      parking: true,
       kitchen: true,
       dedicated_workspace: true,
-      prop_type: 'Entire home',
+      prop_type: 'Loft',
       pets_allowed: true,
-      users_id: 5,
-      lat: 40.7558606730357,
-      lng: -74.00159449170306
+      users_id: 1,
+      lat: 40.76732546060237,
+      lng: -73.968918005597
     })
 
     listing7 = Listing.create!({

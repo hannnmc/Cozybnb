@@ -145,3 +145,11 @@
 .profile-review-star {
     margin-top: 32px;
 }
+
+.profile-cancel {
+    cursor: pointer;
+}
+
+.profile-submit {
+    cursor: pointer;
+}
