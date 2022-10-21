@@ -334,26 +334,3 @@
     }
 }
 
-@media (max-width: 745px) {
-    .mobile-overlap {
-        display: none;
-    }
-}
-
-@media (max-width: 745px) {
-    .filter-form-knob {
-        display: none;
-    }
-}
-
-@media (max-width: 745px) {
-    .number-homes {
-        display: none;
-    }
-}
-
-@media (max-width: 745px) {
-    .filter-fields {
-        display: none;
-    }
-}
