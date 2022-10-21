@@ -36,19 +36,19 @@ function LoginForm(props) {
   };
   const loginFacebookUser = (e) => {
     return dispatch(sessionActions.login({    
-      email: 'facebookUser@fb.com', 
+      email: 'Tammylove@fb.com', 
       password: 'password'
     }));
   };
   const loginGoogleUser = (e) => {
     return dispatch(sessionActions.login({    
-      email: 'googleuser@gmail.com', 
+      email: 'iheartgoogle@gmail.com', 
       password: 'password'
     }));
   };
   const loginAppleUser = (e) => {
     return dispatch(sessionActions.login({    
-      email: 'appleuser@icloud.com', 
+      email: 'apple4ever@icloud.com', 
       password: 'password'
     }));
   };

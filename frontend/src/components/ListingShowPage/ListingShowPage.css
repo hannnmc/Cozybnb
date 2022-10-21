@@ -92,7 +92,7 @@
 
 .listing-show-visuals .main {
     height: 100%;
-    width: 97.8%;
+    width: 99%;
     object-fit: cover;
     overflow: hidden;
     aspect-ratio: 1;
@@ -184,13 +184,22 @@
     height: 56px;
     aspect-ratio: 1;
     border-radius: 50%;
+    object-fit: cover;
 }
 
-.listing-features span:first-child{
-    font-weight: 500;
-}
 .listing-show-section{
-    margin-bottom: 30px;
+    padding: 48px 0;
+}
+#show-superhost {
+    margin-left: 14px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #222222;
+}
+
+#show-superhost-container {
+    display: flex;
+
 }
 
 @media (max-width: 1127px) {
@@ -201,4 +210,52 @@
 
 #github-help {
     font-weight: 400;
+}
+
+.listing-features {
+    width: 100%;
+    /* background-color: blue; */
+    padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.superhost-description {
+    color: #717171;
+    font-size: 15px;
+    margin-left: 39px;
+}
+
+.show-description {
+    padding: 32px 0 48px;
+    font-size: 16px;
+}
+
+.listing-show-section h2 {
+    font-size: 22px;
+    
+}
+
+.average-rating {
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.will-be {
+    display: flex;
+    flex-direction: column;
+}
+
+.will-be span:first-child{
+    margin-top: 48px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #222222;
+    padding-bottom: 24px;
+}
+
+.will-be span:last-child {
+    font-size: 17px;
+    color: #222222;
+    margin-bottom: 24px;
 }
