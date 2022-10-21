@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import ListingMap from '../ListingMap';
 // import ReviewForm from './ReviewForm';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +7,7 @@ import { fetchListing } from '../../store/listings';
 import { fetchUsers } from '../../store/users';
 // import { destroyReview, getListingReviews } from '../../store/reviews';
 import './ListingShowPage.css';
-import listing1photo1 from '../../assets/images/listing1/photo1.jpg'
+
 
 function ListingShowPage() {
     const dispatch = useDispatch();
@@ -28,14 +28,10 @@ function ListingShowPage() {
         return null;
     }
     
-    const { usersId, description, beds, bedrooms, baths, guests, propType, lat, lng, averageRating, photoUrls, city, country } = listing;
-
-    // console.log(listingId);
-    // const user = users.listingId;
-    // console.log(user);
+    const { usersId, description, beds, bedrooms, baths, guests, propType, averageRating, photoUrls, city, country } = listing;
     
     const user = users[usersId];
-    // if (user) console.log(user)
+
     //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
 
   if(user) return (
