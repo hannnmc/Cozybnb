@@ -111,6 +111,7 @@
     text-decoration: underline;
     font-weight: 500;
     padding-bottom: 55px;
+    cursor: pointer;
 }
 
 .profile-about {
@@ -152,4 +153,13 @@
 
 .profile-submit {
     cursor: pointer;
+}
+
+.profile-edit-form {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 120px;
 }

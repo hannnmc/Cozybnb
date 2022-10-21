@@ -13,6 +13,7 @@ ApplicationRecord.transaction do
     puts "Creating users..."
 
     user1 = User.create!(
+      about: "",
       email: 'hanmikechen@gmail.com', 
       password: 'password',
       first_name: 'Han',
@@ -20,6 +21,7 @@ ApplicationRecord.transaction do
       birth_date: '28/10/1991'
     )
     user2 = User.create!(
+      about: "",
       email: 'Tammylove@fb.com', 
       password: 'password',
       first_name: 'Tammy',
@@ -27,6 +29,7 @@ ApplicationRecord.transaction do
       birth_date: '01/01/1989'
     )
     user3 = User.create!(
+      about: "",
       email: 'iheartgoogle@gmail.com', 
       password: 'password',
       first_name: 'Dan',
@@ -34,6 +37,7 @@ ApplicationRecord.transaction do
       birth_date: '01/01/1991'
     )
     user4 = User.create!(
+      about: "",
       email: 'apple4ever@icloud.com', 
       password: 'password',
       first_name: 'George',
@@ -42,6 +46,7 @@ ApplicationRecord.transaction do
     )
 
     user5 = User.create!(
+      about: "",
       email: 'clairsynclare@icloud.com', 
       password: 'password',
       first_name: 'Claire',
@@ -50,6 +55,7 @@ ApplicationRecord.transaction do
     )
     
     user6 = User.create!(
+      about: "",
       email: 'lavenderstory@icloud.com', 
       password: 'password',
       first_name: 'Iris',
@@ -58,6 +64,7 @@ ApplicationRecord.transaction do
     )
 
     user7 = User.create!(
+      about: "",
       email: 'tommycuzy@icloud.com', 
       password: 'password',
       first_name: 'Tom',
@@ -66,6 +73,7 @@ ApplicationRecord.transaction do
     )
 
     user8 = User.create!(
+      about: "",
       email: 'kimmystahh@icloud.com', 
       password: 'password',
       first_name: 'Kimmy',

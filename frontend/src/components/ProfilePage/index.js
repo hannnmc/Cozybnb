@@ -59,7 +59,7 @@ const ProfilePage = () => {
             <div className='profile-right-container'>
                 <h1 className='profile-hello'>Hi, I'm {`${ user.firstName }`}</h1>
                 <div className='joined-year'>Joined in {`${user.createdAt.slice(0,4)}`}</div>
-                <div className='edit-profile-button' onClick={openEditProfile}>Edit Profile</div>
+                {/* <div className='edit-profile-button' onClick={openEditProfile}>Edit Profile</div> */}
                 {showProfileEditForm && (
                     <>
                         <ProfileEditForm setShowProfileEditForm={setShowProfileEditForm}/>
