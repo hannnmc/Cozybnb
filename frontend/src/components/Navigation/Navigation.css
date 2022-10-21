@@ -125,6 +125,8 @@ a {
   font-weight: 30px;
   border-radius: 50%;
   margin-left: 11px;
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
 .profile-dropdown .dropdown-email:hover {

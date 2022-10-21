@@ -20,37 +20,59 @@ ApplicationRecord.transaction do
       birth_date: '28/10/1991'
     )
     user2 = User.create!(
-      email: 'facebookUser@fb.com', 
+      email: 'Tammylove@fb.com', 
       password: 'password',
-      first_name: 'Facebook',
-      last_name: 'User',
-      birth_date: '01/01/1991'
+      first_name: 'Tammy',
+      last_name: 'Pink',
+      birth_date: '01/01/1989'
     )
     user3 = User.create!(
-      email: 'googleuser@gmail.com', 
+      email: 'iheartgoogle@gmail.com', 
       password: 'password',
-      first_name: 'Google',
-      last_name: 'User',
+      first_name: 'Dan',
+      last_name: 'Brown',
       birth_date: '01/01/1991'
     )
     user4 = User.create!(
-      email: 'appleuser@icloud.com', 
+      email: 'apple4ever@icloud.com', 
       password: 'password',
-      first_name: 'Apple',
-      last_name: 'User',
+      first_name: 'George',
+      last_name: 'Michels',
       birth_date: '01/01/1991'
     )
 
+    user5 = User.create!(
+      email: 'clairsynclare@icloud.com', 
+      password: 'password',
+      first_name: 'Claire',
+      last_name: 'Synclare',
+      birth_date: '27/10/1993'
+    )
+    
+    user6 = User.create!(
+      email: 'lavenderstory@icloud.com', 
+      password: 'password',
+      first_name: 'Iris',
+      last_name: 'Ishka',
+      birth_date: '03/05/1992'
+    )
+
+    user7 = User.create!(
+      email: 'tommycuzy@icloud.com', 
+      password: 'password',
+      first_name: 'Tom',
+      last_name: 'Cruzer',
+      birth_date: '12/11/1994'
+    )
+
+    user8 = User.create!(
+      email: 'kimmystahh@icloud.com', 
+      password: 'password',
+      first_name: 'Kimmy',
+      last_name: 'Stars',
+      birth_date: '12/12/1994'
+    )
   
-    4.times do 
-      User.create!({
-        email: Faker::Internet.unique.email,
-        password: 'password',
-        first_name: Faker::Name.first_name,
-        last_name: Faker::Name.last_name,
-        birth_date: Faker::Date.between(from: '2000-09-23', to: '2003-09-25')
-      }) 
-    end
 
     puts "Creating listings..."
     
@@ -362,9 +384,30 @@ ApplicationRecord.transaction do
     # listing11.photos.purge
     # listing12.photos.purge
     
-    user1_photo = URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg")
-    user1.photo.attach(io: user1_photo, filename:"profile_icon.jpg")
+    user1_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user1.jpg")
+    user1.photo.attach(io: user1_photo, filename:"user1.jpg")
 
+    user2_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user2.webp")
+    user2.photo.attach(io: user2_photo, filename:"user2.webp
+      ")
+    
+    user3_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user3.jpg")
+    user3.photo.attach(io: user3_photo, filename:"user3.jpg")
+
+    user4_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user4.webp")
+    user4.photo.attach(io: user4_photo, filename:"user4.webp")
+
+    user5_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user5.jpg")
+    user5.photo.attach(io: user5_photo, filename:"user5.jpg")
+
+    user6_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user6.jpg")
+    user6.photo.attach(io: user6_photo, filename:"user6.jpg")
+
+    user7_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user7.jpg")
+    user7.photo.attach(io: user7_photo, filename:"user7.jpp")
+
+    user8_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user8.jpg")
+    user8.photo.attach(io: user8_photo, filename:"user8.jpg")
 
     l1p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing1/photo1.jpg")
     l1p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing1/photo2.webp")

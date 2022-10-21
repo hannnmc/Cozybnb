@@ -28,7 +28,7 @@ function ListingShowPage() {
         return null;
     }
     
-    const { usersId, description, beds, bedrooms, baths, guests, propType, lat, lng, averageRating, photoUrls } = listing;
+    const { usersId, description, beds, bedrooms, baths, guests, propType, lat, lng, averageRating, photoUrls, city, country } = listing;
 
     // console.log(listingId);
     // const user = users.listingId;
@@ -85,18 +85,22 @@ function ListingShowPage() {
 
         <div className='showpage-divider'></div>
         <div className='listing-features'>
-            <span>Dedicated workspace</span>
-            <span>A common area with wifi that's well-suited for working.</span>
+            <div id='show-superhost-container'>
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height="24" width='24'><path d="m16 17c3.8659932 0 7 3.1340068 7 7s-3.1340068 7-7 7-7-3.1340068-7-7 3.1340068-7 7-7zm0 2c-2.7614237 0-5 2.2385763-5 5s2.2385763 5 5 5 5-2.2385763 5-5-2.2385763-5-5-5zm9.6666667-18.66666667c1.0543618 0 1.9181651.81587779 1.9945142 1.85073766l.0054858.14926234v6.38196601c0 .70343383-.3690449 1.35080636-.9642646 1.71094856l-.1413082.0779058-9.6666667 4.8333334c-.5067495.2533747-1.0942474.2787122-1.6171466.0760124l-.1717078-.0760124-9.66666666-4.8333334c-.62917034-.3145851-1.04315599-.93418273-1.09908674-1.62762387l-.00648607-.16123049v-6.38196601c0-1.05436179.81587779-1.91816512 1.85073766-1.99451426l.14926234-.00548574zm0 2h-19.33333337v6.38196601l9.66666667 4.83333336 9.6666667-4.83333336z"></path></svg>
+                <div id='show-superhost'>{user.firstName} is a Superhost</div>
+            </div>
+            <span className='superhost-description'>Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</span>
         </div>
         <div className='showpage-divider'></div>
-        <p> {description} </p>
+        <p className='show-description'> {description} </p>
 
         </section>
             <div className='showpage-divider'></div>
         <section className="listing-show-section">
-            <h2>Reviews</h2>
+            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height='24px' width='24px'><path d="M14.998 1.032a2 2 0 0 0-.815.89l-3.606 7.766L1.951 10.8a2 2 0 0 0-1.728 2.24l.031.175A2 2 0 0 0 .87 14.27l6.36 5.726-1.716 8.608a2 2 0 0 0 1.57 2.352l.18.028a2 2 0 0 0 1.215-.259l7.519-4.358 7.52 4.358a2 2 0 0 0 2.734-.727l.084-.162a2 2 0 0 0 .147-1.232l-1.717-8.608 6.361-5.726a2 2 0 0 0 .148-2.825l-.125-.127a2 2 0 0 0-1.105-.518l-8.627-1.113-3.606-7.765a2 2 0 0 0-2.656-.971zm-3.07 10.499l4.07-8.766 4.07 8.766 9.72 1.252-7.206 6.489 1.938 9.723-8.523-4.94-8.522 4.94 1.939-9.723-7.207-6.489z"></path></svg>
+
             <span className="average-rating">
-            Average Rating: {averageRating || 'No reviews yet'}
+            {averageRating || 'No reviews (yet)'}
             </span>
             <div className="reviews">
             {/* {reviews.map(review => (
@@ -117,6 +121,13 @@ function ListingShowPage() {
             </div>
             {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
         </section>
+
+        <div className='showpage-divider'></div>
+        <div className='will-be'>
+            <span>Where you'll be</span> 
+            <span>{city}, {country}</span>
+        </div>
+
         <section className='map-section'>
             <div className='show-map'>
                 <ListingMap
