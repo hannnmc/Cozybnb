@@ -64,10 +64,6 @@ function ListingIndexPage() {
       </div>
       <div className="listing-list-container">
         <FilterForm
-          minGuests={minGuests}
-          maxGuests={maxGuests}
-          setMinGuests={setMinGuests}
-          setMaxGuests={setMaxGuests}
           minPrice={minPrice}
           maxPrice={maxPrice}
           setMinPrice={setMinPrice}
