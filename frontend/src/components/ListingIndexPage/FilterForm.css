@@ -118,7 +118,6 @@ body {
 }
 
 .filter-button {
-  cursor: pointer;
   height: 40px;
   width: 94.3px;
   min-width: 94.3px;
@@ -137,6 +136,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   color: #222222;
+  cursor: pointer;
 }
 
 .filter-button span {
