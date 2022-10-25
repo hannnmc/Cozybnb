@@ -19,6 +19,7 @@ Filter listings by minimum and maximum pricing with no latency.
 
 ## Code snippets
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/listingindex.png' alt='' />
+Index page listings, maps, and props threading.
 
 ## Future directions
 - Reservations 
