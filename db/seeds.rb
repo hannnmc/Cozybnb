@@ -139,7 +139,7 @@ ApplicationRecord.transaction do
     })
 
     listing3 = Listing.create!({
-      title: 'Moon View Yurt - Sleep Under the Moon and Stars!',
+      title: 'Best views in the city!',
       description: "One of the best views of the city if not the best view of the city.  A newer luxury condo in the heart of the city.  Enjoyed everything the city has to offer,   Broadway plays walk to with in mins,  Madison Square Garden, Center Park,  high end shopping of 5th Ave and the best restaurant in the world unless you feel like a $1.00 slice of pizza Manhattan has that for you to.  Perfect home away from home for you and the family.",
       price: Faker::Number.within(range: 500..900),
       guests: 5,
