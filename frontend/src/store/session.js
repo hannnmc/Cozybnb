@@ -41,6 +41,10 @@ export const restoreSession = () => async dispatch => {
     dispatch(setCurrentUser(data.user));
     return response;
 };
+
+export const getCurrentUser = (data) => async dispatch => {
+    return dispatch(setCurrentUser(data.user));
+};
   
 export const signup = (user) => async (dispatch) => {
     const { email, password, firstName, lastName, birthDate } = user;

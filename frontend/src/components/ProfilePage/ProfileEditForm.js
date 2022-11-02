@@ -7,7 +7,7 @@ const ProfileEditForm = (props) => {
 
     const dispatch = useDispatch();
     const user = useSelector(state => Object.values(state.session))
-    const { birthDate, phoneNumber, firstName, lastName, about } = user[0];
+    const { birthDate, phoneNumber, firstName, lastName, about, id } = user[0];
     const { setShowProfileEditForm } = props;
     const [ errors, setErrors ] = useState([]);
     const [ bdate, setBdate ] = useState(birthDate);
@@ -18,27 +18,29 @@ const ProfileEditForm = (props) => {
 
     const saveChanges = (e) => {
         e.preventDefault();
-        setShowProfileEditForm(false);
+        
         // setErrors([]);
         return dispatch(userActions.updateUser({
-           fname,
-           lname,
-           desc,
-           number, 
-           bdate
-          }))
-            .catch(async (res) => {
-            let data;
-            try {
-            data = await res.clone().json();
-            } catch {
-            data = await res.text(); 
-            }
-            // if (data?.errors) setErrors(data.errors);
-            // else if (data) setErrors([data]);
-            // else setErrors([res.statusText]);
-            });
-        };
+            firstName:fname,
+            lastName:lname,
+            about:desc,
+            phoneNumber:number, 
+            birthDate:bdate,
+            id
+        }))
+        .then(setShowProfileEditForm(false))
+        .catch(async (res) => {
+        let data;
+        try {
+        data = await res.clone().json();
+        } catch {
+        data = await res.text(); 
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+        });
+    };
 
     return (
         <>
@@ -87,7 +89,7 @@ const ProfileEditForm = (props) => {
                     </div>
                     <div>
                         <div className="profile-cancel" onClick={() => setShowProfileEditForm(false)}>Cancel</div>
-                        <div className="profile-submit"><button type="submit">Save</button></div>
+                        <div ><button className="profile-submit" type="submit">Save</button></div>
                     </div>
                 </form>
 
