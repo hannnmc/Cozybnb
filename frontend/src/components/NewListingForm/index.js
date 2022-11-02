@@ -2,7 +2,7 @@ import './NewListingForm.css'
 import React, { useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import * as listingActions from "../../store/listings";
-
+import { useHistory } from 'react-router-dom';
 
 function NewListingForm(props) {
 
@@ -10,6 +10,7 @@ function NewListingForm(props) {
   const dispatch = useDispatch();
   const { setNewListingModal } = props;
   const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory(); 
   if (!sessionUser) {
     // setNewListingForm(false);
     // setLoginFormModal(open => true);  
@@ -36,7 +37,9 @@ function NewListingForm(props) {
   const [lng, setLng] = useState("");
   const [usersId, setUsersId] = useState("");
   const [country, setCountry] = useState("United States");
-    
+  
+  const listings = useSelector(state => state.listings)
+  const newId = Object.keys(listings).length + 1
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,7 +67,8 @@ function NewListingForm(props) {
       petsAllowed,
       usersId
     }))
-      .catch(async (res) => {
+      .then(history.push({ pathname: `/listings/${newId}`}))
+      .catch(async (res) => {        
       let data;
       try {
       data = await res.clone().json();
@@ -74,6 +78,7 @@ function NewListingForm(props) {
       if (data?.errors) setErrors(data.errors);
       else if (data) setErrors([data]);
       else setErrors([res.statusText]);
+      
       });
   };
 
