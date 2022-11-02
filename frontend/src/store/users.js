@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf";
+import * as sessionActions from "./session";
 
 const SET_USERS = 'users/setUsers';
 const SET_USER = 'users/setUser';
@@ -23,28 +24,26 @@ export const fetchUsers = () => async dispatch => {
 };
 
 export const updateUser = (user) => async dispatch => {
-    console.log(user)
     const {           
-        fname,
-        lname,
-        desc,
-        number, 
-        bdate
+        firstName,
+        lastName,
+        about,
+        phoneNumber, 
+        birthDate
     } = user;
-    const res = await csrfFetch(`/api/users/${user.userId}`, {
+    const res = await csrfFetch(`/api/users/${user.id}`, {
         method: "PATCH",
         body: JSON.stringify({
-            fname,
-            lname,
-            desc,
-            number, 
-            bdate
+            firstName,
+            lastName,
+            about,
+            phoneNumber,
+            birthDate
         })
     });
     const data = await res.json();
-    dispatch(setUser(data.user));
+    dispatch(sessionActions.getCurrentUser(data));
     return res;
-
 };
 
 // export const fetchUser = (userId) => async dispatch => {
@@ -62,7 +61,9 @@ function usersReducer(state = {}, action) {
     const nextState = {...state};
     switch (action.type) {
         case SET_USER:
-            nextState[action.user.id] = action.user;
+            // console.log(nextState[action.userId])
+            // debugger
+            nextState[action.payload.id] = action.payload;
             return nextState;
         case SET_USERS:
             return {...nextState,...action.payload};

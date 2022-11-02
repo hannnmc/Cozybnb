@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  wrap_parameters include: User.attribute_names + ['password' , 'firstName', 'lastName', 'birthDate']
+  wrap_parameters include: User.attribute_names + ['password' , 'firstName', 'lastName', 'birthDate', 'phoneNumber']
 
   def create
     # bdate = DateTime.parse(user_params.birthdate)
@@ -19,7 +19,9 @@ class Api::UsersController < ApplicationController
 
   def update 
     @user = User.find(current_user.id)
+    # debugger
     if @user.update(user_params)
+      @user.save!
       render :show
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
@@ -34,6 +36,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :photo, :last_name, :birth_date, :about)
+    params.require(:user).permit(:email, :password, :first_name, :photo, :last_name, :birth_date, :phone_number, :about)
   end
 end
