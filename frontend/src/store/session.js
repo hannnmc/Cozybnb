@@ -43,6 +43,7 @@ export const restoreSession = () => async dispatch => {
 };
 
 export const getCurrentUser = (data) => async dispatch => {
+    storeCurrentUser(data.user);
     return dispatch(setCurrentUser(data.user));
 };
   
