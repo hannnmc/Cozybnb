@@ -61,8 +61,6 @@ function usersReducer(state = {}, action) {
     const nextState = {...state};
     switch (action.type) {
         case SET_USER:
-            // console.log(nextState[action.userId])
-            // debugger
             nextState[action.payload.id] = action.payload;
             return nextState;
         case SET_USERS:

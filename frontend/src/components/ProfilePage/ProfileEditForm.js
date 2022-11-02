@@ -6,8 +6,8 @@ import { useDispatch } from "react-redux";
 const ProfileEditForm = (props) => {
 
     const dispatch = useDispatch();
-    const user = useSelector(state => Object.values(state.session))
-    const { birthDate, phoneNumber, firstName, lastName, about, id } = user[0];
+    const user = useSelector(state => Object.values(state.session));
+    const { birthDate, firstName, phoneNumber, lastName, about, id } = user[0];
     const { setShowProfileEditForm } = props;
     const [ errors, setErrors ] = useState([]);
     const [ bdate, setBdate ] = useState(birthDate);
@@ -80,7 +80,7 @@ const ProfileEditForm = (props) => {
                     </div>
                     <div>Phone Number</div>
                     <div>
-                    <input 
+                        <input 
                         type="number" 
                         value={number}
                         onChange={(e)=>setNumber(e.target.value)}

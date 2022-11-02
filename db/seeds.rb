@@ -18,7 +18,8 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'Han',
       last_name: 'Chen',
-      birth_date: '28/10/1991'
+      birth_date: '28/10/1991',
+      phone_number: '2129617000'
     )
     user2 = User.create!(
       about: "",
@@ -26,7 +27,8 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'Tammy',
       last_name: 'Pink',
-      birth_date: '01/01/1989'
+      birth_date: '01/01/1989',
+      phone_number: '1234567893'
     )
     user3 = User.create!(
       about: "",
@@ -34,7 +36,8 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'Dan',
       last_name: 'Brown',
-      birth_date: '01/01/1991'
+      birth_date: '01/01/1991',
+      phone_number: '1234567894'
     )
     user4 = User.create!(
       about: "",
@@ -42,7 +45,8 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'George',
       last_name: 'Michels',
-      birth_date: '01/01/1991'
+      birth_date: '01/01/1991',
+      phone_number: '1234567895'
     )
 
     user5 = User.create!(
@@ -51,7 +55,8 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'Claire',
       last_name: 'Synclare',
-      birth_date: '27/10/1993'
+      birth_date: '27/10/1993',
+      phone_number: '1234567896'
     )
     
     user6 = User.create!(
@@ -60,7 +65,8 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'Iris',
       last_name: 'Ishka',
-      birth_date: '03/05/1992'
+      birth_date: '03/05/1992',
+      phone_number: '1234567897'
     )
 
     user7 = User.create!(
@@ -69,7 +75,8 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'Tom',
       last_name: 'Cruzer',
-      birth_date: '12/11/1994'
+      birth_date: '12/11/1994',
+      phone_number: '1234567898'
     )
 
     user8 = User.create!(
@@ -78,7 +85,8 @@ ApplicationRecord.transaction do
       password: 'password',
       first_name: 'Kimmy',
       last_name: 'Stars',
-      birth_date: '12/12/1994'
+      birth_date: '12/12/1994',
+      phone_number: '1234567899'
     )
   
 
