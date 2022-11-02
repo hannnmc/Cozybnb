@@ -149,9 +149,11 @@
 
 .profile-cancel {
     cursor: pointer;
+    margin-top: 5px;
 }
 
 .profile-submit {
+    margin-top: 5px;
     cursor: pointer;
 }
 
