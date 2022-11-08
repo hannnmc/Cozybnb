@@ -1,0 +1,27 @@
+.profile-listing-info {
+    display: flex;
+    margin-top: 48px;
+    cursor: pointer;
+}
+
+.profile-listing-image {
+    height: 100px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.profile-listing-infobox {
+    margin-left: 20px;
+    line-height: 24px;
+}
+
+.profile-mylistings {
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 36px;
+}
+
+#profile-box-divider {
+    margin-top: 36px;
+}

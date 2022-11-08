@@ -109,7 +109,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Loft',
       pets_allowed: true,
-      users_id: 5,
+      users_id: 4,
       lat: 40.7558606730357,
       lng: -74.00159449170306
     })
@@ -139,7 +139,7 @@ ApplicationRecord.transaction do
     })
 
     listing3 = Listing.create!({
-      title: 'Best views in the city!',
+      title: 'Best Views in Manhattan with Full Roof Top Access',
       description: "One of the best views of the city if not the best view of the city.  A newer luxury condo in the heart of the city.  Enjoyed everything the city has to offer,   Broadway plays walk to with in mins,  Madison Square Garden, Center Park,  high end shopping of 5th Ave and the best restaurant in the world unless you feel like a $1.00 slice of pizza Manhattan has that for you to.  Perfect home away from home for you and the family.",
       price: Faker::Number.within(range: 500..900),
       guests: 5,
@@ -183,7 +183,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 6,
+      users_id: 3,
       lat: 40.70376570566167, 
       lng: -73.9897054035584
     })
@@ -206,20 +206,20 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Loft',
       pets_allowed: true,
-      users_id: 1,
-      lat: 40.73732546060237,
-      lng: -73.928918005597
+      users_id: 3,
+      lat: 40.7553582002978, 
+      lng: -73.9877736373611
     })
 
     listing1 = Listing.create({
-      title: "Time Square Manhattan Luxury Loft",
-      description: "Have fun with the whole family at this stylish place.  Two bedroom 2 bathroom,  fully stock kitchen, washer and dryer.  Walk to Time Square, Central Park and Madison Square Garden and many more.  The best shopping and dinning in the city.",
-      price: Faker::Number.within(range: 300..600),
+      title: "Gorgeous Manhattan High Life with Contemporary Style",
+      description: "Designer unit with all amenities in the heart of Manhattan over looking the Empire State Building.",
+      price: Faker::Number.within(range: 400..700),
       guests: 4,
       bedrooms: 2,
       beds: 2,
       baths: 2,
-      address: '5 Madison Ave.',
+      address: '25 Madison Ave.',
       city: 'Manhattan',
       state: 'NY',
       country: 'United States',
@@ -229,9 +229,9 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Loft',
       pets_allowed: true,
-      users_id: 1,
-      lat: 40.76732546060237,
-      lng: -73.968918005597
+      users_id: 2,
+      lat: 40.746674260759875, 
+      lng: -73.98979343376428
     })
 
     listing7 = Listing.create!({
@@ -357,7 +357,7 @@ ApplicationRecord.transaction do
     })
 
     listing12 = Listing.create!({
-      title: 'Architectural wonder in the forest',
+      title: 'Architectural Wonder in the Forest',
       description: "Unique experience, secluded.
       Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometric masterpiece on 30 preserved acres just minutes from all that Rhinebeck and the Hudson Valley have to offer.
       The house is an open plan, and though it has zero bedrooms, it can sleep 3!",
