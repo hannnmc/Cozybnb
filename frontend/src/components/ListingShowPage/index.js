@@ -7,6 +7,7 @@ import { fetchListing } from '../../store/listings';
 import { fetchUsers } from '../../store/users';
 // import { destroyReview, getListingReviews } from '../../store/reviews';
 import './ListingShowPage.css';
+import FloatingBox from './FloatingBox';
 
 
 function ListingShowPage() {
@@ -92,9 +93,7 @@ function ListingShowPage() {
             <div className='showpage-divider'></div>
             <p className='show-description'> {description} </p>
         </div>
-        <div className='listing-floating-panel'>
-                wee
-        </div>
+        <FloatingBox listing={listing}/>
         </section>
             <div className='showpage-divider'></div>
         <section className="listing-show-section">

@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import ProfilePage from "./components/ProfilePage";
 import ListingIndexPage from './components/ListingIndexPage';
-import ListingShowPage from './components/ListingShowPage/ListingShowPage';
+import ListingShowPage from './components/ListingShowPage';
 import { useSelector } from 'react-redux';
 
 
