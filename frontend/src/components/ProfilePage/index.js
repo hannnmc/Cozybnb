@@ -1,10 +1,13 @@
 import './ProfilePage.css'
 import ProfileEditForm from './ProfileEditForm';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import * as listingActions from '../../store/listings';
+import ProfileListingItem from '../ProfileListingItem';
 // import defaultPhoto from "../../../../frontend/src/assets/images/default_user_photo.png";
 
 const ProfilePage = () => {
+    const dispatch = useDispatch();
     const [ showProfileEditForm, setShowProfileEditForm ] = useState(false);
     const user = useSelector(({session}) => session.user );
 
@@ -12,6 +15,21 @@ const ProfilePage = () => {
         e.preventDefault();
         setShowProfileEditForm(open => !open)
     };
+    const listings = useSelector((state) => state.listings);
+
+    useEffect(() => {
+        dispatch(listingActions.fetchListings());
+    },[])
+
+    const ownedListings = [];
+
+    for (let i = 1; i < Object.keys(listings).length+1 ; i++) {
+        if (listings[i].usersId === user.id) {
+            ownedListings.push(listings[i]);
+        }
+        
+    }
+
 
     if (!user) return null;
     
@@ -73,6 +91,19 @@ const ProfilePage = () => {
                     <div className='profile-location'>Lives in New York, NY</div>
                 </div>
                 <div className='profile-box-divider'></div>
+                
+                <div className='profile-mylistings'>My Listings</div>
+
+                <div className='profile-listings'>
+                    {ownedListings.map(listing => (
+                        <ProfileListingItem 
+                            key={listing.id}
+                            listing={listing}
+                            ownedListings={ownedListings}
+                        />
+                    ))}
+                </div>
+                <div id='profile-box-divider' className='profile-box-divider'></div>
                 <div className='review-count-container'>
                     <div className='profile-review-star'>
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height='24px' width='24px'><path d="M14.998 1.032a2 2 0 0 0-.815.89l-3.606 7.766L1.951 10.8a2 2 0 0 0-1.728 2.24l.031.175A2 2 0 0 0 .87 14.27l6.36 5.726-1.716 8.608a2 2 0 0 0 1.57 2.352l.18.028a2 2 0 0 0 1.215-.259l7.519-4.358 7.52 4.358a2 2 0 0 0 2.734-.727l.084-.162a2 2 0 0 0 .147-1.232l-1.717-8.608 6.361-5.726a2 2 0 0 0 .148-2.825l-.125-.127a2 2 0 0 0-1.105-.518l-8.627-1.113-3.606-7.765a2 2 0 0 0-2.656-.971zm-3.07 10.499l4.07-8.766 4.07 8.766 9.72 1.252-7.206 6.489 1.938 9.723-8.523-4.94-8.522 4.94 1.939-9.723-7.207-6.489z"></path></svg>

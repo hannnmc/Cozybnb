@@ -10,8 +10,7 @@
     max-width: 1064px;
     margin-bottom: 32px;
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     margin: 48px auto 32px;
     padding-left: 16px;
     padding-right: 16px;
@@ -58,6 +57,7 @@
 }
 
 .profile-box-divider {
+    min-width: 260px;
     width: 100%;
     height: 1px;
     background: #EAEAEA;
