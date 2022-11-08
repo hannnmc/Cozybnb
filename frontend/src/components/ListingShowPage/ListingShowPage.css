@@ -154,24 +154,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    height: 1000px;
 }
 
 .listing-details-left {
     width: 66%;
-}
-
-.listing-floating-panel {
-    width: 33%;
-    border: 1px solid rgb(221, 221, 221);
-    background-color: white;
-    /* position: fixed; */
-    display: inline-block;
-    margin-top: 48px;
-    margin-left: 50px;
-    border-radius: 12px;
-    margin-bottom: 48px;
-    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
-    max-width: 372.33px;
+    margin-right: 50px;
+    max-width: 653.33px;
 }
 
 .listing-detail-header {
