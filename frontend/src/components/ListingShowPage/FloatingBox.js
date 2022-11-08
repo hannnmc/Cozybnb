@@ -43,7 +43,7 @@ const FloatingBox = ({listing}) => {
                     <div>${parseInt(listing.price * .35)}</div> 
                 </div>
             </div>
-            <div id='float-divider' className='showpage-divider'></div>
+            <div id='float-divider'></div>
             <div className='float-total'>
                 <div>Total before taxes</div>
                 <div>${listing.price * 5}</div>
