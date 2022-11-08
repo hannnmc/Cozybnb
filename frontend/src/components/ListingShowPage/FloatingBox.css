@@ -20,12 +20,14 @@
     padding: 24px;
     display: flex;
     flex-direction: column;
+    height: 90.4%;
 }
 
 .floating-box-price-review {
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
+    flex-wrap: wrap;
 }
 
 .floating-box-price {
@@ -96,6 +98,7 @@
     font-weight: 495;
     cursor: pointer;
     font-weight: 500;
+    padding-top: 7px;
 }
 
 .floating-box-nights {
@@ -122,8 +125,8 @@
 .floating-box-service {
     display: flex;
     justify-content: space-between;
-    padding-top: 16px;
-    margin-bottom: 8px;
+    margin-top: 16px;
+    margin-bottom: 4px;
 }
 .floating-box-service>div:first-child {
     text-decoration: underline;
@@ -132,6 +135,8 @@
 
 #float-divider {
     margin: 24px 0;
+    background-color: rgb(221, 221, 221);
+    height: 1px;
 }
 
 .float-total {
@@ -139,4 +144,8 @@
     justify-content: space-between;
     font-size: 16.5px;
     font-weight: 600;
+}
+
+.float-total div:last-child {
+    font-size: 16.4px;
 }
