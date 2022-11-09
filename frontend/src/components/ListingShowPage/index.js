@@ -8,6 +8,7 @@ import { fetchUsers } from '../../store/users';
 // import { destroyReview, getListingReviews } from '../../store/reviews';
 import './ListingShowPage.css';
 import FloatingBox from './FloatingBox';
+import ListingFeatures from './ListingFeatures';
 
 
 function ListingShowPage() {
@@ -117,9 +118,10 @@ function ListingShowPage() {
                     <p>{listing.beds} queen-size beds</p>
                 </div>
             </div>
-
+            <div className='showpage-divider'></div>
             <div className='listing-offers'>
                 <span>What this place offers</span>
+                <ListingFeatures listing={listing}/>
             </div>
 
         </div>
