@@ -9,6 +9,7 @@ import { fetchUsers } from '../../store/users';
 import './ListingShowPage.css';
 import FloatingBox from './FloatingBox';
 import ListingFeatures from './ListingFeatures';
+import DatePickerComp from './DatePickerComp';
 
 
 function ListingShowPage() {
@@ -102,7 +103,6 @@ function ListingShowPage() {
                 <div className='show-feature-title'>Free cancellation for 48 hours.</div>
 
                 </div>
-
                 
             </div>
             <div className='showpage-divider'></div>
@@ -123,7 +123,12 @@ function ListingShowPage() {
                 <span>What this place offers</span>
                 <ListingFeatures listing={listing}/>
             </div>
+            <div className='showpage-divider'></div>
 
+            <div className='show-datepicker'>
+                <DatePickerComp />
+                <h1>from date picker</h1>
+            </div>
         </div>
         <FloatingBox listing={listing}/>
         <div className='showpage-divider'></div>

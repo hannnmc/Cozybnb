@@ -329,3 +329,9 @@
 .show-feature-section>div{
     margin-top: 16px;
 }
+
+.show-datepicker {
+    margin: 48px 0;
+    width: 300px;
+}
+

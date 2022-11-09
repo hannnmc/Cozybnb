@@ -45,12 +45,14 @@
     width: 50%;
     border: 1px solid rgb(176, 176, 176);
     border-top-left-radius: 8px;
+    text-align: center;
 }
 .floating-end-date {
     width: 50%;
     border: 1px solid rgb(176, 176, 176);
     border-left: none;
     border-top-right-radius: 8px;
+    text-align: center;
 }
 
 .floating-box-guests {
