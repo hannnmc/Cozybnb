@@ -316,3 +316,17 @@
     font-size: 22.5px;
     font-weight: 500;
 }
+
+.show-feature-details span {
+    margin-left: 16px;
+    vertical-align: top;
+    line-height: 24px;
+}
+
+.show-feature-section {
+    margin-top: 24px;
+}
+
+.show-feature-section>div{
+    margin-top: 16px;
+}
