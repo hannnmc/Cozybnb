@@ -15,7 +15,11 @@ json.extract! listing,
   :country,
   :prop_type,
   :users_id,
-  :wifi
+  :wifi,
+  :parking,
+  :kitchen,
+  :dedicated_workspace,
+  :pets_allowed
   
 if listing.photos.attached?
   json.photo_urls listing.photos.map { |photo| photo.url} 

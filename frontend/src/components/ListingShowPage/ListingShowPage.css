@@ -307,3 +307,12 @@
 .show-sleep-box>p{
     padding-bottom: 18px;
 }
+
+.listing-offers {
+    padding: 48px 0;;
+}
+
+.listing-offers>span {
+    font-size: 22.5px;
+    font-weight: 500;
+}
