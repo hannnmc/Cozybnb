@@ -1,7 +1,5 @@
 const ListingFeatures = ({listing}) => {
 
-    console.log(listing)
-
     const {
     wifi,
     parking,
