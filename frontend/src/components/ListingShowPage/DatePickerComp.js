@@ -19,7 +19,7 @@ function DatePickerComp() {
     // },[value])
 
   return (
-    <div>
+    <div className='calendar-container'>
       <Calender 
       selectRange={selectRange}
     //   defaultValue={defaultValue}
