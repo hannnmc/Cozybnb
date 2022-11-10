@@ -127,7 +127,6 @@ function ListingShowPage() {
 
             <div className='show-datepicker'>
                 <DatePickerComp />
-                <h1>from date picker</h1>
             </div>
         </div>
         <FloatingBox listing={listing}/>

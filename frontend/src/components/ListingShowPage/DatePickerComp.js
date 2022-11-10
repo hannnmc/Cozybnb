@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Calender from 'react-calendar';
 import './DatePickerComp.css';
 import 'react-calendar/dist/Calendar.css';
 
-const date = new Date('2022-11-11');
+
 
 function DatePickerComp() {
-  const [value, onChange] = useState(null);
-    // console.log(value);
-    const [activeStartDate, setActiveStartDate] = useState(new Date('2022-11-23'));
+    const date = new Date('2022-11-2');
+    const date1 = new Date('2022-11-5');
+    const [value1, onChange] = useState(date);
+    console.log(value1)
+    // const defaultValue = [date,date1];
+    // const value = date;
+    const selectRange = true;
 
-    const onClickMonth = () => {
+    // useEffect(() => {
 
-    };
+    // },[value])
 
   return (
     <div>
       <Calender 
-      activeStartDate={activeStartDate}
-      onClickMonth={onClickMonth}
-      onChange={onChange} value={value} />
+      selectRange={selectRange}
+    //   defaultValue={defaultValue}
+      onChange={onChange} 
+    //   value={value}
+       />
     </div>
   );
 }
