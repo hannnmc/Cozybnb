@@ -22,7 +22,7 @@ const maxMonthDays = {
 }
 
 function DatePickerComp() {
-    const [startDate, setStartDate] = useState(new Date(`2022, 12, 29`));
+    const [startDate, setStartDate] = useState(new Date());
     const [numDays, setNumDays] = useState(5);
     const [endMonth, setEndMonth] = useState(startDate.getMonth());
     const [endDay, setEndDay] = useState(startDate.getDate() + numDays);
@@ -54,36 +54,20 @@ function DatePickerComp() {
         console.log( `end date ${endDate}`)
     },[])    
     
-
-
-    // useEffect(() => {
-    //     if (startingDay % maxMonthDays[startingDay] < startingDay) {
-    //         setEndDate(startDate.getFullYear(), startDate.getMonth() +1, startDate.getDate(startingDay % maxMonthDays[startingDay]))
-    //         // console.log('sdfsdfdsf')
-    //     } else {
-    //         let newMonth = startDate.getMonth();
-    //         setNewDay(startDate.getDate() + numDays);
-    //         let endDateString = `${startDate.getFullYear()}, ${newMonth}, ${newDay}`
-    //         setEndDate(new Date(endDateString))
-            
-    //     }
-    // }, [])
-    // console.log(`5 days later ${date1}`);
-    // const [value1, onChange] = useState(startDate);
-    // console.log(value1)
-    // const defaultValue = [date,date1];
     const defaultValue = [startDate, endDate];
     const selectRange = true;
-
-    // useEffect(() => {
-
-    // },[value])
+    // const showDoubleView = true;
+    // const showNavigation = false;
+    const view = 'month';
 
   return (
     <div className='calendar-container'>
       <Calender 
       selectRange={selectRange}
       defaultValue={defaultValue}
+    //   showDoubleView={showDoubleView}
+      view={view}
+    //   showNavigation={showNavigation}
     //   onChange={onChange} 
     //   value={value}
        />
