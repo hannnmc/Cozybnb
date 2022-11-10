@@ -10,9 +10,14 @@
     display: none;
 }
 
+.calendar-container {
+    width: 336px;
+}
+
 .react-calendar {
     border: none !important;
     font-size: 16px !important;
+    width: 800px !important;
 }
 
 .react-calendar__tile:hover {
@@ -74,4 +79,16 @@
 
 .react-calendar__month-view__weekdays__weekday {
     text-transform: none !important;
+    color: rgb(54, 97, 97);
 }
+
+.react-calendar__navigation__label__labelText {
+    font-size: 15.5px;
+    font-weight: 550;
+    color: #222222;
+}
+
+abbr {
+    text-decoration: none !important;
+}
+
