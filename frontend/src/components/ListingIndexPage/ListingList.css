@@ -79,7 +79,6 @@
 
 .list-item-copy {
     font-weight: 500;
-    white-space: nowrap;
     overflow-x:hidden;
     height: 18px;
 }
