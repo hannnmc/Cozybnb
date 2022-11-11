@@ -5,12 +5,15 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
     
     const handleStartChange = (e) => {
         const startValue = e.target.value;
-        const startYear = startValue.split('-')[0]
-        const startMonth = startValue.split('-')[1]
-        const startDay = startValue.split('-')[2]
+        console.log(startValue)
+        const startYear = parseInt(startValue.split('-')[0])
+        const startMonth = parseInt(startValue.split('-')[1])
+        const startDay = parseInt(startValue.split('-')[2])
         // setStartDate()
-        // console.log(startYear, startMonth, startDay)
+        console.log((new Date()).getMonth())
+        console.log(startYear, startMonth, startDay)
         setStartDate(new Date(`${startYear}, ${startMonth}, ${startDay}`))
+        // setStartDate(new Date(`${startValue}`))
         console.log(new Date(`${startYear}, ${startMonth}, ${startDay}`))
     }
     const handleEndChange = (e) => {
@@ -49,11 +52,11 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         <input 
                         className='floating-start-date' 
                         type="date"
-                        value={`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate()}`}
+                        value={`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`}
                         onChange={handleStartChange}
                        />
                         <input className='floating-end-date' type="date" 
-                        value={`${endDate.getFullYear()}-${endDate.getMonth() + 1}-${endDate.getDate()}`}
+                        value={`${endDate.getFullYear()}-${endDate.getMonth() + 1}-${endDate.getDate() > 9 ? '':'0' }${endDate.getDate()}`}
                         onChange={handleEndChange}
                         />
                     </div>
