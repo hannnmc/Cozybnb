@@ -3,6 +3,9 @@ import './FloatingBox.css'
 
 const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays}) => {
     
+
+    setNumDays(Math.floor((endDate.getTime() - startDate.getTime())/1000/60/60/24));
+
     const handleStartChange = (e) => {
         const startValue = e.target.value;
         console.log(startValue)
@@ -74,22 +77,22 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             <span className='floating-box-charge'>You won't be charged yet</span>
             <div className='floating-box-bot'>
                 <div className='floating-box-nights'>
-                    <div>{listing.price} x 5 nights</div> 
-                    <div>${listing.price * 5} </div> 
+                    <div>{listing.price} x {numDays} nights</div> 
+                    <div>${listing.price * numDays} </div> 
                 </div>
                 <div className='floating-box-cleaning'>
                     <div>Cleaning fee</div> 
-                    <div>${parseInt(listing.price * .2)} </div> 
+                    <div>${parseInt(listing.price * numDays * 0.08)} </div> 
                 </div>
                 <div className='floating-box-service'>
                     <div>Service fee</div> 
-                    <div>${parseInt(listing.price * .35)}</div> 
+                    <div>${parseInt(listing.price * numDays * 0.12)}</div> 
                 </div>
             </div>
             <div id='float-divider'></div>
             <div className='float-total'>
                 <div>Total before taxes</div>
-                <div>${listing.price * 5 + parseInt(listing.price * .35) + parseInt(listing.price * .2)}</div>
+                <div>${listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08)}</div>
             </div>
         </div>
     </div>
