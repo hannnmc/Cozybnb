@@ -48,7 +48,7 @@ function ListingShowPage() {
     const dayOverage = (startingDay + numDays) % maxMonthDays[startDate.getMonth()];
 
     const [endDate, setEndDate] = useState(new Date(startDate.getFullYear(), endMonth, endDay));
-
+    const [value, onChange] = useState([startDate,endDate]);
     useEffect(() => {
         if (dayOverage < startDate.getDate()) {
             if (endMonth === 12) {
@@ -67,10 +67,9 @@ function ListingShowPage() {
     },[])    
 
     useEffect(() => {
-        console.log(`start date ${startDate}`);
-        console.log( `end date ${endDate}`)
+        onChange([startDate,endDate]);
+        console.log(value);
     },[startDate,endDate])
-
 
 
     // const [startDate, setStartDate] = useState(new Date(`2022-1-29`)); 
@@ -260,6 +259,8 @@ function ListingShowPage() {
                     setStartDate={setStartDate} 
                     endDate={endDate}
                     setEndDate={setEndDate}
+                    value={value}
+                    onChange={onChange}
                     />
                 </div>
             </div>

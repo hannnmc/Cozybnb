@@ -21,9 +21,9 @@ import 'react-calendar/dist/Calendar.css';
 //     11:31,
 // }
 
-function DatePickerComp({startDate, setStartDate, endDate, setEndDate }) {
+function DatePickerComp({startDate, setStartDate, endDate, setEndDate, value, onChange }) {
 
-    const [value, onChange] = useState([startDate,endDate]);
+    // const [value, onChange] = useState([startDate,endDate]);
     // console.log(value)
 
     useEffect(() => {
@@ -31,7 +31,7 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate }) {
         setEndDate(value[1]);
     },[value])
 
-    const defaultValue = [startDate, endDate];
+    // const defaultValue = [startDate, endDate];
     const selectRange = true;
     // const showDoubleView = true;
     // const showNavigation = false;
@@ -42,7 +42,7 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate }) {
     <div className='calendar-container'>
       <Calender 
       selectRange={selectRange}
-      defaultValue={defaultValue}
+      // defaultValue={defaultValue}
       // showFixedNumberOfWeeks={showFixedNumberOfWeeks}
       // goToRangeStartOnSelect={goToRangeStartOnSelect}
     //   showDoubleView={showDoubleView}
