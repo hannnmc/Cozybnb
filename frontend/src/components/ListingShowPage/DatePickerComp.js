@@ -38,6 +38,7 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate, value, on
     const view = 'month';
     // const goToRangeStartOnSelect = false;
     const showFixedNumberOfWeeks = true;
+    const calendarType = "US";
   return (
     <div className='calendar-container'>
       <Calender 
@@ -49,6 +50,7 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate, value, on
       view={view}
       onChange={onChange} 
       value={value}
+      calendarType={calendarType}
        />
     </div>
   );
