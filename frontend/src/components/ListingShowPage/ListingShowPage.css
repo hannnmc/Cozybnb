@@ -330,8 +330,22 @@
     margin-top: 16px;
 }
 
-.show-datepicker {
+.showpage-calendar {
     margin: 48px 0;
-    width: 300px;
+    /* width: 300px; */
 }
 
+.showpage-calendar h2{
+    font-size: 22.5px;
+    font-weight: 500;
+}
+
+.showpage-calendar h3{
+    font-size: 14.49px;
+    color: #717171;
+    padding-top: 8px;
+}
+
+.show-datepicker {
+    margin-top: 22px;
+}

@@ -30,6 +30,10 @@ const maxMonthDays = {
     11:31,
 }
 
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
 function ListingShowPage() {
     
     const dispatch = useDispatch();
@@ -245,14 +249,19 @@ function ListingShowPage() {
                 <ListingFeatures listing={listing}/>
             </div>
             <div className='showpage-divider'></div>
-
-            <div className='show-datepicker'>
-                <DatePickerComp 
-                startDate={startDate}
-                setStartDate={setStartDate} 
-                endDate={endDate}
-                setEndDate={setEndDate}
-                />
+            <div className='showpage-calendar'>
+                <div className='calendar-header'>
+                    <h2>{`${numDays} nights in ${city}`}</h2>
+                    <h3>{`${monthNames[startDate.getMonth()]} ${startDate.getDate()}, ${startDate.getFullYear()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}, ${endDate.getFullYear()}`}</h3>
+                </div>
+                <div className='show-datepicker'>
+                    <DatePickerComp 
+                    startDate={startDate}
+                    setStartDate={setStartDate} 
+                    endDate={endDate}
+                    setEndDate={setEndDate}
+                    />
+                </div>
             </div>
         </div>
         <FloatingBox listing={listing}
