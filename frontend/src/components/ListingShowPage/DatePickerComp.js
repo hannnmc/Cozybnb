@@ -30,19 +30,22 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate }) {
         setStartDate(value[0]);
         setEndDate(value[1]);
 
-    },[value])
+    },[])
 
     const defaultValue = [startDate, endDate];
     const selectRange = true;
     // const showDoubleView = true;
     // const showNavigation = false;
     const view = 'month';
-
+    // const goToRangeStartOnSelect = false;
+    const showFixedNumberOfWeeks = true;
   return (
     <div className='calendar-container'>
       <Calender 
       selectRange={selectRange}
       defaultValue={defaultValue}
+      // showFixedNumberOfWeeks={showFixedNumberOfWeeks}
+      // goToRangeStartOnSelect={goToRangeStartOnSelect}
     //   showDoubleView={showDoubleView}
       view={view}
     //   showNavigation={showNavigation}
