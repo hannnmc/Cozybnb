@@ -49,13 +49,15 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                 <form >
                     <div className='floating-box-form-top'>
                     <div className='floating-dates'>
-                        <input 
+                        <input onKeyDown={(e) => e.preventDefault()}
                         className='floating-start-date' 
                         type="date"
                         value={`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`}
                         onChange={handleStartChange}
                        />
-                        <input className='floating-end-date' type="date" 
+                        <input onKeyDown={(e) => e.preventDefault()}
+                        className='floating-end-date' 
+                        type="date" 
                         value={`${endDate.getFullYear()}-${endDate.getMonth() + 1}-${endDate.getDate() > 9 ? '':'0' }${endDate.getDate()}`}
                         onChange={handleEndChange}
                         />

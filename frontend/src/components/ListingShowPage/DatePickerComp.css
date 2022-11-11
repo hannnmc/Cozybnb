@@ -8,6 +8,7 @@
 
 .calendar-container {
     width: 338px;
+    height: 380px;
     /* height: 350px; */
 }
 
@@ -44,15 +45,14 @@
 .react-calendar__tile--active {
     background: rgb(247, 247, 247) !important;
     color: black !important;
-    aspect-ratio: 1;
     font-weight: 700;
 }
+
+
 
 .react-calendar__month-view__days__day {
     aspect-ratio: 1;
 }
-
-/* react-calendar__tile react-calendar__tile--now react-calendar__tile--hasActive react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__month-view__days__day */
 
 .react-calendar__month-view__days {
     display: flex;
@@ -60,26 +60,58 @@
 }
 
 .react-calendar__tile--range {
-    /* background: blue !important; */
     border-radius: none !important;
 }
 
 .react-calendar__tile--rangeStart {
-    background: #222222 !important;
     color: white !important;
+    position: relative;
+    z-index: 2;
+    border: none !important;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.react-calendar__tile--rangeStart::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #222222;
+    position: absolute;
+    /* margin-top: -16px;
+    margin-left: -17px; */
+    top: 0;
+    left: 0;
     border-radius: 50%;
+    z-index: 5;
 }
 .react-calendar__tile--rangeStart:hover {
     background: #222222 !important;
     color: white !important;
     border-radius: 50%;
     padding-left: 5px !important;
+    border: none !important;
 }
 
 .react-calendar__tile--rangeEnd {
-    background: #222222 !important;
     color: white !important;
+    position: relative;
+    z-index: 2;
+    border: none !important;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.react-calendar__tile--rangeEnd::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #222222;
+    position: absolute;
+    /* margin-top: -16px;
+    margin-left: -17px; */
+    top: 0;
+    left: 0;
     border-radius: 50%;
+    z-index: 5;
 }
 .react-calendar__tile--rangeEnd:hover {
     background: #222222 !important;
@@ -101,6 +133,8 @@
 
 abbr {
     text-decoration: none !important;
+    position: relative;
+    z-index: 100;
 }
 
 
@@ -109,9 +143,14 @@ abbr {
 }
 
 .react-calendar__tile--hasActive.react-calendar__tile--rangeStart {
-    background: #222222 !important;
+    background: rgb(247, 247, 247) !important;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
 }
 
 .react-calendar__tile--hasActive.react-calendar__tile--rangeEnd {
-    background: #222222 !important;
+    background: rgb(247, 247, 247) !important;
+    /* background: blue !important; */
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
 }
