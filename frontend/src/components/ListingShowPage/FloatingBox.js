@@ -1,6 +1,36 @@
+import { useEffect } from 'react'
 import './FloatingBox.css'
 
-const FloatingBox = ({listing}) => {
+const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays}) => {
+    
+    const handleStartChange = (e) => {
+        const startValue = e.target.value;
+        const startYear = startValue.split('-')[0]
+        const startMonth = startValue.split('-')[1]
+        const startDay = startValue.split('-')[2]
+        // setStartDate()
+        // console.log(startYear, startMonth, startDay)
+        setStartDate(new Date(`${startYear}, ${startMonth}, ${startDay}`))
+        console.log(new Date(`${startYear}, ${startMonth}, ${startDay}`))
+    }
+    const handleEndChange = (e) => {
+        const endValue = e.target.value;
+        const endYear = endValue.split('-')[0]
+        const endMonth = endValue.split('-')[1]
+        const endDay = endValue.split('-')[2]
+        // setEndDate()
+        // console.log(endYear, endMonth, endDay)
+        setEndDate(new Date(`${endYear}, ${endMonth}, ${endDay}`))
+        console.log(new Date(`${endYear}, ${endMonth}, ${endDay}`))
+    }
+    
+    // useEffect(() => {
+        
+        // console.log(startDate)
+        // console.log(new Date(endDate.getFullYear(), endDate.getMonth()+1, endDate.getDate()))
+        // console.log(endDate)
+    // },[startDate,endDate])
+
     return (
         <div className='listing-floating-panel'>
         <div className='floating-box-border'>
@@ -16,8 +46,16 @@ const FloatingBox = ({listing}) => {
                 <form >
                     <div className='floating-box-form-top'>
                     <div className='floating-dates'>
-                       <input className='floating-start-date' type="date" />
-                        <input className='floating-end-date' type="date" />
+                        <input 
+                        className='floating-start-date' 
+                        type="date"
+                        value={`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate()}`}
+                        onChange={handleStartChange}
+                       />
+                        <input className='floating-end-date' type="date" 
+                        value={`${endDate.getFullYear()}-${endDate.getMonth() + 1}-${endDate.getDate()}`}
+                        onChange={handleEndChange}
+                        />
                     </div>
                     </div>
                     <select className='floating-box-guests'>
@@ -46,7 +84,7 @@ const FloatingBox = ({listing}) => {
             <div id='float-divider'></div>
             <div className='float-total'>
                 <div>Total before taxes</div>
-                <div>${listing.price * 5}</div>
+                <div>${listing.price * 5 + parseInt(listing.price * .35) + parseInt(listing.price * .2)}</div>
             </div>
         </div>
     </div>

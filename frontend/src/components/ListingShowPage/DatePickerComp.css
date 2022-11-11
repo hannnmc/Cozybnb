@@ -68,8 +68,10 @@
     border-radius: 50%;
 }
 .react-calendar__tile--rangeStart:hover {
-    color: #222222 !important;
-    font-weight: 550;
+    background: #222222 !important;
+    color: white !important;
+    border-radius: 50%;
+    padding-left: 5px !important;
 }
 
 .react-calendar__tile--rangeEnd {
@@ -78,13 +80,15 @@
     border-radius: 50%;
 }
 .react-calendar__tile--rangeEnd:hover {
-    color: #222222 !important;
-    font-weight: 550;
+    background: #222222 !important;
+    color: white !important;
+    border-radius: 50%;
+    padding-left: 5px !important;
 }
 
 .react-calendar__month-view__weekdays__weekday {
     text-transform: none !important;
-    color: rgb(54, 97, 97);
+    color: rgb(113, 113, 113);
 }
 
 .react-calendar__navigation__label__labelText {
@@ -97,3 +101,18 @@ abbr {
     text-decoration: none !important;
 }
 
+
+.react-calendar__tile--hasActive {
+    background: none !important;
+}
+
+
+/* react-calendar__tile react-calendar__tile--now react-calendar__tile--hasActive react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__month-view__days__day */
+
+.react-calendar__tile--hasActive.react-calendar__tile--rangeStart {
+    background: #222222 !important;
+}
+
+.react-calendar__tile--hasActive.react-calendar__tile--rangeEnd {
+    background: #222222 !important;
+}
