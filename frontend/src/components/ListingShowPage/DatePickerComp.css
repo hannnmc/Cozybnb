@@ -52,6 +52,8 @@
     aspect-ratio: 1;
 }
 
+/* react-calendar__tile react-calendar__tile--now react-calendar__tile--hasActive react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__month-view__days__day */
+
 .react-calendar__month-view__days {
     display: flex;
     justify-content: space-evenly;
@@ -105,9 +107,6 @@ abbr {
 .react-calendar__tile--hasActive {
     background: none !important;
 }
-
-
-/* react-calendar__tile react-calendar__tile--now react-calendar__tile--hasActive react-calendar__tile--range react-calendar__tile--rangeStart react-calendar__month-view__days__day */
 
 .react-calendar__tile--hasActive.react-calendar__tile--rangeStart {
     background: #222222 !important;
