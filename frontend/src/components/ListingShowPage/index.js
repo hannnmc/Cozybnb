@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ListingMap from '../ListingMap';
 // import ReviewForm from './ReviewForm';
@@ -12,16 +12,137 @@ import ListingFeatures from './ListingFeatures';
 import DatePickerComp from './DatePickerComp';
 
 
-function ListingShowPage() {
-    const dispatch = useDispatch();
-    const { listingId } = useParams();
+let lunar = false;
 
+if (new Date().getFullYear() % 4 === 0) lunar = true;
+const maxMonthDays = {
+    0:31,
+    1:lunar ? 29 : 28,
+    2:31,
+    3:30,
+    4:31,
+    5:30,
+    6:31,
+    7:31,
+    8:30,
+    9:31,
+    10:30,
+    11:31,
+}
+
+function ListingShowPage() {
+    
+    const dispatch = useDispatch();
+
+    const [startDate, setStartDate] = useState(new Date());
+    const [numDays, setNumDays] = useState(5);
+    const [endMonth, setEndMonth] = useState(startDate.getMonth());
+    const [endDay, setEndDay] = useState(startDate.getDate() + numDays);
+    const [startingDay, setStartingday] = useState(startDate.getDate());
+    const [newDay, setNewDay] = useState(startDate.getDate());
+    const [endYear, setEndYear] = useState(startDate.getFullYear());
+    const dayOverage = (startingDay + numDays) % maxMonthDays[startDate.getMonth()];
+
+    const [endDate, setEndDate] = useState(new Date(startDate.getFullYear(), endMonth, endDay));
+
+    useEffect(() => {
+        if (dayOverage < startDate.getDate()) {
+            if (endMonth === 12) {
+                setEndYear(startDate.getFullYear() + 1);
+                setEndMonth(1);
+                setEndDay(dayOverage);
+            } else {
+                setEndMonth(startDate.getMonth() + 1);
+                setEndDay(dayOverage);
+                console.log('in overage')
+            }
+        } else {
+            setEndDay(startDate.getDate() + numDays)
+            console.log('not in overage')
+        }
+    },[])    
+
+    useEffect(() => {
+        console.log(`start date ${startDate}`);
+        console.log( `end date ${endDate}`)
+    },[startDate,endDate])
+
+
+
+    // const [startDate, setStartDate] = useState(new Date(`2022-1-29`)); 
+    // const [numDays, setNumDays] = useState(6);
+    // const [startingDay, setStartingday] = useState(startDate.getDate());
+    // const [newDay, setNewDay] = useState(startDate.getDate());
+
+    // const [endYear, setEndYear] = useState(startDate.getFullYear());
+    // const [endMonth, setEndMonth] = useState(startDate.getMonth() + 1);
+    // const [endDay, setEndDay] = useState(startDate.getDate() + numDays);
+    
+    // const dayOverage = (startingDay + numDays) % maxMonthDays[startDate.getMonth()];
+
+    // useEffect(() => {
+    //     setEndDay(startDate.getDate() + numDays)
+    //     if (endDay > maxMonthDays[startDate.getMonth()]) {
+    //         if (endMonth === 12) {
+    //             setEndYear(endYear + 1);
+    //             setEndMonth(1);
+    //             setEndDay(dayOverage);
+    //         } else {
+    //             setEndMonth(endMonth + 1);
+    //             setEndDay(dayOverage);
+    //         }
+    //     } 
+    // },[])
+
+    // console.log(endMonth)
+    // console.log(endDay)
+
+    
+    // const [endDate, setEndDate] = useState(new Date(`${startDate.getFullYear()}-${endMonth}-${endDay}`)); 
+
+    // const [endDate, setEndDate] = useState(new Date(`${startDate.getFullYear()}-${endMonth}-${endDay}`)); 
+    
+
+    // console.log(endDate)
     // const sessionUser = useSelector(state => state.session.user);
+    const { listingId } = useParams();
     const listing = useSelector(state => state.listings[listingId]);
     const users = useSelector(state => state.users);
     
     //   const reviews = useSelector(getListingReviews(parseInt(listingId)));
         
+
+ 
+
+    // useEffect(() => {
+    //     if (endDay > maxMonthDays[startDate.getMonth()]) {
+
+    //         console.log(endDay)
+    //         console.log(maxMonthDays[startDate.getMonth()])
+
+    //         if (endMonth === 12) {
+    //             setEndYear(startDate.getFullYear() + 1);
+    //             setEndMonth(1);
+    //             setEndDay(dayOverage);
+    //         } else {
+    //             // setEndMonth(startDate.getMonth());
+    //             setEndDay(dayOverage);
+    //             // console.log('in overage')
+    //         }
+    //     } else {
+    //         // setEndMonth(new Date('2022,11,15'))
+    //         // console.log(`this is end month ${endMonth}`)
+    //         setEndDay(startDate.getDate() + numDays)
+    //         // console.log('not in overage')
+    //     }
+    //     // let endDateString = `${startDate.getFullYear()}, ${endMonth}, ${endDay}`
+    //     // console.log(endDateString)
+    //     console.log(`start date ${startDate}`);
+    //     setEndDate(new Date(`${startDate.getFullYear()}-${endMonth}-${endDay}`));
+    //     console.log( `end date ${endDate}`)
+    // },[])    
+
+
     useEffect(() => {
         dispatch(fetchListing(listingId));
         dispatch(fetchUsers());
@@ -126,10 +247,22 @@ function ListingShowPage() {
             <div className='showpage-divider'></div>
 
             <div className='show-datepicker'>
-                <DatePickerComp />
+                <DatePickerComp 
+                startDate={startDate}
+                setStartDate={setStartDate} 
+                endDate={endDate}
+                setEndDate={setEndDate}
+                />
             </div>
         </div>
-        <FloatingBox listing={listing}/>
+        <FloatingBox listing={listing}
+        startDate={startDate}
+        setStartDate={setStartDate} 
+        endDate={endDate}
+        setEndDate={setEndDate}
+        numDays={numDays}
+        setNumDays={setNumDays}
+        />
         <div className='showpage-divider'></div>
         </section>
             <div className='showpage-divider'></div>
