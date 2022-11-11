@@ -86,7 +86,26 @@
 
 .top-info-field {
 
+    overflow-y: hidden;
     margin-top: 5px;
+    height: 18px;
+    color: #717171;
+    /* width: 85%; */
+    position: relative;
+    display: flex;
+}
+/* .top-info-field::after {
+    content: '...';
+    position: absolute;
+    height: 17px;
+    width: 17px;
+
+    top: 0;
+    right: 0;
+} */
+
+.description-dots{
+    padding-left: 3px;
 }
 
 .bot-info-field {
@@ -334,3 +353,11 @@
     }
 }
 
+.list-item-beds {
+    font-size: 16px;
+    color: #717171;
+}
+
+.list-item-beds-container {
+    margin-top: 5px;
+}
