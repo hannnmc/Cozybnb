@@ -29,8 +29,7 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate }) {
     useEffect(() => {
         setStartDate(value[0]);
         setEndDate(value[1]);
-
-    },[])
+    },[value])
 
     const defaultValue = [startDate, endDate];
     const selectRange = true;
@@ -48,9 +47,8 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate }) {
       // goToRangeStartOnSelect={goToRangeStartOnSelect}
     //   showDoubleView={showDoubleView}
       view={view}
-    //   showNavigation={showNavigation}
       onChange={onChange} 
-    //   value={value}
+      value={value}
        />
     </div>
   );

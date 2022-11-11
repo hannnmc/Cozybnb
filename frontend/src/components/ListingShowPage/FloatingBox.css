@@ -53,6 +53,14 @@
     border-left: none;
     border-top-right-radius: 8px;
     text-align: center;
+    position: relative;
+    z-index: 5;
+}
+.floating-start-date:focus {
+    border-radius: 8px;
+}
+.floating-end-date:focus {
+    border-radius: 8px;
 }
 
 .floating-box-guests {
@@ -65,9 +73,12 @@
     font-size: 15px;
     text-indent: 5px;
 }
-.floating-box-guests:current {
+.floating-box-guests:focus {
     border-radius: 8px;
+    position: relative;
+    z-index: 10;
 }
+
 
 .floating-box-button {
     margin-top: 15px;
