@@ -29,6 +29,11 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         setEndDate(new Date(`${endYear}, ${endMonth}, ${endDay}`))
         console.log(new Date(`${endYear}, ${endMonth}, ${endDay}`))
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+    }
     
     // useEffect(() => {
         
@@ -49,7 +54,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         {listing.averageRating ? listing.averageRating : '0 reviews'}
                     </div>
                 </div>
-                <form >
+                <form onSubmit={handleSubmit}>
                     <div className='floating-box-form-top'>
                     <div className='floating-dates'>
                         <input onKeyDown={(e) => e.preventDefault()}
@@ -69,7 +74,8 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                     <select className='floating-box-guests'>
                         <option value="select">1 guest</option>
                     </select>
-                    <button className='floating-box-button'>
+                    <button type='submit'
+                    className='floating-box-button'>
                         Reserve
                     </button>
                 </form>
