@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 function ListItem({ listing, isHighlighted, setSelectedListing }) {
 
-  const { title, photoUrls, price, averageRating } = listing;
+  const { title, photoUrls, price, averageRating, beds, description } = listing;
   const history = useHistory(); 
 
   return (
@@ -20,9 +20,16 @@ function ListItem({ listing, isHighlighted, setSelectedListing }) {
         <h2  className="list-item-copy">{title}</h2>
         <div className="list-item-fields">
           <div className="top-info-field">
-            <span className="list-item-category">Average Rating:</span>
+            {/* <span className="list-item-category">Average Rating:</span>
             <span className="list-item-review">
               {averageRating || ' No reviews yet'}
+            </span> */}
+            <span>{description.split(' ').slice(0,5).join(' ')}</span>
+            <span className="description-dots">...</span>
+          </div>
+          <div className="list-item-beds-container">
+            <span className="list-item-beds">
+              {beds} beds
             </span>
           </div>
           <div className="bot-info-field">
