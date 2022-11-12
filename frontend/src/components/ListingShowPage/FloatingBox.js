@@ -3,8 +3,9 @@ import './FloatingBox.css'
 
 const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays}) => {
     
-
-    setNumDays( Math.floor((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : Math.floor((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
+    useEffect(() => {
+        setNumDays( ((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : parseInt((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
+    },[startDate,endDate])
 
     const handleStartChange = (e) => {
         const startValue = e.target.value;

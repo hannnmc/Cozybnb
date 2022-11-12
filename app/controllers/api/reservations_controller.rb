@@ -1,4 +1,7 @@
 class Api::ReservationsController < ApplicationController
+
+    wrap_parameters include: Reservation.attribute_names + ['listingId' , 'userId', 'startDate', 'endDate']
+
     def create
         @reservation = Reservation.new(reservation_params)
         @reservation[:user_id] = current_user.id
