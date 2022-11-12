@@ -10,6 +10,7 @@ import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
 import * as listingActions from "./store/listings"
 import * as userActions from "./store/users"
+import * as reservationActions from "./store/reservations"
 
 const store = configureStore();
 
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV !== "production") {
   window.sessionActions = sessionActions;
   window.listingActions = listingActions;
   window.userActions = userActions;
+  window.reservationActions = reservationActions;
 }
 
 function Root() {
