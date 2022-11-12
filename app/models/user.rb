@@ -12,6 +12,7 @@
 #  phone_number    :string(10)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  about           :string
 #
 class User < ApplicationRecord
   has_secure_password
@@ -31,9 +32,8 @@ class User < ApplicationRecord
   validate :validate_age
 
   has_one_attached :photo
-
-  has_many :listings, 
-  class_name: "Listing"
+  has_many :reservations
+  has_many :listings
 
   def self.find_by_credentials(email, password)
     user = User.find_by(:email => email)

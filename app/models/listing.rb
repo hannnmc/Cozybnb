@@ -24,11 +24,12 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  country             :string           not null
-#  prop_type           :string           not null
+#  prop_type           :string           default("Entire home"), not null
 #
 class Listing < ApplicationRecord
 
     has_many_attached :photos
+    has_many :reservations
 
     belongs_to :users,
     class_name: "User"
