@@ -68,8 +68,9 @@ function ListingShowPage() {
     },[])    
 
     useEffect(() => {
-        onChange([startDate,endDate]);
-        console.log(value);
+        if (startDate !== value[0] || endDate !== value[1])(
+            onChange([startDate,endDate])
+        )
     },[startDate,endDate])
 
     const { listingId } = useParams();

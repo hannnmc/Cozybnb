@@ -20,8 +20,6 @@ const ProfilePage = () => {
     };
     const listings = useSelector((state) => state.listings);
 
-    const reservations = useSelector((state) => state.reservations);
-
     useEffect(() => {
         dispatch(listingActions.fetchListings());
         dispatch(reservationActions.fetchReservations());
@@ -35,6 +33,12 @@ const ProfilePage = () => {
         }
         
     }
+
+    const reservations = useSelector(state => state.reservations);
+    const {id} = useSelector(state => state.session.user);
+
+    const resArray = Object.entries(reservations);
+    const userReserves = resArray.filter(([key,value]) => value.userId === id);
 
 
     if (!user) return null;
@@ -101,8 +105,7 @@ const ProfilePage = () => {
                 <div className='profile-reservations'>
                     <h1>Trips</h1>
                     <div className='reservation-list'>
-                        {}
-
+                        {<ProfileReservations />}
                     </div>
                 
                 
