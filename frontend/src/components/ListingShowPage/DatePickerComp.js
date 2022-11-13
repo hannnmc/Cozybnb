@@ -23,34 +23,29 @@ import 'react-calendar/dist/Calendar.css';
 
 function DatePickerComp({startDate, setStartDate, endDate, setEndDate, value, onChange }) {
 
-    // const [value, onChange] = useState([startDate,endDate]);
-    // console.log(value)
+
 
     useEffect(() => {
         setStartDate(value[0]);
         setEndDate(value[1]);
     },[value])
-
-    // const defaultValue = [startDate, endDate];
     const selectRange = true;
-    // const showDoubleView = true;
-    // const showNavigation = false;
     const view = 'month';
-    // const goToRangeStartOnSelect = false;
     const showFixedNumberOfWeeks = true;
     const calendarType = "US";
+    const tileDisabled = ({activeStartDate, date, view }) => date.getTime() < ((new Date).getTime() - 100000000)
   return (
     <div className='calendar-container'>
       <Calender 
       selectRange={selectRange}
       // defaultValue={defaultValue}
-      // showFixedNumberOfWeeks={showFixedNumberOfWeeks}
       // goToRangeStartOnSelect={goToRangeStartOnSelect}
     //   showDoubleView={showDoubleView}
       view={view}
       onChange={onChange} 
       value={value}
       calendarType={calendarType}
+      tileDisabled={tileDisabled}
        />
     </div>
   );

@@ -7,17 +7,15 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         setNumDays( ((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : parseInt((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
     },[startDate,endDate])
 
+    console.log(startDate,endDate)
+
     const handleStartChange = (e) => {
         const startValue = e.target.value;
-        console.log(startValue)
         const startYear = parseInt(startValue.split('-')[0])
         const startMonth = parseInt(startValue.split('-')[1])
         const startDay = parseInt(startValue.split('-')[2])
-        // setStartDate()
-        console.log((new Date()).getMonth())
-        console.log(startYear, startMonth, startDay)
         setStartDate(new Date(`${startYear}, ${startMonth}, ${startDay}`))
-        // setStartDate(new Date(`${startValue}`))
+
         console.log(new Date(`${startYear}, ${startMonth}, ${startDay}`))
     }
     const handleEndChange = (e) => {
@@ -25,24 +23,15 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         const endYear = endValue.split('-')[0]
         const endMonth = endValue.split('-')[1]
         const endDay = endValue.split('-')[2]
-        // setEndDate()
-        // console.log(endYear, endMonth, endDay)
+
         setEndDate(new Date(`${endYear}, ${endMonth}, ${endDay}`))
         console.log(new Date(`${endYear}, ${endMonth}, ${endDay}`))
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
     }
     
-    // useEffect(() => {
-        
-        // console.log(startDate)
-        // console.log(new Date(endDate.getFullYear(), endDate.getMonth()+1, endDate.getDate()))
-        // console.log(endDate)
-    // },[startDate,endDate])
-
     return (
         <div className='listing-floating-panel'>
         <div className='floating-box-border'>

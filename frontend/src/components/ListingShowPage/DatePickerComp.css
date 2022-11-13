@@ -154,3 +154,14 @@ abbr {
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
 }
+
+.react-calendar__tile:disabled{
+    background: none !important;
+    color: #1010104D;
+    text-decoration: line-through
+}
+
+.react-calendar__tile:disabled:hover{
+    border: none !important;
+    color: #1010104D;
+}
