@@ -19,6 +19,7 @@ const ProfilePage = () => {
         setShowProfileEditForm(open => !open)
     };
     const listings = useSelector((state) => state.listings);
+    const reservations = useSelector(state => state.reservations);
 
     useEffect(() => {
         dispatch(listingActions.fetchListings());
@@ -26,19 +27,20 @@ const ProfilePage = () => {
     },[])
 
     const ownedListings = [];
+    const ownedReservations = [];
 
     for (let i = 1; i < Object.keys(listings).length+1 ; i++) {
         if (listings[i].usersId === user.id) {
             ownedListings.push(listings[i]);
         }
-        
     }
-
-    const reservations = useSelector(state => state.reservations);
-    const {id} = useSelector(state => state.session.user);
-
-    const resArray = Object.entries(reservations);
-    const userReserves = resArray.filter(([key,value]) => value.userId === id);
+    for (let i = 1; i < Object.keys(reservations).length+1 ; i++) {
+        if (reservations[i].userId === user.id) {
+            ownedReservations.push(reservations[i]);
+        }
+    }
+    // const resArray = Object.entries(reservations);
+    // const userReserves = resArray.filter(([key,value]) => value.userId === id);
 
 
     if (!user) return null;
@@ -105,7 +107,14 @@ const ProfilePage = () => {
                 <div className='profile-reservations'>
                     <h1>Trips</h1>
                     <div className='reservation-list'>
-                        {<ProfileReservations />}
+                        {ownedReservations.map(reservation => (
+                            <ProfileReservations 
+                                key={reservation.id}
+                                reservation={reservation}
+                                listings={listings}
+                                ownedReservations={ownedReservations}
+                                />
+                        ))}
                     </div>
                 
                 

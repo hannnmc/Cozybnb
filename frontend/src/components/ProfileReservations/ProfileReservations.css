@@ -7,3 +7,19 @@
     font-weight: 500;
 }
 
+.res-item {
+    height: 102px;
+    margin-top: 36px;
+    display: flex;
+}
+
+.res-image {
+    object-fit: cover;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+}
+
+.res-title {
+    margin-left: 20px;
+}
