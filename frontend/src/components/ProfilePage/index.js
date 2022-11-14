@@ -28,10 +28,12 @@ const ProfilePage = () => {
 
     const ownedListings = [];
     const ownedReservations = [];
-
-    for (let i = 1; i < Object.keys(listings).length+1 ; i++) {
-        if (listings[i].usersId === user.id) {
-            ownedListings.push(listings[i]);
+    if (Object.keys(listings).length > 0) {
+        
+        for (let i = 1; i < Object.keys(listings).length+1 ; i++) {
+            if (listings[i].usersId === user.id) {
+                ownedListings.push(listings[i]);
+            }
         }
     }
 
@@ -50,7 +52,7 @@ const ProfilePage = () => {
 
     if (!user) return null;
     
-    return (
+    if (listings && reservations) return (
         <>
         <div className='profile-container'>
             <div className='profile-card'>

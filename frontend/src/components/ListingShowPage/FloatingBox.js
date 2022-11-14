@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './FloatingBox.css';
 import { createReservation } from '../../store/reservations';
+import { useHistory } from 'react-router-dom';
 // import $ from "jquery";
 
 // const options = [
@@ -26,6 +27,7 @@ import { createReservation } from '../../store/reservations';
 const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays}) => {
     
     const dispatch = useDispatch();
+    const history = useHistory();
     const user = useSelector(state => state.session.user);
 
     const [ guests, setGuests ] = useState(1);
@@ -62,6 +64,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             guests,
             total
         }))
+        .then(history.push(`/profile/`))
     }
     
     return (

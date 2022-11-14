@@ -7,8 +7,8 @@ class Api::ReservationsController < ApplicationController
         # debugger
         @reservation[:user_id] = current_user.id
 
-        debugger
-        if @reservation.save!
+        # debugger
+        if @reservation.save
             render :show
         else
             render json: @reservation.errors.full_messages, status: 422
