@@ -317,6 +317,13 @@ input:not(:focus):valid ~ .ps-floating-label{
     cursor: pointer;
 }
 
+.signup-span {
+    margin-left: 5px;
+    color: #717171;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 @media (max-width: 570px) {
     .login-modal {
         width: 100%;
@@ -346,4 +353,5 @@ input:not(:focus):valid ~ .ps-floating-label{
         width: 76%;
     }
 }
+
 

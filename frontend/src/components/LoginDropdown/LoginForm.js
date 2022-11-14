@@ -8,7 +8,7 @@ function LoginForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const { setShowLoginModal } = props;
+  const { setShowLoginModal, setShowSignupModal } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -53,6 +53,12 @@ function LoginForm(props) {
     }));
   };
 
+  const toggleSignup = (e) => {
+    e.preventDefault();
+    setShowLoginModal(false);
+    setShowSignupModal(true);
+  }
+
   return (
     <>
       <div className="login-modal">
@@ -94,7 +100,11 @@ function LoginForm(props) {
           </ul>
           </div>
       
-          <div className="login-message">You may also select demo users to login.</div>
+          <div className="login-message">You may also 
+          <span className="signup-span"
+          onClick={toggleSignup}
+          >Signup</span>
+          </div>
           <button 
           type="submit">Continue</button>
         </form>
