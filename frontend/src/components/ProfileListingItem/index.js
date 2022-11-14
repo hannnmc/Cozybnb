@@ -5,7 +5,7 @@ import './ProfileListingItem.css'
 function ProfileListingItem({ ownedListings, listing }) {
 
     const history = useHistory(); 
-    const { title, photoUrls, price, averageRating } = listing;
+    const { title, photoUrls, price, averageRating, description, beds } = listing;
 
     return (
         <div
@@ -18,14 +18,24 @@ function ProfileListingItem({ ownedListings, listing }) {
             <h2  className="profile-item-title">{title}</h2>
             <div className="profile-listing-fields">
                 <div className="profile-listing-info-top">
-                    <span className="list-item-category">Average Rating:</span>
-                    <span className="list-item-review">
+                    {/* <span className="list-item-category">Average Rating:</span> */}
+                    {/* <span className="list-item-review">
                     {averageRating || ' No reviews yet'}
+                    </span> */}
+                    <div>
+                        <span>{description.split(' ').slice(0,5).join(' ')}</span>
+                        <span className="description-dots">...</span>
+
+                    </div>
+                    <span className="list-item-beds">
+                        {beds} beds
                     </span>
                 </div>
                 <div className="profile-listing-info-top">
-                    <span className="list-item-copy">${price}</span>
-                    <span className="list-item-category"> night</span>
+                    <div>
+                        <span className="list-item-copy">${price}</span>
+                        <span className="list-item-category"> night</span>
+                    </div>
                 </div>
             </div>
         </div>
