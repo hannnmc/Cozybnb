@@ -64,7 +64,7 @@ const ProfileReservations = ({reservation, listings}) => {
                 <div className='res-title'>{listing.title}</div>
                 <div className='res-dates'>
                     <h3>{`${monthNames[formatStartDate.getMonth()]} ${formatStartDate.getDate()}, ${formatStartDate.getFullYear()} - ${monthNames[formatEndDate.getMonth()]} ${formatEndDate.getDate()}, ${formatEndDate.getFullYear()}`}</h3>
-                    <h3>{`${(formatEndDate.getTime() - formatStartDate.getTime())/1000/60/60/24}`} nights</h3>
+                    <h3>{`${Math.ceil((formatEndDate.getTime() - formatStartDate.getTime())/1000/60/60/24)}`} nights</h3>
                 </div>
                 <div className='res-details'>Total: ${reservation.total}</div>
                 <div className='res-trip-in'>
