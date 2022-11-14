@@ -1,8 +1,21 @@
-import { useEffect } from 'react'
-import './FloatingBox.css'
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import './FloatingBox.css';
+import { createReservation } from '../../store/reservations';
 
 const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays}) => {
     
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.session.user);
+
+    const [ guests, setGuests ] = useState(1);
+    const [total, setTotal ] = useState(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
+
+    
+
+    const listingId = listing.id;
+    const userId = user.id;
+
     useEffect(() => {
         setNumDays( ((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : parseInt((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
     },[startDate,endDate])
@@ -13,8 +26,6 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         const startMonth = parseInt(startValue.split('-')[1])
         const startDay = parseInt(startValue.split('-')[2])
         setStartDate(new Date(`${startYear}, ${startMonth}, ${startDay}`))
-
-        console.log(new Date(`${startYear}, ${startMonth}, ${startDay}`))
     }
     const handleEndChange = (e) => {
         const endValue = e.target.value;
@@ -23,11 +34,18 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         const endDay = endValue.split('-')[2]
 
         setEndDate(new Date(`${endYear}, ${endMonth}, ${endDay}`))
-        console.log(new Date(`${endYear}, ${endMonth}, ${endDay}`))
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        dispatch(createReservation({
+            startDate,
+            endDate,
+            listingId,
+            userId,
+            guests,
+            total
+        }))
     }
     
     return (
@@ -59,8 +77,27 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         />
                     </div>
                     </div>
-                    <select className='floating-box-guests'>
-                        <option value="select">1 guest</option>
+                    <select 
+                    value={guests}
+                    onChange={(e)=>(setGuests(e.target.value))}
+                    className='floating-box-guests
+                    '>
+                        <option value="1">1 guest</option>
+                        <option value="2">2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5">5 guests</option>
+                        <option value="6">6 guests</option>
+                        <option value="7">7 guests</option>
+                        <option value="8">8 guests</option>
+                        <option value="9">9 guests</option>
+                        <option value="10">10 guests</option>
+                        <option value="11">11 guests</option>
+                        <option value="12">12 guests</option>
+                        <option value="13">13 guests</option>
+                        <option value="14">14 guests</option>
+                        <option value="15">15 guests</option>
+                        <option value="16">16 guests</option>
                     </select>
                     <button type='submit'
                     className='floating-box-button'>
@@ -86,7 +123,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             <div id='float-divider'></div>
             <div className='float-total'>
                 <div>Total before taxes</div>
-                <div>${listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08)}</div>
+                <div>$ {total}</div>
             </div>
         </div>
     </div>
