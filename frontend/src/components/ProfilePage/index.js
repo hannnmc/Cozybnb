@@ -29,26 +29,24 @@ const ProfilePage = () => {
     const ownedListings = [];
     const ownedReservations = [];
     if (Object.keys(listings).length > 0) {
-
-        for (let i = 1; i < Object.keys(listings).length+1 ; i++) {
-            if (listings[i].usersId === user.id) {
-                ownedListings.push(listings[i]);
+        Object.keys(listings).forEach(listingId => {
+            if (listings[listingId].usersId === user.id) {
+                ownedListings.push(listings[listingId])
             }
-        }
+        })
     }
 
     if (Object.keys(reservations).length > 0) {
         // debugger
-        for (let i = 1; i < Object.keys(reservations).length+1 ; i++) {
-            if (reservations[i].userId === user.id) {
-                ownedReservations.unshift(reservations[i]);
+        // for (let i = 1; i < Object.keys(reservations).length+1 ; i++)
+        Object.keys(reservations).forEach(reservationId => {
+            if (reservations[reservationId].userId === user.id) {
+                ownedReservations.unshift(reservations[reservationId]);
             }
-        }
+        }) 
     }
     // const resArray = Object.entries(reservations);
     // const userReserves = resArray.filter(([key,value]) => value.userId === id);
-
-    console.log(reservations)
 
     if (!user) return null;
     

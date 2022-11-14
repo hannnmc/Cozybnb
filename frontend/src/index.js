@@ -9,8 +9,8 @@ import configureStore from "./store";
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
 import * as listingActions from "./store/listings"
-import * as userActions from "./store/users"
-import * as reservationActions from "./store/reservations"
+import * as userActions from "./store/users";
+import * as reservationActions from "./store/reservations";
 
 const store = configureStore();
 
