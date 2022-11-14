@@ -29,7 +29,7 @@ const ProfilePage = () => {
     const ownedListings = [];
     const ownedReservations = [];
     if (Object.keys(listings).length > 0) {
-        
+
         for (let i = 1; i < Object.keys(listings).length+1 ; i++) {
             if (listings[i].usersId === user.id) {
                 ownedListings.push(listings[i]);
@@ -41,7 +41,7 @@ const ProfilePage = () => {
         // debugger
         for (let i = 1; i < Object.keys(reservations).length+1 ; i++) {
             if (reservations[i].userId === user.id) {
-                ownedReservations.push(reservations[i]);
+                ownedReservations.unshift(reservations[i]);
             }
         }
     }

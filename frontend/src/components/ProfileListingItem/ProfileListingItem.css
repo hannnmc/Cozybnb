@@ -14,6 +14,8 @@
 .profile-listing-infobox {
     margin-left: 20px;
     line-height: 24px;
+    overflow-y: scroll;
+    height: 102px;
 }
 
 .profile-mylistings {

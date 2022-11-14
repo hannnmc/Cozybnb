@@ -25,6 +25,7 @@
     margin-left: 20px;
     line-height: 24px;
     width: 100%;
+    overflow-y: scroll;
 }
 
 .res-title {
