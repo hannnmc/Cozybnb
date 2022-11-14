@@ -25,3 +25,8 @@
 #profile-box-divider {
     margin-top: 36px;
 }
+.profile-item-title{
+    font-weight: 500;
+    overflow: hidden;
+    height: 24px;
+}

@@ -20,6 +20,14 @@
     border-radius: 8px;
 }
 
-.res-title {
+.res-info {
     margin-left: 20px;
+    line-height: 24px;
+    width: 100%;
+}
+
+.res-title {
+    font-weight: 500;
+    height: 24px;
+    overflow: hidden;
 }
