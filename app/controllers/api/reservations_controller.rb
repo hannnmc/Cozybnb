@@ -10,8 +10,8 @@ class Api::ReservationsController < ApplicationController
         # debugger
         if @reservation.save
             render :show
-        # else
-        #     render json: @reservation.errors.full_messages, status: 422
+        else
+            render json: @reservation.errors.full_messages, status: 422
         end
     end
 
