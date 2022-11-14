@@ -6,9 +6,17 @@ class Api::UsersController < ApplicationController
     render :show
   end
 
-  def update 
+  def create 
+    @user = User.create(user_params)
+    if @user.save 
+      render :show
+    else 
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def update
     @user = User.find(current_user.id)
-    # debugger
     if @user.update(user_params)
       @user.save
       render :show

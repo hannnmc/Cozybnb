@@ -4,9 +4,11 @@ class Api::ReservationsController < ApplicationController
 
     def create
         @reservation = Reservation.new(reservation_params)
+        # debugger
         @reservation[:user_id] = current_user.id
 
-        if @reservation.save
+        debugger
+        if @reservation.save!
             render :show
         else
             render json: @reservation.errors.full_messages, status: 422
@@ -14,14 +16,20 @@ class Api::ReservationsController < ApplicationController
     end
 
     def index 
-        @reservations = Reservation.all
+        reservations = Reservation.all
+        
+        if params[:userId]
+           q reservations = reservations.where(user_id: params[userId])
+        end
+        @reservations = reservations.includes(:user)
+
         render :index
     end
 
     private
 
     def reservation_params 
-        params.require(:reservation).permit(:listing_id, :user_id, :guests, :start_date, :end_date, :total)
+        params.require(:reservation).permit(:listing_id, :guests, :start_date, :end_date, :total)
     end
 
 
