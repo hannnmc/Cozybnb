@@ -33,7 +33,7 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate, value, on
     const view = 'month';
     const showFixedNumberOfWeeks = true;
     const calendarType = "US";
-    const tileDisabled = ({activeStartDate, date, view }) => date.getTime() < ((new Date).getTime() - 100000000)
+    const tileDisabled = ({activeStartDate, date, view }) => date.getTime() < ((new Date).getTime() - 86400000)
   return (
     <div className='calendar-container'>
       <Calender 

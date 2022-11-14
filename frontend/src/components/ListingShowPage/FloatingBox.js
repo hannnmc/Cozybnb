@@ -2,6 +2,26 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './FloatingBox.css';
 import { createReservation } from '../../store/reservations';
+// import $ from "jquery";
+
+// const options = [
+//     {label: "1 guest", value: 1},
+//     {label: "2 guests", value: 2},
+//     {label: "3 guests", value: 3},
+//     {label: "4 guests", value: 4},
+//     {label: "5 guests", value: 5},
+//     {label: "6 guests", value: 6},
+//     {label: "7 guests", value: 7},
+//     {label: "8 guests", value: 8},
+//     {label: "9 guests", value: 9},
+//     {label: "10 guests", value: 10},
+//     {label: "11 guests", value: 11},
+//     {label: "12 guests", value: 12},
+//     {label: "13 guests", value: 13},
+//     {label: "14 guests", value: 14},
+//     {label: "15 guests", value: 15},
+//     {label: "16 guests", value: 16}
+// ]
 
 const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays}) => {
     
@@ -11,7 +31,12 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
     const [ guests, setGuests ] = useState(1);
     const [total, setTotal ] = useState(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
 
-    
+    document.querySelectorAll("#floating-box-guests").forEach(opt => {
+        // if (opt.value === 1) {
+        //     opt.disabled = true;
+        // }
+        console.log(opt.value)
+    });    
 
     const listingId = listing.id;
     const userId = user.id;
@@ -80,24 +105,74 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                     <select 
                     value={guests}
                     onChange={(e)=>(setGuests(e.target.value))}
-                    className='floating-box-guests
-                    '>
-                        <option value="1">1 guest</option>
-                        <option value="2">2 guests</option>
-                        <option value="3">3 guests</option>
-                        <option value="4">4 guests</option>
-                        <option value="5">5 guests</option>
-                        <option value="6">6 guests</option>
-                        <option value="7">7 guests</option>
-                        <option value="8">8 guests</option>
-                        <option value="9">9 guests</option>
-                        <option value="10">10 guests</option>
-                        <option value="11">11 guests</option>
-                        <option value="12">12 guests</option>
-                        <option value="13">13 guests</option>
-                        <option value="14">14 guests</option>
-                        <option value="15">15 guests</option>
-                        <option value="16">16 guests</option>
+                    className='floating-box-guests'
+                    
+                    >
+                        <option 
+                        disabled={listing.guests < 1 ? 'disabled' : ''}
+                        hidden={listing.guests < 1 ? 'hidden' : ''} 
+                        value="1">1 guest</option>
+                        <option 
+                        disabled={listing.guests < 2 ? 'disabled' : ''}
+                        hidden={listing.guests < 2 ? 'hidden' : ''}
+
+                        value="2">2 guests</option>
+                        <option 
+                        disabled={listing.guests < 3 ? 'disabled' : ''}
+                        hidden={listing.guests < 3 ? 'hidden' : ''} 
+                        value="3">3 guests</option>
+                        <option 
+                        disabled={listing.guests < 4 ? 'disabled' : ''}
+                        hidden={listing.guests < 4 ? 'hidden' : ''} 
+                        value="4">4 guests</option>
+                        <option 
+                        disabled={listing.guests < 5 ? 'disabled' : ''}
+                        hidden={listing.guests < 5 ? 'hidden' : ''} 
+                        value="5">5 guests</option>
+                        <option 
+                        disabled={listing.guests < 6 ? 'disabled' : ''}
+                        hidden={listing.guests < 6 ? 'hidden' : ''} 
+                        value="6">6 guests</option>
+                        <option 
+                        disabled={listing.guests < 7 ? 'disabled' : ''} 
+                        hidden={listing.guests < 7 ? 'hidden' : ''}
+                        value="7">7 guests</option>
+                        <option 
+                        disabled={listing.guests < 8 ? 'disabled' : ''} 
+                        hidden={listing.guests < 8 ? 'hidden' : ''}
+                        value="8">8 guests</option>
+                        <option 
+                        disabled={listing.guests < 9 ? 'disabled' : ''}
+                        hidden={listing.guests < 9 ? 'hidden' : ''} 
+                        value="9">9 guests</option>
+                        <option 
+                        disabled={listing.guests < 10 ? 'disabled' : ''}
+                        hidden={listing.guests < 10 ? 'hidden' : ''} 
+                        value="10">10 guests</option>
+                        <option 
+                        disabled={listing.guests < 11 ? 'disabled' : ''}
+                        hidden={listing.guests < 11 ? 'hidden' : ''} 
+                        value="11">11 guests</option>
+                        <option 
+                        disabled={listing.guests < 12 ? 'disabled' : ''}
+                        hidden={listing.guests < 12 ? 'hidden' : ''} 
+                        value="12">12 guests</option>
+                        <option 
+                        disabled={listing.guests < 13 ? 'disabled' : ''}
+                        hidden={listing.guests < 13 ? 'hidden' : ''} 
+                        value="13">13 guests</option>
+                        <option 
+                        disabled={listing.guests < 14 ? 'disabled' : ''}
+                        hidden={listing.guests < 14 ? 'hidden' : ''} 
+                        value="14">14 guests</option>
+                        <option 
+                        disabled={listing.guests < 15 ? 'disabled' : ''}
+                        hidden={listing.guests < 15 ? 'hidden' : ''} 
+                        value="15">15 guests</option>
+                        <option 
+                        disabled={listing.guests < 16 ? 'disabled' : ''}
+                        hidden={listing.guests < 16 ? 'hidden' : ''} 
+                        value="16">16 guests</option>
                     </select>
                     <button type='submit'
                     className='floating-box-button'>
