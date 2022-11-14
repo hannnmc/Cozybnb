@@ -27,6 +27,8 @@
 }
 .profile-item-title{
     font-weight: 500;
-    overflow: hidden;
-    height: 24px;
+}
+
+.profile-listing-info-top {
+    color: #717171;
 }
