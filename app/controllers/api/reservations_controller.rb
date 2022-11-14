@@ -15,6 +15,12 @@ class Api::ReservationsController < ApplicationController
         end
     end
 
+    def destroy 
+        @reservation = Reservation.find(params[:id])
+        @reservation.destroy if current_user.id == @reservation.user_id
+        render :show
+    end
+
     def index 
         reservations = Reservation.all
         
