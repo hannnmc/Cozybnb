@@ -2,8 +2,11 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as listingActions from '../../store/listings';
 import './ProfileReservations.css'
-
 import { useHistory } from 'react-router-dom';
+
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
 
 const ProfileReservations = ({reservation, listings}) => {
 
@@ -29,6 +32,8 @@ const ProfileReservations = ({reservation, listings}) => {
         dispatch(listingActions.fetchListings());
     },[])
 
+    const { startDate, endDate } = reservation;
+
     useEffect(() => {
         if (Object.keys(listings).length > 0){
             // debugger
@@ -53,7 +58,10 @@ const ProfileReservations = ({reservation, listings}) => {
             <div className='res-info'>
                 <div className='res-title'>{listing.title}</div>
                 <div className='res-details'>Invoice total: ${reservation.total}</div>
-                <div className='res-dates'>{`${(new Date().getFullYear())}`}</div>
+                <div className='res-dates'>
+                <h3>{`${monthNames[startDate.getMonth()]} ${startDate.getDate()}, ${startDate.getFullYear()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}, ${endDate.getFullYear()}`}</h3>
+
+                </div>
             </div>
         </div>
     );
