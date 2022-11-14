@@ -7,8 +7,6 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         setNumDays( ((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : parseInt((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
     },[startDate,endDate])
 
-    console.log(startDate,endDate)
-
     const handleStartChange = (e) => {
         const startValue = e.target.value;
         const startYear = parseInt(startValue.split('-')[0])
