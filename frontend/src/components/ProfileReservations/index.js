@@ -12,6 +12,7 @@ const ProfileReservations = ({reservation, listings}) => {
 
     const dispatch = useDispatch();
     const history = useHistory(); 
+    const today = new Date();
     let photo = null;
     // const reservations = useSelector(state => state.reservations);
     const listing = listings[reservation.listingId];
@@ -47,7 +48,18 @@ const ProfileReservations = ({reservation, listings}) => {
         }
     },[listings])    
 
-
+    let countDown = '';
+    if (formatStartDate.getTime() > today.getTime()) {
+        console.log(formatStartDate.getTime())
+        console.log(today.getTime())
+        countDown = 
+        `Trip is in ${Math.ceil((formatStartDate.getTime() - (today).getTime())/1000/24/60/60)} days`
+    } else if (formatEndDate.getTime() < today.getTime()) {
+        countDown = 'Trip complete'
+    } else {
+        countDown = 'Trip in progress'
+    }
+        
 
     // console.log(userReserves);
 
@@ -68,7 +80,7 @@ const ProfileReservations = ({reservation, listings}) => {
                 </div>
                 <div className='res-details'>Total: ${reservation.total}</div>
                 <div className='res-trip-in'>
-                    Trip is in {Math.ceil((formatStartDate.getTime() - (new Date()).getTime())/1000/24/60/60)} days
+                    {countDown}
                 </div>
             </div>
         </div>
