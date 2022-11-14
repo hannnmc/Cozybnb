@@ -11,6 +11,7 @@
     height: 102px;
     margin-top: 36px;
     display: flex;
+    cursor: pointer;
 }
 
 .res-image {
@@ -28,6 +29,8 @@
 
 .res-title {
     font-weight: 500;
-    height: 24px;
-    overflow: hidden;
+}
+
+.res-details {
+    color: #717171;
 }

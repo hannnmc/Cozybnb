@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as listingActions from '../../store/listings';
 import './ProfileReservations.css'
 
+import { useHistory } from 'react-router-dom';
+
 const ProfileReservations = ({reservation, listings}) => {
 
     const dispatch = useDispatch();
+    const history = useHistory(); 
     let photo = null;
     // const reservations = useSelector(state => state.reservations);
     const listing = listings[reservation.listingId];
-
 
     // const resArray = Object.entries(reservations);
     // const userReserves = resArray.filter(([key,value]) => value.userId === id); 
@@ -35,17 +37,23 @@ const ProfileReservations = ({reservation, listings}) => {
         }
     },[listings])    
 
+
+
     // console.log(userReserves);
 
     // console.log(id)
     // console.log(reservations)
     if (listing) return (
-        <div className='res-item'>
+        <div 
+        onClick={() => history.push(`/listings/${listing.id}`)}
+        
+        className='res-item'>
             {listing &&(<img className='res-image' src={listing.photoUrls[0]} alt="loading" />
             )}
             <div className='res-info'>
                 <div className='res-title'>{listing.title}</div>
-                <div className='res-details'>{reservation.total}</div>
+                <div className='res-details'>Invoice total: ${reservation.total}</div>
+                <div className='res-dates'>{`${(new Date().getFullYear())}`}</div>
             </div>
         </div>
     );
