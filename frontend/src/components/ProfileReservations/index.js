@@ -34,6 +34,11 @@ const ProfileReservations = ({reservation, listings}) => {
 
     const { startDate, endDate } = reservation;
 
+    const formatStartDate = new Date(startDate);
+    const formatEndDate = new Date(endDate);
+
+    console.log(`weee ${new Date(startDate)}`)
+
     useEffect(() => {
         if (Object.keys(listings).length > 0){
             // debugger
@@ -57,10 +62,13 @@ const ProfileReservations = ({reservation, listings}) => {
             )}
             <div className='res-info'>
                 <div className='res-title'>{listing.title}</div>
-                <div className='res-details'>Invoice total: ${reservation.total}</div>
                 <div className='res-dates'>
-                <h3>{`${monthNames[startDate.getMonth()]} ${startDate.getDate()}, ${startDate.getFullYear()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}, ${endDate.getFullYear()}`}</h3>
-
+                    <h3>{`${monthNames[formatStartDate.getMonth()]} ${formatStartDate.getDate()}, ${formatStartDate.getFullYear()} - ${monthNames[formatEndDate.getMonth()]} ${formatEndDate.getDate()}, ${formatEndDate.getFullYear()}`}</h3>
+                    <h3>{`${(formatEndDate.getTime() - formatStartDate.getTime())/1000/60/60/24}`} nights</h3>
+                </div>
+                <div className='res-details'>Total: ${reservation.total}</div>
+                <div className='res-trip-in'>
+                    Trip is in {Math.ceil((formatStartDate.getTime() - (new Date()).getTime())/1000/24/60/60)} days
                 </div>
             </div>
         </div>
