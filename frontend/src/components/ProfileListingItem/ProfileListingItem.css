@@ -33,4 +33,6 @@
 
 .profile-listing-info-top {
     color: #717171;
+    display: flex;
+    flex-direction: column;
 }
