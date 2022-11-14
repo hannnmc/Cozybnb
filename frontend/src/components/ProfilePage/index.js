@@ -34,14 +34,19 @@ const ProfilePage = () => {
             ownedListings.push(listings[i]);
         }
     }
-    for (let i = 1; i < Object.keys(reservations).length+1 ; i++) {
-        if (reservations[i].userId === user.id) {
-            ownedReservations.push(reservations[i]);
+
+    if (Object.keys(reservations).length > 0) {
+        // debugger
+        for (let i = 1; i < Object.keys(reservations).length+1 ; i++) {
+            if (reservations[i].userId === user.id) {
+                ownedReservations.push(reservations[i]);
+            }
         }
     }
     // const resArray = Object.entries(reservations);
     // const userReserves = resArray.filter(([key,value]) => value.userId === id);
 
+    console.log(reservations)
 
     if (!user) return null;
     

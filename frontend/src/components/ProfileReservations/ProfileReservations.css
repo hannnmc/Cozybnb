@@ -34,3 +34,17 @@
 .res-details {
     color: #717171;
 }
+
+.res-dates {
+    display: flex;
+    color: #717171;
+}
+
+.res-dates h3{
+    margin-right: 10px;
+}
+
+.res-dates h3:first-child{
+    font-size: 15px;
+    /* color: #717171; */
+}
