@@ -39,11 +39,14 @@ const ProfileReservations = ({reservation, listings}) => {
 
     // console.log(id)
     // console.log(reservations)
-    return (
+    if (listing) return (
         <div className='res-item'>
             {listing &&(<img className='res-image' src={listing.photoUrls[0]} alt="loading" />
             )}
-            <div className='res-title'>{listing.title}</div>
+            <div className='res-info'>
+                <div className='res-title'>{listing.title}</div>
+                <div className='res-details'>{reservation.total}</div>
+            </div>
         </div>
     );
 }
