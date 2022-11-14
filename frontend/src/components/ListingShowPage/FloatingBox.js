@@ -31,15 +31,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
     const [ guests, setGuests ] = useState(1);
     const [total, setTotal ] = useState(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
 
-    document.querySelectorAll("#floating-box-guests").forEach(opt => {
-        // if (opt.value === 1) {
-        //     opt.disabled = true;
-        // }
-        console.log(opt.value)
-    });    
-
     const listingId = listing.id;
-    const userId = user.id;
 
     useEffect(() => {
         setNumDays( ((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : parseInt((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
@@ -67,7 +59,6 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             startDate,
             endDate,
             listingId,
-            userId,
             guests,
             total
         }))

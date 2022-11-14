@@ -31,7 +31,7 @@ export const fetchReservation = reservationId => async dispatch => {
 export const createReservation = (reservation) => async (dispatch) => {
     const {            
         userId,
-        reservationId,
+        listingId,
         guests,
         startDate,
         endDate,
@@ -41,7 +41,7 @@ export const createReservation = (reservation) => async (dispatch) => {
         method: "POST",
         body: JSON.stringify({
             userId,
-            reservationId,
+            listingId,
             guests,
             startDate,
             endDate,
