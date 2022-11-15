@@ -28,8 +28,8 @@
 #
 class Listing < ApplicationRecord
 
-    has_many_attached :photos, dependent: :destroy_all
-    has_many :reservations, dependent: :destroy_all
+    has_many_attached :photos, dependent: :delete_all
+    has_many :reservations, dependent: :delete_all
 
     belongs_to :users,
     class_name: "User"

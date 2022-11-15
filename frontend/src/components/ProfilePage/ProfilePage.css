@@ -165,6 +165,7 @@
     padding: 30px;
     border-radius: 12px;
     margin-top: 120px;
+    z-index: 11;
 }
 
 .reservation-list {

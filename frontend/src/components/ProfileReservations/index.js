@@ -23,7 +23,7 @@ const ProfileReservations = ({reservation, listings, ownedReservations}) => {
         dispatch(listingActions.fetchListings());
     },[])
 
-    const { startDate, endDate } = reservation;
+    const { startDate, endDate, guests } = reservation;
 
     const formatStartDate = new Date(startDate);
     const formatEndDate = new Date(endDate);
@@ -64,14 +64,14 @@ const ProfileReservations = ({reservation, listings, ownedReservations}) => {
                     <h3>{`${monthNames[formatStartDate.getMonth()]} ${formatStartDate.getDate()}, ${formatStartDate.getFullYear()} - ${monthNames[formatEndDate.getMonth()]} ${formatEndDate.getDate()}, ${formatEndDate.getFullYear()}`}</h3>
                     <h3>{`${numDays > 0 ? numDays : 0}`} nights</h3>
                 </div>
-                <div className='res-details'>Total: ${reservation.total}</div>
+                <div className='res-details'>{`${guests} guests · `} total: ${reservation.total}</div>
                 <div className='res-trip-in'>
                     {countDown}
                 </div>
                 <div 
                 onClick={handleDelete}
                 className='delete-reservation'>
-                x
+                    <i class="fa-solid fa-x"></i>
                 </div>
             </div>
         </div>
