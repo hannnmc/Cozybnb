@@ -3,18 +3,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as listingActions from '../../store/listings';
 import './ProfileReservations.css'
 import { useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { destroyReservation } from '../../store/reservations';
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ];
 
-const ProfileReservations = ({reservation, listings}) => {
+const ProfileReservations = ({reservation, listings, ownedReservations}) => {
 
     const dispatch = useDispatch();
     const history = useHistory(); 
     const today = new Date();
     let photo = null;
-    
+
     const listing = listings[reservation.listingId];
 
     useEffect(()=>{
@@ -42,6 +44,12 @@ const ProfileReservations = ({reservation, listings}) => {
     } else {
         countDown = 'Trip in progress'
     }
+
+    const handleDelete = (e) =>{
+        e.preventDefault();
+        e.stopPropagation();
+        dispatch(destroyReservation(reservation.id))
+    }
         
     if (listing) return (
         <div 
@@ -59,6 +67,11 @@ const ProfileReservations = ({reservation, listings}) => {
                 <div className='res-details'>Total: ${reservation.total}</div>
                 <div className='res-trip-in'>
                     {countDown}
+                </div>
+                <div 
+                onClick={handleDelete}
+                className='delete-reservation'>
+                x
                 </div>
             </div>
         </div>
