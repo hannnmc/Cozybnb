@@ -13,7 +13,7 @@
     display: flex;
     cursor: pointer;
     position: relative;
-    z-index: 10;
+    z-index: 9;
 }
 
 .delete-reservation {
@@ -21,6 +21,7 @@
     height: 100%;
     right: 0;
     top: 0;
+    display: none;
 }
 
 .res-item:hover .delete-reservation {
@@ -30,12 +31,12 @@
     border-bottom-right-radius: 8px;
     color: white;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 2000;
+    z-index: 11;
 }
 
 .res-image {
