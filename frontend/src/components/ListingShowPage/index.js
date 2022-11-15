@@ -58,12 +58,10 @@ function ListingShowPage() {
             } else {
                 setEndMonth(startDate.getMonth() + 1);
                 setEndDay(dayOverage);
-                console.log('in overage')
             }
         } else {
             setEndDay(startDate.getDate() + numDays);
             setStartDate(new Date(`${startDate.getFullYear()}, ${startDate.getMonth()+1},${startDate.getDate()}`));
-            console.log('not in overage');
         }
     },[])    
 

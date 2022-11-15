@@ -14,20 +14,8 @@ const ProfileReservations = ({reservation, listings}) => {
     const history = useHistory(); 
     const today = new Date();
     let photo = null;
-    // const reservations = useSelector(state => state.reservations);
+    
     const listing = listings[reservation.listingId];
-
-    // const resArray = Object.entries(reservations);
-    // const userReserves = resArray.filter(([key,value]) => value.userId === id); 
-    // if (Object.keys(reservations).length > 0 && Object.keys(listings).length > 0 ) {
-    //     userReserves.forEach((value,key) => console.log(listings[value[1].listingId].photoUrls[0]))
-    // }
-
-    // value[1]['photoUrl'] = 
-
-    // useEffect(()=>{
-
-    // },[listings, reservations])
 
     useEffect(()=>{
         dispatch(listingActions.fetchListings());
@@ -37,21 +25,16 @@ const ProfileReservations = ({reservation, listings}) => {
 
     const formatStartDate = new Date(startDate);
     const formatEndDate = new Date(endDate);
-
-    console.log(`weee ${new Date(startDate)}`)
+    const numDays = (Math.ceil((formatEndDate.getTime() - formatStartDate.getTime())/1000/60/60/24));
 
     useEffect(() => {
         if (Object.keys(listings).length > 0){
-            // debugger
             photo = listings[reservation.listingId].photoUrls[0]
-            // console.log(photo)
         }
     },[listings])    
 
     let countDown = '';
     if (formatStartDate.getTime() > today.getTime()) {
-        console.log(formatStartDate.getTime())
-        console.log(today.getTime())
         countDown = 
         `Trip is in ${Math.ceil((formatStartDate.getTime() - (today).getTime())/1000/24/60/60)} days`
     } else if (formatEndDate.getTime() < today.getTime()) {
@@ -60,11 +43,6 @@ const ProfileReservations = ({reservation, listings}) => {
         countDown = 'Trip in progress'
     }
         
-
-    // console.log(userReserves);
-
-    // console.log(id)
-    // console.log(reservations)
     if (listing) return (
         <div 
         onClick={() => history.push(`/listings/${listing.id}`)}
@@ -76,7 +54,7 @@ const ProfileReservations = ({reservation, listings}) => {
                 <div className='res-title'>{listing.title}</div>
                 <div className='res-dates'>
                     <h3>{`${monthNames[formatStartDate.getMonth()]} ${formatStartDate.getDate()}, ${formatStartDate.getFullYear()} - ${monthNames[formatEndDate.getMonth()]} ${formatEndDate.getDate()}, ${formatEndDate.getFullYear()}`}</h3>
-                    <h3>{`${Math.ceil((formatEndDate.getTime() - formatStartDate.getTime())/1000/60/60/24)}`} nights</h3>
+                    <h3>{`${numDays > 0 ? numDays : 0}`} nights</h3>
                 </div>
                 <div className='res-details'>Total: ${reservation.total}</div>
                 <div className='res-trip-in'>

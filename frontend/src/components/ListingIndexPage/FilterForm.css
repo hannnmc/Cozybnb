@@ -42,11 +42,6 @@
   border: 1px solid #999;
 }
 
-::selection{
-    color: #fff;
-    background: #13b1c9;
-}
-
 .price-divider {
   padding: 10px 0 0 10px;
 }

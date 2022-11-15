@@ -37,8 +37,6 @@ const ProfilePage = () => {
     }
 
     if (Object.keys(reservations).length > 0) {
-        // debugger
-        // for (let i = 1; i < Object.keys(reservations).length+1 ; i++)
         Object.keys(reservations).forEach(reservationId => {
             if (reservations[reservationId].userId === user.id) {
                 ownedReservations.unshift(reservations[reservationId]);
@@ -98,7 +96,6 @@ const ProfilePage = () => {
                 {showProfileEditForm && (
                     <>
                         <ProfileEditForm setShowProfileEditForm={setShowProfileEditForm}/>
-                        <div className='profile-divider'>________</div>
                     </>
                 )}
 
