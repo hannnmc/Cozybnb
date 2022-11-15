@@ -36,8 +36,14 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
     const listingId = listing.id;
 
     useEffect(() => {
-        setNumDays( ((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : parseInt((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
+        setNumDays( Math.ceil((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : parseInt((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
+
     },[startDate,endDate])
+
+    useEffect(() => {
+        setTotal(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
+    },[numDays])
+
 
     const handleStartChange = (e) => {
         const startValue = e.target.value;
@@ -57,12 +63,13 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (endDate.getTime() - startDate.getTime() > 8639999)
         dispatch(createReservation({
             startDate,
             endDate,
             listingId,
             guests,
-            total
+            total:(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08))
         }))
         .then(history.push(`/profile/`))
     }
@@ -192,7 +199,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             <div id='float-divider'></div>
             <div className='float-total'>
                 <div>Total before taxes</div>
-                <div>$ {total}</div>
+                <div>$ {listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08)}</div>
             </div>
         </div>
     </div>
