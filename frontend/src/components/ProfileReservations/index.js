@@ -71,7 +71,7 @@ const ProfileReservations = ({reservation, listings, ownedReservations}) => {
                 <div 
                 onClick={handleDelete}
                 className='delete-reservation'>
-                    <i class="fa-solid fa-x"></i>
+                    <i className="fa-solid fa-x"></i>
                 </div>
             </div>
         </div>
