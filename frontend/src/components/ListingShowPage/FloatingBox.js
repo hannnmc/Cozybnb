@@ -63,7 +63,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (endDate.getTime() - startDate.getTime() > 8639999)
+        if (endDate.getTime() - startDate.getTime() > 8639999 && user)
         dispatch(createReservation({
             startDate,
             endDate,
