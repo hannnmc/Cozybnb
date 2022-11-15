@@ -25,7 +25,7 @@ class Api::ReservationsController < ApplicationController
         reservations = Reservation.all
         
         if params[:userId]
-           q reservations = reservations.where(user_id: params[userId])
+           @reservations = reservations.where(user_id: params[userId])
         end
         @reservations = reservations.includes(:user)
 
