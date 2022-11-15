@@ -6,7 +6,7 @@ import LoginDropDown from '../LoginDropdown';
 import './Navigation.css';
 import logoImg from '../../assets/images/cozybnb_logo.png';
 
-function Navigation() {
+function Navigation({showLoginModal,setShowLoginModal}) {
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
@@ -16,7 +16,9 @@ function Navigation() {
     );
   } else {
     sessionLinks = (
-        <LoginDropDown/>
+        <LoginDropDown setShowLoginModal={setShowLoginModal}
+        showLoginModal={showLoginModal}
+        />
     );
   }
 

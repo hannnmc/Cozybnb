@@ -34,7 +34,7 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ];
 
-function ListingShowPage() {
+function ListingShowPage({showLoginModal,setShowLoginModal}) {
     
     const dispatch = useDispatch();
 
@@ -203,6 +203,8 @@ function ListingShowPage() {
         setEndDate={setEndDate}
         numDays={numDays}
         setNumDays={setNumDays}
+        setShowLoginModal={setShowLoginModal}
+        showLoginModal={showLoginModal}
         />
         <div className='showpage-divider'></div>
         </section>

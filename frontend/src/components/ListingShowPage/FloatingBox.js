@@ -24,7 +24,7 @@ import { useHistory } from 'react-router-dom';
 //     {label: "16 guests", value: 16}
 // ]
 
-const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays}) => {
+const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal}) => {
     
     const dispatch = useDispatch();
     const history = useHistory();
@@ -63,6 +63,9 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(!user) {
+            setShowLoginModal(true);
+        }
         if (endDate.getTime() - startDate.getTime() > 8639999 && user)
         dispatch(createReservation({
             startDate,
