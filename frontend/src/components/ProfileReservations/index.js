@@ -30,7 +30,7 @@ const ProfileReservations = ({reservation, listings, ownedReservations}) => {
     const numDays = (Math.ceil((formatEndDate.getTime() - formatStartDate.getTime())/1000/60/60/24));
 
     useEffect(() => {
-        if (Object.keys(listings).length > 0){
+        if (listings[reservation.listingId]){
             photo = listings[reservation.listingId].photoUrls[0]
         }
     },[listings])    

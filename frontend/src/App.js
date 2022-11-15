@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Redirect, Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import ProfilePage from "./components/ProfilePage";
@@ -14,12 +14,14 @@ function App() {
 
   const loggedIn = !!user;
 
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
   return (
     <>
-      <Navigation />
+      <Navigation showLoginModal={showLoginModal} setShowLoginModal={setShowLoginModal}/>
         <Switch>
           <Route exact path="/listings/:listingId">
-            <ListingShowPage />
+            <ListingShowPage showLoginModal={showLoginModal} setShowLoginModal={setShowLoginModal}/>
           </Route>
           <Route exact path="/profile">
             {loggedIn ? <ProfilePage/> : <Redirect to="/" />}
