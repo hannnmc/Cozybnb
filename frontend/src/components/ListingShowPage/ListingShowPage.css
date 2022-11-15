@@ -110,8 +110,8 @@
     font-size: 26.5px;
     font-weight: 500;
     letter-spacing: +0.3px;
-    line-height: 15px;
-    height: 27px;
+    line-height: 30px;
+    /* height: 27px; */
     padding-top: 7px;
     font-family: circular-bold;
 }
