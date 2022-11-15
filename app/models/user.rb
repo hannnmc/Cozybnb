@@ -32,7 +32,7 @@ class User < ApplicationRecord
   validate :validate_age
 
   has_one_attached :photo
-  has_many :reservations, dependent: :delete_all
+  has_many :reservations, foreign_key: :users_id, class_name: :User, dependent: :delete_all
   has_many :listings, dependent: :delete_all
 
   def self.find_by_credentials(email, password)
