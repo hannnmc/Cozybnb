@@ -111,7 +111,7 @@ function NewListingForm(props) {
 
   return (
     <>
-      <div className="signup-modal">
+      <div id='new-listing-modal' className="signup-modal">
         <div 
         onClick={() => setNewListingModal(false)} className="login-x-button"><span className="material-symbols-outlined">close</span></div>
       <header className="signup-header">
@@ -122,26 +122,6 @@ function NewListingForm(props) {
 
       <div className="signup-div">
         <form onSubmit={handleSubmit}>
-          <div className='new-listing-top'>
-            <div className='listing-image-upload'>
-              <input type="file" onChange={handleFile} />
-            </div>
-
-            <div className='listing-minimap'>
-
-            <ListingMap
-                      // listings={[listing]}
-                      setLat={setLat}
-                      setLng={setLng}
-                      mapEventHandlers={mapEventHandlers}
-                      mapOptions={{ 
-                      center: { lat, lng }, 
-                      zoom: 13.75, 
-                      mapId: "49aa6f67e21bd8eb"
-                      }}
-                  />
-            </div>
-          </div>
 
           <div className="input-div">
             <input
@@ -380,7 +360,28 @@ function NewListingForm(props) {
           <a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a>
            </div> */}
+          <div className='new-listing-top'>
+            <div className='listing-image-upload'>
+              <input type="file" onChange={handleFile} />
+            </div>
+
+            <div className='listing-minimap'>
+
+            <ListingMap
+                      // listings={[listing]}
+                      setLat={setLat}
+                      setLng={setLng}
+                      mapEventHandlers={mapEventHandlers}
+                      mapOptions={{ 
+                      center: { lat, lng }, 
+                      zoom: 13.75, 
+                      mapId: "49aa6f67e21bd8eb"
+                      }}
+                  />
+            </div>
+          </div>
           <button id='new-listing-button' type="submit">Create</button>
+
         </form>
 
       </div>
