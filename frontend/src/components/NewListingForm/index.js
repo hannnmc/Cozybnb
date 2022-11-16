@@ -1,11 +1,15 @@
 import './NewListingForm.css'
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import * as listingActions from "../../store/listings";
 import { useHistory } from 'react-router-dom';
+// import NewListingMap from './NewListingMap';
+import { Wrapper } from '@googlemaps/react-wrapper';
+import ListingMap from '../ListingMap'
+import { useMemo } from 'react';
+
 
 function NewListingForm(props) {
-
   
   const dispatch = useDispatch();
   const { setNewListingModal } = props;
@@ -15,7 +19,7 @@ function NewListingForm(props) {
     // setNewListingForm(false);
     // setLoginFormModal(open => true);  
   };
-
+  const [photoFile, setPhotoFile] = useState (null);
   const [errors, setErrors] = useState([]);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState('');
@@ -33,13 +37,23 @@ function NewListingForm(props) {
   const [dedicatedWorkspace, setDedicatedWorkspace] = useState(false);
   const [petsAllowed, setPetsAllowed] = useState(false);
   const [propType, setPropType] = useState("");
-  const [lat, setLat] = useState("");
-  const [lng, setLng] = useState("");
+  const [lat, setLat] = useState(40.7128);
+  const [lng, setLng] = useState(-74.0060);
   const [usersId, setUsersId] = useState("");
   const [country, setCountry] = useState("United States");
+  const [bounds, setBounds] = useState(null);
   
   const listings = useSelector(state => state.listings)
   const newId = Object.keys(listings).length + 1
+
+  const handleFile = e => {
+    const file = e.currentTarget.files[0];
+    setPhotoFile(file);
+  }
+
+  useEffect(() => {
+    console.log(lat,lng)
+  },[lat, lng])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -82,6 +96,19 @@ function NewListingForm(props) {
       });
   };
 
+  const mapEventHandlers = useMemo(() => ({
+    // click: event => {
+    //   const search = new URLSearchParams(event.latLng.toJSON()).toString();
+    //   console.log(event.latLng.toJSON())
+    // },
+    idle: map => setBounds(map.getBounds().toUrlValue())
+  }), [history]);
+
+
+  if(listings.length === 0) return null;
+
+  // console.log(photoFile)
+
   return (
     <>
       <div className="signup-modal">
@@ -89,12 +116,33 @@ function NewListingForm(props) {
         onClick={() => setNewListingModal(false)} className="login-x-button"><span className="material-symbols-outlined">close</span></div>
       <header className="signup-header">
         <div></div>
-        <div className="finish-signup">Create a new listing</div>
+        <div className="finish-signup">Tell us about your home</div>
         <div></div>
       </header>
 
       <div className="signup-div">
         <form onSubmit={handleSubmit}>
+          <div className='new-listing-top'>
+            <div className='listing-image-upload'>
+              <input type="file" onChange={handleFile} />
+            </div>
+
+            <div className='listing-minimap'>
+
+            <ListingMap
+                      // listings={[listing]}
+                      setLat={setLat}
+                      setLng={setLng}
+                      mapEventHandlers={mapEventHandlers}
+                      mapOptions={{ 
+                      center: { lat, lng }, 
+                      zoom: 13.75, 
+                      mapId: "49aa6f67e21bd8eb"
+                      }}
+                  />
+            </div>
+          </div>
+
           <div className="input-div">
             <input
               maxLength="73"
@@ -241,7 +289,7 @@ function NewListingForm(props) {
             className='new-description'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder='Tell us about your new listing.'
+            placeholder='Description'
             required />
 
           </div>
@@ -255,7 +303,7 @@ function NewListingForm(props) {
               max="90"
               type="number" 
               value={lat}
-              onChange={(e) => setLat(e.target.value)}
+              onChange={(e) => setLat(parseFloat(e.target.value))}
               placeholder="Latitude"
               required/>
               <input 
@@ -264,7 +312,7 @@ function NewListingForm(props) {
               max="180"
               type="number" 
               value={lng}
-              onChange={(e) => setLng(e.target.value)}
+              onChange={(e) => setLng(parseFloat(e.target.value))}
               placeholder="Longitude"
               required/>
             </div>
@@ -326,14 +374,15 @@ function NewListingForm(props) {
                 return <li key={error}>{error}</li> 
             })}
           </ul>
-          <div className="agree-message">By selecting 
+          {/* <div className="agree-message">By selecting 
           <span className="bold">  Continue</span>, I agree to Cozybnb's 
           <span className="bold2">Term of Service</span>. 
           <a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a>
-           </div>
+           </div> */}
           <button id='new-listing-button' type="submit">Create</button>
         </form>
+
       </div>
       </div>
       

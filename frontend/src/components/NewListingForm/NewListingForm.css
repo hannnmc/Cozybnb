@@ -2,6 +2,7 @@
     width: calc(100% - 2px);
     display: flex;
     justify-content: space-between;
+    margin-top: 16px;
 }
 
 .listing-specs > div {
@@ -23,7 +24,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    height: 57px;
+    height: 48px;
 }
 
 .new-dropdown select {
@@ -55,7 +56,7 @@
     border-radius: 0 0 8px 8px;
     color: rgb(113, 113, 113);
     width: 100%;
-    height: 45px;
+    height: 36px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -94,12 +95,11 @@ input:not(:focus):valid ~ .address-floating-label{
 
 .guests-input {
     display: flex;
-    margin-top: 20px;
     font-size: 15px;
     border-radius: 8px;
     color: rgb(113, 113, 113);
     width: 100%;
-    height: 44px;
+    height: 35px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -137,12 +137,11 @@ input:not(:focus):valid ~ .guests-floating-label{
 
 .bedrooms-input {
     display: flex;
-    margin-top: 20px;
     font-size: 15px;
     border-radius: 8px;
     color: rgb(113, 113, 113);
     width: 100%;
-    height: 44px;
+    height: 35px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -180,12 +179,11 @@ input:not(:focus):valid ~ .bedrooms-floating-label{
 
 .beds-input {
     display: flex;
-    margin-top: 20px;
     font-size: 15px;
     border-radius: 8px;
     color: rgb(113, 113, 113);
     width: 100%;
-    height: 44px;
+    height: 35px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -253,12 +251,11 @@ input:not(:focus):valid ~ .bathrooms-floating-label{
 
 .bathrooms-input {
     display: flex;
-    margin-top: 20px;
     font-size: 15px;
     border-radius: 8px;
     color: rgb(113, 113, 113);
     width: 100%;
-    height: 44px;
+    height: 35px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -324,7 +321,7 @@ input:not(:focus):valid ~ .night-floating-label{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
+    height: 60px;
 }
 
 .new-description {
@@ -342,14 +339,16 @@ input:not(:focus):valid ~ .night-floating-label{
 }
 
 #new-listing-button {
-    margin-top: -1px;
+    height: 36px;
+    line-height: 36px;
+    margin-top: 12px;
 }
 
 .new-checkboxes {
     color: rgb(113, 113, 113);
     display: flex;
     justify-content: space-between;
-    margin-top: 18px;
+    margin-top: 6px;
 }
 
 .coord-price {
@@ -357,7 +356,7 @@ input:not(:focus):valid ~ .night-floating-label{
     justify-content: space-between;
     margin-top: 14px;
     width: 100%;
-    height: 57px;
+    height: 48px;
     margin-top: 26px;
 }
 .coord-input-div {
@@ -368,7 +367,7 @@ input:not(:focus):valid ~ .night-floating-label{
     width: 50%;
     display: flex;
     align-items: center;
-    height: 55px;
+    height: 46px;
     margin-top: 1px;
 }
 
@@ -412,3 +411,14 @@ input:not(:focus):valid ~ .night-floating-label{
     font-size: 15px;
 }
 
+.listing-minimap {
+    height: 140px;
+    width: 240px;
+    margin-top: -8px;
+    margin-bottom: 14px;
+}
+
+.new-listing-top {
+    display: flex;
+    justify-content: space-between;
+}

@@ -4,6 +4,10 @@ import { useHistory } from "react-router-dom";
 import './ListingMap.css';
 
 function ListingMap({ 
+  lat,
+  lng,
+  setLat,
+  setLng,
   listings, 
   selectedListing,
   mapOptions = {}, 
@@ -14,15 +18,25 @@ function ListingMap({
   const mapRef = useRef(null);
   const markers = useRef({});
   const history = useHistory();
+  let center = null;
+  if (map) center = map.getCenter().toJSON();
+  // const [center , setCenter ] = useState({lat,lng})
 
-  // Create the map
+  // useEffect(()=>{
+  //   if (map) {
+  //     console.log((`this is lat ${map.getCenter().toJSON().lat}`));
+  //     setLat(map.getCenter().toJSON().lat)
+
+  //   }
+  // },[map])
+
   useEffect(() => {
     if (!map) {
       setMap(new window.google.maps.Map(mapRef.current, {
         center: {
           lat: 40.74363402543966, 
           lng: -73.98377122848856
-        }, // San Francisco coordinates
+        }, 
         zoom: 13,
         mapId: "49aa6f67e21bd8eb",
         gestureHandling: "greedy",
@@ -33,7 +47,7 @@ function ListingMap({
     }
   }, [mapRef, map, mapOptions]);
 
-  // Add event handlers to map
+
   useEffect(() => {
     if (map) {
       const listeners = Object.entries(mapEventHandlers).map(([event, handler]) => 
@@ -43,14 +57,19 @@ function ListingMap({
           (...args) => handler(...args, map)
         )
       );
-
+      // console.log(map.getCenter().toJSON());
+      if (setLat && setLng) {
+        setLat(map.getCenter().toJSON().lat);
+        setLng(map.getCenter().toJSON().lng);
+        console.log('SET')
+      }
       return () => listeners.forEach(window.google.maps.event.removeListener);
     }
-  }, [map, mapEventHandlers]);
+  }, [map, center, mapEventHandlers]);
 
   // Update map markers whenever `listings` changes
   useEffect(() => {
-    if (map) {
+    if (map && listings) {
       // Add markers for new listings
       listings.forEach((listing) => {
         if (markers.current[listing.id]) return;
