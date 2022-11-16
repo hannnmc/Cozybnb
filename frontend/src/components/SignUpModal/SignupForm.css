@@ -90,8 +90,11 @@ span.bold2 {
 }
 .firstname-input:focus {
     outline-color: #222222;
-    border-bottom: 1px solid black;
-    height: 33px;
+    /* border-bottom: 1px solid black;
+    height: 33px; */
+    position: static;
+    z-index: 3;
+    margin-top: -1px;
 }
 .firstname-input:focus::placeholder{
     color: #717171f9;
