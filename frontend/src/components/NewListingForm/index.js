@@ -20,6 +20,10 @@ function NewListingForm(props) {
     // setLoginFormModal(open => true);  
   };
   const [photoFile, setPhotoFile] = useState (null);
+  const [photoFile2, setPhotoFile2] = useState (null);
+  const [photoFile3, setPhotoFile3] = useState (null);
+  const [photoFile4, setPhotoFile4] = useState (null);
+  const [photoFile5, setPhotoFile5] = useState (null);
   const [errors, setErrors] = useState([]);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState('');
@@ -42,13 +46,61 @@ function NewListingForm(props) {
   const [usersId, setUsersId] = useState(sessionUser.id);
   const [country, setCountry] = useState("United States");
   const [bounds, setBounds] = useState(null);
+  const [photoUrl, setPhotoUrl] = useState(null);
+  const [photoUrl2, setPhotoUrl2] = useState(null);
+  const [photoUrl3, setPhotoUrl3] = useState(null);
+  const [photoUrl4, setPhotoUrl4] = useState(null);
+  const [photoUrl5, setPhotoUrl5] = useState(null);
   
   const listings = useSelector(state => state.listings)
-  const newId = Object.keys(listings).length + 1
 
   const handleFile = e => {
     const file = e.currentTarget.files[0];
-    setPhotoFile(file);
+    const file2 = e.currentTarget.files[1];
+    const file3 = e.currentTarget.files[2];
+    const file4 = e.currentTarget.files[3];
+    const file5 = e.currentTarget.files[4];
+    
+    if (file) {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        setPhotoFile(file);
+        setPhotoUrl(fileReader.result);
+      };
+    }
+    if (file2) {
+      const fileReader2 = new FileReader();
+      fileReader2.readAsDataURL(file2);
+      fileReader2.onload = () => {
+        setPhotoFile2(file2);
+        setPhotoUrl2(fileReader2.result);
+      };
+    }
+    if (file3) {
+      const fileReader3 = new FileReader();
+      fileReader3.readAsDataURL(file3);
+      fileReader3.onload = () => {
+        setPhotoFile3(file3);
+        setPhotoUrl3(fileReader3.result);
+      };
+    }
+    if (file4) {
+      const fileReader4 = new FileReader();
+      fileReader4.readAsDataURL(file4);
+      fileReader4.onload = () => {
+        setPhotoFile4(file4);
+        setPhotoUrl4(fileReader4.result);
+      };
+    }
+    if (file5) {
+      const fileReader5 = new FileReader();
+      fileReader5.readAsDataURL(file5);
+      fileReader5.onload = () => {
+        setPhotoFile5(file5);
+        setPhotoUrl5(fileReader5.result);
+      };
+    }
   }
 
   // useEffect(() => {
@@ -86,36 +138,23 @@ function NewListingForm(props) {
     if (photoFile) {
       formData.append('listing[photos]', photoFile);
     }
-    console.log(formData);
-    debugger
+    if (photoFile2) {
+      formData.append('listing[photos]', photoFile2);
+    }
+    if (photoFile3) {
+      formData.append('listing[photos]', photoFile3);
+    }
+    if (photoFile4) {
+      formData.append('listing[photos]', photoFile4);
+    }
+    if (photoFile5) {
+      formData.append('listing[photos]', photoFile5);
+    }
 
     setErrors([]);
     setNewListingModal(false);
-    return dispatch(listingActions.createListing(formData
-    //   {
-    //   title,
-    //   description, 
-    //   lat, 
-    //   lng, 
-    //   price,
-    //   guests, 
-    //   bedrooms,
-    //   beds,
-    //   baths,
-    //   address,
-    //   city,
-    //   state,
-    //   country,
-    //   wifi,
-    //   propType,
-    //   parking,
-    //   kitchen,
-    //   dedicatedWorkspace,
-    //   petsAllowed,
-    //   usersId
-    // }
-    ))
-      .then(history.push({ pathname: `/listings/${newId}`}))
+    return dispatch(listingActions.createListing(formData))
+      .then(history.push({ pathname: `/listings/${Math.max(...Object.keys(listings)) + 1}`}))
       .catch(async (res) => {        
       let data;
       try {
@@ -142,6 +181,11 @@ function NewListingForm(props) {
   if(listings.length === 0) return null;
 
   // console.log(photoFile)
+  const preview = photoUrl ? <img src={photoUrl} alt="" /> : null;
+  const preview2 = photoUrl2 ? <img src={photoUrl2} alt="" /> : null;
+  const preview3 = photoUrl3 ? <img src={photoUrl3} alt="" /> : null;
+  const preview4 = photoUrl4 ? <img src={photoUrl4} alt="" /> : null;
+  const preview5 = photoUrl5 ? <img src={photoUrl5} alt="" /> : null;
 
   return (
     <>
@@ -398,7 +442,15 @@ function NewListingForm(props) {
            </div> */}
           <div className='new-listing-top'>
             <div className='listing-image-upload'>
-              <input type="file" onChange={handleFile} />
+              <input type="file" onChange={handleFile} multiple/>
+              <div className='listing-preview'>
+              {preview}
+              {preview2}
+              {preview3}
+              {preview4}
+              {preview5}
+              </div>
+              
             </div>
 
             <div className='listing-minimap'>

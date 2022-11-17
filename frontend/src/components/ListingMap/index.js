@@ -61,7 +61,7 @@ function ListingMap({
       if (setLat && setLng) {
         setLat(map.getCenter().toJSON().lat);
         setLng(map.getCenter().toJSON().lng);
-        console.log('SET')
+        // console.log('SET')
       }
       return () => listeners.forEach(window.google.maps.event.removeListener);
     }
