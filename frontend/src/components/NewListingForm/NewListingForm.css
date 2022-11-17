@@ -417,7 +417,7 @@ input:not(:focus):valid ~ .night-floating-label{
 }
 
 .listing-minimap {
-    height: 154px;
+    height: 166px;
     width: 260px;
     /* margin-top: 8px; */
     /* margin-bottom: 14px; */
@@ -431,4 +431,21 @@ input:not(:focus):valid ~ .night-floating-label{
 
 #new-listing-modal{
     height: 100%;
+}
+
+.listing-preview {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listing-preview img{
+    height: 65px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    position: relative;
+    margin: 5px;
+}
+
+.listing-image-upload {
+    max-width: 50%;
 }
