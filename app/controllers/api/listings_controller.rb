@@ -26,7 +26,7 @@ class Api::ListingsController < ApplicationController
     def destroy 
         @listing = Listing.find(params[:id])
         @listing.destroy if current_user.id == @listing.users_id
-        render :index 
+        render :show 
     end
 
     private

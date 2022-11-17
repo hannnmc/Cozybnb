@@ -3,6 +3,7 @@ import csrfFetch from "./csrf";
 
 const SET_LISTINGS = 'listings/setListings'
 const ADD_LISTING = 'listings/addListing'
+const REMOVE_LISTING = 'listings/removeListing'
 
 const setListings = listings => ({
     type: SET_LISTINGS,
@@ -11,6 +12,11 @@ const setListings = listings => ({
 
 export const addListing = listing => ({
     type: ADD_LISTING,
+    payload: listing
+});
+
+export const removeListing = listing => ({
+    type: REMOVE_LISTING,
     payload: listing
 });
 
@@ -31,52 +37,20 @@ export const fetchListing = listingId => async dispatch => {
     return response;
 }
 
-export const createListing = (listing) => async (dispatch) => {
-    const { title,
-        description, 
-        lat, 
-        lng, 
-        price,
-        guests, 
-        bedrooms,
-        beds,
-        baths,
-        address,
-        city,
-        state,
-        country,
-        wifi,
-        propType,
-        parking,
-        kitchen,
-        dedicatedWorkspace,
-        petsAllowed,
-        usersId
-    } = listing;
+export const destroyListing = (listingId) => async dispatch => {
+    const response = await csrfFetch(`/api/listings/${listingId}`, {
+        method: "DELETE"
+    })
+    const data = await response.json();
+    dispatch(removeListing(data.listing));
+    return response;
+}
+
+export const createListing = (formData) => async (dispatch) => {
+
     const response = await csrfFetch("/api/listings", {
         method: "POST",
-        body: JSON.stringify({
-            title,
-            description, 
-            lat, 
-            lng, 
-            price,
-            guests, 
-            bedrooms,
-            beds,
-            baths,
-            address,
-            city,
-            state,
-            country,
-            wifi,
-            propType,
-            parking,
-            kitchen,
-            dedicatedWorkspace,
-            petsAllowed,
-            usersId
-        })
+        body: formData
     });
     const data = await response.json();
     dispatch(addListing(data.listing));
@@ -90,6 +64,11 @@ function listingsReducer(state = {}, action) {
     case ADD_LISTING:
         const listing = action.payload;
         return { ...state, [listing.id]: listing };
+    case REMOVE_LISTING: {
+        const listing = action.payload;
+        const { [listing.id]: _remove, ...newState } = state;
+        return newState;
+    }
       default:
         return state;
     }

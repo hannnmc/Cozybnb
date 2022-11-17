@@ -39,7 +39,7 @@ function NewListingForm(props) {
   const [propType, setPropType] = useState("");
   const [lat, setLat] = useState(40.7128);
   const [lng, setLng] = useState(-74.0060);
-  const [usersId, setUsersId] = useState("");
+  const [usersId, setUsersId] = useState(sessionUser.id);
   const [country, setCountry] = useState("United States");
   const [bounds, setBounds] = useState(null);
   
@@ -57,9 +57,8 @@ function NewListingForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors([]);
-    setNewListingModal(false);
-    return dispatch(listingActions.createListing({
+    const formData = new FormData();
+    const newListing = {
       title,
       description, 
       lat, 
@@ -80,7 +79,42 @@ function NewListingForm(props) {
       dedicatedWorkspace,
       petsAllowed,
       usersId
-    }))
+    };
+    Object.keys(newListing).forEach((key) => {
+      formData.append(`listing[${key}]`, newListing[key]);
+    })
+    if (photoFile) {
+      formData.append('listing[photos]', photoFile);
+    }
+    console.log(formData);
+    debugger
+
+    setErrors([]);
+    setNewListingModal(false);
+    return dispatch(listingActions.createListing(formData
+    //   {
+    //   title,
+    //   description, 
+    //   lat, 
+    //   lng, 
+    //   price,
+    //   guests, 
+    //   bedrooms,
+    //   beds,
+    //   baths,
+    //   address,
+    //   city,
+    //   state,
+    //   country,
+    //   wifi,
+    //   propType,
+    //   parking,
+    //   kitchen,
+    //   dedicatedWorkspace,
+    //   petsAllowed,
+    //   usersId
+    // }
+    ))
       .then(history.push({ pathname: `/listings/${newId}`}))
       .catch(async (res) => {        
       let data;
