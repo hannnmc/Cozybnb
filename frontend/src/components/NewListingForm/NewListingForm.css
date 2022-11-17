@@ -40,6 +40,7 @@
     outline-color: #222222;
     position: relative;
     z-index: 2;
+    /* font-weight: 100; */
 }
 
 .new-dropdown input {
@@ -416,10 +417,10 @@ input:not(:focus):valid ~ .night-floating-label{
 }
 
 .listing-minimap {
-    height: 140px;
-    width: 240px;
-    /* margin-top: -8px; */
-    margin-bottom: 14px;
+    height: 154px;
+    width: 260px;
+    /* margin-top: 8px; */
+    /* margin-bottom: 14px; */
 }
 
 .new-listing-top {
