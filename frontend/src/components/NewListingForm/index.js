@@ -51,9 +51,9 @@ function NewListingForm(props) {
     setPhotoFile(file);
   }
 
-  useEffect(() => {
-    console.log(lat,lng)
-  },[lat, lng])
+  // useEffect(() => {
+  //   console.log(lat,lng)
+  // },[lat, lng])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -116,7 +116,7 @@ function NewListingForm(props) {
         onClick={() => setNewListingModal(false)} className="login-x-button"><span className="material-symbols-outlined">close</span></div>
       <header className="signup-header">
         <div></div>
-        <div className="finish-signup">Tell us about your home</div>
+        <div className="finish-signup">Create a new listing</div>
         <div></div>
       </header>
 
@@ -269,7 +269,7 @@ function NewListingForm(props) {
             className='new-description'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder='Description'
+            placeholder='Tell us about your home'
             required />
 
           </div>
@@ -285,6 +285,7 @@ function NewListingForm(props) {
               value={lat}
               onChange={(e) => setLat(parseFloat(e.target.value))}
               placeholder="Latitude"
+              step='any'
               required/>
               <input 
               className='lng-input'
@@ -294,6 +295,7 @@ function NewListingForm(props) {
               value={lng}
               onChange={(e) => setLng(parseFloat(e.target.value))}
               placeholder="Longitude"
+              step='any'
               required/>
             </div>
             <div className='price-input-div'>
