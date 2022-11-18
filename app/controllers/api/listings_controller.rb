@@ -9,13 +9,18 @@ class Api::ListingsController < ApplicationController
     end
     
     def show
-
         @listing = Listing.find(params[:id])
     end
 
     def create
         @listing = Listing.new(listing_params)
         @listing.users_id = current_user.id
+        if listing_params[:photos]
+            listing_params[:photos].each do |photo|
+                @listing.photos.attach(photo)
+            end
+        end
+        debugger
         if @listing.save
             render :show
         else 
@@ -52,7 +57,7 @@ class Api::ListingsController < ApplicationController
             :pets_allowed,
             :kitchen,
             :parking,
-            :photos
+            photos:[]
         )
     end
     

@@ -27,7 +27,7 @@ if listing.photos.attached?
   # json.photoUrl @user.photo.url
 
 else
-  json.photo_urls listing.photos.map { |photo| "https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg"  } 
+  json.photo_urls listing.photos.map { |photo| "https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg" } 
 end
 
 
