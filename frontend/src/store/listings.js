@@ -53,7 +53,7 @@ export const createListing = (formData) => async (dispatch) => {
         body: formData
     });
     const data = await response.json();
-    debugger
+    // debugger
     dispatch(addListing(data.listing));
     return response;
 };
