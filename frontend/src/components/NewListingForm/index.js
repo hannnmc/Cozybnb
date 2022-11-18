@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import * as listingActions from "../../store/listings";
 import { useHistory } from 'react-router-dom';
-// import NewListingMap from './NewListingMap';
-import { Wrapper } from '@googlemaps/react-wrapper';
 import ListingMap from '../ListingMap'
 import { useMemo } from 'react';
 
@@ -16,14 +14,9 @@ function NewListingForm(props) {
   const sessionUser = useSelector(state => state.session.user);
   const history = useHistory(); 
   if (!sessionUser) {
-    // setNewListingForm(false);
-    // setLoginFormModal(open => true);  
+
   };
-  const [photoFile, setPhotoFile] = useState (null);
-  const [photoFile2, setPhotoFile2] = useState (null);
-  const [photoFile3, setPhotoFile3] = useState (null);
-  const [photoFile4, setPhotoFile4] = useState (null);
-  const [photoFile5, setPhotoFile5] = useState (null);
+
   const [errors, setErrors] = useState([]);
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState('');
@@ -46,66 +39,81 @@ function NewListingForm(props) {
   const [usersId, setUsersId] = useState(sessionUser.id);
   const [country, setCountry] = useState("United States");
   const [bounds, setBounds] = useState(null);
+  const [photoFile, setPhotoFile] = useState (null);
+  const [photoFile2, setPhotoFile2] = useState (null);
+  const [photoFile3, setPhotoFile3] = useState (null);
+  const [photoFile4, setPhotoFile4] = useState (null);
+  const [photoFile5, setPhotoFile5] = useState (null);
   const [photoUrl, setPhotoUrl] = useState(null);
   const [photoUrl2, setPhotoUrl2] = useState(null);
   const [photoUrl3, setPhotoUrl3] = useState(null);
   const [photoUrl4, setPhotoUrl4] = useState(null);
+  const [files, setFiles] = useState(null);
+
   const [photoUrl5, setPhotoUrl5] = useState(null);
-  
   const listings = useSelector(state => state.listings)
 
   const handleFile = e => {
-    const file = e.currentTarget.files[0];
-    const file2 = e.currentTarget.files[1];
-    const file3 = e.currentTarget.files[2];
-    const file4 = e.currentTarget.files[3];
-    const file5 = e.currentTarget.files[4];
-    
-    if (file) {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-      fileReader.onload = () => {
-        setPhotoFile(file);
-        setPhotoUrl(fileReader.result);
-      };
+    // const file = e.currentTarget.files[0];
+    // const file2 = e.currentTarget.files[1];
+    // const file3 = e.currentTarget.files[2];
+    // const file4 = e.currentTarget.files[3];
+    // const file5 = e.currentTarget.files[4];
+    const currentFiles = e.currentTarget.files;
+    const filesList = [];
+    for (let i = 0; i < currentFiles.length; i++) {
+      filesList.push(currentFiles[i]);
     }
-    if (file2) {
-      const fileReader2 = new FileReader();
-      fileReader2.readAsDataURL(file2);
-      fileReader2.onload = () => {
-        setPhotoFile2(file2);
-        setPhotoUrl2(fileReader2.result);
-      };
-    }
-    if (file3) {
-      const fileReader3 = new FileReader();
-      fileReader3.readAsDataURL(file3);
-      fileReader3.onload = () => {
-        setPhotoFile3(file3);
-        setPhotoUrl3(fileReader3.result);
-      };
-    }
-    if (file4) {
-      const fileReader4 = new FileReader();
-      fileReader4.readAsDataURL(file4);
-      fileReader4.onload = () => {
-        setPhotoFile4(file4);
-        setPhotoUrl4(fileReader4.result);
-      };
-    }
-    if (file5) {
-      const fileReader5 = new FileReader();
-      fileReader5.readAsDataURL(file5);
-      fileReader5.onload = () => {
-        setPhotoFile5(file5);
-        setPhotoUrl5(fileReader5.result);
-      };
-    }
+    setFiles(filesList);
+    // if (filesList.length > 4) {
+    //   setTooManyPhotos(true);
+    // } else {
+    //   setTooManyPhotos(false);
+    // }
+    // setFiles(e.currentTarget.files);
+
+    // if (file) {
+    //   const fileReader = new FileReader();
+    //   fileReader.readAsDataURL(file);
+    //   fileReader.onload = () => {
+    //     setPhotoFile(file);
+    //     setPhotoUrl(fileReader.result);
+    //   };
+    // }
+    // if (file2) {
+    //   const fileReader2 = new FileReader();
+    //   fileReader2.readAsDataURL(file2);
+    //   fileReader2.onload = () => {
+    //     setPhotoFile2(file2);
+    //     setPhotoUrl2(fileReader2.result);
+    //   };
+    // }
+    // if (file3) {
+    //   const fileReader3 = new FileReader();
+    //   fileReader3.readAsDataURL(file3);
+    //   fileReader3.onload = () => {
+    //     setPhotoFile3(file3);
+    //     setPhotoUrl3(fileReader3.result);
+    //   };
+    // }
+    // if (file4) {
+    //   const fileReader4 = new FileReader();
+    //   fileReader4.readAsDataURL(file4);
+    //   fileReader4.onload = () => {
+    //     setPhotoFile4(file4);
+    //     setPhotoUrl4(fileReader4.result);
+    //   };
+    // }
+    // if (file5) {
+    //   const fileReader5 = new FileReader();
+    //   fileReader5.readAsDataURL(file5);
+    //   fileReader5.onload = () => {
+    //     setPhotoFile5(file5);
+    //     setPhotoUrl5(fileReader5.result);
+    //   };
+    // }
   }
 
-  // useEffect(() => {
-  //   console.log(lat,lng)
-  // },[lat, lng])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -129,27 +137,35 @@ function NewListingForm(props) {
       parking,
       kitchen,
       dedicatedWorkspace,
-      petsAllowed,
-      usersId
+      petsAllowed
     };
     Object.keys(newListing).forEach((key) => {
       formData.append(`listing[${key}]`, newListing[key]);
     })
-    if (photoFile) {
-      formData.append('listing[photos]', photoFile);
+
+    // console.log(files.length)
+    if (files && files.length > 0) {
+      files.forEach((file) => {
+        formData.append('listing[photos][]', file)
+      })
+      // formData.append(`listing[photos][]`, files)
     }
-    if (photoFile2) {
-      formData.append('listing[photos]', photoFile2);
-    }
-    if (photoFile3) {
-      formData.append('listing[photos]', photoFile3);
-    }
-    if (photoFile4) {
-      formData.append('listing[photos]', photoFile4);
-    }
-    if (photoFile5) {
-      formData.append('listing[photos]', photoFile5);
-    }
+    // if (photoFile) {
+    //   formData.append('listing[photos][]', photoFile);
+    // }
+    // if (photoFile2) {
+    //   formData.append('listing[photos][]', photoFile2);
+    // }
+    // if (photoFile3) {
+    //   formData.append('listing[photos][]', photoFile3);
+    // }
+    // if (photoFile4) {
+    //   formData.append('listing[photos][]', photoFile4);
+    // }
+    // if (photoFile5) {
+    //   formData.append('listing[photos][]', photoFile5);
+    // }
+    console.log(photoFile, photoFile2, photoFile3)
 
     setErrors([]);
     setNewListingModal(false);
