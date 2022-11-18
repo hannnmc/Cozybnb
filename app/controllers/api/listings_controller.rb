@@ -14,14 +14,14 @@ class Api::ListingsController < ApplicationController
 
     def create
         @listing = Listing.new(listing_params)
-        debugger
+
         @listing.users_id = current_user.id
         # if listing_params[:photos]
         #     listing_params[:photos].each do |photo|
         #         @listing.photos.attach(photo)
         #     end
         # end
-        debugger
+
         if @listing.save
             render :show
         else 
