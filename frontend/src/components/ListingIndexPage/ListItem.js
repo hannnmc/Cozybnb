@@ -14,7 +14,7 @@ function ListItem({ listing, isHighlighted, setSelectedListing }) {
       onMouseLeave={() => setSelectedListing(null)}
     >
       <div className="list-item-info">
-      {photoUrls && ( <div className="listing-image-box"> <img className="listing-image" src={photoUrls[0]} alt='loading...'/></div> )}
+      {photoUrls[0] ? ( <div className="listing-image-box"> <img className="listing-image" src={photoUrls[0]} alt='loading...'/></div> ) : <div className="listing-image-box"><img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' className="listing-image" /></div>}
 
       <div className="text-info-box">
         <h2  className="list-item-copy">{title}</h2>
