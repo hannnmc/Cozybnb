@@ -109,15 +109,15 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
       </div>
       <div className="listing-show-visuals">
         <div className='first-col-photo'>
-        {photoUrls && <img src={photoUrls[0]} alt='loading...' className="listing-show-image main"/>}
+        {photoUrls[0] ? <img src={photoUrls[0]} alt='loading...' className="listing-show-image main"/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' className="listing-show-image main" /> }
         </div>
         <div className='second-col-photos'>
-            {photoUrls && <img src={photoUrls[1]} alt='loading...' className="listing-show-image"/>}
-            {photoUrls && <img src={photoUrls[2]} alt='loading...' className="listing-show-image"/>}
+            {photoUrls[1] ? <img src={photoUrls[1]} alt='loading...' className="listing-show-image"/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' className="listing-show-image" />}
+            {photoUrls[2] ? <img src={photoUrls[2]} alt='loading...' className="listing-show-image"/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' className="listing-show-image" /> }
         </div>
         <div className='third-col-photos'>
-            {photoUrls && <img src={photoUrls[3]} alt='loading...' className="listing-show-image"/>}
-            {photoUrls && <img src={photoUrls[4]} alt='loading...' className="listing-show-image"/>}
+            {photoUrls[3] ? <img src={photoUrls[3]} alt='loading...' className="listing-show-image"/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' className="listing-show-image" />}
+            {photoUrls[4] ? <img src={photoUrls[4]} alt='loading...' className="listing-show-image"/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' className="listing-show-image" /> }
         </div>
       </div>
       <section className="listing-details">
