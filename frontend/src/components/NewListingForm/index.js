@@ -357,7 +357,7 @@ function NewListingForm(props) {
             </div>
           </div>
 
-          <div className='new-listing-description'>
+          <div className='new-listing-description' >
             <textarea 
             maxLength="1000"
             className='new-description'
@@ -370,7 +370,7 @@ function NewListingForm(props) {
       
           
           <div className='coord-price'>
-            <div className='coord-input-div' >
+            <div className='coord-input-div'>
               <input 
               className='lat-input'
               min="-90"
