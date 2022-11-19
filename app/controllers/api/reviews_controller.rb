@@ -1,12 +1,12 @@
 class Api::ReviewsController < ApplicationController
 
-    wrap_parameters include: Reviews.attribute_names + ['listingId' , 'userId']
+    wrap_parameters include: Review.attribute_names + ['listingId' , 'userId']
 
     def create
-        @review = review.new(review_params)
+        @review = Review.new(review_params)
         @review[:user_id] = current_user.id
-        
-        if @review.save
+        # debugger
+        if @review.save!
             render :show
         else
             render json: @review.errors.full_messages, status: 422
@@ -20,7 +20,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index 
-        reviews = Reservation.all
+        reviews = Review.all
         
         if params[:userId]
            @reviews = reviews.where(user_id: params[userId])
@@ -33,7 +33,7 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params 
-        params.require(:reservation).permit(:body, :rating, :user_id)
+        params.require(:review).permit(:body, :rating, :listing_id)
     end
 
 
