@@ -369,8 +369,8 @@ function NewListingForm(props) {
           </div>
       
           
-          <div className='coord-price' >
-            <div className='coord-input-div'>
+          <div className='coord-price'>
+            <div className='coord-input-div' >
               <input 
               className='lat-input'
               min="-90"
