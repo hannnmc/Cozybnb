@@ -13,8 +13,8 @@
 class Review < ApplicationRecord
 
 
-    belongs_to :users
-    belongs_to :listings
+    belongs_to :user
+    belongs_to :listing
 
     validates :body, :rating, :user_id, :listing_id, presence: true
 
