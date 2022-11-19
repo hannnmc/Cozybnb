@@ -20,7 +20,7 @@
 #  kitchen             :boolean          default(FALSE), not null
 #  dedicated_workspace :boolean          default(FALSE), not null
 #  pets_allowed        :boolean          default(TRUE), not null
-#  users_id            :bigint           not null
+#  user_id            :bigint           not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  country             :string           not null
@@ -30,8 +30,9 @@ class Listing < ApplicationRecord
 
     has_many_attached :photos, dependent: :destroy
     has_many :reservations, dependent: :destroy
+    has_many :reviews, dependent: :destroy
 
-    belongs_to :users,
+    belongs_to :user,
     class_name: "User"
 
     validates :guests, inclusion: {in: 1..16, message: "Number of guests must be between 1 to 16"}

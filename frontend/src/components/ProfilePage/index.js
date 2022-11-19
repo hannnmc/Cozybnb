@@ -30,7 +30,7 @@ const ProfilePage = () => {
     const ownedReservations = [];
     if (Object.keys(listings).length > 0) {
         Object.keys(listings).forEach(listingId => {
-            if (listings[listingId].usersId === user.id) {
+            if (listings[listingId].userId === user.id) {
                 ownedListings.push(listings[listingId])
             }
         })

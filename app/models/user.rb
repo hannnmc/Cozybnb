@@ -33,7 +33,8 @@ class User < ApplicationRecord
 
   has_one_attached :photo
   has_many :reservations, dependent: :destroy
-  has_many :listings,  foreign_key: :users_id, class_name: :Listing, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :listings, dependent: :destroy
 
   def self.find_by_credentials(email, password)
     user = User.find_by(:email => email)

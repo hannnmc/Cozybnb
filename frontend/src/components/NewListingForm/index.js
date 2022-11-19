@@ -36,7 +36,7 @@ function NewListingForm(props) {
   const [propType, setPropType] = useState("");
   const [lat, setLat] = useState(40.7128);
   const [lng, setLng] = useState(-74.0060);
-  const [usersId, setUsersId] = useState(sessionUser.id);
+  const [userId, setUserId] = useState(sessionUser.id);
   const [country, setCountry] = useState("United States");
   const [bounds, setBounds] = useState(null);
   const [photoFile, setPhotoFile] = useState (null);

@@ -86,9 +86,9 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
         return null;
     }
     
-    const { usersId, description, beds, bedrooms, baths, guests, propType, averageRating, photoUrls, city, country } = listing;
+    const { userId, description, beds, bedrooms, baths, guests, propType, averageRating, photoUrls, city, country } = listing;
     
-    const user = users[usersId];
+    const user = users[userId];
 
     //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
 
