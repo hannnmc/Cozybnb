@@ -357,7 +357,7 @@ function NewListingForm(props) {
             </div>
           </div>
 
-          <div className='new-listing-description' >
+          <div className='new-listing-description'>
             <textarea 
             maxLength="1000"
             className='new-description'
