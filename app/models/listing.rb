@@ -20,11 +20,11 @@
 #  kitchen             :boolean          default(FALSE), not null
 #  dedicated_workspace :boolean          default(FALSE), not null
 #  pets_allowed        :boolean          default(TRUE), not null
-#  user_id            :bigint           not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #  country             :string           not null
 #  prop_type           :string           default("Entire home"), not null
+#  user_id             :bigint           not null
 #
 class Listing < ApplicationRecord
 
