@@ -109,7 +109,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Loft',
       pets_allowed: true,
-      users_id: 4,
+      user_id: 4,
       lat: 40.7558606730357,
       lng: -74.00159449170306
     })
@@ -133,7 +133,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type:'Entire home',
       pets_allowed: true,
-      users_id: 5,
+      user_id: 5,
       lat: 40.773506142037114,
       lng: -73.96588646726212
     })
@@ -156,7 +156,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: false,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 6,
+      user_id: 6,
       lat: 40.721525397897885,
       lng: -73.99980873460277
     })
@@ -183,7 +183,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 3,
+      user_id: 3,
       lat: 40.70376570566167, 
       lng: -73.9897054035584
     })
@@ -206,7 +206,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Loft',
       pets_allowed: true,
-      users_id: 3,
+      user_id: 3,
       lat: 40.7553582002978, 
       lng: -73.9877736373611
     })
@@ -229,7 +229,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Loft',
       pets_allowed: true,
-      users_id: 2,
+      user_id: 2,
       lat: 40.746674260759875, 
       lng: -73.98979343376428
     })
@@ -254,7 +254,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 7,
+      user_id: 7,
       lat: 40.75060397737184, 
       lng: -73.9784142135405
     })
@@ -282,7 +282,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 7,
+      user_id: 7,
       lat: 40.77141356013632, 
       lng: -73.93364049975207
     })
@@ -305,7 +305,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 6,
+      user_id: 6,
       lat: 40.79325173439996,
       lng: -73.97320465661757
     })
@@ -328,7 +328,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
+      user_id: 1,
       lat: 40.79525173439996,
       lng: -73.97220465661757
     })
@@ -351,7 +351,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 7,
+      user_id: 7,
       lat: 40.76308748165343,
       lng: -74.17333254874063
     })
@@ -376,7 +376,7 @@ ApplicationRecord.transaction do
       dedicated_workspace: true,
       prop_type: 'Entire home',
       pets_allowed: true,
-      users_id: 1,
+      user_id: 1,
       lat: 41.924556784593946,
       lng: -73.90491596080538
     })

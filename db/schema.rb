@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_11_234432) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_19_071336) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,12 +60,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_11_234432) do
     t.boolean "kitchen", default: false, null: false
     t.boolean "dedicated_workspace", default: false, null: false
     t.boolean "pets_allowed", default: true, null: false
-    t.bigint "users_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "country", null: false
     t.string "prop_type", default: "Entire home", null: false
-    t.index ["users_id"], name: "index_listings_on_users_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -79,6 +79,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_11_234432) do
     t.datetime "updated_at", null: false
     t.index ["listing_id"], name: "index_reservations_on_listing_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "listing_id", null: false
+    t.index ["listing_id"], name: "index_reviews_on_listing_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -99,7 +110,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_11_234432) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "listings", "users", column: "users_id"
+  add_foreign_key "listings", "users"
   add_foreign_key "reservations", "listings"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "listings"
+  add_foreign_key "reviews", "users"
 end

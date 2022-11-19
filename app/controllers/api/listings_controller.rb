@@ -1,5 +1,5 @@
 class Api::ListingsController < ApplicationController
-    wrap_parameters include: Listing.attribute_names + ["photos", "dedicatedWorkspace", "propType", "usersId", "petsAllowed" ]
+    wrap_parameters include: Listing.attribute_names + ["photos", "dedicatedWorkspace", "propType", "userId", "petsAllowed" ]
 
     def index
         @listings = Listing.all
@@ -15,7 +15,7 @@ class Api::ListingsController < ApplicationController
     def create
         @listing = Listing.new(listing_params)
 
-        @listing.users_id = current_user.id
+        @listing.user_id = current_user.id
         # if listing_params[:photos]
         #     listing_params[:photos].each do |photo|
         #         @listing.photos.attach(photo)
@@ -31,7 +31,7 @@ class Api::ListingsController < ApplicationController
 
     def destroy 
         @listing = Listing.find(params[:id])
-        @listing.destroy if current_user.id == @listing.users_id
+        @listing.destroy if current_user.id == @listing.user_id
         render :show 
     end
 
