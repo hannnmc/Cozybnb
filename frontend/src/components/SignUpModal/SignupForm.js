@@ -52,9 +52,10 @@ function SignUpForm(props) {
       </header>
       <div className="signup-div">
         <form onSubmit={handleSubmit}>
-          <div className="input-div">
+          <div className="input-div" id="firstname-inputdiv">
             <input
               className="firstname-input"
+              id="signup-firstname"
               placeholder="First name"
               type="text"
               value={firstName}

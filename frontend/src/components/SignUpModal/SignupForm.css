@@ -177,7 +177,7 @@ span.bold2 {
 
 input:focus ~ .fn-floating-label,
 input:not(:focus):valid ~ .fn-floating-label{
-  top: 99px;
+  top: 104px;
   bottom: 10px;
   left: 37px;
   font-size: 11px;
@@ -187,7 +187,7 @@ input:not(:focus):valid ~ .fn-floating-label{
   position: absolute;
   pointer-events: none;
   left: 37px;
-  top: 109px;
+  top: 114px;
   color: #717171;
   transition: 0.2s ease all;
   font-size: 18px;
@@ -196,7 +196,7 @@ input:not(:focus):valid ~ .fn-floating-label{
 
 input:focus ~ .ln-floating-label,
 input:not(:focus):valid ~ .ln-floating-label{
-  top: 156px;
+  top: 162px;
   bottom: 10px;
   left: 37px;
   font-size: 11px;
@@ -206,7 +206,7 @@ input:not(:focus):valid ~ .ln-floating-label{
   position: absolute;
   pointer-events: none;
   left: 37px;
-  top: 165px;
+  top: 172px;
   color: #717171;
   transition: 0.2s ease all;
   font-size: 18px;
@@ -225,7 +225,7 @@ input:not(:focus):valid ~ .bd-floating-label{
   position: absolute;
   pointer-events: none;
   left: 37px;
-  top: 265px;
+  top: 266px;
   color: #717171;
   transition: 0.2s ease all;
   font-size: 18px;
@@ -234,7 +234,7 @@ input:not(:focus):valid ~ .bd-floating-label{
 
 input:focus ~ .signupemail-floating-label,
 input:not(:focus):valid ~ .signupemail-floating-label{
-  top: 376px;
+  top: 373px;
   bottom: 10px;
   left: 37px;
   font-size: 11px;
@@ -244,7 +244,7 @@ input:not(:focus):valid ~ .signupemail-floating-label{
   position: absolute;
   pointer-events: none;
   left: 37px;
-  top: 384px;
+  top: 383px;
   color: #717171;
   transition: 0.2s ease all;
   font-size: 18px;
@@ -253,7 +253,7 @@ input:not(:focus):valid ~ .signupemail-floating-label{
 
 input:focus ~ .su-password-floating-label,
 input:not(:focus):valid ~ .su-password-floating-label{
-  top: 479px;
+  top: 471px;
   bottom: 10px;
   left: 37px;
   font-size: 11px;
@@ -263,9 +263,17 @@ input:not(:focus):valid ~ .su-password-floating-label{
   position: absolute;
   pointer-events: none;
   left: 37px;
-  top: 487px;
+  top: 481px;
   color: #717171;
   transition: 0.2s ease all;
   font-size: 18px;
   font-weight: 350;
 }
+
+#signup-firstname {
+    height: 47px;
+}
+#firstname-inputdiv {
+    height: 59px;
+}
+

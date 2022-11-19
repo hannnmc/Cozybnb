@@ -2,18 +2,20 @@
 #
 # Table name: reviews
 #
-#  id          :bigint           not null, primary key
-#  body        :text             not null
-#  rating      :integer          not null
+#  id         :bigint           not null, primary key
+#  body       :text             not null
+#  rating     :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #  user_id    :bigint           not null
-#  listings_id :bigint           not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  listing_id :bigint           not null
 #
 class Review < ApplicationRecord
 
 
     belongs_to :users
     belongs_to :listings
+
+    validates :body, :rating, :user_id, :listing_id, presence: true
 
 end
