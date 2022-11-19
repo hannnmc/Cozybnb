@@ -367,7 +367,7 @@ function NewListingForm(props) {
             required />
 
           </div>
- 
+   
           
           <div className='coord-price'>
             <div className='coord-input-div'>
