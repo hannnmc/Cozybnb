@@ -11,6 +11,7 @@ import * as sessionActions from "./store/session";
 import * as listingActions from "./store/listings"
 import * as userActions from "./store/users";
 import * as reservationActions from "./store/reservations";
+import * as reviewActions from "./store/reviews";
 
 const store = configureStore();
 
@@ -21,6 +22,7 @@ if (process.env.NODE_ENV !== "production") {
   window.listingActions = listingActions;
   window.userActions = userActions;
   window.reservationActions = reservationActions;
+  window.reviewActions = reviewActions;
 }
 
 function Root() {
