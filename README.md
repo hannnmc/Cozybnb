@@ -1,5 +1,5 @@
 ## Background
-<a href='https://cozy-bnb.herokuapp.com' alt=''>Cozybnb</a> is a near pixel perfect clone of the original Airbnb website and possesses many of the original functionalities such as creating a new listing, browsing listings others have created, and filtering listings with criterias. You can choose to signup for a new account, login with an existing account, or login with a demo user to tryout the app. Additionally, the homepage of the app is built responsively to be compatible with screens of any size. 
+<a href='https://cozy-bnb.herokuapp.com' alt=''>Cozybnb</a> is a near pixel perfect clone of Airbnb and possesses many of the original functionalities such as creating a new listing, browsing listings others have created, and filtering listings with criterias. You can choose to signup for a new account, login with an existing account, or login with a demo user to tryout the app. Additionally, the homepage of the app is built responsively to be compatible with screens of any size. 
 
 ## Technologies
 - React.js - frontend components
