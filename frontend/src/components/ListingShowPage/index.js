@@ -53,7 +53,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const { listingId } = useParams();
     const listing = useSelector(state => state.listings[listingId]);
     const users = useSelector(state => state.users);
-    // const reviews = useSelector(reviewActions.fetchReviews(parseInt(listingId)));
+    const reviews = useSelector(state => state.reviews);
     
     useEffect(() => {
         if (dayOverage < startDate.getDate()) {
