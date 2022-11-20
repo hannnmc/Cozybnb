@@ -53,7 +53,9 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const { listingId } = useParams();
     const listing = useSelector(state => state.listings[listingId]);
     const users = useSelector(state => state.users);
-    const reviews = useSelector(state => state.reviews);
+    const reviews = useSelector(state => Object.values(state.reviews));
+    console.log(reviews)
+    const [listingReviews, setListingReviews] = useState([])
     
     useEffect(() => {
         if (dayOverage < startDate.getDate()) {
@@ -79,13 +81,25 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     },[startDate,endDate])
 
 
-    // console.log(reviews)
+    console.log(listingReviews)
     
     
     useEffect(() => {
         dispatch(fetchListing(listingId));
         dispatch(fetchUsers());
     }, [listingId, dispatch]);
+
+    // useEffect(() => {
+    //     let i =0;
+    //     while (listingReviews.length !== Object.keys(reviews).length) {
+    //         let review = reviews[Object.keys(reviews)[i]]
+    //         if (review.listingId === parseInt(listingId)) {
+    //             setListingReviews(prevReviews => (
+    //                 [...prevReviews, review]
+    //             ))
+    //         }
+    //     }
+    // },[reviews])
     
     if (!listing || !users) {
         return null;
@@ -94,8 +108,11 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const { userId, description, beds, bedrooms, baths, guests, propType, averageRating, photoUrls, city, country } = listing;
     
     const user = users[userId];
+
     
     //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
+
+
   if(user) return (
     <div className="listing-show">
       <div className="listing-show-header">
@@ -220,12 +237,12 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             {averageRating || 'No reviews (yet)'}
             </span>
             <div className="reviews">
-            {/* {reviews.map(review => (
+            {reviews.map(review => (
                 <div className="review" key={review.id}>
                 <h3>Rating: {review.rating}</h3>
                 <span>{review.author}</span>
                 <p>{review.body}</p>
-                {review.authorId === sessionUser?.id && (
+                {review.userId === user?.id && (
                     <button 
                     //   onClick={() => dispatch(destroyReview(review.id))} 
                     className='delete-icon'
@@ -234,7 +251,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
                 </button>
                 )}
                 </div>
-            ))} */}
+            ))}
             </div>
             {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
         </section>
