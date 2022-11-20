@@ -1,4 +1,6 @@
 import csrfFetch from "./csrf";
+import { addReviews } from './reviews';
+import { addUsers } from './users';
 
 
 const SET_LISTINGS = 'listings/setListings'
@@ -32,8 +34,8 @@ export const fetchListing = listingId => async dispatch => {
     const response = await csrfFetch(`/api/listings/${listingId}`);
     const data = await response.json();
     dispatch(addListing(data.listing));
-    // dispatch(addUsers(data.users));
-    // dispatch(addReviews(data.reviews));
+    dispatch(addUsers(data.users));
+    dispatch(addReviews(data.reviews));
     return response;
 }
 
@@ -53,7 +55,6 @@ export const createListing = (formData) => async (dispatch) => {
         body: formData
     });
     const data = await response.json();
-    // debugger
     dispatch(addListing(data.listing));
     return response;
 };

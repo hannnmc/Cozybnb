@@ -10,6 +10,7 @@ import './ListingShowPage.css';
 import FloatingBox from './FloatingBox';
 import ListingFeatures from './ListingFeatures';
 import DatePickerComp from './DatePickerComp';
+import * as reviewActions from '../../store/reviews'
 
 
 let lunar = false;
@@ -49,6 +50,11 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
 
     const [endDate, setEndDate] = useState(new Date(startDate.getFullYear(), endMonth, endDay));
     const [value, onChange] = useState([startDate,endDate]);
+    const { listingId } = useParams();
+    const listing = useSelector(state => state.listings[listingId]);
+    const users = useSelector(state => state.users);
+    // const reviews = useSelector(reviewActions.fetchReviews(parseInt(listingId)));
+    
     useEffect(() => {
         if (dayOverage < startDate.getDate()) {
             if (endMonth === 12) {
@@ -63,6 +69,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             setEndDay(startDate.getDate() + numDays);
             setStartDate(new Date(`${startDate.getFullYear()}, ${startDate.getMonth()+1},${startDate.getDate()}`));
         }
+        dispatch(reviewActions.fetchReviews())
     },[])    
 
     useEffect(() => {
@@ -71,17 +78,15 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
         )
     },[startDate,endDate])
 
-    const { listingId } = useParams();
-    const listing = useSelector(state => state.listings[listingId]);
-    const users = useSelector(state => state.users);
-    
-    //   const reviews = useSelector(getListingReviews(parseInt(listingId)));
 
+    // console.log(reviews)
+    
+    
     useEffect(() => {
         dispatch(fetchListing(listingId));
         dispatch(fetchUsers());
     }, [listingId, dispatch]);
-
+    
     if (!listing || !users) {
         return null;
     }
@@ -89,9 +94,8 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const { userId, description, beds, bedrooms, baths, guests, propType, averageRating, photoUrls, city, country } = listing;
     
     const user = users[userId];
-
+    
     //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
-
   if(user) return (
     <div className="listing-show">
       <div className="listing-show-header">
