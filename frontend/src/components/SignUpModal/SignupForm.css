@@ -152,7 +152,7 @@ span.bold2 {
     font-size: 16px;
     font-weight: 400;
     color: rgb(34, 34, 34);
-    width: 506px;
+    width: 505px;
     height: 48px;
 }
 
@@ -177,7 +177,7 @@ span.bold2 {
 
 input:focus ~ .fn-floating-label,
 input:not(:focus):valid ~ .fn-floating-label{
-  top: 104px;
+  top: 100px;
   bottom: 10px;
   left: 37px;
   font-size: 11px;
@@ -187,7 +187,7 @@ input:not(:focus):valid ~ .fn-floating-label{
   position: absolute;
   pointer-events: none;
   left: 37px;
-  top: 114px;
+  top: 110px;
   color: #717171;
   transition: 0.2s ease all;
   font-size: 18px;

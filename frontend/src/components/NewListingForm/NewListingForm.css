@@ -22,7 +22,7 @@
 
 .new-dropdown {
     display: flex;
-    width: 100%;
+    width: calc(100% - 1px);
     justify-content: space-between;
     height: 48px;
 }
@@ -366,7 +366,9 @@ input:not(:focus):valid ~ .night-floating-label{
 }
 .coord-input-div {
     display: flex;
+    position: relative;
     width: 50%;
+    color: rgb(113, 113, 113);
 }
 .price-input-div {
     width: 50%;
@@ -383,9 +385,10 @@ input:not(:focus):valid ~ .night-floating-label{
     width: 50%;
     text-align: center;
     outline-color: #222222;
-    font-size: 15px;
+    font-size: 14.5px;
     color:rgb(113, 113, 113);
     padding: 0 12px;
+    padding-top: 10px;
 }
 
 .lng-input {
@@ -396,9 +399,10 @@ input:not(:focus):valid ~ .night-floating-label{
     border-left: none;
     text-align: center;
     outline-color: #222222;
-    font-size: 14px;
+    font-size: 14.5px;
     color:rgb(113, 113, 113);
     padding: 0 12px;
+    padding-top: 10px;
 }
 .lng-input:focus {
     margin-right: 1px;
@@ -419,11 +423,28 @@ input:not(:focus):valid ~ .night-floating-label{
 }
 
 .listing-minimap {
-    height: 170px;
-    width: 260px;
+    height: 178px;
+    width: 225px;
     /* margin-top: 8px; */
     /* margin-bottom: 14px; */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.listing-minimap>div:first-child {
+    position: absolute;
+    /* background-color: blue; */
+    right: 50%;
+    text-align: center;
+    z-index: 200;
+    font-size: 20px;
+    margin-right: -9px;
+}
+
 
 .new-listing-top {
     display: flex;
@@ -437,8 +458,26 @@ input:not(:focus):valid ~ .night-floating-label{
 
 .listing-preview {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     margin-top: 7px;
+    /* justify-content: center; */
+}
+
+.listing-preview>img:first-child{
+    height: 138px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    position: relative;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+.preview-div {
+    display: flex;
+    /* flex-direction: column; */
+    overflow: scroll;
+    height: 145px;
+    flex-wrap: wrap;
 }
 
 .listing-preview img{
@@ -447,8 +486,55 @@ input:not(:focus):valid ~ .night-floating-label{
     object-fit: cover;
     position: relative;
     margin: 3px;
+    border-radius: 5px;
 }
 
 .listing-image-upload {
-    max-width: 50%;
+    max-width: 55%;
+}
+
+
+.listing-image-input{ 
+    position: relative;
+    width: 285px;
+}
+
+.listing-image-input::file-selector-button {
+    border: 1px solid #bababa;
+    background: none;
+    border-radius: 8px;
+    color: transparent;
+    padding: 6px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+    width: 110px;
+}
+
+.listing-image-input::before {
+    position: absolute;
+    content: 'Upload photos';
+    line-height: 27px;
+    padding-left: 11px;
+    padding-top: 1px;
+}
+.listing-image-input::after {
+    position: absolute;
+    content: '/ 5 Files.';
+    line-height: 27px;
+    padding-left: 11px;
+    padding-top: 1px;
+}
+
+.lattext {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    font-size: 14px;
+}
+.lngtext {
+    position: absolute;
+    left: 140px;
+    top: 4px;
+    font-size: 14px;
 }

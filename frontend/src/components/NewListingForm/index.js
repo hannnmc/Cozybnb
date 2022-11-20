@@ -79,7 +79,7 @@ function NewListingForm(props) {
         setPhotoFile(file);
         setPhotoUrl(fileReader.result);
       };
-    }
+    } else setPhotoUrl(null);
     if (file2) {
       const fileReader2 = new FileReader();
       fileReader2.readAsDataURL(file2);
@@ -87,7 +87,7 @@ function NewListingForm(props) {
         setPhotoFile2(file2);
         setPhotoUrl2(fileReader2.result);
       };
-    }
+    } else setPhotoUrl2(null);
     if (file3) {
       const fileReader3 = new FileReader();
       fileReader3.readAsDataURL(file3);
@@ -95,7 +95,7 @@ function NewListingForm(props) {
         setPhotoFile3(file3);
         setPhotoUrl3(fileReader3.result);
       };
-    }
+    } else setPhotoUrl3(null);
     if (file4) {
       const fileReader4 = new FileReader();
       fileReader4.readAsDataURL(file4);
@@ -103,7 +103,7 @@ function NewListingForm(props) {
         setPhotoFile4(file4);
         setPhotoUrl4(fileReader4.result);
       };
-    }
+    } else setPhotoUrl4(null);
     if (file5) {
       const fileReader5 = new FileReader();
       fileReader5.readAsDataURL(file5);
@@ -111,7 +111,7 @@ function NewListingForm(props) {
         setPhotoFile5(file5);
         setPhotoUrl5(fileReader5.result);
       };
-    }
+    } else setPhotoUrl5(null);
   }
 
 
@@ -144,7 +144,7 @@ function NewListingForm(props) {
     })
 
     // console.log(files.length)
-    if (files && files.length > 0) {
+    if (files && files.length > 0 && files.length < 6) {
       files.forEach((file) => {
         formData.append('listing[photos][]', file)
       })
@@ -165,7 +165,7 @@ function NewListingForm(props) {
     // if (photoFile5) {
     //   formData.append('listing[photos][]', photoFile5);
     // }
-    console.log(photoFile, photoFile2, photoFile3)
+    // console.log(photoFile, photoFile2, photoFile3)
 
     setErrors([]);
     setNewListingModal(false);
@@ -395,6 +395,8 @@ function NewListingForm(props) {
               placeholder="Latitude"
               step='any'
               required/>
+              <span className='lattext'>Lat</span>
+              
               <input 
               className='lng-input'
               min="-180"
@@ -405,6 +407,7 @@ function NewListingForm(props) {
               placeholder="Longitude"
               step='any'
               required/>
+              <span className='lngtext'>Lng</span>
             </div>
           </div>
           
@@ -459,19 +462,23 @@ function NewListingForm(props) {
            </div> */}
           <div className='new-listing-top'>
             <div className='listing-image-upload'>
-              <input type="file" onChange={handleFile} multiple/>
+              <input className='listing-image-input' type="file" onChange={handleFile} 
+              accept="image/png, image/jpg, image/jpeg"
+              multiple/>
               <div className='listing-preview'>
               {preview}
-              {preview2}
-              {preview3}
-              {preview4}
-              {preview5}
+              <div className='preview-div'>
+                {preview2}
+                {preview3}
+                {preview4}
+                {preview5}
+              </div>
               </div>
               
             </div>
-
+            
             <div className='listing-minimap'>
-
+            <div><i class="fa-solid fa-location-dot"></i></div>
             <ListingMap
                       // listings={[listing]}
                       setLat={setLat}
