@@ -349,3 +349,35 @@
 .show-datepicker {
     margin-top: 22px;
 }
+
+.show-review-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.show-review-top>span:first-child{
+    font-weight: 500;
+    font-size: 16.5px;
+}
+.show-review-top>span:last-child{
+    font-size: 14.5px;
+    color: #717171;
+}
+
+.show-review-image>img{
+    aspect-ratio: 1;
+    object-fit: contain;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.show-review-header {
+    display: flex;
+}
+
+.show-review {
+    margin-bottom: 40px;
+}
+.show-reviews {
+    /* margin-bottom: 40px; */
+}

@@ -236,20 +236,28 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             <span className="average-rating">
             {averageRating || 'No reviews (yet)'}
             </span>
-            <div className="reviews">
+            <div className="show-reviews">
             {reviews.map(review => (
-                <div className="review" key={review.id}>
-                <h3>Rating: {review.rating}</h3>
-                <span>{review.author}</span>
+                <div className="show-review" key={review.id}>
+                    <div className='show-review-header'>
+                        <div className='show-review-image'>
+                            <img src={users[review.userId].photoUrl} alt="" />
+                        </div>
+                        <div className='show-review-top'>
+                            <span>{users[review.userId].firstName}</span>
+                            <span>{`${monthNames[new Date(review.createdAt).getMonth()]}, ${new Date(review.createdAt).getFullYear()}`}</span>
+                        </div>
+
+                    </div>
                 <p>{review.body}</p>
-                {review.userId === user?.id && (
+                {/* {review.userId === userId && (
                     <button 
-                    //   onClick={() => dispatch(destroyReview(review.id))} 
+                      onClick={() => dispatch(reviewActions.destroyReview(review.id))} 
                     className='delete-icon'
-                    >
+                    >asdfasdf
                     <i className="fa-solid fa-rectangle-xmark" />
                 </button>
-                )}
+                )} */}
                 </div>
             ))}
             </div>
