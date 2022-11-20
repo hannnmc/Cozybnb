@@ -346,7 +346,7 @@ input:not(:focus):valid ~ .night-floating-label{
 #new-listing-button {
     height: 36px;
     line-height: 36px;
-    margin-top: 12px;
+    margin-top: 16px;
 }
 
 .new-checkboxes {
@@ -449,7 +449,7 @@ input:not(:focus):valid ~ .night-floating-label{
 .new-listing-top {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 #new-listing-modal{
