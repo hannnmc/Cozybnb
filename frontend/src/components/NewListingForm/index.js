@@ -370,6 +370,20 @@ function NewListingForm(props) {
       
           
           <div className='coord-price'>
+
+            <div className='price-input-div'>
+              <input 
+                className='new-price-input'
+                type="number" 
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                min="0"
+                max="1000"
+                placeholder='Price'
+                required/>
+                <span className="price-floating-label">$</span>
+                <span className="night-floating-label">per night</span>
+            </div>
             <div className='coord-input-div'>
               <input 
               className='lat-input'
@@ -391,19 +405,6 @@ function NewListingForm(props) {
               placeholder="Longitude"
               step='any'
               required/>
-            </div>
-            <div className='price-input-div'>
-              <input 
-                className='new-price-input'
-                type="number" 
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                min="0"
-                max="1000"
-                placeholder='Price'
-                required/>
-                <span className="price-floating-label">$</span>
-                <span className="night-floating-label">per night</span>
             </div>
           </div>
           
