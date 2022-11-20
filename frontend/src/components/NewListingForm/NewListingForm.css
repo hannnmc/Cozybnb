@@ -281,9 +281,9 @@ input:not(:focus):valid ~ .bathrooms-floating-label{
 }
 input:focus ~ .price-floating-label,
 input:not(:focus):valid ~ .price-floating-label{
-    top: 423px;
+    top: 422px;
     bottom: 10px;
-    left: 360px;
+    left: 110px;
     font-size: 17px;
     opacity: 1;
     color: rgb(113, 113, 113);
@@ -291,8 +291,8 @@ input:not(:focus):valid ~ .price-floating-label{
 .price-floating-label {
     position: absolute;
     pointer-events: none;
-    left: 390px;
-    top: 425px;
+    left: 120px;
+    top: 422px;
     color: transparent;
     transition: 0.2s ease all;
     font-size: 17px;
@@ -302,9 +302,9 @@ input:not(:focus):valid ~ .price-floating-label{
 
 input:focus ~ .night-floating-label,
 input:not(:focus):valid ~ .night-floating-label{
-  top: 423px;
+  top: 422px;
   bottom: 10px;
-  left: 440px;
+  left: 173px;
   font-size: 17px;
   opacity: 1;
   color: rgb(113, 113, 113);
@@ -312,8 +312,8 @@ input:not(:focus):valid ~ .night-floating-label{
 .night-floating-label {
   position: absolute;
   pointer-events: none;
-  left: 390px;
-  top: 425px;
+  left: 163px;
+  top: 422px;
   color: transparent;
   transition: 0.2s ease all;
   font-size: 17px;
@@ -377,8 +377,8 @@ input:not(:focus):valid ~ .night-floating-label{
 }
 
 .lat-input {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    /* border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px; */
     border: 1px solid #BABABA;
     width: 50%;
     text-align: center;
@@ -389,6 +389,8 @@ input:not(:focus):valid ~ .night-floating-label{
 }
 
 .lng-input {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     width: 50%;
     border: 1px solid #BABABA;
     border-left: none;
@@ -404,11 +406,11 @@ input:not(:focus):valid ~ .night-floating-label{
 
 .new-price-input {
     width: 100%;
-    border-radius: 0 8px 8px 0;
+    border-radius: 8px 0 0 8px;
     text-align: center;
     outline-color: #222222;
     border: 1px solid #BABABA;
-    border-left: none;
+    border-right: none;
     vertical-align: center;
     height: 100%;
     padding: 0;
