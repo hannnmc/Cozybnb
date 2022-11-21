@@ -252,7 +252,7 @@
 }
 
 .average-rating {
-    font-size: 22px;
+    font-size: 22.5px;
     margin-left: 10px;
 }
 
@@ -353,4 +353,18 @@
 .underscore-removal {
     color: #222222;
     text-decoration: none;
+}
+
+.reviewMain {
+    display: flex;
+}
+
+.reviewMain>div {
+    margin-left: 3px;
+}
+
+.reviewMain-text {
+    margin-top: -3px;
+    font-weight: 500;
+    margin-bottom: 32px;
 }
