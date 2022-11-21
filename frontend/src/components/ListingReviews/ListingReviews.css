@@ -29,13 +29,18 @@
 
 .show-review {
     margin-bottom: 40px;
+    min-width: 402px;
+    width: 30%;
+    margin-right: 80px;
 }
 
 .show-reviews {
     margin-bottom: -40px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .show-review-body {
     font-size: 16.5px;
-
+    line-height: 24px;
 }
