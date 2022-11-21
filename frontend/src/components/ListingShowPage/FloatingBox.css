@@ -115,6 +115,10 @@
     padding-top: 7px;
 }
 
+.float-box-tag {
+    color: #717171;
+}
+
 .floating-box-nights {
     display: flex;
     justify-content: space-between;
