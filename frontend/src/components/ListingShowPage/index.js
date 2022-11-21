@@ -10,6 +10,7 @@ import ListingFeatures from './ListingFeatures';
 import DatePickerComp from './DatePickerComp';
 import * as reviewActions from '../../store/reviews';
 import ListingReviews from '../ListingReviews';
+import { Modal } from '../../context/Modal'
 
 
 let lunar = false;
@@ -39,6 +40,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const dispatch = useDispatch();
 
     const [startDate, setStartDate] = useState(new Date());
+    const [reviewModal, setReviewModal] = useState(false);
     const [numDays, setNumDays] = useState(5);
     const [endMonth, setEndMonth] = useState(startDate.getMonth());
     const [endDay, setEndDay] = useState(startDate.getDate() + numDays);
@@ -251,14 +253,19 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             <span className="average-rating">
             {reviewMain}
             </span>
-
+            <button 
+            onClick={() => setReviewModal(true)} className='listing-write-review'>Write a review</button>
             <ListingReviews 
             reviews={listingReview} 
             users={users}/>
 
             {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
         </section>
-
+        {reviewModal && (
+            <Modal onClose={() => setReviewModal(false)}>
+                <div>dsafasdf</div>
+            </Modal>
+        )}
         <div className='showpage-divider'></div>
         <div className='show-will-be'>
             <span>Where you'll be</span> 
