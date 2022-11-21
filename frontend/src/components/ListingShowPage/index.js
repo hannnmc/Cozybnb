@@ -91,6 +91,24 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     
     const user = users[userId];
 
+    let avgListingReview = 0;
+
+    if (listingReview.length > 0) {
+        listingReview.forEach(review => {
+            avgListingReview += review.rating;
+        })
+        avgListingReview = avgListingReview/listingReview.length
+        console.log(avgListingReview)
+    }
+
+    let reviewHeader = null;
+
+    if (listingReview.length > 0) {
+        reviewHeader = <div>{parseFloat(avgListingReview).toFixed(1)} · <span><a className='underscore-removal' href="#reviews-header">{listingReview.length} reviews</a></span></div>
+    } else {
+        reviewHeader = <div>New</div>
+    }
+
 
   if(user) return (
     <div className="listing-show">
@@ -102,7 +120,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             <svg className={"svg-star"} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height={"14px"} width={"14px"} fill="#222222" display={"inline-block"}>
             <path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z" fillRule="evenodd"></path>
             </svg>
-                <span className='show-info-reviews'>{averageRating || 'No reviews yet'}</span>
+                <span className='show-info-reviews'>{reviewHeader}</span>
                 <span className='divider-dot'>·</span>
             <span>{`${listing.city}, ${listing.state}, ${listing.country}`}</span>
         </div>
@@ -178,7 +196,8 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
                 <span>What this place offers</span>
                 <ListingFeatures listing={listing}/>
             </div>
-            <div className='showpage-divider'></div>
+            <div
+            id='reviews-header' className='showpage-divider'></div>
             <div className='showpage-calendar'>
                 <div className='calendar-header'>
                     <h2>{`${numDays} nights in ${city}`}</h2>
