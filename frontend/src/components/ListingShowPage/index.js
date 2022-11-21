@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ListingMap from '../ListingMap';
-// import ReviewForm from './ReviewForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchListing } from '../../store/listings';
 import { fetchUsers } from '../../store/users';
-// import { destroyReview, getListingReviews } from '../../store/reviews';
 import './ListingShowPage.css';
 import FloatingBox from './FloatingBox';
 import ListingFeatures from './ListingFeatures';
@@ -54,8 +52,9 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const listing = useSelector(state => state.listings[listingId]);
     const users = useSelector(state => state.users);
     const reviews = useSelector(state => Object.values(state.reviews));
-    const [listingReviews, setListingReviews] = useState([])
-    
+    const listingReview = reviews.filter(review =>
+        review.listingId === parseInt(listingId))
+    // console.log(listingReview)
     useEffect(() => {
         if (dayOverage < startDate.getDate()) {
             if (endMonth === 12) {
@@ -70,7 +69,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             setEndDay(startDate.getDate() + numDays);
             setStartDate(new Date(`${startDate.getFullYear()}, ${startDate.getMonth()+1},${startDate.getDate()}`));
         }
-        dispatch(reviewActions.fetchReviews())
+        dispatch(reviewActions.fetchReviews(listingId))
     },[])    
 
     useEffect(() => {
@@ -218,7 +217,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             </span>
 
             <ListingReviews 
-            reviews={reviews} 
+            reviews={listingReview} 
             users={users}/>
 
             {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
