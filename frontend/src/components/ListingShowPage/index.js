@@ -10,7 +10,8 @@ import './ListingShowPage.css';
 import FloatingBox from './FloatingBox';
 import ListingFeatures from './ListingFeatures';
 import DatePickerComp from './DatePickerComp';
-import * as reviewActions from '../../store/reviews'
+import * as reviewActions from '../../store/reviews';
+import ListingReviews from '../ListingReviews';
 
 
 let lunar = false;
@@ -34,9 +35,6 @@ const maxMonthDays = {
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ];
-const monthFullNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
 
 function ListingShowPage({showLoginModal,setShowLoginModal}) {
     
@@ -47,7 +45,6 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const [endMonth, setEndMonth] = useState(startDate.getMonth());
     const [endDay, setEndDay] = useState(startDate.getDate() + numDays);
     const [startingDay, setStartingday] = useState(startDate.getDate());
-    const [newDay, setNewDay] = useState(startDate.getDate());
     const [endYear, setEndYear] = useState(startDate.getFullYear());
     const dayOverage = (startingDay + numDays) % maxMonthDays[startDate.getMonth()];
 
@@ -57,7 +54,6 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const listing = useSelector(state => state.listings[listingId]);
     const users = useSelector(state => state.users);
     const reviews = useSelector(state => Object.values(state.reviews));
-    console.log(reviews)
     const [listingReviews, setListingReviews] = useState([])
     
     useEffect(() => {
@@ -81,28 +77,12 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
         if (startDate !== value[0] || endDate !== value[1])(
             onChange([startDate,endDate])
         )
-    },[startDate,endDate])
-
-
-    console.log(listingReviews)
-    
+    },[startDate,endDate])    
     
     useEffect(() => {
         dispatch(fetchListing(listingId));
         dispatch(fetchUsers());
     }, [listingId, dispatch]);
-
-    // useEffect(() => {
-    //     let i =0;
-    //     while (listingReviews.length !== Object.keys(reviews).length) {
-    //         let review = reviews[Object.keys(reviews)[i]]
-    //         if (review.listingId === parseInt(listingId)) {
-    //             setListingReviews(prevReviews => (
-    //                 [...prevReviews, review]
-    //             ))
-    //         }
-    //     }
-    // },[reviews])
     
     if (!listing || !users) {
         return null;
@@ -111,9 +91,6 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const { userId, description, beds, bedrooms, baths, guests, propType, averageRating, photoUrls, city, country } = listing;
     
     const user = users[userId];
-
-    
-    //   const hasReviewed = sessionUser && reviews.some(review => review.authorId === sessionUser.id);
 
 
   if(user) return (
@@ -239,31 +216,11 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             <span className="average-rating">
             {averageRating || 'No reviews (yet)'}
             </span>
-            <div className="show-reviews">
-            {reviews.map(review => (
-                <div className="show-review" key={review.id}>
-                    <div className='show-review-header'>
-                        <div className='show-review-image'>
-                            <img src={users[review.userId].photoUrl} alt="" />
-                        </div>
-                        <div className='show-review-top'>
-                            <span>{users[review.userId].firstName}</span>
-                            <span>{`${monthFullNames[new Date(review.createdAt).getMonth()]}, ${new Date(review.createdAt).getFullYear()}`}</span>
-                        </div>
 
-                    </div>
-                <div className='show-review-body'>{review.body}</div>
-                {/* {review.userId === userId && (
-                    <button 
-                      onClick={() => dispatch(reviewActions.destroyReview(review.id))} 
-                    className='delete-icon'
-                    >asdfasdf
-                    <i className="fa-solid fa-rectangle-xmark" />
-                </button>
-                )} */}
-                </div>
-            ))}
-            </div>
+            <ListingReviews 
+            reviews={reviews} 
+            users={users}/>
+
             {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
         </section>
 
