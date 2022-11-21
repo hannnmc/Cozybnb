@@ -353,6 +353,9 @@
 .show-review-top {
     display: flex;
     flex-direction: column;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    line-height: 20px;
 }
 
 .show-review-top>span:first-child{
@@ -380,4 +383,8 @@
 }
 .show-reviews {
     /* margin-bottom: 40px; */
+}
+
+.show-review-body {
+    
 }
