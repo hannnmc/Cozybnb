@@ -34,6 +34,9 @@ const maxMonthDays = {
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ];
+const monthFullNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
 function ListingShowPage({showLoginModal,setShowLoginModal}) {
     
@@ -245,11 +248,11 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
                         </div>
                         <div className='show-review-top'>
                             <span>{users[review.userId].firstName}</span>
-                            <span>{`${monthNames[new Date(review.createdAt).getMonth()]}, ${new Date(review.createdAt).getFullYear()}`}</span>
+                            <span>{`${monthFullNames[new Date(review.createdAt).getMonth()]}, ${new Date(review.createdAt).getFullYear()}`}</span>
                         </div>
 
                     </div>
-                <p>{review.body}</p>
+                <div className='show-review-body'>{review.body}</div>
                 {/* {review.userId === userId && (
                     <button 
                       onClick={() => dispatch(reviewActions.destroyReview(review.id))} 
