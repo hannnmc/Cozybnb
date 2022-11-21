@@ -242,6 +242,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
         setNumDays={setNumDays}
         setShowLoginModal={setShowLoginModal}
         showLoginModal={showLoginModal}
+        reviews={listingReview}
         />
         <div className='showpage-divider'></div>
         </section>

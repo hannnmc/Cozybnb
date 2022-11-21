@@ -24,7 +24,7 @@ import { useHistory } from 'react-router-dom';
 //     {label: "16 guests", value: 16}
 // ]
 
-const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal}) => {
+const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews}) => {
     
     const dispatch = useDispatch();
     const history = useHistory();
@@ -85,8 +85,9 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                     <div className='floating-box-price'>
                         ${listing.price} <span id='floating-price-night'> night</span>
                     </div>
-                    <div className='floating-box-review'>
-                        {listing.averageRating ? listing.averageRating : '0 reviews'}
+                    <div className='floating-box-review'><a 
+                    className='float-box-tag'   href="#reviews-header">
+                        {reviews.length > 0 ? `${reviews.length} reviews` : ''}</a>
                     </div>
                 </div>
                 <form onSubmit={handleSubmit}>

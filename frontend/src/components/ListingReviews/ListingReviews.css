@@ -30,11 +30,12 @@
 .show-review {
     margin-bottom: 40px;
 }
-/* .show-reviews {
-    margin-bottom: 40px;
-} */
+
+.show-reviews {
+    margin-bottom: -40px;
+}
 
 .show-review-body {
     font-size: 16.5px;
-    
+
 }
