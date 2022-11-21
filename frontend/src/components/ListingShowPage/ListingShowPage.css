@@ -118,7 +118,7 @@
 
 .show-info-reviews {
     font-weight: 500;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .show-header-info {
@@ -350,3 +350,7 @@
     margin-top: 22px;
 }
 
+.underscore-removal {
+    color: #222222;
+    text-decoration: none;
+}
