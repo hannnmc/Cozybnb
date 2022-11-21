@@ -20,13 +20,12 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index 
-        reviews = Review.all
-        
-        if params[:userId]
-           @reviews = reviews.where(user_id: params[userId])
-        end
-        @reviews = reviews.includes(:user)
-
+        @reviews = Review.all
+        # debugger
+        # if params[:userId]
+        #     @reviews = reviews.where(user_id: params[userId])
+        # end
+        # @reviews = reviews.includes(:user)
         render :index
     end
 
