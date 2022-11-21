@@ -126,7 +126,7 @@ const ProfilePage = () => {
 
                 <div className='profile-box-divider'></div>
                 
-                <div className='profile-mylistings'>My Listings</div>
+                <div className='profile-mylistings'>{user.firstName}'s listings</div>
 
                 <div className='profile-listings'>
                     {ownedListings.map(listing => (
