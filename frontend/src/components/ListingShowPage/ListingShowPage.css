@@ -365,5 +365,15 @@
 .reviewMain-text {
     margin-top: -3px;
     font-weight: 500;
+    /* margin-bottom: 32px; */
+}
+
+.listing-write-review {
     margin-bottom: 32px;
+    background: none;
+    border: none;
+    color: #717171;
+    text-decoration: underline;
+    font-weight: 550;
+    cursor: pointer;
 }
