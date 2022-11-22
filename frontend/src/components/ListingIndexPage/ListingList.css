@@ -90,7 +90,7 @@
 
 .listing-box-title>span {
     font-size: 15.5px;
-    min-width: 44px;
+    min-width: 48px;
     text-align: right;
 }
 
@@ -98,7 +98,7 @@
     font-weight: 500;
     overflow-x:hidden;
     height: 18px;
-    width: 85%;
+    width: 82%;
 }
 
 .top-info-field {
