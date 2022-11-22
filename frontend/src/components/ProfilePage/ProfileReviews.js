@@ -7,9 +7,13 @@ const monthFullNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 
-const ProfileReviews = ({reviews, users}) => {
+const ProfileReviews = ({users, ownedReviews}) => {
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
+    const reviews = useSelector(state => Object.values(state.reviews));
+
+
+    console.log(ownedReviews)
 
     useEffect(() => {
         dispatch(userActions.fetchUsers());
@@ -17,24 +21,24 @@ const ProfileReviews = ({reviews, users}) => {
 
     if (users) return (
         <div className="show-reviews">
-        {reviews.map(review => (
+        {ownedReviews?.map(review => (
             <div className="show-review" key={review.id}>
                 <div className='show-review-header'>
                     <div className='show-review-image'>
-                        {users[review.userId] && (<img src={users[review.userId].photoUrl} alt="" />)}
+                        <img src={users[review.userId]?.photoUrl} alt="" />
                     </div>
                     <div className='show-review-top'>
-                        {users[review.userId] && (<span>{users[review.userId].firstName}</span>)}
+                        <span>{users[review.userId]?.firstName}</span>
                         <span>{`${monthFullNames[new Date(review.createdAt).getMonth()]}, ${new Date(review.createdAt).getFullYear()}`}</span>
                     </div>
                     <div>
-                    {user && review.userId === user.id && (
-                    <button 
+                    
+                    {/* <button 
                         onClick={() => dispatch(reviewActions.destroyReview(review.id))} 
                         className='listing-review-delete'
                         ><i className="fa-solid fa-xmark"></i>
                     </button>
-                    )}
+                     */}
                     </div>
                 </div>
                 <div className='show-review-body'>{review.body}</div>
