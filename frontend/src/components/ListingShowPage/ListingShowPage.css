@@ -356,6 +356,7 @@
 
 .reviewMain {
     display: flex;
+    margin-bottom: 32px;
 }
 
 .reviewMain>div {
@@ -369,7 +370,7 @@
 }
 
 .listing-write-review {
-    margin-bottom: 32px;
+    margin-top: 32px;
     background: none;
     border: none;
     color: #717171;

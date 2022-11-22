@@ -1,5 +1,6 @@
 .review-bars {
     display: flex;
+    margin-bottom: 34px;
 }
 
 .review-bars>div{
@@ -22,7 +23,7 @@
     width: 243%;
 }
 .review-bars>div>div>span {
-    font-size: 12.5px;
+    font-size: 13px;
     line-height: 18px;
     margin-left: 12px;
 }
