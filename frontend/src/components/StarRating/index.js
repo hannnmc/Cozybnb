@@ -1,9 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "./StarRating.css";
 import FilledStar from '../../assets/images/filled-star.svg';
 import EmptyStar from '../../assets/images/empty_star.svg';
 
-const StarRating = () => {
+const StarRating = ({setCleanliness}) => {
 
     const [currRating, setCurrRating] = useState(5);
     const [selectRating, setSelectRating] = useState(null);
@@ -21,6 +21,10 @@ const StarRating = () => {
             setSelectRating(e.target.dataset.value);
         }
       }
+
+      useEffect(() => {
+        setCleanliness(finalRating)
+    },[selectRating, currRating])
 
     return [...Array(5).keys()].map( (index) => {
         return (

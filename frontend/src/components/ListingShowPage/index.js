@@ -264,8 +264,6 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             <span className="average-rating">
             {reviewMain}
             </span>
-            <button 
-            onClick={writeReview} className='listing-write-review'>Write a review</button>
 
             <ReviewBars 
             listingReview={listingReview}
@@ -276,6 +274,8 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             users={users}/>
 
             {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
+            <button 
+            onClick={writeReview} className='listing-write-review'>Write a review</button>
         </section>
 
         <div className='showpage-divider'></div>

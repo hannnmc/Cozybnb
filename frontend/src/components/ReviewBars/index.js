@@ -19,6 +19,8 @@ const ReviewBars = ({listingReview}) => {
         avgValue += review.value / listingReview.length
     })
 
+    console.log(listingReview)
+
     const cleanlinessBar = {
         width: `${avgCleanliness/5*100}%`,
         backgroundColor: `#222222`
@@ -57,7 +59,7 @@ const ReviewBars = ({listingReview}) => {
                 <div>
                     <h1>Accuracy</h1>
                     <div>
-                        <div style={cleanlinessBar}></div>
+                        <div style={accuracyBar}></div>
                     </div>
                     <span>{parseFloat(avgAccuracy).toFixed(1)}</span>
                 </div>

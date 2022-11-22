@@ -55,7 +55,6 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 <div className='star-rating'>
                 <StarRating 
                 setCleanliness={setCleanliness}
-                cleanliness={cleanliness}
                 />
                 </div>
                 </label>
@@ -63,7 +62,6 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 <div className='star-rating'>
                 <StarRating2
                 setAccuracy={setAccuracy}
-                accuracy={accuracy}
                 />
                 </div>
                 </label>
@@ -71,7 +69,6 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 <div className='star-rating'>
                 <StarRating3 
                 setCommunication={setCommunication}
-                communication={communication}
                 />
                 </div>
                 </label>
@@ -86,7 +83,6 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 <label>Check-in
                 <div className='star-rating'>
                 <StarRating5 
-                checkin={checkin}
                 setCheckin={setCheckin}
                 />
                 </div>
