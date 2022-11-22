@@ -21,10 +21,10 @@ const ProfileReviews = ({reviews, users}) => {
             <div className="show-review" key={review.id}>
                 <div className='show-review-header'>
                     <div className='show-review-image'>
-                        <img src={users[review.userId].photoUrl} alt="" />
+                        {users[review.userId] && (<img src={users[review.userId].photoUrl} alt="" />)}
                     </div>
                     <div className='show-review-top'>
-                        <span>{users[review.userId].firstName}</span>
+                        {users[review.userId] && (<span>{users[review.userId].firstName}</span>)}
                         <span>{`${monthFullNames[new Date(review.createdAt).getMonth()]}, ${new Date(review.createdAt).getFullYear()}`}</span>
                     </div>
                     <div>
