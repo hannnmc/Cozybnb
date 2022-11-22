@@ -41,7 +41,7 @@ function FilterForm({ listings, minPrice, maxPrice, setMinPrice, setMaxPrice }) 
                                 <div>Price</div>
                                 <div className="field">
                                 <Input
-                                label="Min:"
+                                label="min"
                                 type="number"
                                 value={minPrice}
                                 onChange={e => setMinPrice(parseValue(e.target.value))}
@@ -50,7 +50,7 @@ function FilterForm({ listings, minPrice, maxPrice, setMinPrice, setMaxPrice }) 
                                 <div className='price-divider'> - </div>
                                 <div className="field">
                                 <Input
-                                label="Max:"
+                                label="max"
                                 type="number"
                                 value={maxPrice}
                                 onChange={e => setMaxPrice(parseValue(e.target.value))}
