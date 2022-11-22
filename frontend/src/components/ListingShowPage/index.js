@@ -11,7 +11,8 @@ import DatePickerComp from './DatePickerComp';
 import * as reviewActions from '../../store/reviews';
 import ListingReviews from '../ListingReviews';
 import { Modal } from '../../context/Modal';
-import ReviewForm from '../ReviewForm/'
+import ReviewForm from '../ReviewForm/';
+import ReviewBars from '../ReviewBars';
 
 
 let lunar = false;
@@ -265,6 +266,11 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             </span>
             <button 
             onClick={writeReview} className='listing-write-review'>Write a review</button>
+
+            <ReviewBars 
+            listingReview={listingReview}
+            />
+
             <ListingReviews 
             reviews={listingReview} 
             users={users}/>

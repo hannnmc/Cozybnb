@@ -1,0 +1,40 @@
+.review-bars {
+    display: flex;
+}
+
+.review-bars>div{
+    width: 49.5%;
+    display: flex;
+    flex-direction: column;
+    font-size: 16.5px;
+    min-width: 332px;
+}
+
+.review-bars>div>div {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.review-bars>div>div>h1 {
+    min-width: 142px;
+    width: 243%;
+}
+.review-bars>div>div>span {
+    font-size: 12.5px;
+    line-height: 18px;
+    margin-left: 12px;
+}
+
+.review-bars>div>div>div {
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    margin-top: 8px;
+    background: #eaeaea;
+}
+
+.review-bars>div>div>div>div {
+    height: 4px;
+}
