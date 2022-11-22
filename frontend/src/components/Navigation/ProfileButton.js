@@ -58,7 +58,7 @@ function ProfileButton({ user }) {
           </NavLink>
           
           <li className="dropdown-divider"></li>
-          <a  href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer"><li id='github-help'>Help</li></a> 
+          <a  href="https://github.com/hannnmc/Cozybnb" target="_blank" rel="noopener noreferrer"><li id='github-help'>Help</li></a> 
           <li  onClick={logout}>
             <button className="logout-button" onClick={logout}>Log Out</button>
           </li>
