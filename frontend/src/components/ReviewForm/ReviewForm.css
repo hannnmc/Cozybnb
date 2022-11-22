@@ -1,6 +1,6 @@
 .reviews-modal {
     height: auto;
-    width: 495px;
+    width: 500px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -13,8 +13,11 @@
     text-align: center;
     font-size: 20px;
     font-weight: 500;
-    line-height: 48px;    
+    line-height: 42px;    
+    padding-bottom: 6px;
     margin-bottom: 32px;
+    border-bottom: 1px solid #eaeaea;
+    width: calc(100% + 48px);
 }
 
 .reviews-form {
@@ -47,8 +50,10 @@
     border-radius: 8px;
     height: 36px;
     color: white;
-    font-weight: 500;
+    font-weight: 600;
     background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+    margin-bottom: 12px;
+    cursor: pointer;
 }
 
 .review-textbox {
@@ -64,8 +69,8 @@
 
 .review-span {
     color: #222222;
-    margin-bottom: 8px;
-    margin-top: 8px;
+    margin-bottom: 18px;
+    margin-top: 12px;
     font-weight: 500;
     font-size: 18px;
 }

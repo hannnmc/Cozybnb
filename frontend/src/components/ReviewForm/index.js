@@ -51,7 +51,7 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
         <div className='reviews-modal'>
             <div className='reviews-modal-header'>Tell us about your stay</div>
             <form onSubmit={handleSubmit} className='reviews-form'>
-                <label>Cleanliness:
+                <label>Cleanliness
                 <div className='star-rating'>
                 <StarRating 
                 setCleanliness={setCleanliness}
@@ -59,7 +59,7 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 />
                 </div>
                 </label>
-                <label>Accuracy:
+                <label>Accuracy
                 <div className='star-rating'>
                 <StarRating2
                 setAccuracy={setAccuracy}
@@ -67,7 +67,7 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 />
                 </div>
                 </label>
-                <label>Communication:
+                <label>Communication
                 <div className='star-rating'>
                 <StarRating3 
                 setCommunication={setCommunication}
@@ -75,7 +75,7 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 />
                 </div>
                 </label>
-                <label>Location:
+                <label>Location
                 <div className='star-rating'
                 >
                 <StarRating4 
@@ -83,7 +83,7 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 />
                 </div>
                 </label>
-                <label>Check-in:
+                <label>Check-in
                 <div className='star-rating'>
                 <StarRating5 
                 checkin={checkin}
@@ -91,7 +91,7 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 />
                 </div>
                 </label>
-                <label>Value:
+                <label>Value
                 <div className='star-rating'>
                 <StarRating6 
                 value={value}

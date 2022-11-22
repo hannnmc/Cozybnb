@@ -5,8 +5,8 @@ import { fetchListings } from "../../store/listings";
 import ListingList from "./ListingList";
 import ListingMap from "../ListingMap"
 import FilterForm from "./FilterForm";
-
 import './ListingList.css';
+import { fetchReviews } from "../../store/reviews";
 
 function ListingIndexPage() {
   const history = useHistory(); 
@@ -25,6 +25,7 @@ function ListingIndexPage() {
 
   useEffect(() => {
     dispatch(fetchListings())
+    dispatch(fetchReviews())
   },[]);
 
   useEffect(() => {
