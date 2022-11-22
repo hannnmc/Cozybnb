@@ -22,7 +22,7 @@ const StarRating = () => {
         }
       }
 
-    return [...Array(5).keys()].map((index) => {
+    return [...Array(5).keys()].map( (index) => {
         return (
         <img
             key={index}
