@@ -1,0 +1,5 @@
+.star {
+    aspect-ratio: 1;
+    height: 21px;
+    filter: invert(84%) sepia(79%) saturate(7%) hue-rotate(177deg) brightness(106%) contrast(65%)
+}

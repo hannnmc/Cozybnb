@@ -10,7 +10,8 @@ import ListingFeatures from './ListingFeatures';
 import DatePickerComp from './DatePickerComp';
 import * as reviewActions from '../../store/reviews';
 import ListingReviews from '../ListingReviews';
-import { Modal } from '../../context/Modal'
+import { Modal } from '../../context/Modal';
+import ReviewForm from '../ReviewForm/'
 
 
 let lunar = false;
@@ -100,7 +101,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             avgListingReview += review.rating;
         })
         avgListingReview = avgListingReview/listingReview.length
-        console.log(avgListingReview)
+        // console.log(avgListingReview)
     }
 
     let reviewHeader = null;
@@ -261,11 +262,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
 
             {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
         </section>
-        {reviewModal && (
-            <Modal onClose={() => setReviewModal(false)}>
-                <div>dsafasdf</div>
-            </Modal>
-        )}
+
         <div className='showpage-divider'></div>
         <div className='show-will-be'>
             <span>Where you'll be</span> 
@@ -284,6 +281,11 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
                 />
             </div>
         </section>
+        {reviewModal && (
+            <Modal onClose={() => setReviewModal(false)}>
+                <ReviewForm />
+            </Modal>
+        )}
         </div>
   );
 };
