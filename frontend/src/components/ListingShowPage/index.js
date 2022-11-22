@@ -59,7 +59,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const reviews = useSelector(state => Object.values(state.reviews));
     const listingReview = reviews.filter(review =>
         review.listingId === parseInt(listingId));
-    // console.log(listingReview)
+
     useEffect(() => {
         if (dayOverage < startDate.getDate()) {
             if (endMonth === 12) {
@@ -136,7 +136,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     } else {
         reviewHeader = <div>New</div>
         reviewMain =             <div className='reviewMain'>
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height='24px' width='24px'><path d="M14.998 1.032a2 2 0 0 0-.815.89l-3.606 7.766L1.951 10.8a2 2 0 0 0-1.728 2.24l.031.175A2 2 0 0 0 .87 14.27l6.36 5.726-1.716 8.608a2 2 0 0 0 1.57 2.352l.18.028a2 2 0 0 0 1.215-.259l7.519-4.358 7.52 4.358a2 2 0 0 0 2.734-.727l.084-.162a2 2 0 0 0 .147-1.232l-1.717-8.608 6.361-5.726a2 2 0 0 0 .148-2.825l-.125-.127a2 2 0 0 0-1.105-.518l-8.627-1.113-3.606-7.765a2 2 0 0 0-2.656-.971zm-3.07 10.499l4.07-8.766 4.07 8.766 9.72 1.252-7.206 6.489 1.938 9.723-8.523-4.94-8.522 4.94 1.939-9.723-7.207-6.489z"></path></svg><div>No reviews (yet)</div>
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height='24px' width='24px'><path d="M14.998 1.032a2 2 0 0 0-.815.89l-3.606 7.766L1.951 10.8a2 2 0 0 0-1.728 2.24l.031.175A2 2 0 0 0 .87 14.27l6.36 5.726-1.716 8.608a2 2 0 0 0 1.57 2.352l.18.028a2 2 0 0 0 1.215-.259l7.519-4.358 7.52 4.358a2 2 0 0 0 2.734-.727l.084-.162a2 2 0 0 0 .147-1.232l-1.717-8.608 6.361-5.726a2 2 0 0 0 .148-2.825l-.125-.127a2 2 0 0 0-1.105-.518l-8.627-1.113-3.606-7.765a2 2 0 0 0-2.656-.971zm-3.07 10.499l4.07-8.766 4.07 8.766 9.72 1.252-7.206 6.489 1.938 9.723-8.523-4.94-8.522 4.94 1.939-9.723-7.207-6.489z"></path></svg><div className='no-reviews-yet'>No reviews (yet)</div>
         </div>
     }
 
@@ -265,9 +265,9 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             {reviewMain}
             </span>
 
-            <ReviewBars 
+            {listingReview.length > 0 && (<ReviewBars 
             listingReview={listingReview}
-            />
+            />)}
 
             <ListingReviews 
             reviews={listingReview} 
