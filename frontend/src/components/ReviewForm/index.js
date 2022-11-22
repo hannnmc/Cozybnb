@@ -2,9 +2,12 @@ import { useState } from 'react';
 import './ReviewForm.css';
 import StarRating from '../StarRating';
 import * as reviewActions from '../../store/reviews';
+import { useDispatch } from 'react-redux';
 
 
-const ReviewForm = ({user,listing}) => {
+const ReviewForm = ({user,listing,setReviewModal}) => {
+
+    const dispatch = useDispatch();
     const [body, setBody] = useState("");
     const [cleanliness, setCleanliness] = useState(5);
     const [accuracy, setAccuracy] = useState(5);
@@ -13,10 +16,19 @@ const ReviewForm = ({user,listing}) => {
     const [checkin, setCheckin] = useState(5);
     const [value, setValue] = useState(5);
 
+    // console.log(            user.id,
+    //     listing.id,
+    //     body,
+    //     cleanliness,
+    //     accuracy,
+    //     communication,
+    //     location,
+    //     checkin,
+    //     value)
+    
     const handleSubmit = (e) => {
-        e.preventdefault();
+        e.preventDefault();
         dispatch(reviewActions.createReview({
-            userId:user.id,
             listingId:listing.id,
             body,
             cleanliness,
@@ -25,8 +37,8 @@ const ReviewForm = ({user,listing}) => {
             location,
             checkin,
             value
-
         }))
+        .then(setReviewModal(false))
     }
 
     // console.log(cleanliness)
