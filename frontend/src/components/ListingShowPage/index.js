@@ -283,7 +283,10 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
         </section>
         {reviewModal && (
             <Modal onClose={() => setReviewModal(false)}>
-                <ReviewForm />
+                <ReviewForm 
+                user={user}
+                listing={listing}
+                />
             </Modal>
         )}
         </div>
