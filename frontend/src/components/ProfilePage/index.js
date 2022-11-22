@@ -6,17 +6,20 @@ import * as listingActions from '../../store/listings';
 import ProfileListingItem from '../ProfileListingItem';
 import * as reservationActions from '../../store/reservations'
 import ProfileReservations from '../ProfileReservations';
-// import defaultPhoto from "../../../../frontend/src/assets/images/default_user_photo.png";
+import * as reviewActions from '../../store/reviews';
+import ProfileReviews from './ProfileReviews';
+import * as userActions from '../../store/users';
 
 const ProfilePage = () => {
     const dispatch = useDispatch();
     const [ showProfileEditForm, setShowProfileEditForm ] = useState(false);
     const user = useSelector(({session}) => session.user );
-    
+    const reviews = useSelector(state => Object.values(state.reviews));
+    const users = useSelector(state => state.users);
 
     const openEditProfile = (e) => {
         e.preventDefault();
-        setShowProfileEditForm(open => !open)
+        setShowProfileEditForm(open => !open);
     };
     const listings = useSelector((state) => state.listings);
     const reservations = useSelector(state => state.reservations);
@@ -24,14 +27,18 @@ const ProfilePage = () => {
     useEffect(() => {
         dispatch(listingActions.fetchListings());
         dispatch(reservationActions.fetchReservations());
+        dispatch(reviewActions.fetchReviews());
+        dispatch(userActions.fetchUsers());
     },[])
 
     const ownedListings = [];
+    const ownedListingsId = [];
     const ownedReservations = [];
     if (Object.keys(listings).length > 0) {
         Object.keys(listings).forEach(listingId => {
             if (listings[listingId].userId === user.id) {
                 ownedListings.push(listings[listingId])
+                ownedListingsId.push(listings[listingId].id)
             }
         })
     }
@@ -118,11 +125,7 @@ const ProfilePage = () => {
                                 />
                         ))}
                     </div>
-                
-                
                 </div>
-
-                
 
                 <div className='profile-box-divider'></div>
                 
@@ -139,10 +142,11 @@ const ProfilePage = () => {
                 </div>
                 <div id='profile-box-divider' className='profile-box-divider'></div>
                 <div className='review-count-container'>
-                    <div className='profile-review-star'>
+                    <div className='profile-review-header'>
                         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height='24px' width='24px'><path d="M14.998 1.032a2 2 0 0 0-.815.89l-3.606 7.766L1.951 10.8a2 2 0 0 0-1.728 2.24l.031.175A2 2 0 0 0 .87 14.27l6.36 5.726-1.716 8.608a2 2 0 0 0 1.57 2.352l.18.028a2 2 0 0 0 1.215-.259l7.519-4.358 7.52 4.358a2 2 0 0 0 2.734-.727l.084-.162a2 2 0 0 0 .147-1.232l-1.717-8.608 6.361-5.726a2 2 0 0 0 .148-2.825l-.125-.127a2 2 0 0 0-1.105-.518l-8.627-1.113-3.606-7.765a2 2 0 0 0-2.656-.971zm-3.07 10.499l4.07-8.766 4.07 8.766 9.72 1.252-7.206 6.489 1.938 9.723-8.523-4.94-8.522 4.94 1.939-9.723-7.207-6.489z"></path></svg>
+                        <div className='user-review-count'>0 reviews</div>
                     </div>
-                    <div className='user-review-count'>0 reviews</div>
+                    <ProfileReviews users={users} reviews={reviews} ownedListingsId={ownedListingsId}/>
                 </div>
                 {/* <div className='profile-box-divider'></div>
                 <div>Reviews by you</div>
