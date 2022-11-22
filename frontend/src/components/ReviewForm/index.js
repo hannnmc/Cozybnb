@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import './ReviewForm.css';
 import StarRating from '../StarRating';
+import StarRating2 from '../StarRating2';
+import StarRating3 from '../StarRating3';
+import StarRating4 from '../StarRating4';
+import StarRating5 from '../StarRating5';
+import StarRating6 from '../StarRating6';
 import * as reviewActions from '../../store/reviews';
 import { useDispatch } from 'react-redux';
 
@@ -48,32 +53,50 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
             <form onSubmit={handleSubmit} className='reviews-form'>
                 <label>Cleanliness:
                 <div className='star-rating'>
-                <StarRating />
+                <StarRating 
+                setCleanliness={setCleanliness}
+                cleanliness={cleanliness}
+                />
                 </div>
                 </label>
                 <label>Accuracy:
                 <div className='star-rating'>
-                <StarRating />
+                <StarRating2
+                setAccuracy={setAccuracy}
+                accuracy={accuracy}
+                />
                 </div>
                 </label>
                 <label>Communication:
                 <div className='star-rating'>
-                <StarRating />
+                <StarRating3 
+                setCommunication={setCommunication}
+                communication={communication}
+                />
                 </div>
                 </label>
                 <label>Location:
-                <div className='star-rating'>
-                <StarRating />
+                <div className='star-rating'
+                >
+                <StarRating4 
+                setLocation={setLocation}
+                />
                 </div>
                 </label>
                 <label>Check-in:
                 <div className='star-rating'>
-                <StarRating />
+                <StarRating5 
+                checkin={checkin}
+                setCheckin={setCheckin}
+                />
                 </div>
                 </label>
                 <label>Value:
                 <div className='star-rating'>
-                <StarRating />
+                <StarRating6 
+                value={value}
+                setValue={setValue}
+                />
                 </div>
                 </label>
 
