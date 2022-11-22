@@ -38,6 +38,8 @@
     margin-bottom: -40px;
     display: flex;
     flex-wrap: wrap;
+    max-height: 321px;
+    overflow: scroll;
 }
 
 .show-review-body {

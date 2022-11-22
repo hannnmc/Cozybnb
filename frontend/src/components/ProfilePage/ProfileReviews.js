@@ -1,24 +1,27 @@
-import { useDispatch, useSelector } from 'react-redux';
-import './ListingReviews.css';
-import * as reviewActions from '../../store/reviews';
-
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as reviewActions from "../../store/reviews";
+import * as userActions from "../../store/users";
 
 const monthFullNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 
-
-const ListingReviews = ({reviews, users}) => {
-
+const ProfileReviews = ({reviews, users}) => {
     const user = useSelector(state => state.session.user);
     const dispatch = useDispatch();
-    return (
+
+    useEffect(() => {
+        dispatch(userActions.fetchUsers());
+    },[])
+
+    if (users) return (
         <div className="show-reviews">
         {reviews.map(review => (
             <div className="show-review" key={review.id}>
                 <div className='show-review-header'>
                     <div className='show-review-image'>
-                        {/* <img src={users[review.userId].photoUrl} alt="" /> */}
+                        <img src={users[review.userId].photoUrl} alt="" />
                     </div>
                     <div className='show-review-top'>
                         <span>{users[review.userId].firstName}</span>
@@ -34,12 +37,10 @@ const ListingReviews = ({reviews, users}) => {
                     )}
                     </div>
                 </div>
-            <div className='show-review-body'>{review.body}</div>
+                <div className='show-review-body'>{review.body}</div>
             </div>
         ))}
         </div>
     );
 }
- 
-export default ListingReviews;
-
+export default ProfileReviews;

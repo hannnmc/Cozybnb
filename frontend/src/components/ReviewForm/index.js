@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './ReviewForm.css';
 import StarRating from '../StarRating';
-import StarRating2 from '../StarRating2';
-import StarRating3 from '../StarRating3';
-import StarRating4 from '../StarRating4';
-import StarRating5 from '../StarRating5';
-import StarRating6 from '../StarRating6';
+import StarRating2 from '../StarRating/StarRating2';
+import StarRating3 from '../StarRating/StarRating3';
+import StarRating4 from '../StarRating/StarRating4';
+import StarRating5 from '../StarRating/StarRating5';
+import StarRating6 from '../StarRating/StarRating6';
 import * as reviewActions from '../../store/reviews';
 import { useDispatch } from 'react-redux';
 
