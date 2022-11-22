@@ -109,6 +109,7 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
                 value={body}
                 onChange={(e)=> setBody(e.target.value)}
                 placeholder='How was your stay?'
+                required
                 >
                 </textarea>
 

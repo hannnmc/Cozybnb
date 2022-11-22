@@ -54,6 +54,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const { listingId } = useParams();
     const listing = useSelector(state => state.listings[listingId]);
     const users = useSelector(state => state.users);
+    const currentUser = useSelector(state => state.session.user)
     const reviews = useSelector(state => Object.values(state.reviews));
     const listingReview = reviews.filter(review =>
         review.listingId === parseInt(listingId))
@@ -85,6 +86,15 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
         dispatch(fetchListing(listingId));
         dispatch(fetchUsers());
     }, [listingId, dispatch]);
+
+    const writeReview = (e) => {
+        e.preventDefault();
+        if (currentUser) {
+            setReviewModal(true);
+        } else {
+            setShowLoginModal(true);
+        }
+    } 
     
     if (!listing || !users) {
         return null;
@@ -255,7 +265,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             {reviewMain}
             </span>
             <button 
-            onClick={() => setReviewModal(true)} className='listing-write-review'>Write a review</button>
+            onClick={writeReview} className='listing-write-review'>Write a review</button>
             <ListingReviews 
             reviews={listingReview} 
             users={users}/>
