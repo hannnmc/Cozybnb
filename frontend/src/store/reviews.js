@@ -59,14 +59,26 @@ export const createReview = (review) => async (dispatch) => {
     const {            
         listingId,
         body,
-        rating
+        rating,            
+        cleanliness,
+        accuracy,
+        communication,
+        location,
+        checkin,
+        value
     } = review;
     const response = await csrfFetch("/api/reviews", {
         method: "POST",
         body: JSON.stringify({
             listingId,
             body,
-            rating
+            rating,
+            cleanliness,
+            accuracy,
+            communication,
+            location,
+            checkin,
+            value
         })
     });
     const data = await response.json();

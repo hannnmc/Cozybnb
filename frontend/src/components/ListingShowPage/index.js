@@ -286,6 +286,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
                 <ReviewForm 
                 user={user}
                 listing={listing}
+                setReviewModal={setReviewModal}
                 />
             </Modal>
         )}
