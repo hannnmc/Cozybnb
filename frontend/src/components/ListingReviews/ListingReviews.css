@@ -24,7 +24,7 @@
 .show-review-header {
     display: flex;
     margin-bottom: 12px;
-
+    position: relative;
 }
 
 .show-review {
@@ -47,4 +47,21 @@
     word-wrap: break-word;
     max-height: 160px;
     overflow: scroll;
+    position: relative;
+}
+
+.listing-review-delete {
+    margin-left: auto;
+    background: none;
+    position: absolute;
+    right: 0;
+    top: 25%;
+    border: none;
+    font-size: 16.5px;
+    cursor: pointer;
+    display: none;
+}
+
+.show-review:hover .listing-review-delete {
+    display: flex;
 }
