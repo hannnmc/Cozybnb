@@ -381,6 +381,21 @@ ApplicationRecord.transaction do
       lng: -73.90491596080538
     })
 
+    puts "Creating reviews..."
+
+    review1 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'We came to Manhattan for a 4 day visit and we absolutely loved this place! It has all the ammenities you can imagine and the lobby is gorgeous! Location is great and quiet very close to central park.  Highly recommend!',
+      listingId: 1,
+      userId: 1
+    })
+
     puts "Attaching photos..."
 
     # user1 = User.first

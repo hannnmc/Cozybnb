@@ -1,4 +1,6 @@
-import './ListingReviews.css'
+import { useDispatch, useSelector } from 'react-redux';
+import './ListingReviews.css';
+import * as reviewActions from '../../store/reviews';
 
 
 const monthFullNames = ["January", "February", "March", "April", "May", "June",
@@ -7,6 +9,9 @@ const monthFullNames = ["January", "February", "March", "April", "May", "June",
 
 
 const ListingReviews = ({reviews, users}) => {
+
+    const user = useSelector(state => state.session.user);
+    const dispatch = useDispatch();
     return (
         <div className="show-reviews">
         {reviews.map(review => (
@@ -19,17 +24,17 @@ const ListingReviews = ({reviews, users}) => {
                         <span>{users[review.userId].firstName}</span>
                         <span>{`${monthFullNames[new Date(review.createdAt).getMonth()]}, ${new Date(review.createdAt).getFullYear()}`}</span>
                     </div>
-
+                    <div>
+                    {user && review.userId === user.id && (
+                    <button 
+                        onClick={() => dispatch(reviewActions.destroyReview(review.id))} 
+                        className='listing-review-delete'
+                        ><i className="fa-solid fa-xmark"></i>
+                    </button>
+                    )}
+                    </div>
                 </div>
             <div className='show-review-body'>{review.body}</div>
-            {/* {review.userId === userId && (
-                <button 
-                  onClick={() => dispatch(reviewActions.destroyReview(review.id))} 
-                className='delete-icon'
-                >asdfasdf
-                <i className="fa-solid fa-rectangle-xmark" />
-            </button>
-            )} */}
             </div>
         ))}
         </div>
