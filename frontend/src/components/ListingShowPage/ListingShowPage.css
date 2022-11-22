@@ -378,3 +378,7 @@
     font-weight: 550;
     cursor: pointer;
 }
+
+.no-reviews-yet {
+    margin-left: 12px !important;
+}
