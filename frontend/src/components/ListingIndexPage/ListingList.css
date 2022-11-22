@@ -83,6 +83,22 @@
     height: 18px;
 }
 
+.listing-box-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.listing-box-title>span {
+    font-size: 15.5px;
+}
+
+.list-item-title {
+    font-weight: 500;
+    overflow-x:hidden;
+    height: 18px;
+    width: 85%;
+}
+
 .top-info-field {
 
     overflow-y: hidden;

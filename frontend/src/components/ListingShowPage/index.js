@@ -57,7 +57,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
     const currentUser = useSelector(state => state.session.user)
     const reviews = useSelector(state => Object.values(state.reviews));
     const listingReview = reviews.filter(review =>
-        review.listingId === parseInt(listingId))
+        review.listingId === parseInt(listingId));
     // console.log(listingReview)
     useEffect(() => {
         if (dayOverage < startDate.getDate()) {
@@ -73,7 +73,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             setEndDay(startDate.getDate() + numDays);
             setStartDate(new Date(`${startDate.getFullYear()}, ${startDate.getMonth()+1},${startDate.getDate()}`));
         }
-        dispatch(reviewActions.fetchReviews(listingId))
+        dispatch(reviewActions.fetchReviews())
     },[])    
 
     useEffect(() => {
@@ -100,7 +100,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
         return null;
     }
     
-    const { userId, description, beds, bedrooms, baths, guests, propType, averageRating, photoUrls, city, country } = listing;
+    const { userId, description, beds, bedrooms, baths, guests, propType, photoUrls, city, country } = listing;
     
     const user = users[userId];
 
@@ -111,7 +111,6 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
             avgListingReview += review.rating;
         })
         avgListingReview = avgListingReview/listingReview.length
-        // console.log(avgListingReview)
     }
 
     let reviewHeader = null;
