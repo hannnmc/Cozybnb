@@ -90,6 +90,8 @@
 
 .listing-box-title>span {
     font-size: 15.5px;
+    min-width: 44px;
+    text-align: right;
 }
 
 .list-item-title {
