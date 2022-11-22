@@ -6,12 +6,12 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review[:user_id] = current_user.id
         @review[:rating] = (
-        review_params[:cleanliness] +
-        review_params[:accuracy] + 
-        review_params[:communication] + 
-        review_params[:location] + 
-        review_params[:checkin] + 
-        review_params[:value]) / 6
+        (review_params[:cleanliness]).to_i +
+        (review_params[:accuracy]).to_i + 
+        (review_params[:communication]).to_i + 
+        (review_params[:location]).to_i + 
+        (review_params[:checkin]).to_i + 
+        (review_params[:value]).to_i) / 6
         # debugger
         if @review.save
             render :show

@@ -1,9 +1,8 @@
-import React, { Component, useState } from "react";
-import "./StarRating.css";
+import React, { Component, useEffect, useState } from "react";
 import FilledStar from '../../assets/images/filled-star.svg';
 import EmptyStar from '../../assets/images/empty_star.svg';
 
-const StarRating = () => {
+const StarRating = ({setValue}) => {
 
     const [currRating, setCurrRating] = useState(5);
     const [selectRating, setSelectRating] = useState(null);
@@ -21,6 +20,11 @@ const StarRating = () => {
             setSelectRating(e.target.dataset.value);
         }
       }
+
+      useEffect(() => {
+        setValue(finalRating)
+    },[selectRating, currRating])
+
 
     return [...Array(5).keys()].map((index) => {
         return (
