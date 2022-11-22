@@ -45,16 +45,22 @@
     width: 50%;
     border: 1px solid rgb(176, 176, 176);
     border-top-left-radius: 8px;
-    text-align: center;
+    text-indent: 7px;
+    z-index: 1;
+    position: relative;
+    padding-top: 8px;
+    font-size: 14.5px;
 }
 .floating-end-date {
     width: 50%;
     border: 1px solid rgb(176, 176, 176);
     border-left: none;
     border-top-right-radius: 8px;
-    text-align: center;
+    text-indent: 7px;
+    padding-top: 8px;
     position: relative;
     z-index: 5;
+    font-size: 14.5px;
 }
 .floating-start-date:focus {
     border-radius: 8px;
@@ -71,14 +77,31 @@
     border: 1px solid rgb(176, 176, 176);
     border-top: none;
     font-size: 15px;
-    text-indent: calc(23% - 40px);
+    /* text-indent: calc(23% - 40px); */
+    text-indent: 7px;
+    padding-top: 10px;
 }
+
+.float-checkout {
+    left: 50%;
+    position: absolute;
+    z-index: 6;
+}
+
 .floating-box-guests:focus {
     border-radius: 8px;
     position: relative;
     z-index: 10;
 }
 
+.floatbox-guests-span {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 12px;
+    margin-top: 10px;
+    z-index: 6;
+}
 
 .floating-box-button {
     margin-top: 15px;

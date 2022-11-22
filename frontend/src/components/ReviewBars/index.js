@@ -43,7 +43,7 @@ const ReviewBars = ({listingReview}) => {
     }
     const valueBar = {
         width: `${avgValue/5*100}%`,
-        backgroundColor: `#222222`
+        backgroundColor: `#222222`,
     }
 
     return (

@@ -38,4 +38,5 @@
 
 .review-bars>div>div>div>div {
     height: 4px;
+    border-radius: 2px;
 }

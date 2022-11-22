@@ -93,12 +93,14 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                 <form onSubmit={handleSubmit}>
                     <div className='floating-box-form-top'>
                     <div className='floating-dates'>
+                        <span className='floatbox-guests-span'>CHECK-IN</span>
                         <input onKeyDown={(e) => e.preventDefault()}
                         className='floating-start-date' 
                         type="date"
                         value={`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`}
                         onChange={handleStartChange}
                        />
+                        <span className='floatbox-guests-span float-checkout'>CHECKOUT</span>
                         <input onKeyDown={(e) => e.preventDefault()}
                         className='floating-end-date' 
                         type="date" 
@@ -107,11 +109,11 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         />
                     </div>
                     </div>
+                    <span className='floatbox-guests-span'>GUESTS</span>
                     <select 
                     value={guests}
                     onChange={(e)=>(setGuests(e.target.value))}
                     className='floating-box-guests'
-                    
                     >
                         <option 
                         disabled={listing.guests < 1 ? 'disabled' : ''}
