@@ -99,6 +99,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         type="date"
                         value={`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`}
                         onChange={handleStartChange}
+                        min={new Date().toISOString().split('T')[0]}
                        />
                         <span className='floatbox-guests-span float-checkout'>CHECKOUT</span>
                         <input onKeyDown={(e) => e.preventDefault()}
@@ -106,6 +107,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         type="date" 
                         value={`${endDate.getFullYear()}-${endDate.getMonth() + 1}-${endDate.getDate() > 9 ? '':'0' }${endDate.getDate()}`}
                         onChange={handleEndChange}
+                        min={startDate.toISOString().split('T')[0]}
                         />
                     </div>
                     </div>

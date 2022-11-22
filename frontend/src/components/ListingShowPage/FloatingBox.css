@@ -190,3 +190,26 @@
 .float-total div:last-child {
     font-size: 16.4px;
 }
+
+input.floating-start-date[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    z-index: 500;
+    color: transparent;
+    background: transparent;
+}
+input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    z-index: 500;
+    color: transparent;
+    background: transparent;
+}
