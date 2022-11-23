@@ -21,12 +21,12 @@ const ProfilePage = () => {
         const file = e.currentTarget.files[0];
         const formData = new FormData();
         formData.append('user[photo]', file);
-        formData.append('user[firstName]', user.firstname);
-        formData.append('user[lastName]', user.lastName);
-        formData.append('user[about]', user.about);
-        formData.append('user[phoneNumber]', user.phoneNumber);
-        formData.append('user[birthDate]', user.birthDate);
-        formData.append('user[id]', user.id);
+        // formData.append('user[firstName]', user.firstName);
+        // formData.append('user[lastName]', user.lastName);
+        // formData.append('user[about]', user.about);
+        // formData.append('user[phoneNumber]', user.phoneNumber);
+        // formData.append('user[birthDate]', user.birthDate);
+        // formData.append('user[id]', user.id);
         dispatch(userActions.updateUser(formData));
     }
 
@@ -64,9 +64,7 @@ const ProfilePage = () => {
         }) 
     }
 
-    const ownedReviews = reviews.filter(review => ownedListingsId.includes(review.listingId))
-    // const resArray = Object.entries(reservations);
-    // const userReserves = resArray.filter(([key,value]) => value.userId === id);
+    const ownedReviews = reviews.filter(review => ownedListingsId.includes(review.listingId));
 
     if (!user) return null;
     
