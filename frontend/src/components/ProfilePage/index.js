@@ -18,7 +18,16 @@ const ProfilePage = () => {
     const users = useSelector(state => state.users);
 
     const uploadPhoto = (e) => {
-        e.preventDefault();
+        const file = e.currentTarget.files[0];
+        const formData = new FormData();
+        formData.append('user[photo]', file);
+        formData.append('user[firstName]', user.firstname);
+        formData.append('user[lastName]', user.lastName);
+        formData.append('user[about]', user.about);
+        formData.append('user[phoneNumber]', user.phoneNumber);
+        formData.append('user[birthDate]', user.birthDate);
+        formData.append('user[id]', user.id);
+        dispatch(userActions.updateUser(formData));
     }
 
     const openEditProfile = (e) => {
@@ -70,7 +79,7 @@ const ProfilePage = () => {
                     {user.photoUrl && (<img className='profile-picture' src={user.photoUrl} alt="loading" />)}
                 </div>
                 <label className='update-photo' htmlFor="update-photo">Update photo</label>
-                <input type="file" id='update-photo'/>
+                <input type="file" id='update-photo' onChange={uploadPhoto} accept="image/png, image/jpg, image/jpeg"/>
 
                 <div className='identity-box'>
 

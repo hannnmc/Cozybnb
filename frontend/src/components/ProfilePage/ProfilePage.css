@@ -46,7 +46,7 @@
 .identity-box {
     display: flex;
     margin-top: 42px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     font-size: 17px;
     font-weight: 500;
     flex-direction: column;

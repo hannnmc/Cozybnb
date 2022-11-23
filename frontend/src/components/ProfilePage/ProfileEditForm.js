@@ -18,16 +18,14 @@ const ProfileEditForm = (props) => {
 
     const saveChanges = (e) => {
         e.preventDefault();
-        
+        const formData = new FormData();
         // setErrors([]);
-        return dispatch(userActions.updateUser({
-            firstName:fname,
-            lastName:lname,
-            about:desc,
-            phoneNumber:number, 
-            birthDate:bdate,
-            id
-        }))
+        formData.append('user[firstName]', fname);
+        formData.append('user[lastName]', lname);
+        formData.append('user[about]', desc);
+        formData.append('user[phoneNumber]', number);
+        formData.append('user[birthDate]', bdate);
+        return dispatch(userActions.updateUser(formData))
         .then(setShowProfileEditForm(false))
         .catch(async (res) => {
         let data;

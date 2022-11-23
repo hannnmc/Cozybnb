@@ -24,22 +24,16 @@ export const fetchUsers = () => async dispatch => {
 };
 
 export const updateUser = (user) => async dispatch => {
-    const {           
-        firstName,
-        lastName,
-        about,
-        phoneNumber, 
-        birthDate
-    } = user;
+    // const {           
+    //     firstName,
+    //     lastName,
+    //     about,
+    //     phoneNumber, 
+    //     birthDate
+    // } = user;
     const res = await csrfFetch(`/api/users/${user.id}`, {
         method: "PATCH",
-        body: JSON.stringify({
-            firstName,
-            lastName,
-            about,
-            phoneNumber,
-            birthDate
-        })
+        body: user
     });
     const data = await res.json();
     dispatch(sessionActions.getCurrentUser(data));
