@@ -32,10 +32,10 @@ ApplicationRecord.transaction do
     )
     user3 = User.create!(
       about: "",
-      email: 'iheartgoogle@gmail.com', 
+      email: 'kimmystar@gmail.com', 
       password: 'password',
-      first_name: 'Dan',
-      last_name: 'Brown',
+      first_name: 'Kimmy',
+      last_name: 'Star',
       birth_date: '01/01/1991',
       phone_number: '1234567894'
     )
@@ -81,10 +81,10 @@ ApplicationRecord.transaction do
 
     user8 = User.create!(
       about: "",
-      email: 'kimmystahh@icloud.com', 
+      email: 'iheartgoogle@gmail.com', 
       password: 'password',
-      first_name: 'Kimmy',
-      last_name: 'Stars',
+      first_name: 'Dan',
+      last_name: 'Brown',
       birth_date: '12/12/1994',
       phone_number: '1234567899'
     )
@@ -391,11 +391,209 @@ ApplicationRecord.transaction do
       location: 5,
       checkin: 5,
       value: 5,
-      body: 'We came to Manhattan for a 4 day visit and we absolutely loved this place! It has all the ammenities you can imagine and the lobby is gorgeous! Location is great and quiet very close to central park.  Highly recommend!',
+      body: 'Checkin was super easy. Unit was clean and spacious. I was overwhelmed with how large it was for a two bedroom. WiFi was fast. Complimentary coffee in the unit was a nice touch. Walking distance to a lot of nice restaurants as well as sight seeing on foot which was convenient. It was absolutely perfect for our stay in New York. George was super helpful and quick to respond. Highly recommend!!',
       listing_id: 1,
       user_id: 1
     })
+       
+    review2 = Review.create!({
+      rating: 4.83,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 4,
+      value: 5,
+      body: "Just when you think you know all there is to know about New York there’s another area to surprise you. Great views.",
+      listing_id: 1,
+      user_id: 2
+    })
+       
+    review3 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: "This place was so amazing. The views were incredible and the location was impeccable. I will stay here anytime. I’m back in New York. This place was so amazing. And the communication from the host was great. I would even say excellent.",
+      listing_id: 1,
+      user_id: 3
+    })
+       
+    review4 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Fantastic stay! The apartment is beautiful and clean. It came well equipped with anything one may need in the kitchen and bathroom for a comfortable stay. Everything looks clean, modern and nice. The six windows we had allowed in plenty of natural light which was great since I work from home. And the view from the bedroom is gorgeous. Excellent value for NYC.
+      ',
+      listing_id: 1,
+      user_id: 7
+    })
+       
+    review5 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Perfect accommodations for an overnight. Spacious with spectacular views.',
+      listing_id: 2,
+      user_id: 4
+    })
+       
+    review6 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Very nice place. Amazing views and very comfortable. Host is wonderful, highly recommended',
+      listing_id: 2,
+      user_id: 3
+    })
+       
+    review7 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'have stayed at this location multiple times. The reason we keep coming back is: great host, great location, just great...',
+      listing_id: 3,
+      user_id: 5
+    })
+       
+    review8 = Review.create!({
+      rating: 4,
+      cleanliness: 2,
+      accuracy: 4,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 3,
+      body: 'Great creativity and style. Kinda dirty.',
+      listing_id: 8,
+      user_id: 6
+    })
+       
+    review9 = Review.create!({
+      rating: 4.83,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 4,
+      body: 'Stayed with my kids. They loved it. Amazing views . Great communication
+      To have all the restaurants and Whole Foods and get to know this new area was a plus.',
+      listing_id: 3,
+      user_id: 7
+    })
+       
+    review10 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'We came to Manhattan for a 4 day visit and we absolutely loved this place! It has all the ammenities you can imagine and the lobby is gorgeous! Location is great and quiet very close to central park.  Highly recommend!',
+      listing_id: 4,
+      user_id: 2
+    })
+       
+    review11 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'This apartment has a tremendous view! Bedrooms are spacious and whole apartment is pretty clean. The location is convenient and has a Whole Foods market next to it.',
+      listing_id: 4,
+      user_id: 4
+    })
+       
+    review12 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Amazing views and unbeatable location. Highly recommend!',
+      listing_id: 5,
+      user_id: 4
+    })
+       
+    review13 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: "This place is a gem and I agree with other reviewers that the views in person are much better than the pictures. Communication from the host was excellent and the whole check in and checkout process was flawless. We were also met by a host representative who helped us with the bags. This place is within walking distance of little China, Johny's and other great brunch places. Our family will definitely visit this place in the near future.",
+      listing_id: 6,
+      user_id: 5
+    })
+       
+    review14 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'I loved this place. Amazing views, clean, close to everything. Definitely recommend staying here.',
+      listing_id: 6,
+      user_id: 6
+    })
+       
+    review15 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Excellent location. Brand new facility. Everything you need is immediately accessible.',
+      listing_id: 9,
+      user_id: 1
+    })
 
+    review16 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'What a wonderful experience being surrounded by the peaceful sounds of nature.  Truly a gem and a unforgettable experience!',
+      listing_id: 12,
+      user_id: 3
+    })
+       
+       
     puts "Attaching photos..."
 
     # user1 = User.first
