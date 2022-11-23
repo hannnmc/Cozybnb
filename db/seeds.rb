@@ -415,29 +415,29 @@ ApplicationRecord.transaction do
     # listing11.photos.purge
     # listing12.photos.purge
     
-    user1_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user1.jpg")
+    user1_photo = File.open("frontend/src/assets/images/users/user1.jpg")
     user1.photo.attach(io: user1_photo, filename:"user1.jpg")
 
-    user2_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user2.webp")
+    user2_photo = File.open("frontend/src/assets/images/users/user2.webp")
     user2.photo.attach(io: user2_photo, filename:"user2.webp
       ")
     
-    user3_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user3.jpg")
+    user3_photo = File.open("frontend/src/assets/images/users/user3.jpg")
     user3.photo.attach(io: user3_photo, filename:"user3.jpg")
 
-    user4_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user4.webp")
+    user4_photo = File.open("frontend/src/assets/images/users/user4.webp")
     user4.photo.attach(io: user4_photo, filename:"user4.webp")
 
-    user5_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user5.jpg")
+    user5_photo = File.open("frontend/src/assets/images/users/user5.jpg")
     user5.photo.attach(io: user5_photo, filename:"user5.jpg")
 
-    user6_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user6.jpg")
+    user6_photo = File.open("frontend/src/assets/images/users/user6.jpg")
     user6.photo.attach(io: user6_photo, filename:"user6.jpg")
 
-    user7_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user7.jpg")
+    user7_photo = File.open("frontend/src/assets/images/users/user7.jpg")
     user7.photo.attach(io: user7_photo, filename:"user7.jpp")
 
-    user8_photo = URI.open("https://thecozybnb-seed.s3.amazonaws.com/users/user8.jpg")
+    user8_photo = File.open("frontend/src/assets/images/users/user8.jpg")
     user8.photo.attach(io: user8_photo, filename:"user8.jpg")
 
     l1p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing1/photo1.jpg")

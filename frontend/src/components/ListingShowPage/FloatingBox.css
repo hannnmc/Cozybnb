@@ -80,6 +80,7 @@
     /* text-indent: calc(23% - 40px); */
     text-indent: 7px;
     padding-top: 10px;
+    cursor: pointer;
 }
 
 .float-checkout {
@@ -198,9 +199,9 @@ input.floating-start-date[type="date"]::-webkit-calendar-picker-indicator {
     width: 100%;
     height: 100%;
     padding: 0;
-    z-index: 500;
     color: transparent;
     background: transparent;
+    cursor: pointer;
 }
 input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
@@ -209,7 +210,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     width: 100%;
     height: 100%;
     padding: 0;
-    z-index: 500;
     color: transparent;
     background: transparent;
+    cursor: pointer;
 }
