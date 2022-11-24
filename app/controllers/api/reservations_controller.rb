@@ -4,10 +4,8 @@ class Api::ReservationsController < ApplicationController
 
     def create
         @reservation = Reservation.new(reservation_params)
-        # debugger
         @reservation[:user_id] = current_user.id
 
-        # debugger
         if @reservation.save
             render :show
         else

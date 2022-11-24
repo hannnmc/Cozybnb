@@ -20,15 +20,6 @@ function ListingMap({
   const history = useHistory();
   let center = null;
   if (map) center = map.getCenter().toJSON();
-  // const [center , setCenter ] = useState({lat,lng})
-
-  // useEffect(()=>{
-  //   if (map) {
-  //     console.log((`this is lat ${map.getCenter().toJSON().lat}`));
-  //     setLat(map.getCenter().toJSON().lat)
-
-  //   }
-  // },[map])
 
   useEffect(() => {
     if (!map) {

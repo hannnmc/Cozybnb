@@ -1,7 +1,6 @@
 import './ReviewBars.css';
 
 const ReviewBars = ({listingReview}) => {
-    // console.log(listingReview)
 
     let avgCleanliness = 0;
     let avgAccuracy = 0;
@@ -18,8 +17,6 @@ const ReviewBars = ({listingReview}) => {
         avgCheckin += review.checkin / listingReview.length
         avgValue += review.value / listingReview.length
     })
-
-    console.log(listingReview)
 
     const cleanlinessBar = {
         width: `${avgCleanliness/5*100}%`,
