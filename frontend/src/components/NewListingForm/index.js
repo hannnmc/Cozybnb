@@ -64,12 +64,6 @@ function NewListingForm(props) {
       filesList.push(currentFiles[i]);
     }
     setFiles(filesList);
-    // if (filesList.length > 4) {
-    //   setTooManyPhotos(true);
-    // } else {
-    //   setTooManyPhotos(false);
-    // }
-    // setFiles(e.currentTarget.files);
 
     if (file) {
       const fileReader = new FileReader();
@@ -142,29 +136,11 @@ function NewListingForm(props) {
       formData.append(`listing[${key}]`, newListing[key]);
     })
 
-    // console.log(files.length)
     if (files && files.length > 0 && files.length < 6) {
       files.forEach((file) => {
         formData.append('listing[photos][]', file)
       })
-      // formData.append(`listing[photos][]`, files)
     }
-    // if (photoFile) {
-    //   formData.append('listing[photos][]', photoFile);
-    // }
-    // if (photoFile2) {
-    //   formData.append('listing[photos][]', photoFile2);
-    // }
-    // if (photoFile3) {
-    //   formData.append('listing[photos][]', photoFile3);
-    // }
-    // if (photoFile4) {
-    //   formData.append('listing[photos][]', photoFile4);
-    // }
-    // if (photoFile5) {
-    //   formData.append('listing[photos][]', photoFile5);
-    // }
-    // console.log(photoFile, photoFile2, photoFile3)
 
     setErrors([]);
     setNewListingModal(false);
@@ -195,7 +171,6 @@ function NewListingForm(props) {
 
   if(listings.length === 0) return null;
 
-  // console.log(photoFile)
   const preview = photoUrl ? <img src={photoUrl} alt="" /> : null;
   const preview2 = photoUrl2 ? <img src={photoUrl2} alt="" /> : null;
   const preview3 = photoUrl3 ? <img src={photoUrl3} alt="" /> : null;
@@ -453,12 +428,7 @@ function NewListingForm(props) {
                 return <li key={error}>{error}</li> 
             })}
           </ul>
-          {/* <div className="agree-message">By selecting 
-          <span className="bold">  Continue</span>, I agree to Cozybnb's 
-          <span className="bold2">Term of Service</span>. 
-          <a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a>
-           </div> */}
+
           <div className='new-listing-top'>
             <div className='listing-image-upload'>
               <input className='listing-image-input' type="file" onChange={handleFile} 

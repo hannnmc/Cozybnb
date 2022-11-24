@@ -20,16 +20,6 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
     const [location, setLocation] = useState(5);
     const [checkin, setCheckin] = useState(5);
     const [value, setValue] = useState(5);
-
-    // console.log(            user.id,
-    //     listing.id,
-    //     body,
-    //     cleanliness,
-    //     accuracy,
-    //     communication,
-    //     location,
-    //     checkin,
-    //     value)
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -46,7 +36,6 @@ const ReviewForm = ({user,listing,setReviewModal}) => {
         .then(setReviewModal(false))
     }
 
-    // console.log(cleanliness)
     return (
         <div className='reviews-modal'>
             <div className='reviews-modal-header'>Tell us about your stay</div>

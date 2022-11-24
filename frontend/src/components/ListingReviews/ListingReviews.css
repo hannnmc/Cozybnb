@@ -16,7 +16,7 @@
 
 .show-review-image>img{
     aspect-ratio: 1;
-    object-fit: contain;
+    object-fit: cover;
     height: 40px;
     border-radius: 50%;
 }
