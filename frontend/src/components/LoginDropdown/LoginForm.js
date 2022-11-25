@@ -42,7 +42,7 @@ function LoginForm(props) {
   };
   const loginGoogleUser = (e) => {
     return dispatch(sessionActions.login({    
-      email: 'iheartgoogle@gmail.com', 
+      email: 'kimmystar@gmail.com', 
       password: 'password'
     }));
   };

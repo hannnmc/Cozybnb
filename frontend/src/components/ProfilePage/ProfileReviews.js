@@ -6,7 +6,7 @@ const monthFullNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
 
-const ProfileReviews = ({users, ownedReviews}) => {
+const ProfileReviews = ({users, ownedReviews, listings}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -18,8 +18,11 @@ const ProfileReviews = ({users, ownedReviews}) => {
         {ownedReviews?.map(review => (
             <div className="show-review" key={review.id}>
                 <div className='show-review-header'>
-                    <div className='show-review-image'>
-                        <img src={users[review.userId]?.photoUrl} alt="" />
+                    <div className='show-review-image1'>
+                    <img src={listings[review.listingId]?.photoUrls[0]} alt="" />
+                    </div>
+                    <div className='show-review-image2'>
+                    <img src={users[review.userId]?.photoUrl} alt="" />
                     </div>
                     <div className='show-review-top'>
                         <span>{users[review.userId]?.firstName}</span>

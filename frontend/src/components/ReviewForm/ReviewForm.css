@@ -48,11 +48,12 @@
 .reviews-form>button {
     border:none;
     border-radius: 8px;
-    height: 36px;
+    height: 38px;
     color: white;
     font-weight: 600;
     background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
-    margin-bottom: 12px;
+    margin-top: 8px;
+    margin-bottom: 18px;
     cursor: pointer;
 }
 
@@ -62,7 +63,7 @@
     resize: none;
     margin-bottom: 24px;
     border-radius: 8px;
-    border: 1px solid #BABABA;
+    border: 1px solid rgb(221, 221, 221);
     padding: 12px;
     font-size: 14px;
 }
