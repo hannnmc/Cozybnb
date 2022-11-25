@@ -112,10 +112,11 @@ function SignUpForm(props) {
           </div>
           <div className="agree-message">By selecting 
           <span className="bold">  Agree and continue</span>, I agree to Cozybnb's 
-          <span className="bold2">Term of Service</span>. 
-          <a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer">Github</a>
+          <span className="bold"><a href="https://github.com/hannnmc/Cozybnb" target="_blank" rel="noopener noreferrer">Term of Service</a>.
+          </span>
            </div>
+          {/* <a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a> */}
+          
           <ul className="error-message">
             {errors.map(error => {
               if (error.includes('Birth date')) {

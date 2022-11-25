@@ -59,6 +59,23 @@ export const createListing = (formData) => async (dispatch) => {
     return response;
 };
 
+export const updateListing = (listing) => async dispatch => {
+    // const {           
+    //     firstName,
+    //     lastName,
+    //     about,
+    //     phoneNumber, 
+    //     birthDate
+    // } = user;
+    const res = await csrfFetch(`/api/listings/${listing.id}`, {
+        method: "PATCH",
+        body: listing
+    });
+    const data = await res.json();
+    return res;
+};
+
+
 function listingsReducer(state = {}, action) {
     switch (action.type) {
       case SET_LISTINGS:

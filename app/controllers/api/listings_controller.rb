@@ -14,18 +14,23 @@ class Api::ListingsController < ApplicationController
 
     def create
         @listing = Listing.new(listing_params)
-
         @listing.user_id = current_user.id
-        # if listing_params[:photos]
-        #     listing_params[:photos].each do |photo|
-        #         @listing.photos.attach(photo)
-        #     end
-        # end
 
         if @listing.save
             render :show
         else 
             render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+
+
+    def update
+        @listing = Listing.find(params[:id])
+        if @listing.update(listing_params)
+          @listing.save
+          render :show
+        else
+          render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
         end
     end
 

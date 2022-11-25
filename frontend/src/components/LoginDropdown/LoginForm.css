@@ -9,7 +9,7 @@ header {
     font-size: 16px;
     line-height: 20px;
     min-height: 64px;
-    font-weight: 700;
+    font-weight: 650;
 }
 
 header .header-login {
@@ -43,7 +43,7 @@ header .header-login {
     font-size: 22px;
     line-height: 26px;
     color: rgb(34, 34, 34);
-    font-weight: 600;
+    font-weight: 500;
     box-sizing: border-box;
     display: block;
     margin-block-start: 1.3em;

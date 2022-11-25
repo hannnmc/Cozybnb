@@ -279,7 +279,7 @@ function NewListingForm(props) {
           <div className='listing-specs'>
 
             <div className="input-div">
-              <input
+              {/* <input
                 className="guests-input"
                 type="number"
                 value={guests}
@@ -287,12 +287,35 @@ function NewListingForm(props) {
                 min="0"
                 max="16"
                 required
-              />
+              /> */}
+              <select className='guests-input'
+              value={guests}
+              onChange={(e) => setGuests(e.target.value)}
+              required
+              >
+                <option value="" disabled hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+              </select>
               <span className="guests-floating-label">Guests</span>
             </div>
 
             <div className="input-div">
-              <input
+              {/* <input
                 className="bedrooms-input"
                 type="number"
                 value={bedrooms}
@@ -300,12 +323,27 @@ function NewListingForm(props) {
                 min="0"
                 max="8"
                 required
-              />
+              /> */}
+              <select className='bedrooms-input'
+              value={bedrooms}
+              onChange={(e) => setBedrooms(e.target.value)}
+              required
+              >
+                <option value="" disabled hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
               <span className="bedrooms-floating-label">Bedrooms</span>
             </div>
 
             <div className="input-div">
-              <input
+              {/* <input
                 className="beds-input"
                 type="number"
                 value={beds}
@@ -313,12 +351,31 @@ function NewListingForm(props) {
                 min="0"
                 max="12"
                 required
-              />
+              /> */}
+              <select className='beds-input'
+              value={beds}
+              onChange={(e) => setBeds(e.target.value)}
+              required
+              >
+                <option value="" disabled hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
               <span className="beds-floating-label">Beds</span>
             </div>
 
             <div className="bathrooms-div">
-              <input
+              {/* <input
                 className="bathrooms-input"
                 type="number"
                 value={baths}
@@ -326,7 +383,19 @@ function NewListingForm(props) {
                 min="0"
                 max="5"
                 required
-              />
+              /> */}
+              <select className='bathrooms-input'
+              value={baths}
+              onChange={(e) => setBaths(e.target.value)}
+              required
+              >
+                <option value="" disabled hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
               <span className="bathrooms-floating-label">Bathrooms</span>
             </div>
           </div>
@@ -349,7 +418,7 @@ function NewListingForm(props) {
               <input 
                 className='new-price-input'
                 type="number" 
-                value={price}
+                value={price > 0 && price < 1001 ? price : NaN}
                 onChange={(e) => setPrice(e.target.value)}
                 min="0"
                 max="1000"
@@ -364,10 +433,11 @@ function NewListingForm(props) {
               min="-90"
               max="90"
               type="number" 
-              value={lat}
+              value={lat.toFixed(8)}
               onChange={(e) => setLat(parseFloat(e.target.value))}
               placeholder="Latitude"
               step='any'
+              disabled
               required/>
               <span className='lattext'>Lat</span>
               
@@ -376,10 +446,11 @@ function NewListingForm(props) {
               min="-180"
               max="180"
               type="number" 
-              value={lng}
+              value={lng.toFixed(8)}
               onChange={(e) => setLng(parseFloat(e.target.value))}
               placeholder="Longitude"
               step='any'
+              disabled
               required/>
               <span className='lngtext'>Lng</span>
             </div>
@@ -447,7 +518,7 @@ function NewListingForm(props) {
             </div>
             
             <div className='listing-minimap'>
-            <div><i class="fa-solid fa-location-dot"></i></div>
+            <div><i className="fa-solid fa-location-dot"></i></div>
             <ListingMap
                       // listings={[listing]}
                       setLat={setLat}

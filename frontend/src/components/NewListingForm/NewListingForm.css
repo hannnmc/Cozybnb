@@ -105,7 +105,7 @@ input:not(:focus):valid ~ .address-floating-label{
     border-radius: 8px;
     color: rgb(113, 113, 113);
     width: 100%;
-    height: 35px;
+    height: 48px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -133,7 +133,7 @@ input:not(:focus):valid ~ .guests-floating-label{
 .guests-floating-label {
     position: absolute;
     pointer-events: none;
-    left: 61px;
+    left: 60px;
     top: 267px;
     color: rgb(113, 113, 113);
     transition: 0.2s ease all;
@@ -147,7 +147,7 @@ input:not(:focus):valid ~ .guests-floating-label{
     border-radius: 8px;
     color: rgb(113, 113, 113);
     width: 100%;
-    height: 35px;
+    height: 48px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -175,7 +175,7 @@ input:not(:focus):valid ~ .bedrooms-floating-label{
 .bedrooms-floating-label {
     position: absolute;
     pointer-events: none;
-    left: 183px;
+    left: 182px;
     top: 267px;  
     color: rgb(113, 113, 113);
     transition: 0.2s ease all;
@@ -189,7 +189,7 @@ input:not(:focus):valid ~ .bedrooms-floating-label{
     border-radius: 8px;
     color: rgb(113, 113, 113);
     width: 100%;
-    height: 35px;
+    height: 48px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -217,7 +217,7 @@ input:not(:focus):valid ~ .beds-floating-label{
 .beds-floating-label {
     position: absolute;
     pointer-events: none;
-    left: 335px;
+    left: 333px;
     top: 267px;  
     color: rgb(113, 113, 113);
     transition: 0.2s ease all;
@@ -247,7 +247,7 @@ input:not(:focus):valid ~ .bathrooms-floating-label{
 .bathrooms-floating-label {
     position: absolute;
     pointer-events: none;
-    left: 450px;
+    left: 448px;
     top: 267px;  
     color: rgb(113, 113, 113);
     transition: 0.2s ease all;
@@ -261,7 +261,7 @@ input:not(:focus):valid ~ .bathrooms-floating-label{
     border-radius: 8px;
     color: rgb(113, 113, 113);
     width: 100%;
-    height: 35px;
+    height: 48px;
     border: 1px solid #bababa;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
@@ -389,6 +389,7 @@ input:not(:focus):valid ~ .night-floating-label{
     color:rgb(113, 113, 113);
     padding: 0 12px;
     padding-top: 10px;
+    text-indent: 5px;
 }
 
 .lng-input {

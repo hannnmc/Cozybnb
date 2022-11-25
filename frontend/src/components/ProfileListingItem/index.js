@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import './ProfileListingItem.css'
 
@@ -6,11 +7,13 @@ function ProfileListingItem({ ownedListings, listing }) {
 
     const history = useHistory(); 
     const { title, photoUrls, price, averageRating, description, beds } = listing;
-    
+    const dispatch = useDispatch();
+
     const handleDelete = (e) =>{
         e.preventDefault();
         e.stopPropagation();
-        dispatch(destroyReservation(reservation.id))
+
+        // dispatch(destroyReservation(reservation.id))
     }
     return (
         <div
@@ -19,10 +22,10 @@ function ProfileListingItem({ ownedListings, listing }) {
         <div className="profile-listing-info">
         {photoUrls && ( <div className="profile-image-div"> <img className="profile-listing-image" src={photoUrls[0]} alt='loading...'/></div> )}
         <div 
-        onClick={handleDelete}
-        className='delete-reservation'>
+            onClick={handleDelete}
+            className='delete-reservation'>
             <i className="fa-solid fa-x"></i>
-        </div>
+        </div> 
         <div className="profile-listing-infobox">
             <h2  className="profile-item-title">{title}</h2>
             <div className="profile-listing-fields">
