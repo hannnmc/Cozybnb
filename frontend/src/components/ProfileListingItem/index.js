@@ -6,14 +6,23 @@ function ProfileListingItem({ ownedListings, listing }) {
 
     const history = useHistory(); 
     const { title, photoUrls, price, averageRating, description, beds } = listing;
-
+    
+    const handleDelete = (e) =>{
+        e.preventDefault();
+        e.stopPropagation();
+        dispatch(destroyReservation(reservation.id))
+    }
     return (
         <div
         onClick={() => history.push(`/listings/${listing.id}`)}
         >
         <div className="profile-listing-info">
         {photoUrls && ( <div className="profile-image-div"> <img className="profile-listing-image" src={photoUrls[0]} alt='loading...'/></div> )}
-
+        <div 
+        onClick={handleDelete}
+        className='delete-reservation'>
+            <i className="fa-solid fa-x"></i>
+        </div>
         <div className="profile-listing-infobox">
             <h2  className="profile-item-title">{title}</h2>
             <div className="profile-listing-fields">
