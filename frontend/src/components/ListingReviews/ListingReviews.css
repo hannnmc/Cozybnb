@@ -14,11 +14,28 @@
     color: #717171;
 }
 
+.show-review-image1>img{
+    aspect-ratio: 1;
+    object-fit: cover;
+    height: 40px;
+    border-radius: 50%;
+}
+.show-review-image2>img{
+    aspect-ratio: 1;
+    object-fit: cover;
+    height: 40px;
+    border-radius: 50%;
+}
+
 .show-review-image>img{
     aspect-ratio: 1;
     object-fit: cover;
     height: 40px;
     border-radius: 50%;
+}
+
+.show-review-image2 {
+    margin-left: -10px;
 }
 
 .show-review-header {

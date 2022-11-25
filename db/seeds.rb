@@ -418,7 +418,7 @@ ApplicationRecord.transaction do
       checkin: 5,
       value: 5,
       body: "This place was so amazing. The views were incredible and the location was impeccable. I will stay here anytime. I’m back in New York. This place was so amazing. And the communication from the host was great. I would even say excellent.",
-      listing_id: 1,
+      listing_id: 10,
       user_id: 3
     })
        

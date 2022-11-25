@@ -174,6 +174,7 @@ const ProfilePage = () => {
                     <ProfileReviews 
                     users={users} 
                     ownedReviews={ownedReviews}
+                    listings={listings}
                     />
                 </div>
                 {/* <div className='profile-box-divider'></div>

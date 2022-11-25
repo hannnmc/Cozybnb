@@ -32,8 +32,9 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
 
     const [ guests, setGuests ] = useState(1);
     const [total, setTotal ] = useState(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
+    const today = new Date();
+    // const yesterday = new Date();
+    // yesterday.setDate(yesterday.getDate() - 1);
     const listingId = listing.id;
 
     useEffect(() => {
@@ -77,7 +78,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         }))
         .then(history.push(`/profile/`))
     }
-    
+    // console.log(startDate.toISOString().split('T')[0])
     return (
         <div className='listing-floating-panel'>
         <div className='floating-box-border'>
@@ -100,7 +101,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         type="date"
                         value={`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`}
                         onChange={handleStartChange}
-                        min={((yesterday).toISOString().split('T')[0])}
+                        min={(today.toISOString().split('T')[0])}
                        />
                         <span className='floatbox-guests-span float-checkout'>CHECKOUT</span>
                         <input onKeyDown={(e) => e.preventDefault()}
