@@ -39,6 +39,29 @@
     z-index: 11;
 }
 
+.update-listing {
+    width: 20%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
+.profile-listing-info:hover .update-listing {
+    position: absolute;
+    background: linear-gradient(to right, transparent 0%, rgba(135, 135, 135, .3) 100%);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 11;
+}
+
 .res-image {
     object-fit: cover;
     height: 100%;

@@ -2,6 +2,7 @@
     display: flex;
     margin-top: 36px;
     cursor: pointer;
+    position: relative;
 }
 
 .profile-listing-image {
