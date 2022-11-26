@@ -12,14 +12,12 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const history = useHistory(); 
+  const [count, setCount] = useState(0)
   
   if (!sessionUser.id ) {
 
   };
 
-  useEffect(() => {
-    dispatch(listingActions.fetchListings())
-  },[listing])
 
   const [errors, setErrors] = useState([]);
   const [title, setTitle] = useState(listing.title);
@@ -39,8 +37,8 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
   const [petsAllowed, setPetsAllowed] = useState(listing.petsAllowed);
   const [propType, setPropType] = useState(listing.propType);
   const [lat, setLat] = useState(listing.lat);
-  const [lng, setLng] = useState(-74.0060);
-  const [country, setCountry] = useState(listing.lng);
+  const [lng, setLng] = useState(listing.lng);
+  const [country, setCountry] = useState(listing.country);
   const [bounds, setBounds] = useState(null);
   const [photoFile, setPhotoFile] = useState (null);
   const [photoFile2, setPhotoFile2] = useState (null);
@@ -54,7 +52,11 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
   const [files, setFiles] = useState(null);
 
   const [photoUrl5, setPhotoUrl5] = useState(null);
-  const listings = useSelector(state => state.listings)
+  const listings = useSelector(state => state.listings);
+
+  useEffect(() => {
+    dispatch(listingActions.fetchListings())
+  },[listing])
 
   const handleFile = e => {
     const file = e.currentTarget.files[0];
@@ -149,20 +151,20 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
     setErrors([]);
     setShowListingEdit(false);
     return dispatch(listingActions.updateListing(formData,listing.id))
-      .then(history.push({ pathname: `/listings/${listing.id}`}))
-      .catch(async (res) => {        
+    .then(history.push({ pathname: `/listings/${listing.id}`}))
+    .catch(async (res) => {        
       let data;
       try {
-      data = await res.clone().json();
+        data = await res.clone().json();
       } catch {
-      data = await res.text(); 
+        data = await res.text(); 
       }
       if (data?.errors) setErrors(data.errors);
       else if (data) setErrors([data]);
       else setErrors([res.statusText]);
       
       });
-  };
+    };
 
   const mapEventHandlers = useMemo(() => ({
     // click: event => {

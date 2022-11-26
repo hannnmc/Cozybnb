@@ -3,28 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import './FloatingBox.css';
 import { createReservation } from '../../store/reservations';
 import { useHistory } from 'react-router-dom';
-// import $ from "jquery";
 
-// const options = [
-//     {label: "1 guest", value: 1},
-//     {label: "2 guests", value: 2},
-//     {label: "3 guests", value: 3},
-//     {label: "4 guests", value: 4},
-//     {label: "5 guests", value: 5},
-//     {label: "6 guests", value: 6},
-//     {label: "7 guests", value: 7},
-//     {label: "8 guests", value: 8},
-//     {label: "9 guests", value: 9},
-//     {label: "10 guests", value: 10},
-//     {label: "11 guests", value: 11},
-//     {label: "12 guests", value: 12},
-//     {label: "13 guests", value: 13},
-//     {label: "14 guests", value: 14},
-//     {label: "15 guests", value: 15},
-//     {label: "16 guests", value: 16}
-// ]
 
-const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews}) => {
+const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews, setShowListingEdit}) => {
     
     const dispatch = useDispatch();
     const history = useHistory();
@@ -68,17 +49,21 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         if(!user) {
             setShowLoginModal(true);
         }
-        if (endDate.getTime() - startDate.getTime() > 8639999 && user)
-        dispatch(createReservation({
-            startDate,
-            endDate,
-            listingId,
-            guests,
-            total:(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08))
-        }))
-        .then(history.push(`/profile/`))
+        if (listing.userId === user.id) {
+            setShowListingEdit(true);
+        } else {
+            if (endDate.getTime() - startDate.getTime() > 8639999 && user)
+            dispatch(createReservation({
+                startDate,
+                endDate,
+                listingId,
+                guests,
+                total:(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08))
+            }))
+            .then(history.push(`/profile/`))
+        }
     }
-    // console.log(startDate.toISOString().split('T')[0])
+    console.log(`${startDate.getFullYear()}-${startDate.getMonth()+1}-${startDate.getDate()}`)
     return (
         <div className='listing-floating-panel'>
         <div className='floating-box-border'>
@@ -109,7 +94,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         type="date" 
                         value={`${endDate.getFullYear()}-${endDate.getMonth() + 1}-${endDate.getDate() > 9 ? '':'0' }${endDate.getDate()}`}
                         onChange={handleEndChange}
-                        min={startDate.toISOString().split('T')[0]}
+                        min={`${startDate.getFullYear()}-${startDate.getMonth()}-${startDate.getDate()}`}
                         />
                     </div>
                     </div>
@@ -187,7 +172,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                     </select>
                     <button type='submit'
                     className='floating-box-button'>
-                        Reserve
+                        {listing.userId === user.id ? 'Edit' : 'Reserve'}
                     </button>
                 </form>
             </div>
