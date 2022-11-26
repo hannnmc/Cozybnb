@@ -122,8 +122,8 @@ input:not(:focus):valid ~ .address-floating-label{
 .guests-input:focus::placeholder{
     color: rgb(113, 113, 113);
 }
-input:focus ~ .guests-floating-label,
-input:not(:focus):valid ~ .guests-floating-label{
+select:focus ~ .guests-floating-label,
+select:not(:focus):valid ~ .guests-floating-label{
     top: 257px;
     bottom: 10px;
     left: 37px;
@@ -164,8 +164,8 @@ input:not(:focus):valid ~ .guests-floating-label{
 .bedrooms-input:focus::placeholder{
     color: rgb(113, 113, 113);
 }
-input:focus ~ .bedrooms-floating-label,
-input:not(:focus):valid ~ .bedrooms-floating-label{
+select:focus ~ .bedrooms-floating-label,
+select:not(:focus):valid ~ .bedrooms-floating-label{
     top: 257px;
     bottom: 10px;
     left: 169px;
@@ -206,8 +206,8 @@ input:not(:focus):valid ~ .bedrooms-floating-label{
 .beds-input:focus::placeholder{
     color: rgb(113, 113, 113); 
 }
-input:focus ~ .beds-floating-label,
-input:not(:focus):valid ~ .beds-floating-label{
+select:focus ~ .beds-floating-label,
+select:not(:focus):valid ~ .beds-floating-label{
     top: 257px;
     bottom: 10px;
     left: 304px;
@@ -236,8 +236,8 @@ input:not(:focus):valid ~ .beds-floating-label{
 .bathrooms-input:focus::placeholder{
     color: rgb(113, 113, 113);
 }
-input:focus ~ .bathrooms-floating-label,
-input:not(:focus):valid ~ .bathrooms-floating-label{
+select:focus ~ .bathrooms-floating-label,
+select:not(:focus):valid ~ .bathrooms-floating-label{
     top: 257px;
     bottom: 10px;
     left: 436px;

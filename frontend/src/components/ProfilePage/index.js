@@ -10,7 +10,7 @@ import * as reviewActions from '../../store/reviews';
 import ProfileReviews from './ProfileReviews';
 import * as userActions from '../../store/users';
 
-const ProfilePage = () => {
+const ProfilePage = ({ showListingEdit, setShowListingEdit }) => {
     const dispatch = useDispatch();
     const [ showProfileEditForm, setShowProfileEditForm ] = useState(false);
     const user = useSelector(({session}) => session.user );
@@ -162,6 +162,8 @@ const ProfilePage = () => {
                             key={listing.id}
                             listing={listing}
                             ownedListings={ownedListings}
+                            setShowListingEdit={setShowListingEdit}
+                            showListingEdit={showListingEdit}
                         />
                     ))}
                 </div>

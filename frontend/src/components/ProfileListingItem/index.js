@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import './ProfileListingItem.css'
 
-function ProfileListingItem({ ownedListings, listing }) {
+function ProfileListingItem({ ownedListings, listing, showListingEdit, setShowListingEdit }) {
 
     const history = useHistory(); 
     const { title, photoUrls, price, averageRating, description, beds } = listing;
@@ -11,10 +11,10 @@ function ProfileListingItem({ ownedListings, listing }) {
 
     const handleEdit = (e) =>{
         e.preventDefault();
-        e.stopPropagation();
-
+        setShowListingEdit(true);
         // dispatch(destroyReservation(reservation.id))
     }
+
     return (
         <div
         onClick={() => history.push(`/listings/${listing.id}`)}
