@@ -257,6 +257,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
         setShowLoginModal={setShowLoginModal}
         showLoginModal={showLoginModal}
         reviews={listingReview}
+        setShowListingEdit={setShowListingEdit}
         />
         <div className='showpage-divider'></div>
         </section>
