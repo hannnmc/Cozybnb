@@ -13,6 +13,7 @@ import ListingReviews from '../ListingReviews';
 import { Modal } from '../../context/Modal';
 import ReviewForm from '../ReviewForm/';
 import ReviewBars from '../ReviewBars';
+import ListingEditForm from '../ListingEditForm';
 
 
 let lunar = false;
@@ -37,7 +38,7 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ];
 
-function ListingShowPage({showLoginModal,setShowLoginModal}) {
+function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, setShowListingEdit}) {
     
     const dispatch = useDispatch();
 
@@ -302,6 +303,14 @@ function ListingShowPage({showLoginModal,setShowLoginModal}) {
                 user={user}
                 listing={listing}
                 setReviewModal={setReviewModal}
+                />
+            </Modal>
+        )}
+        {showListingEdit && (
+            <Modal onClose={() => setShowListingEdit(false)}>
+                <ListingEditForm 
+                listing={listing}
+                setShowListingEdit={setShowListingEdit}
                 />
             </Modal>
         )}

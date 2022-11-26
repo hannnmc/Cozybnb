@@ -59,7 +59,7 @@ export const createListing = (formData) => async (dispatch) => {
     return response;
 };
 
-export const updateListing = (listing) => async dispatch => {
+export const updateListing = (formData, listingId) => async dispatch => {
     // const {           
     //     firstName,
     //     lastName,
@@ -67,9 +67,9 @@ export const updateListing = (listing) => async dispatch => {
     //     phoneNumber, 
     //     birthDate
     // } = user;
-    const res = await csrfFetch(`/api/listings/${listing.id}`, {
+    const res = await csrfFetch(`/api/listings/${listingId}`, {
         method: "PATCH",
-        body: listing
+        body: formData
     });
     const data = await res.json();
     return res;
