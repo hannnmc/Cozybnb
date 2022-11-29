@@ -58,8 +58,11 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
     const users = useSelector(state => state.users);
     const currentUser = useSelector(state => state.session.user)
     const reviews = useSelector(state => Object.values(state.reviews));
+    const reservations = useSelector(state => Object.values(state.reservations));
     const listingReview = reviews.filter(review =>
         review.listingId === parseInt(listingId));
+    const listingReservation = reservations.filter(reservation =>
+        reservation.listingId === parseInt(listingId));
 
     useEffect(() => {
         if (dayOverage < startDate.getDate()) {
@@ -243,6 +246,9 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                     setEndDate={setEndDate}
                     value={value}
                     onChange={onChange}
+                    numDays={numDays}
+                    listingReservation={listingReservation}
+                    setNumDays={setNumDays}
                     />
                 </div>
             </div>

@@ -6,7 +6,7 @@ class Api::ReservationsController < ApplicationController
         @reservation = Reservation.new(reservation_params)
         @reservation[:user_id] = current_user.id
 
-        if @reservation.save
+        if @reservation.save!
             render :show
         else
             render json: @reservation.errors.full_messages, status: 422
