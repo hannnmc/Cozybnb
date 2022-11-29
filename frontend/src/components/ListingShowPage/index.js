@@ -223,7 +223,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                     <p>{listing.beds} queen-size beds</p>
                 </div>
             </div>
-            <div className='showpage-divider '></div>
+            <div className='showpage-divider'></div>
             <div className='listing-offers'>
                 <span>What this place offers</span>
                 <ListingFeatures listing={listing}/>
