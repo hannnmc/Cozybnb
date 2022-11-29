@@ -23,28 +23,16 @@ import { useDispatch, useSelector } from 'react-redux';
 //     11:31,
 // }
 
-function DatePickerComp({ setStartDate, setEndDate, value, onChange, listingReservation }) {
+function DatePickerComp({ setStartDate, setEndDate, value, onChange, reservedDates }) {
 
   const dispatch = useDispatch();
-  const reservedDates = [];
   const selectRange = true;
   const view = 'month';
-  const showFixedNumberOfWeeks = true;
   const calendarType = "US";
   const tileDisabled = ({activeStartDate, date, view }) => (date.getTime() < ((new Date).getTime() - 86400000)) 
   || (reservedDates.includes(`${date.getFullYear()}${date.getMonth()}${date.getDate()}`))
+  
 
-
-
-  if (listingReservation)
-    listingReservation.forEach((reservation) => {
-      
-      for (let i = 0; i < reservation.days; i++) {
-        let start = new Date(reservation.startDate);
-        start.setDate(start.getDate() + i)
-        reservedDates.push(`${start.getFullYear()}${start.getMonth()}${start.getDate()}`)
-      }
-    })
   
   useEffect(() => {
     dispatch(reservationActions.fetchReservations())

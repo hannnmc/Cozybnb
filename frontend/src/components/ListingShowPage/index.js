@@ -64,6 +64,17 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
     const listingReservation = reservations.filter(reservation =>
         reservation.listingId === parseInt(listingId));
 
+    const reservedDates = [];
+    if (listingReservation)
+        listingReservation.forEach((reservation) => {
+        
+        for (let i = 0; i < reservation.days; i++) {
+            let start = new Date(reservation.startDate);
+            start.setDate(start.getDate() + i)
+            reservedDates.push(`${start.getFullYear()}${start.getMonth()}${start.getDate()}`)
+        }
+        })
+
     useEffect(() => {
         if (dayOverage < startDate.getDate()) {
             if (endMonth === 12) {
@@ -247,8 +258,9 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                     value={value}
                     onChange={onChange}
                     numDays={numDays}
-                    listingReservation={listingReservation}
+                    // listingReservation={listingReservation}
                     setNumDays={setNumDays}
+                    reservedDates={reservedDates}
                     />
                 </div>
             </div>
@@ -264,6 +276,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
         showLoginModal={showLoginModal}
         reviews={listingReview}
         setShowListingEdit={setShowListingEdit}
+        listingReservation={listingReservation}
         />
         <div className='showpage-divider'></div>
         </section>
