@@ -1,1 +1,1 @@
-json.extract! reservation, :id, :user_id, :listing_id, :start_date, :end_date, :total, :guests, :created_at, :updated_at
+json.extract! reservation, :id, :user_id, :listing_id, :start_date, :end_date, :total, :days, :guests, :created_at, :updated_at

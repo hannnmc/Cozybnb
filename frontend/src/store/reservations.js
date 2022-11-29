@@ -50,7 +50,8 @@ export const createReservation = (reservation) => async (dispatch) => {
         guests,
         startDate,
         endDate,
-        total
+        total,
+        days
     } = reservation;
     const response = await csrfFetch("/api/reservations", {
         method: "POST",
@@ -60,7 +61,8 @@ export const createReservation = (reservation) => async (dispatch) => {
             guests,
             startDate,
             endDate,
-            total
+            total,
+            days
         })
     });
     const data = await response.json();
