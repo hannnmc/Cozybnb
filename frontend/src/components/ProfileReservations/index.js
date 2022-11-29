@@ -62,7 +62,7 @@ const ProfileReservations = ({reservation, listings, ownedReservations}) => {
                 <div className='res-title'>{listing.title}</div>
                 <div className='res-dates'>
                     <h3>{`${monthNames[formatStartDate.getMonth()]} ${formatStartDate.getDate()}, ${formatStartDate.getFullYear()} - ${monthNames[formatEndDate.getMonth()]} ${formatEndDate.getDate()}, ${formatEndDate.getFullYear()}`}</h3>
-                    <h3>{`${numDays > 0 ? numDays : 0}`} nights</h3>
+                    <h3>{`${reservation.days}`} nights</h3>
                 </div>
                 <div className='res-details'>{`${guests} guests · `} total: ${reservation.total}</div>
                 <div className='res-trip-in'>

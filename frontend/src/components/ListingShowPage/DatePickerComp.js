@@ -23,7 +23,7 @@ import { useDispatch, useSelector } from 'react-redux';
 //     11:31,
 // }
 
-function DatePickerComp({startDate, setStartDate, endDate, setEndDate, value, onChange, numDays, listingReservation, setNumDays }) {
+function DatePickerComp({ setStartDate, setEndDate, value, onChange, listingReservation }) {
 
   const dispatch = useDispatch();
   const reservedDates = [];
@@ -38,12 +38,11 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate, value, on
 
   if (listingReservation)
     listingReservation.forEach((reservation) => {
-      const resDays = Math.ceil((new Date(reservation.endDate).getTime() - new Date(reservation.startDate).getTime())/1000/60/60/24) < 0 ? 0 : Math.ceil((new Date(reservation.endDate).getTime() - new Date(reservation.startDate).getTime())/1000/60/60/24)
-      for (let i = 0; i < resDays; i++) {
+      
+      for (let i = 0; i < reservation.days; i++) {
         let start = new Date(reservation.startDate);
         start.setDate(start.getDate() + i)
         reservedDates.push(`${start.getFullYear()}${start.getMonth()}${start.getDate()}`)
-        // reservedDates.push([new Date(reservation.startDate).getTime(), new Date(reservation.endDate).getTime()])
       }
     })
   
@@ -51,9 +50,6 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate, value, on
     dispatch(reservationActions.fetchReservations())
   },[])
   
-  // useEffect(() => {
-  //   setNumDays( Math.ceil((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : Math.ceil((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
-  // },[startDate,endDate])
 
   useEffect(() => {
       setStartDate(value[0]);
@@ -66,9 +62,6 @@ function DatePickerComp({startDate, setStartDate, endDate, setEndDate, value, on
     <div className='calendar-container'>
       <Calender 
       selectRange={selectRange}
-      // defaultValue={defaultValue}
-      // goToRangeStartOnSelect={goToRangeStartOnSelect}
-    //   showDoubleView={showDoubleView}
       view={view}
       onChange={onChange} 
       value={value}
