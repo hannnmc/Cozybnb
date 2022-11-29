@@ -5,7 +5,7 @@ import { createReservation } from '../../store/reservations';
 import { useHistory } from 'react-router-dom';
 
 
-const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews, setShowListingEdit}) => {
+const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews, setShowListingEdit, listingReservation}) => {
     
     const dispatch = useDispatch();
     const history = useHistory();
@@ -51,7 +51,9 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         if (listing.userId === user.id) {
             setShowListingEdit(true);
         } else {
-            if (endDate.getTime() - startDate.getTime() > 8639999 && user)
+            if (numDays > 0 && user
+                
+            )
             dispatch(createReservation({
                 startDate,
                 endDate,
