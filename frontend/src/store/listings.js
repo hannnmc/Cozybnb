@@ -60,13 +60,6 @@ export const createListing = (formData) => async (dispatch) => {
 };
 
 export const updateListing = (formData, listingId) => async dispatch => {
-    // const {           
-    //     firstName,
-    //     lastName,
-    //     about,
-    //     phoneNumber, 
-    //     birthDate
-    // } = user;
     const res = await csrfFetch(`/api/listings/${listingId}`, {
         method: "PATCH",
         body: formData
