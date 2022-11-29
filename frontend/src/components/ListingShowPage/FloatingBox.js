@@ -19,10 +19,9 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
     const listingId = listing.id;
 
     useEffect(() => {
-        setNumDays( Math.ceil((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : parseInt((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
-
+        setNumDays( Math.ceil((endDate.getTime() - startDate.getTime())/1000/60/60/24) < 0 ? 0 : Math.ceil((endDate.getTime() - startDate.getTime())/1000/60/60/24) );
     },[startDate,endDate])
-
+ 
     useEffect(() => {
         setTotal(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
     },[numDays])
