@@ -45,7 +45,7 @@ function ProfileListingItem({ ownedListings, listing, showListingEdit, setShowLi
                 <div 
                     onClick={handleEdit}
                     className='update-listing'>
-                    <i class="fa-regular fa-pen-to-square"></i>
+                    <i className="fa-regular fa-pen-to-square"></i>
                 </div> 
             </div>
         </div>
