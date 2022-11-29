@@ -235,7 +235,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                     <h2>{`${numDays} nights in ${city}`}</h2>
                     <h3>{`${monthNames[startDate.getMonth()]} ${startDate.getDate()}, ${startDate.getFullYear()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}, ${endDate.getFullYear()}`}</h3>
                 </div>
-                <div className='show-datepicker '>
+                <div className='show-datepicker'>
                     <DatePickerComp 
                     startDate={startDate}
                     setStartDate={setStartDate} 
