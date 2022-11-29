@@ -49,9 +49,9 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
   const [photoUrl2, setPhotoUrl2] = useState(null);
   const [photoUrl3, setPhotoUrl3] = useState(null);
   const [photoUrl4, setPhotoUrl4] = useState(null);
+  const [photoUrl5, setPhotoUrl5] = useState(null);
   const [files, setFiles] = useState(null);
 
-  const [photoUrl5, setPhotoUrl5] = useState(null);
   const listings = useSelector(state => state.listings);
 
   const handleFile = e => {
@@ -139,6 +139,7 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
     })
 
     if (files && files.length > 0 && files.length < 6) {
+      // debugger
       files.forEach((file) => {
         formData.append('listing[photos][]', file)
       })
@@ -146,6 +147,7 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
 
     setErrors([]);
     setShowListingEdit(false);
+    // debugger
     return dispatch(listingActions.updateListing(formData,listing.id))
     .then(history.push({ pathname: `/listings/${listing.id}`}))
     .catch(async (res) => {        

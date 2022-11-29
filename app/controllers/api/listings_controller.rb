@@ -27,8 +27,16 @@ class Api::ListingsController < ApplicationController
     def update
         @listing = Listing.find(params[:id])
         if @listing.update(listing_params)
-          @listing.save
-          render :show
+            # debugger
+            # if @listing.photos.length > 5 
+            #     @listing.photos = @listing.photos[5]
+            #     debugger
+            # end
+            # debugger
+            @listing.photos.purge
+            @listing.photos.attach(listing_params['photos'])
+            @listing.save
+            render :show
         else
           render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
         end
