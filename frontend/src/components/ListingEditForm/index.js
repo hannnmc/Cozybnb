@@ -54,30 +54,6 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
   const [photoUrl5, setPhotoUrl5] = useState(null);
   const listings = useSelector(state => state.listings);
 
-  // useEffect(() => {
-  //   dispatch(listingActions.fetchListings())
-  // },[
-  //   title,
-  //   price,
-  //   description,
-  //   guests,
-  //   beds,
-  //   bedrooms,
-  //   baths,
-  //   address,
-  //   city,
-  //   state,
-  //   wifi,
-  //   parking,
-  //   kitchen,
-  //   dedicatedWorkspace,
-  //   petsAllowed,
-  //   propType,
-  //   lat,
-  //   lng,
-  //   country
-  // ])
-
   const handleFile = e => {
     const file = e.currentTarget.files[0];
     const file2 = e.currentTarget.files[1];
