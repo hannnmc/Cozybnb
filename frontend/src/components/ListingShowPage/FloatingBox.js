@@ -63,7 +63,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             .then(history.push(`/profile/`))
         }
     }
-    console.log(`${startDate.getFullYear()}-${startDate.getMonth()+1}-${startDate.getDate()}`)
+    // console.log(`${startDate.getFullYear()}-${startDate.getMonth()+1}-${startDate.getDate()}`)
     return (
         <div className='listing-floating-panel'>
         <div className='floating-box-border'>
@@ -172,7 +172,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                     </select>
                     <button type='submit'
                     className='floating-box-button'>
-                        {listing.userId === user.id ? 'Edit' : 'Reserve'}
+                        {user && listing.userId === user.id ? 'Edit' : 'Reserve'}
                     </button>
                 </form>
             </div>
