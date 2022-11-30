@@ -136,7 +136,28 @@ span.bold2 {
     font-weight: 400;
     padding-left: 11px;
     padding-top: 10px;
+    position: relative;
 }
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+    color: #717171 !important;
+}
+
+input.birthdate-input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
 
 .birthdate-input::placeholder{
     color: transparent;
