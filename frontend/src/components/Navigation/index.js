@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginDropDown from '../LoginDropdown';
@@ -8,7 +8,7 @@ import logoImg from '../../assets/images/cozybnb_logo.png';
 
 function Navigation({showLoginModal,setShowLoginModal}) {
   const sessionUser = useSelector(state => state.session.user);
-
+  const { listingId } = useParams();
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -22,9 +22,11 @@ function Navigation({showLoginModal,setShowLoginModal}) {
     );
   }
 
+  let regex = /\/listings\/[0-9]+/i;
+
   return (
-    <ul>
-      <li className='nav-bar'>
+    <div className='nav-bar-wrapper'>
+      <div className='nav-bar' style={regex.test(window.location.pathname) ? {width:'87vw', maxWidth:'1120px'} : {} }>
         <NavLink exact to="/">
           <div className='home-box'>
             <img className='logo-img' src={logoImg} alt="logo" />
@@ -32,8 +34,8 @@ function Navigation({showLoginModal,setShowLoginModal}) {
           </div>
         </NavLink>
         {sessionLinks}
-      </li>
-    </ul>
+      </div>
+    </div>
   );
 }
 
