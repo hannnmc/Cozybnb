@@ -1,5 +1,13 @@
+.listing-details-right {
+    /* display: flex; */
+    /* justify-self: flex-start; */
+    width: 33.3%;
+    margin-left: 8.33%;
+
+}
+
 .listing-floating-panel {
-    width: 33%;
+    width: 100%;
     border: 1px solid rgb(221, 221, 221);
     background-color: white;
     position: sticky;
@@ -232,3 +240,4 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
 57.1% {transform: translateX(6px);}
 71.4% {transform: translateX(-4px);}
 85.7% {transform: translateX(4px);} */
+

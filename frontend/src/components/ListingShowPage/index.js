@@ -270,20 +270,23 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                 </div>
             </div>
         </div>
-        <FloatingBox listing={listing}
-        startDate={startDate}
-        setStartDate={setStartDate} 
-        endDate={endDate}
-        setEndDate={setEndDate}
-        numDays={numDays}
-        setNumDays={setNumDays}
-        setShowLoginModal={setShowLoginModal}
-        showLoginModal={showLoginModal}
-        reviews={listingReview}
-        setShowListingEdit={setShowListingEdit}
-        listingReservation={listingReservation}
-        reservedDates={reservedDates}
-        />
+        <div className='listing-details-right'>
+            <FloatingBox listing={listing}
+            startDate={startDate}
+            setStartDate={setStartDate} 
+            endDate={endDate}
+            setEndDate={setEndDate}
+            numDays={numDays}
+            setNumDays={setNumDays}
+            setShowLoginModal={setShowLoginModal}
+            showLoginModal={showLoginModal}
+            reviews={listingReview}
+            setShowListingEdit={setShowListingEdit}
+            listingReservation={listingReservation}
+            reservedDates={reservedDates}
+            />
+
+        </div>
         <div className='showpage-divider'></div>
         </section>
             <div className='showpage-divider'></div>
