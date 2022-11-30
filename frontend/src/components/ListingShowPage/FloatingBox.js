@@ -14,7 +14,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
     const [ guests, setGuests ] = useState(1);
     const [ shake, setShake ] = useState(false);
     const [total, setTotal ] = useState(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
-    const today = new Date();
+    const today = new Date(startDate.setHours(0,0,0,0));
     // const yesterday = new Date();
     // yesterday.setDate(yesterday.getDate() - 1);
     const listingId = listing.id;

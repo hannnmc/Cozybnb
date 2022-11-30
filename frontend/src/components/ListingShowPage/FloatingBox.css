@@ -219,11 +219,16 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     animation: shake 0.5s linear;
 }
 
-
 @keyframes shake {
     8%,41% {transform: translateX(-6px);}
     25%,58% {transform: translateX(6px);}
     75% {transform: translateX(-4px);}
     92% {transform: translateX(4px);}
-    0%,100% {transform: translateX(0);}
 }
+
+/* 14.3% {transform: translateX(-4px);}
+28.6% {transform: translateX(4px);}
+42.9% {transform: translateX(-6px);}
+57.1% {transform: translateX(6px);}
+71.4% {transform: translateX(-4px);}
+85.7% {transform: translateX(4px);} */
