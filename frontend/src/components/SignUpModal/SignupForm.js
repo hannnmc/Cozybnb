@@ -79,9 +79,12 @@ function SignUpForm(props) {
           </div>
           <div className="input-div">
             <input
-            className="birthdate-input"
+              onKeyDown={(e) => e.preventDefault()}
+              type="date"
+              className="birthdate-input"
               value={birthDate}
               onChange={(e) => setBirthDate(e.target.value)}
+              max={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
               required
               placeholder="Birthdate"
             />

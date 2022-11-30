@@ -56,17 +56,15 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                 // if (new Date(reservedDates[i]).get )
                 let resDay = new Date(reservedDates[i]).getTime();
                 if (resDay > startDate.getTime() - 8640000 && resDay < endDate.getTime()) {
-                    setShake(!shake)
+                    setShake(!shake);
                     setTimeout(() => {
                         setShake(false)
-                    },300)
+                    },300);
                     return
                 } 
             }
 
-            if (numDays > 0 && user 
-                
-            )
+            if (numDays > 0 && user)
             dispatch(createReservation({
                 startDate,
                 endDate,
