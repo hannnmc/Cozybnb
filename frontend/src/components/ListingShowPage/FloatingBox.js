@@ -5,13 +5,14 @@ import { createReservation } from '../../store/reservations';
 import { useHistory } from 'react-router-dom';
 
 
-const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews, setShowListingEdit, listingReservation}) => {
+const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews, setShowListingEdit, reservedDates}) => {
     
     const dispatch = useDispatch();
     const history = useHistory();
     const user = useSelector(state => state.session.user);
 
     const [ guests, setGuests ] = useState(1);
+    const [ shake, setShake ] = useState(false);
     const [total, setTotal ] = useState(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
     const today = new Date();
     // const yesterday = new Date();
@@ -51,7 +52,19 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         if (listing.userId === user.id) {
             setShowListingEdit(true);
         } else {
-            if (numDays > 0 && user
+            for (let i = 0; i < reservedDates.length; i++) {
+                // if (new Date(reservedDates[i]).get )
+                let resDay = new Date(reservedDates[i]).getTime();
+                if (resDay > startDate.getTime() - 8640000 && resDay < endDate.getTime()) {
+                    setShake(!shake)
+                    setTimeout(() => {
+                        setShake(false)
+                    },300)
+                    return
+                } 
+            }
+
+            if (numDays > 0 && user 
                 
             )
             dispatch(createReservation({
@@ -173,7 +186,9 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         value="16">16 guests</option>
                     </select>
                     <button type='submit'
-                    className='floating-box-button'>
+                    className='floating-box-button'
+                    id={shake ? 'shake' : ''}
+                    >
                         {user && listing.userId === user.id ? 'Edit' : 'Reserve'}
                     </button>
                 </form>

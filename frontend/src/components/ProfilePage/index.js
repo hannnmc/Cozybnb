@@ -9,6 +9,7 @@ import ProfileReservations from '../ProfileReservations';
 import * as reviewActions from '../../store/reviews';
 import ProfileReviews from './ProfileReviews';
 import * as userActions from '../../store/users';
+import { restoreSession } from '../../store/session';
 
 const ProfilePage = ({ showListingEdit, setShowListingEdit }) => {
     const dispatch = useDispatch();
@@ -42,6 +43,10 @@ const ProfilePage = ({ showListingEdit, setShowListingEdit }) => {
         dispatch(reservationActions.fetchReservations());
         dispatch(reviewActions.fetchReviews());
         dispatch(userActions.fetchUsers());
+    },[])
+
+    useEffect(() => {
+        dispatch(restoreSession());
     },[])
 
     const ownedListings = [];
