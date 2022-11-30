@@ -80,7 +80,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
 
         console.log(startDate)
     }
-    // console.log(`${startDate.getFullYear()}-${startDate.getMonth()+1}-${startDate.getDate()}`)
+
     return (
         <div className='listing-floating-panel'>
         <div className='floating-box-border'>
