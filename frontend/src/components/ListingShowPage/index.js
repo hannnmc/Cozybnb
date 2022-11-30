@@ -14,6 +14,7 @@ import { Modal } from '../../context/Modal';
 import ReviewForm from '../ReviewForm/';
 import ReviewBars from '../ReviewBars';
 import ListingEditForm from '../ListingEditForm';
+import { restoreSession } from '../../store/session';
 
 
 let lunar = false;
@@ -71,7 +72,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
         for (let i = 0; i < reservation.days; i++) {
             let start = new Date(reservation.startDate);
             start.setDate(start.getDate() + i)
-            reservedDates.push(`${start.getFullYear()}${start.getMonth()}${start.getDate()}`)
+            reservedDates.push(`${start.getFullYear()}-${start.getMonth()+1}-${start.getDate()}`)
         }
         })
 
@@ -102,6 +103,10 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
         dispatch(fetchListing(listingId));
         dispatch(fetchUsers());
     }, [listingId, dispatch]);
+
+    useEffect(() => {
+        dispatch(restoreSession());
+    },[])
 
     const writeReview = (e) => {
         e.preventDefault();
@@ -277,6 +282,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
         reviews={listingReview}
         setShowListingEdit={setShowListingEdit}
         listingReservation={listingReservation}
+        reservedDates={reservedDates}
         />
         <div className='showpage-divider'></div>
         </section>

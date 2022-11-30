@@ -7,6 +7,7 @@ import ListingMap from "../ListingMap"
 import FilterForm from "./FilterForm";
 import './ListingList.css';
 import { fetchReviews } from "../../store/reviews";
+import { restoreSession } from "../../store/session";
 
 function ListingIndexPage() {
   const history = useHistory(); 
@@ -27,6 +28,10 @@ function ListingIndexPage() {
     dispatch(fetchListings())
     dispatch(fetchReviews())
   },[]);
+
+  useEffect(() => {
+    dispatch(restoreSession());
+},[])
 
   useEffect(() => {
     setListingsArray(listings.filter(listing => listing.price >= minPrice && listing.price <= maxPrice))
