@@ -9,7 +9,9 @@ import logoImg from '../../assets/images/cozybnb_logo.png';
 function Navigation({showLoginModal,setShowLoginModal}) {
   const sessionUser = useSelector(state => state.session.user);
   const { listingId } = useParams();
+  let regex = /\/listings\/[0-9]+/i;
   let sessionLinks;
+  
   if (sessionUser) {
     sessionLinks = (
       <ProfileButton user={sessionUser}/>
@@ -22,7 +24,6 @@ function Navigation({showLoginModal,setShowLoginModal}) {
     );
   }
 
-  let regex = /\/listings\/[0-9]+/i;
 
   return (
     <div className='nav-bar-wrapper'>
