@@ -131,6 +131,10 @@
     color: #222222;
 }
 
+.react-calendar__navigation__label {
+    background: none !important;
+}
+
 abbr {
     text-decoration: none !important;
     position: relative;

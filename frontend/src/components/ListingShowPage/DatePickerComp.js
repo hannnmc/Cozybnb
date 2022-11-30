@@ -27,7 +27,6 @@ function DatePickerComp({ setStartDate, setEndDate, value, onChange, reservedDat
 
   const dispatch = useDispatch();
   const selectRange = true;
-  const view = 'month';
   const calendarType = "US";
   const tileDisabled = ({activeStartDate, date, view }) => (date.getTime() < ((new Date).getTime() - 86400000)) 
   || (reservedDates.includes(`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`))
@@ -44,17 +43,17 @@ function DatePickerComp({ setStartDate, setEndDate, value, onChange, reservedDat
       setEndDate(value[1]);
   },[value])
 
-
+  const minDetail = 'month';
 
   return (
     <div className='calendar-container'>
       <Calender 
       selectRange={selectRange}
-      view={view}
       onChange={onChange} 
       value={value}
       calendarType={calendarType}
       tileDisabled={tileDisabled}
+      minDetail={minDetail}
        />
     </div>
   );
