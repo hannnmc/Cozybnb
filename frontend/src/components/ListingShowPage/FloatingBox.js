@@ -77,6 +77,8 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             }))
             .then(history.push(`/profile/`))
         }
+
+        console.log(startDate)
     }
     // console.log(`${startDate.getFullYear()}-${startDate.getMonth()+1}-${startDate.getDate()}`)
     return (
@@ -99,7 +101,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         <input onKeyDown={(e) => e.preventDefault()}
                         className='floating-start-date' 
                         type="date"
-                        value={`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`}
+                        value={`${startDate.getFullYear()}-${(startDate.getMonth() + 1) < 10 ? `0${(startDate.getMonth() + 1)}` : (startDate.getMonth() + 1)}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`}
                         onChange={handleStartChange}
                         min={(today.toISOString().split('T')[0])}
                        />
@@ -107,7 +109,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         <input onKeyDown={(e) => e.preventDefault()}
                         className='floating-end-date' 
                         type="date" 
-                        value={`${endDate.getFullYear()}-${endDate.getMonth() + 1}-${endDate.getDate() > 9 ? '':'0' }${endDate.getDate()}`}
+                        value={`${endDate.getFullYear()}-${(endDate.getMonth() + 1) < 10 ? `0${(endDate.getMonth() + 1)}` : (endDate.getMonth() + 1)}-${endDate.getDate() > 9 ? '':'0' }${endDate.getDate()}`}
                         onChange={handleEndChange}
                         min={`${startDate.getFullYear()}-${startDate.getMonth()}-${startDate.getDate()}`}
                         />
