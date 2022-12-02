@@ -11,7 +11,7 @@ function Navigation({showLoginModal,setShowLoginModal}) {
   const { listingId } = useParams();
   let regex = /\/listings\/[0-9]+/i;
   let sessionLinks;
-  
+
   if (sessionUser) {
     sessionLinks = (
       <ProfileButton user={sessionUser}/>
@@ -23,7 +23,6 @@ function Navigation({showLoginModal,setShowLoginModal}) {
         />
     );
   }
-
 
   return (
     <div className='nav-bar-wrapper'>
