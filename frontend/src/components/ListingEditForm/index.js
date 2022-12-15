@@ -109,6 +109,7 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
     } else setPhotoUrl5(null);
   }
 
+  console.log (files)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -147,7 +148,7 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
     } 
     setErrors([]);
     setShowListingEdit(false);
-    // debugger
+    debugger
     return dispatch(listingActions.updateListing(formData,listing.id))
     .then(history.push({ pathname: `/listings/${listing.id}`}))
     .catch(async (res) => {        
