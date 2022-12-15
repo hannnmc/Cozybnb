@@ -138,13 +138,13 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
       formData.append(`listing[${key}]`, newListing[key]);
     })
 
-    if (files && files.length > 0 && files.length < 6) {
+    if (files && files.length > 0) {
+      if (files.length > 5) setFiles(files.slice(0,5))
       // debugger
       files.forEach((file) => {
         formData.append('listing[photos][]', file)
       })
-    }
-
+    } 
     setErrors([]);
     setShowListingEdit(false);
     // debugger
