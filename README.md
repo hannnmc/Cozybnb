@@ -34,5 +34,5 @@ Filter listings by minimum and maximum pricing with no latency.
 Index page listings, maps, and props threading.
 
 ## Future directions
-- Search bar
+- Location search bar
 - More listing filters
