@@ -362,9 +362,7 @@ ApplicationRecord.transaction do
 
     listing12 = Listing.create!({
       title: 'Architectural Wonder in the Forest',
-      description: "Unique experience, secluded.
-      Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometric masterpiece on 30 preserved acres just minutes from all that Rhinebeck and the Hudson Valley have to offer.
-      The house is an open plan, and though it has zero bedrooms, it can sleep 3!",
+      description: "Unique experience, secluded. Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometric masterpiece on 30 preserved acres just minutes from all that Rhinebeck and the Hudson Valley have to offer. The house is an open plan, and though it has 1 bedroom, it can sleep 3!",
       price: Faker::Number.within(range: 300..500),
       guests: 4,
       bedrooms: 1,

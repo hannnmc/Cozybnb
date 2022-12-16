@@ -15,7 +15,7 @@ function ListingIndexPage() {
   let listings = useSelector(state => Object.values(state.listings));
   const [minGuests, setMinGuests] = useState(1);
   const [maxGuests, setMaxGuests] = useState(16);
-  const [minPrice, setMinPrice] = useState(100);
+  const [minPrice, setMinPrice] = useState(1);
   const [maxPrice, setMaxPrice] = useState(1000);
   const [selectedListing, setSelectedListing] = useState(null);
   const [bounds, setBounds] = useState(null);
