@@ -1,13 +1,25 @@
 ## Background
-<a href='https://cozy-bnb.herokuapp.com' alt=''>Cozybnb</a> is a near pixel perfect clone of Airbnb and possesses many of the original functionalities such as creating a new listing, browsing listings others have created, and filtering listings with criterias. You can choose to signup for a new account, login with an existing account, or login with a demo user to tryout the app. Additionally, the homepage of the app is built responsively to be compatible with screens of any size. 
+<a href='https://cozy-bnb.herokuapp.com' alt=''>Cozybnb</a> is a near pixel perfect clone of Airbnb with many of the original functionalities such as creating a new listing, manage reservations, and leaving reviews. You can choose to signup for a new account, login with an existing account, or use a demo user to try-out the app. 
 
 ## Technologies
 - React.js - frontend components
 - Redux.js - frontend state management
 - Ruby on Rails - backend controller and routing
 - Postgresql - database storage
-- Amazon Web Services - cloud image storage
+- AWS S3 - cloud image upload/storage
 - Google Map API - Map and location services
+
+## Make a new reservation
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/new_reservation.gif' alt='' />
+Reserve a new trip or delete an existing reservation.
+
+## Reserved dates are blocked-off
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/blocked_dates.gif' alt='' />
+Reserved dates are blocked for new reservations.
+
+## Write or delete reviews
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/leave_review.gif' alt='' />
+Utilizing a star-rating review system.
 
 ## Responsive page
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/responsiveness.gif' alt='' />
@@ -22,7 +34,5 @@ Filter listings by minimum and maximum pricing with no latency.
 Index page listings, maps, and props threading.
 
 ## Future directions
-- Reservations 
-- Reviews
-- Updating user profile
-- Filter with more criterias
+- Location search bar
+- More listing filters
