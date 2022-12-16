@@ -11,7 +11,7 @@
 
 ## Make a new reservation
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/new_reservation.gif' alt='' />
-Reserve a new trip or delete a reservation.
+Reserve a new trip or delete an existing reservation.
 
 ## Reserved dates are blocked-off
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/blocked_dates.gif' alt='' />
@@ -19,7 +19,7 @@ Reserved dates are blocked for new reservations.
 
 ## Write or delete reviews
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/leave_review.gif' alt='' />
-Create and delete reviews with star-rating system
+Star-rating review system.
 
 ## Responsive page
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/responsiveness.gif' alt='' />
