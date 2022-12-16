@@ -1,4 +1,4 @@
-<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/cozybnb_home.gif' alt='' />
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/cozybnb_home.png' alt='' />
 
 ## Background
 <a href='https://cozy-bnb.herokuapp.com' alt=''>Cozybnb</a> is a near pixel perfect clone of Airbnb with many of the original functionalities such as creating a new listing, manage reservations, and leaving reviews. You can choose to signup for a new account, login with an existing account, or use a demo user to try-out the app. 
