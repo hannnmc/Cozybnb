@@ -22,12 +22,6 @@ const ProfilePage = ({ showListingEdit, setShowListingEdit }) => {
         const file = e.currentTarget.files[0];
         const formData = new FormData();
         formData.append('user[photo]', file);
-        // formData.append('user[firstName]', user.firstName);
-        // formData.append('user[lastName]', user.lastName);
-        // formData.append('user[about]', user.about);
-        // formData.append('user[phoneNumber]', user.phoneNumber);
-        // formData.append('user[birthDate]', user.birthDate);
-        // formData.append('user[id]', user.id);
         dispatch(userActions.updateUser(formData));
     }
 

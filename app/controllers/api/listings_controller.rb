@@ -27,14 +27,10 @@ class Api::ListingsController < ApplicationController
     def update
         @listing = Listing.find(params[:id])
         if @listing.update(listing_params)
-            # debugger
-            # if @listing.photos.length > 5 
-            #     @listing.photos = @listing.photos[5]
-            #     debugger
-            # end
-            # debugger
-            @listing.photos.purge
-            @listing.photos.attach(listing_params['photos'])
+            if listing_params['photos'] 
+                @listing.photos.purge
+                @listing.photos.attach(listing_params['photos'])
+            end
             @listing.save
             render :show
         else

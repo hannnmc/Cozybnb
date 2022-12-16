@@ -7,12 +7,11 @@ import ListingMap from '../ListingMap'
 import { useMemo } from 'react';
 
 
-function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
+function ListingEditForm({listing, setShowListingEdit}) {
 
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const history = useHistory(); 
-  const [count, setCount] = useState(0)
   
   if (!sessionUser.id ) {
 
@@ -40,11 +39,6 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
   const [lng, setLng] = useState(listing.lng);
   const [country, setCountry] = useState(listing.country);
   const [bounds, setBounds] = useState(null);
-  const [photoFile, setPhotoFile] = useState (null);
-  const [photoFile2, setPhotoFile2] = useState (null);
-  const [photoFile3, setPhotoFile3] = useState (null);
-  const [photoFile4, setPhotoFile4] = useState (null);
-  const [photoFile5, setPhotoFile5] = useState (null);
   const [photoUrl, setPhotoUrl] = useState(null);
   const [photoUrl2, setPhotoUrl2] = useState(null);
   const [photoUrl3, setPhotoUrl3] = useState(null);
@@ -54,6 +48,7 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
 
   const listings = useSelector(state => state.listings);
 
+  console.log(files)
   const handleFile = e => {
     const file = e.currentTarget.files[0];
     const file2 = e.currentTarget.files[1];
@@ -65,13 +60,12 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
     for (let i = 0; i < currentFiles.length; i++) {
       filesList.push(currentFiles[i]);
     }
-    setFiles(filesList);
+    if (filesList.length > 0) setFiles(filesList);
 
     if (file) {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(file);
       fileReader.onload = () => {
-        setPhotoFile(file);
         setPhotoUrl(fileReader.result);
       };
     } else setPhotoUrl(null);
@@ -79,7 +73,6 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
       const fileReader2 = new FileReader();
       fileReader2.readAsDataURL(file2);
       fileReader2.onload = () => {
-        setPhotoFile2(file2);
         setPhotoUrl2(fileReader2.result);
       };
     } else setPhotoUrl2(null);
@@ -87,7 +80,6 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
       const fileReader3 = new FileReader();
       fileReader3.readAsDataURL(file3);
       fileReader3.onload = () => {
-        setPhotoFile3(file3);
         setPhotoUrl3(fileReader3.result);
       };
     } else setPhotoUrl3(null);
@@ -95,7 +87,6 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
       const fileReader4 = new FileReader();
       fileReader4.readAsDataURL(file4);
       fileReader4.onload = () => {
-        setPhotoFile4(file4);
         setPhotoUrl4(fileReader4.result);
       };
     } else setPhotoUrl4(null);
@@ -103,13 +94,12 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
       const fileReader5 = new FileReader();
       fileReader5.readAsDataURL(file5);
       fileReader5.onload = () => {
-        setPhotoFile5(file5);
         setPhotoUrl5(fileReader5.result);
       };
     } else setPhotoUrl5(null);
   }
 
-  console.log (files)
+  // console.log (files)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -136,19 +126,20 @@ function ListingEditForm({listing, showListingEdit, setShowListingEdit}) {
       petsAllowed
     };
     Object.keys(newListing).forEach((key) => {
+      // console.log(key)
       formData.append(`listing[${key}]`, newListing[key]);
     })
 
     if (files && files.length > 0) {
       if (files.length > 5) setFiles(files.slice(0,5))
-      // debugger
+
       files.forEach((file) => {
         formData.append('listing[photos][]', file)
       })
     } 
     setErrors([]);
     setShowListingEdit(false);
-    debugger
+    // debugger
     return dispatch(listingActions.updateListing(formData,listing.id))
     .then(history.push({ pathname: `/listings/${listing.id}`}))
     .catch(async (res) => {        

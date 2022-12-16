@@ -22,15 +22,8 @@ export const fetchUsers = () => async dispatch => {
         dispatch(addUsers(data.users));
     }
 };
-
 export const updateUser = (user) => async dispatch => {
-    // const {           
-    //     firstName,
-    //     lastName,
-    //     about,
-    //     phoneNumber, 
-    //     birthDate
-    // } = user;
+    // debugger
     const res = await csrfFetch(`/api/users/${user.id}`, {
         method: "PATCH",
         body: user
@@ -39,15 +32,6 @@ export const updateUser = (user) => async dispatch => {
     dispatch(sessionActions.getCurrentUser(data));
     return res;
 };
-
-// export const fetchUser = (userId) => async dispatch => {
-//     const res = await csrfFetch(`/api/users/${userId}`)
-//     if (res.ok) {
-//         const data = await res.json();
-//         dispatch(setUser(data.user));
-//     }
-//     return data.user
-// }
 
  
 function usersReducer(state = {}, action) {
