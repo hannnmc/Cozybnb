@@ -28,7 +28,7 @@
     height: 480px;
     max-width: 1120px;
     min-width: 650px;
-    margin-bottom: 50px;
+    margin-bottom: 64px;
 }
 
 .listing-show-visuals {
@@ -380,4 +380,19 @@
 
 .no-reviews-yet {
     margin-left: 12px !important;
+}
+
+.contact-bar {
+    display: flex;
+    border-top: 1px solid rgb(221, 221, 221);
+    padding: 48px 0;
+    justify-content: space-around;
+}
+
+.contact-bar>div>a {
+    color: #222222;
+}
+.contact-bar>div>a>i {
+    cursor: pointer;
+    font-size: 32px;
 }
