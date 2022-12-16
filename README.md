@@ -19,7 +19,7 @@ Reserved dates are blocked for new reservations.
 
 ## Write or delete reviews
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/leave_review.gif' alt='' />
-Star-rating review system.
+Utilizing a star-rating review system.
 
 ## Responsive page
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/responsiveness.gif' alt='' />
