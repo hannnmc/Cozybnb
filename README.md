@@ -6,7 +6,7 @@
 - Redux.js - frontend state management
 - Ruby on Rails - backend controller and routing
 - Postgresql - database storage
-- Amazon Web Services - cloud image storage
+- AWS S3 - cloud image upload/storage
 - Google Map API - Map and location services
 
 ## Create/Delete reservations
