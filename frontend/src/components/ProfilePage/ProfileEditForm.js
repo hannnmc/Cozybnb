@@ -42,8 +42,8 @@ const ProfileEditForm = (props) => {
 
     return (
         <>
-            <div className="profile-edit-form">
-                <form onSubmit={saveChanges}>
+            <div className="profile-edit-div">
+                <form className='profile-edit-form' onSubmit={saveChanges}>
                     <div>About</div>
                     <div>
                         <textarea 
@@ -85,7 +85,7 @@ const ProfileEditForm = (props) => {
                         max="9999999999"
                         />
                     </div>
-                    <div>
+                    <div className="profile-edit-buttons">
                         <div className="profile-cancel" onClick={() => setShowProfileEditForm(false)}>Cancel</div>
                         <div ><button className="profile-submit" type="submit">Save</button></div>
                     </div>
