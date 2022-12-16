@@ -139,6 +139,7 @@ const ProfilePage = ({ showListingEdit, setShowListingEdit }) => {
 
                 <div className='profile-reservations'>
                     <h1>Trips</h1>
+                    <div className='no-trips-yet'>{ownedReservations.length > 0 ? '' : 'No trips (yet)'}</div>
                     <div className='reservation-list'>
                         {ownedReservations.map(reservation => (
                             <ProfileReservations 

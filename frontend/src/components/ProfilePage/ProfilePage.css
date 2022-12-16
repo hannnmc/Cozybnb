@@ -189,15 +189,14 @@
 
 .profile-cancel {
     cursor: pointer;
-    margin-top: 5px;
+    line-height: 21px;
 }
 
 .profile-submit {
-    margin-top: 5px;
     cursor: pointer;
 }
 
-.profile-edit-form {
+.profile-edit-div {
     position: absolute;
     background-color: white;
     border: 1px solid #DDDDDD;
@@ -205,6 +204,10 @@
     border-radius: 12px;
     margin-top: 120px;
     z-index: 11;
+}
+
+.profile-edit-form>div {
+    margin-bottom: 8px;
 }
 
 .reservation-list {
@@ -215,4 +218,11 @@
 .profile-listings {
     max-height: 415px;
     overflow-y: scroll;
+}
+
+
+.profile-edit-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
 }

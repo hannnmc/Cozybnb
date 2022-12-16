@@ -1,15 +1,16 @@
 .profile-reservations {
-    margin: 36px 0;;
+    margin-top: 36px;
 }
 
 .profile-reservations>h1 {
     font-size: 22.5px;
     font-weight: 500;
+    margin-bottom: 36px;
 }
 
 .res-item {
     height: 102px;
-    margin-top: 36px;
+    margin-bottom: 36px;
     display: flex;
     cursor: pointer;
     position: relative;
@@ -96,4 +97,8 @@
 .res-dates h3:first-child{
     font-size: 15px;
     /* color: #717171; */
+}
+
+.no-trips-yet {
+    margin-bottom: 36px;
 }
