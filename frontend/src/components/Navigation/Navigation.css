@@ -161,3 +161,16 @@ a {
   }
 }
 
+.alert-login {
+  position: fixed;
+  top: 40px;
+  height: 48px;
+  width: 200px;
+  background: rgba(42, 196, 93, 0.651);
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
