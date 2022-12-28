@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -9,6 +9,8 @@ import logoImg from '../../assets/images/cozybnb_logo.png';
 function Navigation({showLoginModal,setShowLoginModal}) {
   const sessionUser = useSelector(state => state.session.user);
   const { listingId } = useParams();
+  const [loginMessage, setLoginMessage] = useState(false);
+
   let regex = /\/listings\/[0-9]+/i;
   let sessionLinks;
 
@@ -35,6 +37,9 @@ function Navigation({showLoginModal,setShowLoginModal}) {
         </NavLink>
         {sessionLinks}
       </div>
+      {/* {loginMessage && (
+
+      )} */}
     </div>
   );
 }
