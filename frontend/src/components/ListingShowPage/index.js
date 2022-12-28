@@ -328,10 +328,10 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
         </section>
 
         <section className='contact-bar'>
-            <div><a href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></div>
-            <div><a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></div>
-            <div><a href="https://angel.co/u/han-chen-17" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-angellist"></i></a></div>
-            <div><a href="https://www.hanchen.dev" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-user"></i></a></div>
+            <div><a href="https://github.com/hannnmc" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-github"></i></a></div>
+            <div><a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin"></i></a></div>
+            <div><a href="https://angel.co/u/han-chen-17" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-angellist"></i></a></div>
+            <div><a href="https://www.hanchen.dev" target="_blank" rel="noopener noreferrer"><i className="fa-regular fa-user"></i></a></div>
         </section>
 
 

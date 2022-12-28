@@ -5,11 +5,28 @@ import ProfileButton from './ProfileButton';
 import LoginDropDown from '../LoginDropdown';
 import './Navigation.css';
 import logoImg from '../../assets/images/cozybnb_logo.png';
+import { useEffect } from 'react';
 
 function Navigation({showLoginModal,setShowLoginModal}) {
   const sessionUser = useSelector(state => state.session.user);
   const { listingId } = useParams();
-  const [loginMessage, setLoginMessage] = useState(false);
+  const [loginMessage, setLoginMessage] = useState(true);
+  let messageTimeout;
+
+  useEffect(() => {
+    if(loginMessage) {
+      messageTimeout = setTimeout(() => {
+        setLoginMessage(false);
+        clearTimeout(messageTimeout);
+      }, 3000)
+    }
+  },[loginMessage])
+
+  useEffect(() => {
+    if(sessionUser) {
+      setLoginMessage(true);
+    }
+  },[sessionUser])
 
   let regex = /\/listings\/[0-9]+/i;
   let sessionLinks;
@@ -37,9 +54,11 @@ function Navigation({showLoginModal,setShowLoginModal}) {
         </NavLink>
         {sessionLinks}
       </div>
-      {/* {loginMessage && (
-
-      )} */}
+      {(loginMessage && sessionUser) && (
+        <div className='alert-login'>
+          <span>Welcome Back {`${sessionUser.firstName}`}!</span> 
+        </div>
+      )}
     </div>
   );
 }
