@@ -164,9 +164,9 @@ a {
 .alert-login {
   position: fixed;
   top: 40px;
-  height: 48px;
+  height: 36px;
   width: 200px;
-  background: rgba(42, 196, 93, 0.651);
+  background: rgba(45, 177, 89, 0.8);
   color: white;
   padding: 15px;
   border-radius: 12px;
