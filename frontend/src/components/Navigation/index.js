@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 function Navigation({showLoginModal,setShowLoginModal}) {
   const sessionUser = useSelector(state => state.session.user);
   const { listingId } = useParams();
-  const [loginMessage, setLoginMessage] = useState(true);
+  const [loginMessage, setLoginMessage] = useState(false);
   let messageTimeout;
 
   useEffect(() => {
@@ -22,11 +22,11 @@ function Navigation({showLoginModal,setShowLoginModal}) {
     }
   },[loginMessage])
 
-  useEffect(() => {
-    if(sessionUser) {
-      setLoginMessage(true);
-    }
-  },[sessionUser])
+  // useEffect(() => {
+  //   if(sessionUser) {
+  //     setLoginMessage(true);
+  //   }
+  // },[sessionUser])
 
   let regex = /\/listings\/[0-9]+/i;
   let sessionLinks;
@@ -39,6 +39,7 @@ function Navigation({showLoginModal,setShowLoginModal}) {
     sessionLinks = (
         <LoginDropDown setShowLoginModal={setShowLoginModal}
         showLoginModal={showLoginModal}
+        setLoginMessage={setLoginMessage}
         />
     );
   }
@@ -56,7 +57,7 @@ function Navigation({showLoginModal,setShowLoginModal}) {
       </div>
       {(loginMessage && sessionUser) && (
         <div className='alert-login'>
-          <span>Welcome Back {`${sessionUser.firstName}`}!</span> 
+          <span>Welcome back {`${sessionUser.firstName}`}!</span> 
         </div>
       )}
     </div>
