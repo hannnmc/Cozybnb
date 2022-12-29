@@ -8,7 +8,7 @@ function LoginForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const { setShowLoginModal, setShowSignupModal } = props;
+  const { setShowLoginModal, setShowSignupModal,setLoginMessage } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,24 +29,28 @@ function LoginForm(props) {
   };
 
   const loginDemoUser = (e) => {
+    setLoginMessage(true);
     return dispatch(sessionActions.login({    
       email: 'hanmikechen@gmail.com', 
       password: 'password'
     }));
   };
   const loginFacebookUser = (e) => {
+    setLoginMessage(true);
     return dispatch(sessionActions.login({    
       email: 'Tammylove@fb.com', 
       password: 'password'
     }));
   };
   const loginGoogleUser = (e) => {
+    setLoginMessage(true);
     return dispatch(sessionActions.login({    
       email: 'kimmystar@gmail.com', 
       password: 'password'
     }));
   };
   const loginAppleUser = (e) => {
+    setLoginMessage(true);
     return dispatch(sessionActions.login({    
       email: 'apple4ever@icloud.com', 
       password: 'password'

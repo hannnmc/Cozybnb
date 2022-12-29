@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import SignUpForm from '../SignUpModal/SignupForm';
 import './LoginForm.css';
 
-function LoginDropDown({setShowLoginModal,showLoginModal}) {
+function LoginDropDown({setShowLoginModal,showLoginModal,setLoginMessage}) {
   const [showSignupModal, setShowSignupModal] = useState(false);
 
   const toggleMenu = () => {
@@ -46,7 +46,7 @@ function LoginDropDown({setShowLoginModal,showLoginModal}) {
 
       {showLoginModal && (
         <Modal onClose={() => setShowLoginModal(false)}>
-          <LoginForm setShowLoginModal={setShowLoginModal} setShowSignupModal={setShowSignupModal}/>
+          <LoginForm setShowLoginModal={setShowLoginModal} setShowSignupModal={setShowSignupModal} setLoginMessage={setLoginMessage}/>
         </Modal>
       )}
       {showSignupModal && (
