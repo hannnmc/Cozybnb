@@ -93,7 +93,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                     days:numDays
                 }))
                 .then(history.push(`/profile/`));
-            },3920)
+            },3965)
         }
 
         // console.log(startDate)
