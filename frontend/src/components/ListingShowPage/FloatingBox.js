@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import './FloatingBox.css';
 import { createReservation } from '../../store/reservations';
 import { useHistory } from 'react-router-dom';
-
+import { Modal } from '../../context/Modal';
+import check from '../../assets/images/checkmark.gif';
 
 const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews, setShowListingEdit, reservedDates}) => {
     
@@ -12,6 +13,9 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
     const user = useSelector(state => state.session.user);
 
     const [ guests, setGuests ] = useState(1);
+    const [ resSuccess1, setResSuccess1 ] = useState(false);
+    const [ resSuccess2, setResSuccess2 ] = useState(false);
+    const [ resSuccess3, setResSuccess3 ] = useState(false);
     const [ shake, setShake ] = useState(false);
     const [total, setTotal ] = useState(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
     const today = new Date(startDate.setHours(0,0,0,0));
@@ -63,17 +67,33 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                     return
                 } 
             }
-
+            let timeout1;
+            let timeout2;
+            let timeout3;
             if (numDays > 0 && user)
-            dispatch(createReservation({
-                startDate,
-                endDate,
-                listingId,
-                guests,
-                total:(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08)),
-                days:numDays
-            }))
-            .then(history.push(`/profile/`))
+            setResSuccess1(true);
+            timeout1 = setTimeout(() => {
+                setResSuccess1(false);
+                setResSuccess2(true);
+                clearTimeout(timeout1);
+            },1200);
+            timeout2 = setTimeout(() => {
+                setResSuccess2(false);
+                setResSuccess3(true);
+                clearTimeout(timeout1);
+            },2400);
+            timeout3 = setTimeout(() => {
+                setResSuccess2(false);
+                dispatch(createReservation({
+                    startDate,
+                    endDate,
+                    listingId,
+                    guests,
+                    total:(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08)),
+                    days:numDays
+                }))
+                .then(history.push(`/profile/`));
+            },3920)
         }
 
         // console.log(startDate)
@@ -214,6 +234,34 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                 <div>$ {listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08)}</div>
             </div>
         </div>
+        {resSuccess1 && (
+            <Modal>
+                <div className='res-success-modal1'>
+                    <img className='res-success-logo' src="/static/media/cozybnb_logo.ffe4f29d6fd26f4b6844.png"/>
+                    <div>
+                        Just a moment, we're getting <br /> your trip ready
+                    </div>
+                </div>
+            </Modal> 
+        )}
+        {resSuccess2 && (
+            <Modal>
+                <div className='res-success-modal1'>
+                    <div>
+                        Reviewing payment details
+                    </div>
+                </div>
+            </Modal> 
+        )}
+        {resSuccess3 && (
+            <Modal>
+                <div className='res-success-modal1'>
+                    <div>
+                        <img className='check-gif' src={check} alt="" />
+                    </div>
+                </div>
+            </Modal> 
+        )}
     </div>
     );
 }
