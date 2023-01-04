@@ -163,10 +163,10 @@ a {
 
 .alert-login {
   position: fixed;
-  top: 40px;
+  top: 32px;
   height: 36px;
-  width: 200px;
-  background: rgba(45, 177, 89, 0.8);
+  width: 260px;
+  background: rgba(58, 207, 108, 0.8);
   color: white;
   padding: 15px;
   border-radius: 12px;
