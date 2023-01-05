@@ -328,7 +328,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
             </div>
         </div>
         <div className='listing-details-right'>
-            {/* <FloatingBox listing={listing}
+            <FloatingBox listing={listing}
             startDate={startDate}
             setStartDate={setStartDate} 
             endDate={endDate}
@@ -347,7 +347,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
             setResSuccess2={setResSuccess2}
             resSuccess3={resSuccess3}
             setResSuccess3={setResSuccess3}
-            /> */}
+            />
 
         </div>
         <div className='showpage-divider'></div>
