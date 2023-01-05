@@ -334,11 +334,11 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
         display: flex;
         justify-content: center;
     }
-    .calendar-container {
+    /* .calendar-container {
         width: 100% !important;
         height: auto !important;
         max-width: 530px;
-    }
+    } */
     /* .react-calendar {
         width: 100%;
     }
