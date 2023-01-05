@@ -71,6 +71,8 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
     const listingReservation = reservations.filter(reservation =>
         reservation.listingId === parseInt(listingId));
 
+        // console.log(startDate, endDate);
+
     const reservedDates = [];
     if (listingReservation)
         listingReservation.forEach((reservation) => {
@@ -94,7 +96,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
             }
         } else {
             setEndDay(startDate.getDate() + numDays);
-            setStartDate(new Date(`${startDate.getFullYear()}, ${startDate.getMonth()+1},${startDate.getDate()}`));
+            setStartDate(new Date(`${startDate.getFullYear()}/${startDate.getMonth()+1}/${startDate.getDate()}`));
         }
         dispatch(reviewActions.fetchReviews())
     },[])    
