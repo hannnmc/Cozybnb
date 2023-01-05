@@ -398,3 +398,39 @@
     font-size: 32px;
 }
 
+.listing-show-photos {
+    /* position: absolute; */
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    z-index: 300;
+    overflow-y: scroll;
+
+}
+
+.listing-photos-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 60px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.listing-photos-top>div:first-child{ 
+    cursor: pointer;
+    padding: 6px 8px;  
+}
+
+.listing-photos-top>div:first-child:hover{
+    border-radius: 50%;
+    background-color: rgb(247, 247, 247); 
+}
+
+.listing-photos-list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    position: relative;
+    margin-bottom: 81px;
+}

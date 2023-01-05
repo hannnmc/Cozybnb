@@ -49,6 +49,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
     const [ resSuccess1, setResSuccess1 ] = useState(false);
     const [ resSuccess2, setResSuccess2 ] = useState(false);
     const [ resSuccess3, setResSuccess3 ] = useState(false);
+    const [ showPhotos, setShowPhotos ] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const [reviewModal, setReviewModal] = useState(false);
     const [numDays, setNumDays] = useState(5);
@@ -70,8 +71,6 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
         review.listingId === parseInt(listingId));
     const listingReservation = reservations.filter(reservation =>
         reservation.listingId === parseInt(listingId));
-
-        // console.log(startDate, endDate);
 
     const reservedDates = [];
     if (listingReservation)
@@ -115,6 +114,11 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
     useEffect(() => {
         dispatch(restoreSession());
     },[]);
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        setShowPhotos(true);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -226,7 +230,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
 
   if(user) return (
     <div className="listing-show">
-        <div className='listing-show-main'>
+        <div className='listing-show-main' onClick={handleClick}>
             {photoUrls[0] ? <img src={photoUrls[0]} alt='loading...' className="listing-show-main"/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' className="listing-show-image main" /> }
         </div>
         <div className="listing-show-header">
@@ -420,6 +424,27 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                 listing={listing}
                 setShowListingEdit={setShowListingEdit}
                 />
+            </Modal>
+        )}
+        {showPhotos && (
+            <Modal onClose={() => setShowListingEdit(false)}>
+                <div className='listing-show-photos'>
+                    <div className='listing-photos-top'>
+                        <div onClick={() => setShowPhotos(false)}>
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height='16px' width='16px' stroke='currentcolor' strokeWidth='4'><g fill="none"><path d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"></path></g></svg>
+                        </div>
+                        <div style={{color:'transparent'}}>x</div>
+                    </div>
+                    
+                    <div className='listing-photos-list'>
+                        {photoUrls[0] ? <img src={photoUrls[0]} alt='loading...'/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' /> }
+                            {photoUrls[1] ? <img src={photoUrls[1]} alt='loading...'/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg'/>}
+                            {photoUrls[2] ? <img src={photoUrls[2]} alt='loading...'/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' /> }
+                            {photoUrls[3] ? <img src={photoUrls[3]} alt='loading...'/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg'/>}
+                            {photoUrls[4] ? <img src={photoUrls[4]} alt='loading...'/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg'/> }
+                    </div>
+
+                </div>
             </Modal>
         )}
         <div className='mobile-res-footer'>
