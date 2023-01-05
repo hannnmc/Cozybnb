@@ -15,6 +15,8 @@ import ReviewForm from '../ReviewForm/';
 import ReviewBars from '../ReviewBars';
 import ListingEditForm from '../ListingEditForm';
 import { restoreSession } from '../../store/session';
+import { createReservation } from '../../store/reservations';
+import { useHistory } from 'react-router-dom';
 
 
 let lunar = false;
@@ -41,8 +43,12 @@ const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
 
 function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, setShowListingEdit}) {
     
+    const history = useHistory();
     const dispatch = useDispatch();
-
+    const [ shake, setShake ] = useState(false);
+    const [ resSuccess1, setResSuccess1 ] = useState(false);
+    const [ resSuccess2, setResSuccess2 ] = useState(false);
+    const [ resSuccess3, setResSuccess3 ] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const [reviewModal, setReviewModal] = useState(false);
     const [numDays, setNumDays] = useState(5);
@@ -106,7 +112,56 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
 
     useEffect(() => {
         dispatch(restoreSession());
-    },[])
+    },[]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(!user) {
+            setShowLoginModal(true);
+        }
+        if (listing.userId === currentUser.id) {
+            setShowListingEdit(true);
+        } else {
+            for (let i = 0; i < reservedDates.length; i++) {
+                let resDay = new Date(reservedDates[i]).getTime();
+                if (resDay > startDate.getTime() - 8640000 && resDay < endDate.getTime()) {
+                    setShake(!shake);
+                    setTimeout(() => {
+                        setShake(false)
+                    },300);
+                    return
+                } 
+            }
+            let timeout1;
+            let timeout2;
+            let timeout3;
+            if (numDays > 0 && user)
+            setResSuccess1(true);
+            timeout1 = setTimeout(() => {
+                setResSuccess1(false);
+                setResSuccess2(true);
+                clearTimeout(timeout1);
+            },1200);
+            timeout2 = setTimeout(() => {
+                setResSuccess2(false);
+                setResSuccess3(true);
+                clearTimeout(timeout2);
+            },2400);
+            timeout3 = setTimeout(() => {
+                setResSuccess2(false);
+                clearTimeout(timeout3);
+                dispatch(createReservation({
+                    startDate,
+                    endDate,
+                    listingId,
+                    guests,
+                    total:(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08)),
+                    days:numDays
+                }))
+                .then(history.push(`/profile/`));
+            },3965);
+        }
+    }
 
     const writeReview = (e) => {
         e.preventDefault();
@@ -266,7 +321,6 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                     value={value}
                     onChange={onChange}
                     numDays={numDays}
-                    // listingReservation={listingReservation}
                     setNumDays={setNumDays}
                     reservedDates={reservedDates}
                     />
@@ -287,6 +341,12 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
             setShowListingEdit={setShowListingEdit}
             listingReservation={listingReservation}
             reservedDates={reservedDates}
+            resSuccess1={resSuccess1}
+            setResSuccess1={setResSuccess1}
+            resSuccess2={resSuccess2}
+            setResSuccess2={setResSuccess2}
+            resSuccess3={resSuccess3}
+            setResSuccess3={setResSuccess3}
             />
 
         </div>
@@ -306,7 +366,6 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
             reviews={listingReview} 
             users={users}/>
 
-            {/* {!hasReviewed && <LeaveReview listing={listing} />} */}
             <button 
             onClick={writeReview} className='listing-write-review'>Write a review</button>
         </section>
@@ -365,7 +424,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                         {`${monthNames[startDate.getMonth()]} ${startDate.getDate()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}`}
                     </span>
                 </div>
-                <div className='mobile-res-button'>
+                <div className='mobile-res-button' id={shake ? 'shake' : ''}onClick={handleSubmit}>
                     <span>Reserve</span>
                 </div>
             </div>
