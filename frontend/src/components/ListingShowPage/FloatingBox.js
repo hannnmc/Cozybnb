@@ -16,7 +16,8 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
 
     const [ shake, setShake ] = useState(false);
     const [total, setTotal ] = useState(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
-    const today = new Date(startDate.setHours(0,0,0,0));
+    const temp = new Date();
+    const today = new Date(temp.setHours(0,0,0,0));
 
     const listingId = listing.id;
 
@@ -52,6 +53,12 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         }
         if (listing.userId === user.id) {
             setShowListingEdit(true);
+        } else if (numDays === 0) {
+            setShake(!shake);
+            setTimeout(() => {
+                setShake(false)
+            },300);
+            return
         } else {
             for (let i = 0; i < reservedDates.length; i++) {
                 let resDay = new Date(reservedDates[i]).getTime();
@@ -94,6 +101,9 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
         }
     }
 
+    // console.log((today.toISOString().split('T')[0]).replace(/-/g, "/"))
+    // console.log(`${startDate.getFullYear()}-${(startDate.getMonth() + 1) < 10 ? `0${(startDate.getMonth() + 1)}` : (startDate.getMonth() + 1)}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`);
+
     return (
         <div className='listing-floating-panel'>
         <div className='floating-box-border'>
@@ -117,6 +127,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         value={`${startDate.getFullYear()}-${(startDate.getMonth() + 1) < 10 ? `0${(startDate.getMonth() + 1)}` : (startDate.getMonth() + 1)}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`}
                         onChange={handleStartChange}
                         min={(today.toISOString().split('T')[0])}
+                        // min='2023-01-05'
                        />
                         <span className='floatbox-guests-span float-checkout'>CHECKOUT</span>
                         <input onKeyDown={(e) => e.preventDefault()}
@@ -124,7 +135,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
                         type="date" 
                         value={`${endDate.getFullYear()}-${(endDate.getMonth() + 1) < 10 ? `0${(endDate.getMonth() + 1)}` : (endDate.getMonth() + 1)}-${endDate.getDate() > 9 ? '':'0' }${endDate.getDate()}`}
                         onChange={handleEndChange}
-                        min={`${startDate.getFullYear()}-${startDate.getMonth()}-${startDate.getDate()}`}
+                        min={`${startDate.getFullYear()}-${(startDate.getMonth() + 1) < 10 ? `0${(startDate.getMonth() + 1)}` : (startDate.getMonth() + 1)}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`}
                         />
                     </div>
                     </div>
