@@ -357,6 +357,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
         left: 0;
         position: absolute;
         aspect-ratio: 1.5;
+        cursor: pointer;
     }
     .listing-show-header {
         margin-top: 66.67vw;
