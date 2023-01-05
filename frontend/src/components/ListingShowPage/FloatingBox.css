@@ -262,7 +262,8 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
 .check-gif {
     height: 100px;
 }
-.listing-show-main {
+
+/* .listing-show-main {
     display: none;
 }
 
@@ -321,7 +322,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 14.5px;
     font-weight: 500;
     text-decoration: underline;
-}
+} */
 
 /* @media (max-width: 744px) {
     .listing-details-right {
