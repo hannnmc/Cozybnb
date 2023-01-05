@@ -31,8 +31,6 @@ function DatePickerComp({ setStartDate, setEndDate, value, onChange, reservedDat
   const tileDisabled = ({activeStartDate, date, view }) => (date.getTime() < ((new Date).getTime() - 86400000)) 
   || (reservedDates.includes(`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`))
   
-
-  
   useEffect(() => {
     dispatch(reservationActions.fetchReservations())
   },[])
