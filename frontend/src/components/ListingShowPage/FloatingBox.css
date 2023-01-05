@@ -381,4 +381,8 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
         display: flex;
         z-index: 500;
     }
+    .res-success-modal1 {
+        width: 100vw;
+        height: 80vw;
+    }
 }
