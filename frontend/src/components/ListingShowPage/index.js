@@ -223,7 +223,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
         </div>
         <div className="listing-show-header">
         <h1>{listing.title}</h1>
-        {/* <Link to="/">Back to Listings Index</Link> */}
+
         <div className='show-header-info'>
             
             <svg className={"svg-star"} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" height={"14px"} width={"14px"} fill="#222222" display={"inline-block"}>
@@ -328,7 +328,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
             </div>
         </div>
         <div className='listing-details-right'>
-            <FloatingBox listing={listing}
+            {/* <FloatingBox listing={listing}
             startDate={startDate}
             setStartDate={setStartDate} 
             endDate={endDate}
@@ -347,7 +347,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
             setResSuccess2={setResSuccess2}
             resSuccess3={resSuccess3}
             setResSuccess3={setResSuccess3}
-            />
+            /> */}
 
         </div>
         <div className='showpage-divider'></div>
@@ -421,7 +421,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                         <span className='semi-bold'>${`${listing.price}`}</span> night
                     </span>
                     <span>
-                        {/* {`${monthNames[startDate.getMonth()]} ${startDate.getDate()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}`} */}
+                        {`${monthNames[startDate.getMonth()]} ${startDate.getDate()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}`}
                     </span>
                 </div>
                 <div className='mobile-res-button' id={shake ? 'shake' : ''}onClick={handleSubmit}>
