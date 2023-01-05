@@ -328,7 +328,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
         display: none;
     }
     .listing-details-left {
-        width: 100%;
+        width: 90vw;
     }
     .show-datepicker {
         display: flex;
