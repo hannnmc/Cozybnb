@@ -262,3 +262,52 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
 .check-gif {
     height: 100px;
 }
+.listing-show-main {
+    display: none;
+}
+
+@media (max-width: 744px) {
+    .listing-details-right {
+        display: none;
+    }
+    .listing-details-left {
+        width: 100%;
+    }
+    .show-datepicker {
+        display: flex;
+        justify-content: center;
+    }
+    .calendar-container {
+        width: 75% !important;
+        height: auto !important;
+    }
+    .react-calendar {
+        width: 100%;
+    }
+    .react-calendar__navigation{ 
+        width: 100%;
+    }
+    .react-calendar__viewContainer{
+        width: 100%;
+    }
+    .listing-show-visuals {
+        display: none;
+    }
+    .listing-show-main {
+        display: flex;
+        width: 100vw;
+        left: 0;
+        position: absolute;
+        aspect-ratio: 1.5;
+    }
+    .listing-show-header {
+        margin-top: 66.67vw;
+    }
+    .show-map {
+        height: auto;
+        aspect-ratio: 2.4;
+    }
+    .review-bars {
+        flex-wrap: wrap;
+    }
+}

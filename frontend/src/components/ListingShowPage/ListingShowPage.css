@@ -27,7 +27,7 @@
 .show-map {
     height: 480px;
     max-width: 1120px;
-    min-width: 650px;
+    /* min-width: 650px; */
     margin-bottom: 64px;
 }
 
@@ -98,7 +98,7 @@
 .listing-show-header {
     width: 100%;
     max-width: 1120px;
-    min-width: 650px;
+    /* min-width: 650px; */
     display: flex;
     align-self: center;
     flex-direction: column;
@@ -128,6 +128,7 @@
     align-items:flex-end;
     padding-top: 3px;
     padding-bottom: 6px;
+    flex-wrap: wrap;
 }
 .svg-star {
     margin-right: 5px;
