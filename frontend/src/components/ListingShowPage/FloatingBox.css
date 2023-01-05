@@ -339,7 +339,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
         height: auto !important;
         max-width: 530px;
     }
-    .react-calendar {
+    /* .react-calendar {
         width: 100%;
     }
     .react-calendar__navigation{ 
@@ -347,7 +347,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     }
     .react-calendar__viewContainer{
         width: 100%;
-    }
+    } */
     .listing-show-visuals {
         display: none;
     }
