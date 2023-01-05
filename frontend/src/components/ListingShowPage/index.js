@@ -355,6 +355,21 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                 />
             </Modal>
         )}
+        <div className='mobile-res-footer'>
+            <div className='mobile-res-content'>
+                <div className='mobile-res-text'>
+                    <span>
+                        <span className='semi-bold'>${`${listing.price}`}</span> night
+                    </span>
+                    <span>
+                        {`${monthNames[startDate.getMonth()]} ${startDate.getDate()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}`}
+                    </span>
+                </div>
+                <div className='mobile-res-button'>
+                    <span>Reserve</span>
+                </div>
+            </div>
+        </div>
         </div>
   );
 };

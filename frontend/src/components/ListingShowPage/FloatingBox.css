@@ -266,6 +266,63 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
 }
 
+.mobile-res-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.semi-bold {
+    font-weight: 500;
+    size: 16px;
+}
+
+.mobile-res-footer {
+    height: 80px;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid rgb(221, 221, 221);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    display: none;
+}
+
+.mobile-res-content {
+    margin-left: 24px;
+    margin-right: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile-res-button {
+    width: 108px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+    color: white;
+    font-weight: 500;
+    font-size: 16.5px;
+    letter-spacing: .3px;
+    cursor: pointer;
+}
+
+.mobile-res-text>span {
+    line-height: 22px;
+}
+
+.mobile-res-text>span:last-child {
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
 @media (max-width: 744px) {
     .listing-details-right {
         display: none;
@@ -278,8 +335,9 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
         justify-content: center;
     }
     .calendar-container {
-        width: 75% !important;
+        width: 100% !important;
         height: auto !important;
+        max-width: 530px;
     }
     .react-calendar {
         width: 100%;
@@ -309,5 +367,18 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     }
     .review-bars {
         flex-wrap: wrap;
+    }
+    .nav-bar-wrapper {
+        height: 64px;
+    }
+    .nav-bar {
+        height: 64px;
+    }
+    .contact-bar {
+        margin-bottom: 80px;
+    }
+    .mobile-res-footer {
+        display: flex;
+        z-index: 500;
     }
 }
