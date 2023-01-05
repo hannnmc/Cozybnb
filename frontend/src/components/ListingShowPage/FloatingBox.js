@@ -6,16 +6,14 @@ import { useHistory } from 'react-router-dom';
 import { Modal } from '../../context/Modal';
 import check from '../../assets/images/checkmark.gif';
 
-const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews, setShowListingEdit, reservedDates}) => {
+const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, numDays, setNumDays, setShowLoginModal, reviews, setShowListingEdit, reservedDates, resSuccess1, setResSuccess1, resSuccess2, setResSuccess2, resSuccess3, setResSuccess3}) => {
     
     const dispatch = useDispatch();
     const history = useHistory();
     const user = useSelector(state => state.session.user);
 
     const [ guests, setGuests ] = useState(1);
-    const [ resSuccess1, setResSuccess1 ] = useState(false);
-    const [ resSuccess2, setResSuccess2 ] = useState(false);
-    const [ resSuccess3, setResSuccess3 ] = useState(false);
+
     const [ shake, setShake ] = useState(false);
     const [total, setTotal ] = useState(listing.price * numDays + parseInt(listing.price * numDays * 0.12) + parseInt(listing.price * numDays * 0.08));
     const today = new Date(startDate.setHours(0,0,0,0));
@@ -57,7 +55,6 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             setShowListingEdit(true);
         } else {
             for (let i = 0; i < reservedDates.length; i++) {
-                // if (new Date(reservedDates[i]).get )
                 let resDay = new Date(reservedDates[i]).getTime();
                 if (resDay > startDate.getTime() - 8640000 && resDay < endDate.getTime()) {
                     setShake(!shake);
@@ -80,10 +77,11 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             timeout2 = setTimeout(() => {
                 setResSuccess2(false);
                 setResSuccess3(true);
-                clearTimeout(timeout1);
+                clearTimeout(timeout2);
             },2400);
             timeout3 = setTimeout(() => {
                 setResSuccess2(false);
+                clearTimeout(timeout3);
                 dispatch(createReservation({
                     startDate,
                     endDate,
