@@ -163,7 +163,10 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
 
   if(user) return (
     <div className="listing-show">
-      <div className="listing-show-header">
+        <div className='listing-show-main'>
+            {photoUrls[0] ? <img src={photoUrls[0]} alt='loading...' className="listing-show-main"/> : <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' className="listing-show-image main" /> }
+        </div>
+        <div className="listing-show-header">
         <h1>{listing.title}</h1>
         {/* <Link to="/">Back to Listings Index</Link> */}
         <div className='show-header-info'>
