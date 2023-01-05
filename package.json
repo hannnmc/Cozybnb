@@ -1,0 +1,35 @@
+{
+    "name": "cozybnb",
+    "version": "1.0.0",
+    "description": "",
+    "directories": {
+      "lib": "lib"
+    },
+    "scripts": {
+      "build": "npm install --prefix frontend && npm run build --prefix frontend"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/hannnmc/Cozybnb.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/hannnmc/Cozybnb/issues"
+    },
+    "homepage": "https://github.com/hannnmc/Cozybnb#readme",
+    "engines": {
+      "node": "16.x"
+    },
+    "dependencies": {
+      "@fortawesome/fontawesome-svg-core": "^6.2.0",
+      "@fortawesome/free-solid-svg-icons": "^6.2.0",
+      "@fortawesome/react-fontawesome": "^0.2.0",
+      "@googlemaps/react-wrapper": "^1.1.35",
+      "@react-google-maps/api": "^2.13.1",
+      "nouislider": "^15.6.1",
+      "nouislider-react": "^3.4.1",
+      "sassy-datepicker": "^0.10.1"
+    }
+  }
