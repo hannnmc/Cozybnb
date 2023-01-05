@@ -421,7 +421,7 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
                         <span className='semi-bold'>${`${listing.price}`}</span> night
                     </span>
                     <span>
-                        {`${monthNames[startDate.getMonth()]} ${startDate.getDate()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}`}
+                        {/* {`${monthNames[startDate.getMonth()]} ${startDate.getDate()} - ${monthNames[endDate.getMonth()]} ${endDate.getDate()}`} */}
                     </span>
                 </div>
                 <div className='mobile-res-button' id={shake ? 'shake' : ''}onClick={handleSubmit}>
