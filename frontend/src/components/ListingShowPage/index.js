@@ -121,6 +121,12 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
         }
         if (listing.userId === currentUser.id) {
             setShowListingEdit(true);
+                } else if (numDays === 0) {
+            setShake(!shake);
+            setTimeout(() => {
+                setShake(false)
+            },300);
+            return;
         } else {
             for (let i = 0; i < reservedDates.length; i++) {
                 let resDay = new Date(reservedDates[i]).getTime();
