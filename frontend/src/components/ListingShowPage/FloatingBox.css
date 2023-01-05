@@ -323,7 +323,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     text-decoration: underline;
 }
 
-@media (max-width: 744px) {
+/* @media (max-width: 744px) {
     .listing-details-right {
         display: none;
     }
@@ -333,7 +333,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     .show-datepicker {
         display: flex;
         justify-content: center;
-    }
+    } */
     /* .calendar-container {
         width: 100% !important;
         height: auto !important;
@@ -348,7 +348,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     .react-calendar__viewContainer{
         width: 100%;
     } */
-    .listing-show-visuals {
+    /* .listing-show-visuals {
         display: none;
     }
     .listing-show-main {
@@ -385,4 +385,4 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
         width: 100vw;
         height: 80vw;
     }
-}
+} */
