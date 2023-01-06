@@ -17,6 +17,12 @@
     height: 100vh - 81px;
 }
 
+@media (max-width: 860px) {
+    .profile-container {
+        flex-wrap: wrap;
+    }
+}
+
 .profile-card {
     border: 1px solid #DDDDDD;
     border-radius: 12px;
