@@ -13,6 +13,7 @@
 - Postgresql - database storage
 - AWS S3 - cloud image upload/storage
 - Google Map API - Map and location services
+- <a href='https://projects.wojtekmaj.pl/react-calendar/' alt='' target="_blank" rel="noopener noreferrer"> React-Calendar API </a>
 
 ## Make a new reservation
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/new_reservation.gif' alt='' />
