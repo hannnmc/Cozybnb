@@ -18,7 +18,7 @@
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/new_reservation.gif' alt='' />
 Reserve a new trip or delete an existing reservation.
 
-## Reserved dates are blocked-off
+## Reserved dates
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/blocked_dates.gif' alt='' />
 Reserved dates are blocked for new reservations.
 
