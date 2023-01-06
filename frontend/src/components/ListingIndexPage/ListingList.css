@@ -96,7 +96,7 @@
 
 .list-item-title {
     font-weight: 500;
-    overflow-x:hidden;
+    overflow:hidden;
     height: 18px;
     width: 82%;
 }
