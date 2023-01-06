@@ -253,4 +253,10 @@
     .show-review-body {
         width: 85vw;
     }
+    .res-info {
+        width: 50vw !important;
+    }
+    .res-dates {
+        flex-direction: column;
+    }
 }
