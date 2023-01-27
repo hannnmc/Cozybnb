@@ -1,5 +1,5 @@
 import './ListingEditForm.css'
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import * as listingActions from "../../store/listings";
 import { useHistory } from 'react-router-dom';
