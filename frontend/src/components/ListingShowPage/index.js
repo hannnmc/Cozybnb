@@ -378,8 +378,10 @@ function ListingShowPage({showLoginModal,setShowLoginModal, showListingEdit, set
             reviews={listingReview} 
             users={users}/>
 
-            <button 
-            onClick={writeReview} className='listing-write-review'>Write a review</button>
+            {((!currentUser) || (currentUser.id !== listing.userId)) && (
+                <button onClick={writeReview} className='listing-write-review'>Write a review</button>
+                )
+            }
         </section>
 
         <div className='showpage-divider'></div>

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 function ListItem({ listing, isHighlighted, setSelectedListing }) {
 
-  const { title, photoUrls, price, averageRating, beds, description } = listing;
+  const { title, photoUrls, price, beds, description } = listing;
   const history = useHistory(); 
   const reviews = useSelector(state => Object.values(state.reviews));
   const listingReview = reviews.filter(review =>
@@ -29,7 +29,7 @@ function ListItem({ listing, isHighlighted, setSelectedListing }) {
       <div className="list-item-info">
       {photoUrls[0] ? ( <div className="listing-image-box"> 
       <img className="listing-image" src={photoUrls[0]} alt='loading...'/></div> ) : <div className="listing-image-box">
-        <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' className="listing-image" /></div>}
+        <img src='https://thecozybnb-dev.s3.amazonaws.com/default_property_image.svg' alt='' className="listing-image" /></div>}
 
       <div className="text-info-box">
         <div className="listing-box-title">

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchListings } from "../../store/listings";
@@ -23,19 +23,19 @@ function ListingIndexPage() {
   // if (minPrice && maxPrice && bounds) {
   //   dispatch(fetchListings({ minPrice, maxPrice, bounds }));
   // }
-
+  let listingLength = Object.keys(listings).length
   useEffect(() => {
     dispatch(fetchListings())
     dispatch(fetchReviews())
-  },[]);
+  },[dispatch]);
 
   useEffect(() => {
     dispatch(restoreSession());
-},[])
+},[dispatch])
 
   useEffect(() => {
     setListingsArray(listings.filter(listing => listing.price >= minPrice && listing.price <= maxPrice))
-  }, [minPrice, maxPrice, Object.keys(listings).length, bounds]);
+  }, [minPrice, maxPrice, listingLength, bounds, listings]);
 
   // useEffect(() => {
   //   if (minGuests && maxGuests && bounds) {
@@ -60,8 +60,10 @@ function ListingIndexPage() {
           listings={listingsArray}
           // mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
-            click: (listing) => setSelectedListing(listing.id),
-            click: (listing) => history.push(`/listings/${listing.id}`),
+            click: (listing) => {
+              setSelectedListing(listing.id)
+              history.push(`/listings/${listing.id}`
+            )},
             mouseover: (listing) => setSelectedListing(listing.id),
             mouseout: () => setSelectedListing(null)
           }}
