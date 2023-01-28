@@ -107,19 +107,10 @@
     margin-top: 5px;
     height: 18px;
     color: #717171;
-    /* width: 85%; */
     position: relative;
     display: flex;
 }
-/* .top-info-field::after {
-    content: '...';
-    position: absolute;
-    height: 17px;
-    width: 17px;
 
-    top: 0;
-    right: 0;
-} */
 
 .description-dots{
     padding-left: 3px;
@@ -178,38 +169,6 @@
     padding-right: 3.5%;
 }
 
-@media (max-width: 745px) {
-    .listing-index-page {
-        display: block;
-        flex-direction: column-reverse;
-    }
-    
-}
-
-
-@media (max-width: 745px) {
-    .listing-list-container {
-        width: 100vw;
-        padding-top: 25px;
-        border-radius: 20px;
-
-    }
-}
-
-@media (max-width: 745px) {
-    .filter-button {
-        display: none;
-    }
-}
-
-
-@media (max-width: 745px) {
-    .filter-top {
-        height: 60px;
-        margin-top: -10px;
-        justify-content: center;
-    }
-}
 
 .filter-form-knob {
     width: 40px;
@@ -228,18 +187,29 @@
     align-items: center;
 }
 
-
-
-
-
 @media (max-width: 745px) {
+    .listing-index-page {
+        display: block;
+        flex-direction: column-reverse;
+    }
+    .listing-list-container {
+        width: 100vw;
+        padding-top: 25px;
+        border-radius: 20px;
+
+    }
+    .filter-button {
+        display: none;
+    }
+    .filter-top {
+        height: 60px;
+        margin-top: -10px;
+        justify-content: center;
+    }
     .listings-list {
         width: 100vw;
         background-color: white;
     }
-}
-
-@media (max-width: 745px) {
     .listing-index-page {
         width: 100vw;
     }
@@ -256,61 +226,34 @@
 @media (max-width: 550px)  {
     .listing-box {
         width: 87.5%;
-        max-width: 100%;
+        max-width: 481px;
     }
 }
 
-
-/* @media (min-width: 746px) {
-    .list-index-map-container {
-        display: none;
-    }
-} */
 @media (max-width:950px) {
+    .listings-list {
+        width: 100vw;
+    }
     .list-index-map-container {
         display: none;
         width: 0px;
     }
 }
 
-@media (min-width: 746px) {
-    .listings-list {
-        width: 100vw;
-    }
-}
-
-@media (max-width:950px) {
-    .listings-list {
-        width: 100vw;
-    }
-}
-
-@media (min-width: 950px ) {
-    .listings-list {
-        width: 100%;
-    }
-}
-
-@media (min-width: 746px ) {
-    .listing-list-container {
-        width: 100vw;
-    }
-}
-
-@media (min-width: 950px ) {
-    .listing-list-container {
-        width: 58.9vw;
-        max-width: 720px;
-    }
-}
-
-@media(min-width: 746px) {
-    .listings-list {
-        max-width: none;
-    }
-}
-
 @media (max-width: 745px) {
+    .number-homes {
+        padding-left: 0;
+    }
+    .mobile-overlap{
+        display: absolute;
+        height: 20px;
+        width: 100%;
+        z-index: 30;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: -30px;
+        background: white;
+    }
     .list-index-map-container {
         width: 100vw;
         height: 50vh;
@@ -322,9 +265,15 @@
     }
 }
 
-@media (min-width: 949px ) {
-    .listing-index-page {
-        justify-content: flex-end;
+@media(min-width: 746px) {
+    .listings-list {
+        width: 100vw;
+    }
+    .listings-list {
+        max-width: none;
+    }
+    .listing-list-container {
+        width: 100vw;
     }
 }
 
@@ -335,34 +284,23 @@
         position: sticky;
         top: 0px;
     }
-}
-
-@media (min-width: 949px) {
     .listings-list {
         width: 58.9vw;
         min-width: 561.6px;
         max-width: 720px;
     }
-}
-
-@media (max-width: 745px) {
-    .number-homes {
-        padding-left: 0;
+    .listing-index-page {
+        justify-content: flex-end;
     }
-}
-
-@media (max-width: 745px) {
-    .mobile-overlap{
-        display: absolute;
-        height: 20px;
+    .listing-list-container {
+        width: 58.9vw;
+        max-width: 720px;
+    }
+    .listings-list {
         width: 100%;
-        z-index: 30;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        margin-top: -30px;
-        background: white;
     }
 }
+
 
 @media (min-width: 745px) {
     .filter-form-knob {
