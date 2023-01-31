@@ -35,7 +35,7 @@ function ListingIndexPage() {
 
   useEffect(() => {
     setListingsArray(listings.filter(listing => listing.price >= minPrice && listing.price <= maxPrice))
-  }, [minPrice, maxPrice, listingLength, bounds, listings]);
+  }, [minPrice, maxPrice, listingLength, bounds]);
 
   // useEffect(() => {
   //   if (minGuests && maxGuests && bounds) {
