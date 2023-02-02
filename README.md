@@ -36,9 +36,11 @@ Responsive homepage allows for optimal viewing in any screen size.
 Filter listings by minimum and maximum pricing with no latency.
 
 ## Code snippets
+
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/sample_listing_data.png' alt='' />
 Sample listing data
-
+<br>
+<br>
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/listingindex1.png' alt='' />
 Index page listings, maps, and props threading.
 
