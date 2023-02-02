@@ -39,7 +39,7 @@ Filter listings by minimum and maximum pricing with no latency.
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/sample_listing_data.png' alt='' />
 Sample listing data
 
-<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/listingindex.png' alt='' />
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/listingindex1.png' alt='' />
 Index page listings, maps, and props threading.
 
 ## Future directions
