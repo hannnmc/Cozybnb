@@ -88,7 +88,7 @@ function ListingIndexPage() {
           setSelectedListing={setSelectedListing} 
         />
       </div>
-  </div>
+    </div>
   );
 }
 
