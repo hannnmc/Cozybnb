@@ -237,7 +237,7 @@ ApplicationRecord.transaction do
       lat: 40.746674260759875, 
       lng: -73.98979343376428
     })
-
+ 
     listing7 = Listing.create!({
       title: 'Park Avenue Quintessential 4BD/4BATH',
       description: "The Triplex on Park is part of a historic landmark building that personifies Park Avenue's poise, elegance & spirit.
