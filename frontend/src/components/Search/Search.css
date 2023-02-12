@@ -2,10 +2,12 @@
     position: relative;
     width: 352px;
     height: 48px;
+    /* cursor: text; */
 }
 
 .search-bar input {
     padding-left: 10px !important;
+    width: 280px !important;
 }
 
 .css-2b097c-container {
@@ -26,6 +28,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    cursor: pointer;
 }
 
 .css-yk16xz-control {
@@ -66,4 +69,5 @@
 .css-1wa3eu0-placeholder {
     margin-left: 10px !important;
     margin-top: -1px !important;
+    cursor: text;
 }
