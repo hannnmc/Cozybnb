@@ -1,11 +1,15 @@
 import './Search.css';
-import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
+import { useState } from 'react';
+import PlacesAutoComplete from './PlacesAutoComplete';
 
 const Search = props => {
+
+    const [selected, setSelected ] = useState(null);
+
     return (
         <>
-            <h1>Search Bar</h1>
+            {/* <PlacesAutoComplete setSelected={setSelected} /> */}
         </>
 
     );
