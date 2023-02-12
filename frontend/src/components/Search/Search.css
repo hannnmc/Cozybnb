@@ -32,13 +32,13 @@
     border-radius: 24px !important;
     height: 100% !important;
     min-height: 46px !important;
+    /* border-color: #222222 !important; */
 }
 
 .css-1pahdxg-control {
     border-radius: 24px !important;
     outline: none !important;
     border: none !important;
-    border-color: transparent !important;
 }
 
 .css-1pahdxg-control span {
@@ -64,6 +64,6 @@
 } 
 
 .css-1wa3eu0-placeholder {
-    margin-left: 8px !important;
+    margin-left: 10px !important;
     margin-top: -1px !important;
 }

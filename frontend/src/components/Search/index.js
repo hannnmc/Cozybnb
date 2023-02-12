@@ -23,7 +23,8 @@ const Search = (props) => {
                 },
                 value,
                 onchange: setValue,
-                placeholder: "e.g. New York City"
+                placeholder: "Search...",
+                noOptionsMessage: () => "e.g. New York City",
             }}
             />
             <div className='search-button'>
