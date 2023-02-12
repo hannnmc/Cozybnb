@@ -27,11 +27,9 @@
         "@fortawesome/free-solid-svg-icons": "^6.2.0",
         "@fortawesome/react-fontawesome": "^0.2.0",
         "@googlemaps/react-wrapper": "^1.1.35",
-        "@reach/combobox": "^0.18.0",
         "@react-google-maps/api": "^2.13.1",
         "nouislider": "^15.6.1",
         "nouislider-react": "^3.4.1",
-        "sassy-datepicker": "^0.10.1",
-        "use-places-autocomplete": "^4.0.0"
+        "react-places-autocomplete": "^7.3.0"
     }
 }
