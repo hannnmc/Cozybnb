@@ -10,9 +10,6 @@ const Search = (props) => {
         console.log(value);
     },[value])
 
-    // useEffect((e) => {
-    //     console.log(value);
-    // },[value])
 
     return (
         <div className='search-bar'>
@@ -20,8 +17,8 @@ const Search = (props) => {
             apiKey={process.env.REACT_APP_MAPS_API_KEY}
             selectProps={{
                 value,
-                onchange: setValue,
-                placeholder: "Search...",
+                onChange: setValue,
+                placeholder: "Start your search...",
                 noOptionsMessage: () => "e.g. New York City",
             }}
             />

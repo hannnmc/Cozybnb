@@ -57,7 +57,7 @@
 }
 
 .pac-container{
-    z-index: 8000 !important;
+    z-index: 500 !important;
 }
 
 .css-26l3qy-menu{
@@ -70,4 +70,9 @@
     margin-left: 10px !important;
     margin-top: -1px !important;
     cursor: text;
+}
+
+.css-1uccc91-singleValue {
+    padding-left: 10px;
+    width: 300px;
 }
