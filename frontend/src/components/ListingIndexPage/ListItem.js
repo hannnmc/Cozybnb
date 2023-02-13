@@ -54,7 +54,7 @@ function ListItem({ listing, isHighlighted, setSelectedListing }) {
           </div>
           <div className="bot-info-field">
             <span className="list-item-copy">${price}</span>
-            <span className="list-item-category"> night</span>
+            <span className="list-item-category"> Total before taxes</span>
           </div>
         </div>
       </div>
