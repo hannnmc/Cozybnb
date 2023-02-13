@@ -3,13 +3,11 @@
     position: relative;
     width: 352px;
     height: 48px;
-    /* cursor: text; */
 }
 
 .search-bar input {
     padding-left: 10px !important;
     width: 280px !important;
-    /* max-width: 280px !important; */
 }
 
 .css-2b097c-container {
@@ -31,7 +29,6 @@
     justify-content: center;
     align-items: center;
     color: white;
-    /* cursor: pointer; */
 }
 
 .css-yk16xz-control {
@@ -40,7 +37,6 @@
     min-height: 46px !important;
     width: 100% !important;
     max-width: none !important;
-    /* border-color: #222222 !important; */
 }
 
 .css-1pahdxg-control {
@@ -95,12 +91,10 @@
         margin-left: -50px;
         width: calc(100vw - 150px);
         min-width: 20px;
-        /* background: orange; */
     }
     .css-1hwfws3 {
         width: calc(100vw - 152px) !important;
         min-width: 100px !important;
-        /* display: none !important; */
     }
     .search-button {
         right: 8px;
