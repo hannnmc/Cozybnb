@@ -74,10 +74,7 @@
 .home-box {
   display: flex;
   height: 80px;
-  color: #FF385C;
-  font-family: manrope;
   align-items: center;
-  font-variation-settings: "wght" 650;
 }
 
 .logo-img {
@@ -87,7 +84,9 @@
 }
 
 .logo-text {
-  font-size: 21px;
+  color: #FF385C;
+  font-size: 23px;
+  font-family: circular-standard;
   font-weight: 900;
   letter-spacing: -.7px;
 }
