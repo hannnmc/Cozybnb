@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchListings } from "../../store/listings";
@@ -20,9 +20,13 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
   const [selectedListing, setSelectedListing] = useState(null);
   const [bounds, setBounds] = useState(null);
   const [listingsArray, setListingsArray ] = useState(listings);
-  // if (minPrice && maxPrice && bounds) {
-  //   dispatch(fetchListings({ minPrice, maxPrice, bounds }));
-  // }
+
+  // useEffect(() => {
+  //   if (minGuests && maxGuests && bounds) {
+  //     dispatch(fetchListings({ minGuests, maxGuests, bounds }));
+  //   }
+  // }, [minGuests, maxGuests, bounds, dispatch]);
+
   let listingLength = Object.keys(listings).length
   useEffect(() => {
     dispatch(fetchListings())
@@ -34,22 +38,32 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
 },[dispatch])
 
   useEffect(() => {
-    setListingsArray(listings.filter(listing => listing.price >= minPrice && listing.price <= maxPrice))
+
+    setListingsArray(listings.filter(listing => 
+      listing.price >= minPrice &&
+       listing.price <= maxPrice 
+       ))
+       if (bounds) {
+        const bounded = bounds.split(',');
+        console.log(bounded)
+        setListingsArray(listings.filter(listing => 
+          listing.price >= minPrice &&
+           listing.price <= maxPrice &&
+           listing.lat > bounded[0] && 
+           listing.lat < bounded[2] &&
+           listing.lng > bounded[1] && 
+           listing.lng< bounded[3]
+           ))
+      }
   }, [minPrice, maxPrice, listingLength, bounds]);
 
-  // useEffect(() => {
-  //   if (minGuests && maxGuests && bounds) {
-  //     dispatch(fetchListings({ minGuests, maxGuests, bounds }));
-  //   }
-  // }, [minGuests, maxGuests, bounds, dispatch]);
-
-  // const mapEventHandlers = useMemo(() => ({
-  //   click: event => {
-  //     const search = new URLSearchParams(event.latLng.toJSON()).toString();
-  //     history.push({ pathname: '/listings/new', search });
-  //   },
-  //   idle: map => setBounds(map.getBounds().toUrlValue())
-  // }), [history]);
+  const mapEventHandlers = useMemo(() => ({
+    click: event => {
+      const search = new URLSearchParams(event.latLng.toJSON()).toString();
+      history.push({ pathname: '/listings/new', search });
+    },
+    idle: map => setBounds(map.getBounds().toUrlValue())
+  }), [history]);
 
   if(listings.length === 0) return null;
 
@@ -62,7 +76,7 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
           setLat={setLat}
           setLng={setLng}
           listings={listingsArray}
-          // mapEventHandlers={mapEventHandlers}
+          mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
             click: (listing) => {
               setSelectedListing(listing.id)
