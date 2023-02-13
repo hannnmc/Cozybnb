@@ -18,16 +18,13 @@ function ListingMap({
   const mapRef = useRef(null);
   const markers = useRef({});
   const history = useHistory();
-  let center = null;
-  if (map) center = map.getCenter().toJSON();
-
+  // let center = null;
+  // if (map) center = map.getCenter().toJSON();
+  // console.log(center)
   useEffect(() => {
     if (!map) {
       setMap(new window.google.maps.Map(mapRef.current, {
-        center: {
-          lat: 40.74363402543966, 
-          lng: -73.98377122848856
-        }, 
+        center: new window.google.maps.LatLng(lat, lng), 
         zoom: 13,
         mapId: "49aa6f67e21bd8eb",
         gestureHandling: "greedy",
@@ -36,27 +33,38 @@ function ListingMap({
         ...mapOptions,
       }));
     }
-  }, [mapRef, map, mapOptions]);
+  }, [mapRef, map, mapOptions, lat, lng]);
 
+  useEffect(() => {
+    console.log(lat,lng)
 
+    if (map) {
+      const position = {lat: lat, lng: lng}
+      map.setCenter(
+        position
+      );
+    }
+  },[lat, lng])
+
+  
   useEffect(() => {
     if (map) {
       const listeners = Object.entries(mapEventHandlers).map(([event, handler]) => 
-        window.google.maps.event.addListener(
-          map, 
-          event, 
-          (...args) => handler(...args, map)
+      window.google.maps.event.addListener(
+        map, 
+        event, 
+        (...args) => handler(...args, map)
         )
-      );
-      // console.log(map.getCenter().toJSON());
-      if (setLat && setLng) {
-        setLat(map.getCenter().toJSON().lat);
-        setLng(map.getCenter().toJSON().lng);
-        // console.log('SET')
+        );
+        // console.log(map.getCenter().toJSON());
+        // if (setLat && setLng) {
+        //   setLat(map.getCenter().toJSON().lat);
+        //   setLng(map.getCenter().toJSON().lng);
+        // }
+        return () => listeners.forEach(window.google.maps.event.removeListener);
       }
-      return () => listeners.forEach(window.google.maps.event.removeListener);
-    }
-  }, [map, center, mapEventHandlers]);
+    }, [map, mapEventHandlers]);
+
 
   // Update map markers whenever `listings` changes
   useEffect(() => {

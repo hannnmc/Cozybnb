@@ -9,7 +9,11 @@ import { useEffect } from 'react';
 import Search from '../Search';
 
 
-function Navigation({showLoginModal,setShowLoginModal}) {
+function Navigation({
+  showLoginModal,
+  setShowLoginModal,
+  setLat, 
+  setLng}) {
   const sessionUser = useSelector(state => state.session.user);
   const { listingId } = useParams();
   const [loginMessage, setLoginMessage] = useState(false);
@@ -58,8 +62,10 @@ function Navigation({showLoginModal,setShowLoginModal}) {
         </NavLink>
 
         {/* search bar goes here */}
-        <Search />
-
+        <Search 
+        setLatitude={setLat}
+        setLongitude={setLng}        
+        />
 
         {sessionLinks}
       </div>

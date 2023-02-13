@@ -23,12 +23,12 @@
     border-radius: 50%;
     width: 32px;
     height: 32px;
-    z-index: 51;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .css-yk16xz-control {
@@ -75,4 +75,5 @@
 .css-1uccc91-singleValue {
     padding-left: 10px;
     width: 300px;
+    line-height: 20px;
 }
