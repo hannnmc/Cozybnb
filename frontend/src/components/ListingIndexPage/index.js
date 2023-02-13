@@ -38,22 +38,21 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
 },[dispatch])
 
   useEffect(() => {
-
     setListingsArray(listings.filter(listing => 
       listing.price >= minPrice &&
        listing.price <= maxPrice 
        ))
        if (bounds) {
-        const bounded = bounds.split(',');
-        console.log(bounded)
+        const boundsArray = bounds.split(',');
+        console.log(boundsArray)
         setListingsArray(listings.filter(listing => 
           listing.price >= minPrice &&
-           listing.price <= maxPrice &&
-           listing.lat > bounded[0] && 
-           listing.lat < bounded[2] &&
-           listing.lng > bounded[1] && 
-           listing.lng < bounded[3]
-           ))
+          listing.price <= maxPrice &&
+          listing.lat > boundsArray[0] && 
+          listing.lat < boundsArray[2] &&
+          listing.lng > boundsArray[1] && 
+          listing.lng < boundsArray[3]
+          ))
       }
   }, [minPrice, maxPrice, listingLength, bounds]);
 
