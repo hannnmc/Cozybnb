@@ -58,10 +58,6 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
   }, [minPrice, maxPrice, listingLength, bounds]);
 
   const mapEventHandlers = useMemo(() => ({
-    click: event => {
-      const search = new URLSearchParams(event.latLng.toJSON()).toString();
-      history.push({ pathname: '/listings/new', search });
-    },
     idle: map => setBounds(map.getBounds().toUrlValue())
   }), [history]);
 
@@ -73,8 +69,6 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
         <ListingMap
           lat={lat}
           lng={lng}
-          setLat={setLat}
-          setLng={setLng}
           listings={listingsArray}
           mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
