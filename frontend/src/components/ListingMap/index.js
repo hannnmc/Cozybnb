@@ -39,10 +39,8 @@ function ListingMap({
     console.log(lat,lng)
 
     if (map) {
-      const position = {lat: lat, lng: lng}
-      map.setCenter(
-        position
-      );
+      const position = {lat: lat, lng: lng, zoom: 13}
+      map.setCenter(position);
     }
   },[lat, lng])
 
@@ -54,13 +52,7 @@ function ListingMap({
         map, 
         event, 
         (...args) => handler(...args, map)
-        )
-        );
-        // console.log(map.getCenter().toJSON());
-        // if (setLat && setLng) {
-        //   setLat(map.getCenter().toJSON().lat);
-        //   setLng(map.getCenter().toJSON().lng);
-        // }
+        ));
         return () => listeners.forEach(window.google.maps.event.removeListener);
       }
     }, [map, mapEventHandlers]);

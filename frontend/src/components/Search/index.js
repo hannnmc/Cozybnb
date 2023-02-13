@@ -28,6 +28,9 @@ const Search = ({setLatitude, setLongitude}) => {
                 placeholder: "Start your search...",
                 noOptionsMessage: () => "e.g. New York City",
                 openMenuOnClick: true,
+                isClearable: true,
+                escapeClearsValue: true,
+                // onFocus: () => clear();
             }}
             />
             <div className='search-button'>
