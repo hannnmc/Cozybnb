@@ -1,4 +1,5 @@
 .search-bar {
+    display: flex;
     position: relative;
     width: 352px;
     height: 48px;
@@ -18,7 +19,7 @@
     content: '';
     position: absolute;
     top: 8px;
-    left: 312px;
+    right: 48px;
     background-color: rgb(255, 56, 92);
     border-radius: 50%;
     width: 32px;
@@ -76,4 +77,28 @@
     padding-left: 10px;
     width: 300px;
     line-height: 20px;
+}
+
+@media (max-width: 580px) {
+    .search-bar {
+        margin-left: -50px;
+        width: calc(100vw - 150px);
+        min-width: 20px;
+        /* background: orange; */
+    }
+    .css-1hwfws3 {
+        width: calc(100vw - 152px) !important;
+        min-width: 100px !important;
+        /* display: none !important; */
+    }
+    .search-button {
+        right: 8px;
+    }
+    .search-bar input {
+        padding-left: 14px !important;
+        width: 160px !important;
+    }
+    .home-box {
+        display: none;
+    }
 }

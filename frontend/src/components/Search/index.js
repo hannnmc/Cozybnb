@@ -1,10 +1,9 @@
 import './Search.css';
 import GooglePlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 const Search = ({setLatitude, setLongitude}) => {
     
-    const ref = useRef();
     const [value, setValue] = useState(null);
 
     if (value) {
