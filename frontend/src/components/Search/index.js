@@ -16,8 +16,6 @@ const Search = ({setLatitude, setLongitude}) => {
         });
     }
 
-    // console.log(latitude,longitude)
-
     return (
         <div className='search-bar'>
             <GooglePlacesAutocomplete

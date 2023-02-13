@@ -6,8 +6,6 @@ import './ListingMap.css';
 function ListingMap({ 
   lat,
   lng,
-  setLat,
-  setLng,
   listings, 
   selectedListing,
   mapOptions = {}, 
@@ -18,9 +16,7 @@ function ListingMap({
   const mapRef = useRef(null);
   const markers = useRef({});
   const history = useHistory();
-  // let center = null;
-  // if (map) center = map.getCenter().toJSON();
-  // console.log(center)
+
   useEffect(() => {
     if (!map) {
       setMap(new window.google.maps.Map(mapRef.current, {
