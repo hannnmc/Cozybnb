@@ -9,7 +9,7 @@ import './ListingList.css';
 import { fetchReviews } from "../../store/reviews";
 import { restoreSession } from "../../store/session";
 
-function ListingIndexPage() {
+function ListingIndexPage({lat, lng, setLat, setLng}) {
   const history = useHistory(); 
   const dispatch = useDispatch();
   let listings = useSelector(state => Object.values(state.listings));
@@ -57,6 +57,10 @@ function ListingIndexPage() {
     <div className="listing-index-page">
       <div className="list-index-map-container">
         <ListingMap
+          lat={lat}
+          lng={lng}
+          setLat={setLat}
+          setLng={setLng}
           listings={listingsArray}
           // mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{

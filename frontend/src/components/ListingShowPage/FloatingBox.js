@@ -100,10 +100,7 @@ const FloatingBox = ({listing, startDate, setStartDate, endDate, setEndDate, num
             },3965);
         }
     }
-
-    // console.log((today.toISOString().split('T')[0]).replace(/-/g, "/"))
-    // console.log(`${startDate.getFullYear()}-${(startDate.getMonth() + 1) < 10 ? `0${(startDate.getMonth() + 1)}` : (startDate.getMonth() + 1)}-${startDate.getDate() > 9 ? '':'0' }${startDate.getDate()}`);
-
+    
     return (
         <div className='listing-floating-panel'>
         <div className='floating-box-border'>

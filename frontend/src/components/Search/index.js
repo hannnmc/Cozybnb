@@ -1,15 +1,22 @@
 import './Search.css';
-import GooglePlacesAutocomplete, { geocodeByLatLng } from 'react-google-places-autocomplete';
-import React, { useEffect, useState } from 'react';
+import GooglePlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
+import React, { useRef, useState } from 'react';
 
-const Search = (props) => {
+const Search = ({setLatitude, setLongitude}) => {
     
+    const ref = useRef();
     const [value, setValue] = useState(null);
 
-    useEffect(() => {
-        console.log(value);
-    },[value])
+    if (value) {
+        geocodeByAddress(value.label)
+       .then(results => getLatLng(results[0]))
+       .then(({ lat, lng }) => {
+            setLatitude(lat);
+            setLongitude(lng);
+        });
+    }
 
+    // console.log(latitude,longitude)
 
     return (
         <div className='search-bar'>
@@ -20,6 +27,7 @@ const Search = (props) => {
                 onChange: setValue,
                 placeholder: "Start your search...",
                 noOptionsMessage: () => "e.g. New York City",
+                openMenuOnClick: true,
             }}
             />
             <div className='search-button'>
