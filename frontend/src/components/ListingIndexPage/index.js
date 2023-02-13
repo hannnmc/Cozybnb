@@ -52,7 +52,7 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
            listing.lat > bounded[0] && 
            listing.lat < bounded[2] &&
            listing.lng > bounded[1] && 
-           listing.lng< bounded[3]
+           listing.lng < bounded[3]
            ))
       }
   }, [minPrice, maxPrice, listingLength, bounds]);
