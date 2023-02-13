@@ -16,13 +16,13 @@
     "react-calendar": "^4.0.0",
     "react-date-picker": "^9.1.0",
     "react-dom": "^18.2.0",
+    "react-google-places-autocomplete": "^3.4.0",
     "react-places-autocomplete": "^7.3.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
-    "redux-thunk": "^2.4.1",
-    "sassy-datepicker": "^0.10.1"
+    "redux-thunk": "^2.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

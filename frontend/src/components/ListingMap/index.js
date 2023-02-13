@@ -6,8 +6,6 @@ import './ListingMap.css';
 function ListingMap({ 
   lat,
   lng,
-  setLat,
-  setLng,
   listings, 
   selectedListing,
   mapOptions = {}, 
@@ -18,16 +16,11 @@ function ListingMap({
   const mapRef = useRef(null);
   const markers = useRef({});
   const history = useHistory();
-  let center = null;
-  if (map) center = map.getCenter().toJSON();
 
   useEffect(() => {
     if (!map) {
       setMap(new window.google.maps.Map(mapRef.current, {
-        center: {
-          lat: 40.74363402543966, 
-          lng: -73.98377122848856
-        }, 
+        center: new window.google.maps.LatLng(lat, lng), 
         zoom: 13,
         mapId: "49aa6f67e21bd8eb",
         gestureHandling: "greedy",
@@ -36,27 +29,30 @@ function ListingMap({
         ...mapOptions,
       }));
     }
-  }, [mapRef, map, mapOptions]);
+  }, [mapRef, map, mapOptions, lat, lng]);
 
+  useEffect(() => {
+    console.log(lat,lng)
 
+    if (map) {
+      const position = {lat: lat, lng: lng, zoom: 13}
+      map.setCenter(position);
+    }
+  },[lat, lng])
+
+  
   useEffect(() => {
     if (map) {
       const listeners = Object.entries(mapEventHandlers).map(([event, handler]) => 
-        window.google.maps.event.addListener(
-          map, 
-          event, 
-          (...args) => handler(...args, map)
-        )
-      );
-      // console.log(map.getCenter().toJSON());
-      if (setLat && setLng) {
-        setLat(map.getCenter().toJSON().lat);
-        setLng(map.getCenter().toJSON().lng);
-        // console.log('SET')
+      window.google.maps.event.addListener(
+        map, 
+        event, 
+        (...args) => handler(...args, map)
+        ));
+        return () => listeners.forEach(window.google.maps.event.removeListener);
       }
-      return () => listeners.forEach(window.google.maps.event.removeListener);
-    }
-  }, [map, center, mapEventHandlers]);
+    }, [map, mapEventHandlers]);
+
 
   // Update map markers whenever `listings` changes
   useEffect(() => {
@@ -136,7 +132,9 @@ function ListingMap({
 function ListingMapWrapper(props) {
 
   return (
-    <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
+    <Wrapper 
+    apiKey={process.env.REACT_APP_MAPS_API_KEY} 
+    libraries={["places"]}>
       <ListingMap {...props} />
     </Wrapper>
   );

@@ -48,7 +48,6 @@ function ListingEditForm({listing, setShowListingEdit}) {
 
   const listings = useSelector(state => state.listings);
 
-  console.log(files)
   const handleFile = e => {
     const file = e.currentTarget.files[0];
     const file2 = e.currentTarget.files[1];
@@ -99,7 +98,6 @@ function ListingEditForm({listing, setShowListingEdit}) {
     } else setPhotoUrl5(null);
   }
 
-  // console.log (files)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -126,7 +124,7 @@ function ListingEditForm({listing, setShowListingEdit}) {
       petsAllowed
     };
     Object.keys(newListing).forEach((key) => {
-      // console.log(key)
+
       formData.append(`listing[${key}]`, newListing[key]);
     })
 
