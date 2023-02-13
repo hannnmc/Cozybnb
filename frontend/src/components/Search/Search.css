@@ -1,0 +1,104 @@
+.search-bar {
+    display: flex;
+    position: relative;
+    width: 352px;
+    height: 48px;
+    /* cursor: text; */
+}
+
+.search-bar input {
+    padding-left: 10px !important;
+    width: 280px !important;
+}
+
+.css-2b097c-container {
+    height: 48px;
+}
+
+.search-button {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 48px;
+    background-color: rgb(255, 56, 92);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* cursor: pointer; */
+}
+
+.css-yk16xz-control {
+    border-radius: 24px !important;
+    height: 100% !important;
+    min-height: 46px !important;
+    /* border-color: #222222 !important; */
+}
+
+.css-1pahdxg-control {
+    border-radius: 24px !important;
+    outline: none !important;
+    border: none !important;
+}
+
+.css-1pahdxg-control span {
+    border: none !important;
+}
+
+.css-1wy0on6 {
+    display: none !important;
+}
+
+.css-1hwfws3 {
+    height: 48px !important;
+}
+
+.pac-container{
+    z-index: 500 !important;
+}
+
+.css-26l3qy-menu{
+    z-index: 500 !important;
+    position: relative !important;
+    margin-top: -40px !important;
+} 
+
+.css-1wa3eu0-placeholder {
+    margin-left: 10px !important;
+    margin-top: -1px !important;
+    cursor: text;
+}
+
+.css-1uccc91-singleValue {
+    padding-left: 10px;
+    width: 300px;
+    line-height: 20px;
+}
+
+@media (max-width: 580px) {
+    .search-bar {
+        margin-left: -50px;
+        width: calc(100vw - 150px);
+        min-width: 20px;
+        /* background: orange; */
+    }
+    .css-1hwfws3 {
+        width: calc(100vw - 152px) !important;
+        min-width: 100px !important;
+        /* display: none !important; */
+    }
+    .search-button {
+        right: 8px;
+    }
+    .search-bar input {
+        padding-left: 14px !important;
+        width: 160px !important;
+    }
+    .home-box {
+        display: none;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchListings } from "../../store/listings";
@@ -9,7 +9,7 @@ import './ListingList.css';
 import { fetchReviews } from "../../store/reviews";
 import { restoreSession } from "../../store/session";
 
-function ListingIndexPage() {
+function ListingIndexPage({lat, lng, setLat, setLng}) {
   const history = useHistory(); 
   const dispatch = useDispatch();
   let listings = useSelector(state => Object.values(state.listings));
@@ -20,9 +20,13 @@ function ListingIndexPage() {
   const [selectedListing, setSelectedListing] = useState(null);
   const [bounds, setBounds] = useState(null);
   const [listingsArray, setListingsArray ] = useState(listings);
-  // if (minPrice && maxPrice && bounds) {
-  //   dispatch(fetchListings({ minPrice, maxPrice, bounds }));
-  // }
+
+  // useEffect(() => {
+  //   if (minGuests && maxGuests && bounds) {
+  //     dispatch(fetchListings({ minGuests, maxGuests, bounds }));
+  //   }
+  // }, [minGuests, maxGuests, bounds, dispatch]);
+
   let listingLength = Object.keys(listings).length
   useEffect(() => {
     dispatch(fetchListings())
@@ -34,22 +38,28 @@ function ListingIndexPage() {
 },[dispatch])
 
   useEffect(() => {
-    setListingsArray(listings.filter(listing => listing.price >= minPrice && listing.price <= maxPrice))
+
+    setListingsArray(listings.filter(listing => 
+      listing.price >= minPrice &&
+       listing.price <= maxPrice 
+       ))
+       if (bounds) {
+        const bounded = bounds.split(',');
+        console.log(bounded)
+        setListingsArray(listings.filter(listing => 
+          listing.price >= minPrice &&
+           listing.price <= maxPrice &&
+           listing.lat > bounded[0] && 
+           listing.lat < bounded[2] &&
+           listing.lng > bounded[1] && 
+           listing.lng < bounded[3]
+           ))
+      }
   }, [minPrice, maxPrice, listingLength, bounds]);
 
-  // useEffect(() => {
-  //   if (minGuests && maxGuests && bounds) {
-  //     dispatch(fetchListings({ minGuests, maxGuests, bounds }));
-  //   }
-  // }, [minGuests, maxGuests, bounds, dispatch]);
-
-  // const mapEventHandlers = useMemo(() => ({
-  //   click: event => {
-  //     const search = new URLSearchParams(event.latLng.toJSON()).toString();
-  //     history.push({ pathname: '/listings/new', search });
-  //   },
-  //   idle: map => setBounds(map.getBounds().toUrlValue())
-  // }), [history]);
+  const mapEventHandlers = useMemo(() => ({
+    idle: map => setBounds(map.getBounds().toUrlValue())
+  }), [history]);
 
   if(listings.length === 0) return null;
 
@@ -57,8 +67,10 @@ function ListingIndexPage() {
     <div className="listing-index-page">
       <div className="list-index-map-container">
         <ListingMap
+          lat={lat}
+          lng={lng}
           listings={listingsArray}
-          // mapEventHandlers={mapEventHandlers}
+          mapEventHandlers={mapEventHandlers}
           markerEventHandlers={{
             click: (listing) => {
               setSelectedListing(listing.id)

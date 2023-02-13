@@ -74,10 +74,7 @@
 .home-box {
   display: flex;
   height: 80px;
-  color: #FF385C;
-  font-family: manrope;
   align-items: center;
-  font-variation-settings: "wght" 650;
 }
 
 .logo-img {
@@ -87,7 +84,9 @@
 }
 
 .logo-text {
-  font-size: 21px;
+  color: #FF385C;
+  font-size: 23px;
+  font-family: circular-standard;
   font-weight: 900;
   letter-spacing: -.7px;
 }
@@ -165,7 +164,9 @@ a {
   top: 32px;
   height: 36px;
   width: 260px;
-  background: rgba(58, 207, 108, 0.8);
+  background: rgba(255, 56, 92, 0.95);
+  font-weight: 600;
+  font-size: 17px;
   color: white;
   padding: 15px;
   border-radius: 12px;

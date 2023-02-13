@@ -6,8 +6,14 @@ import LoginDropDown from '../LoginDropdown';
 import './Navigation.css';
 import logoImg from '../../assets/images/cozybnb_logo.png';
 import { useEffect } from 'react';
+import Search from '../Search';
 
-function Navigation({showLoginModal,setShowLoginModal}) {
+
+function Navigation({
+  showLoginModal,
+  setShowLoginModal,
+  setLat, 
+  setLng}) {
   const sessionUser = useSelector(state => state.session.user);
   const { listingId } = useParams();
   const [loginMessage, setLoginMessage] = useState(false);
@@ -46,6 +52,7 @@ function Navigation({showLoginModal,setShowLoginModal}) {
 
   return (
     <div className='nav-bar-wrapper'>
+      {/* changing navbar styling based on page url */}
       <div className='nav-bar' style={regex.test(window.location.pathname) ? {width:'87vw', maxWidth:'1120px'} : {} }>
         <NavLink exact to="/">
           <div className='home-box'>
@@ -53,6 +60,13 @@ function Navigation({showLoginModal,setShowLoginModal}) {
             <div className='logo-text'>cozybnb</div> 
           </div>
         </NavLink>
+
+        {/* search bar goes here */}
+        <Search 
+        setLatitude={setLat}
+        setLongitude={setLng}        
+        />
+
         {sessionLinks}
       </div>
       {(loginMessage && sessionUser) && (
