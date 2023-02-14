@@ -41,8 +41,12 @@ Filter listings by minimum and maximum pricing with no latency.
 Sample listing data
 <br>
 <br>
-<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/listingindex1.png' alt='' />
-Index page listings, maps, and props threading.
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/listing-filters.png' alt='' />
+Reducing data fetches to the back-end by fetching a larger scope of data initially and filtering the data in the front-end, reducing load times and preventing delays from components like the price slider. 
+<br>
+<br>
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/reservation confirmation.png' alt='' />
+Improvised reservation confirmation pop-up animation by utilizing 3 perfectly timed modals utilizing setTimeout. 
 
 ## Future directions
 - More listing filters
