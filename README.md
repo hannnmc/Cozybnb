@@ -29,11 +29,11 @@ Utilizing a star-rating review system.
 
 ## Web-Responsive Design
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/responsiveness.gif' alt='' />
-Application interface optimized for screens of any size including mobile.
+UI optimized for any screen size including mobile.
 
 ## Filtering listings
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/filtering.gif' alt='' />
-Filter listings by minimum and maximum pricing with no latency.
+Filter listings by minimum and maximum pricing with super low latency.
 
 ## Code snippets
 
