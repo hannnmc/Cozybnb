@@ -1,6 +1,6 @@
 # Cozybnb
 <div align="center">
-<img width="650" height="466.07" src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/cozybnb_home.png' alt='' />
+<img width="650" height="466.07" src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/cozybnb_home1.png' alt='' />
 </div>
 
 ## Background
@@ -27,9 +27,9 @@ Reserved dates are blocked for new reservations.
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/leave_review.gif' alt='' />
 Utilizing a star-rating review system.
 
-## Responsive page
+## Web-Responsive Design
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/responsiveness.gif' alt='' />
-Responsive homepage allows for optimal viewing in any screen size.
+Application interface optimized for screens of any size including mobile.
 
 ## Filtering listings
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/filtering.gif' alt='' />
@@ -45,5 +45,4 @@ Sample listing data
 Index page listings, maps, and props threading.
 
 ## Future directions
-- Location search bar
 - More listing filters
