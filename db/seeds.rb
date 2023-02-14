@@ -734,6 +734,123 @@ ApplicationRecord.transaction do
       user_id: 3
     })
        
+    review17 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Perfect location, everything was walking distance!',
+      listing_id: 13,
+      user_id: 5
+    })
+       
+    review18 = Review.create!({
+      rating: 4.83,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 4,
+      body: 'Wonderful hosts and stay! Walking distance to restaurants was very convenient',
+      listing_id: 14,
+      user_id: 6
+    })
+       
+    review19 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Best AirBnb in the local area for the price, super clean, plenty of supplies, great parking in the garage, super convenient location for someone visiting L.A. perfect for a holiday getaway!',
+      listing_id: 15,
+      user_id: 7
+    })
+       
+    review20 = Review.create!({
+      rating: 4.67,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 3,
+      body: 'Nice place to stay in a good location and really good communication with the host. The only think I missed was a AC because there was a heat wave when we were there, but the days with normal temperature it was ok with the fan',
+      listing_id: 12,
+      user_id: 8
+    })
+       
+    review21 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'This place was very cute and clean. Good location in a nice neighborhood. Looked just like the pictures.',
+      listing_id: 16,
+      user_id: 7
+    })
+       
+    review22 = Review.create!({
+      rating: 4.83,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 4,
+      value: 5,
+      body: 'Amazing location with a very spacious garage. Amazing spot for a workaction.',
+      listing_id: 17,
+      user_id: 3
+    })
+       
+    review23 = Review.create!({
+      rating: 4.83,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 4,
+      checkin: 5,
+      value: 5,
+      body: 'It was a pleasant stay, home was as it is explained. Owner was a great host.',
+      listing_id: 18,
+      user_id: 5
+    })
+       
+    review24 = Review.create!({
+      rating: 4.83,
+      cleanliness: 4,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Great location!',
+      listing_id: 17,
+      user_id: 8
+    })
+       
+    review25 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Perfect!',
+      listing_id: 16,
+      user_id: 7
+    })
+       
        
     puts "Attaching photos..."
     
