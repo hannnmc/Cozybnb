@@ -92,26 +92,6 @@ ApplicationRecord.transaction do
       birth_date: '12/12/1994',
       phone_number: '1234567899'
     )
-
-    user8 = User.create!(
-      about: "",
-      email: 'iheartgoogle@gmail.com', 
-      password: 'password',
-      first_name: 'Dan',
-      last_name: 'Brown',
-      birth_date: '12/12/1994',
-      phone_number: '1234567899'
-    )
-
-    user8 = User.create!(
-      about: "",
-      email: 'iheartgoogle@gmail.com', 
-      password: 'password',
-      first_name: 'Dan',
-      last_name: 'Brown',
-      birth_date: '12/12/1994',
-      phone_number: '1234567899'
-    )
   
 
     puts "Creating listings..."
@@ -756,23 +736,6 @@ ApplicationRecord.transaction do
        
        
     puts "Attaching photos..."
-
-    # user1 = User.first
-    # listing1 = Listing.first
-
-    user1.photo.purge
-    # listing1.photos.purge
-    # listing2.photos.purge
-    # listing3.photos.purge
-    # listing4.photos.purge
-    # listing5.photos.purge
-    # listing6.photos.purge
-    # listing7.photos.purge
-    # listing8.photos.purge
-    # listing9.photos.purge
-    # listing10.photos.purge
-    # listing11.photos.purge
-    # listing12.photos.purge
     
     user1_photo = File.open("frontend/src/assets/images/users/user1.jpg")
     user1.photo.attach(io: user1_photo, filename:"user1.jpg")
@@ -948,7 +911,7 @@ ApplicationRecord.transaction do
     l12p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing12/photo3.webp")
     l12p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing12/photo4.webp")
     l12p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing12/photo5.webp")
-
+    
     listing12.photos.attach(
       [io: l12p1, filename:"photo1"],
       [io: l12p2, filename:"photo2"],
@@ -956,21 +919,91 @@ ApplicationRecord.transaction do
       [io: l12p4, filename:"photo4"],
       [io: l12p5, filename:"photo5"]
     )
-    # listing1.photos.attach(io: l1p1, filename:"photo1.jpg")
     
-    # listing1.photos.attach(io: l1p2, filename:"photo2.webp")
-    
-    # listing1.photos.attach(io: l1p3, filename:"photo3.webp")
-    
-    # listing1.photos.attach(io: l1p4, filename:"photo4.webp")
-    
-    # listing1.photos.attach(io: l1p5, filename:"photo5.webp")
-    
-    listing1.save
+    l13p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing13/photo1.webp")
+    l13p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing13/photo2.webp")
+    l13p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing13/photo3.webp")
+    l13p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing13/photo4.webp")
+    l13p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing13/photo5.webp")
+
+    listing13.photos.attach(
+      [io: l13p1, filename:"photo1"],
+      [io: l13p2, filename:"photo2"],
+      [io: l13p3, filename:"photo3"],
+      [io: l13p4, filename:"photo4"],
+      [io: l13p5, filename:"photo5"]
+    )
+
+    l14p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing14/photo1.webp")
+    l14p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing14/photo2.webp")
+    l14p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing14/photo3.webp")
+    l14p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing14/photo4.webp")
+    l14p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing14/photo5.webp")
+
+    listing14.photos.attach(
+      [io: l14p1, filename:"photo1"],
+      [io: l14p2, filename:"photo2"],
+      [io: l14p3, filename:"photo3"],
+      [io: l14p4, filename:"photo4"],
+      [io: l14p5, filename:"photo5"]
+    )
+
+    l15p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing15/photo1.webp")
+    l15p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing15/photo2.webp")
+    l15p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing15/photo3.webp")
+    l15p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing15/photo4.webp")
+    l15p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing15/photo5.webp")
+
+    listing15.photos.attach(
+      [io: l15p1, filename:"photo1"],
+      [io: l15p2, filename:"photo2"],
+      [io: l15p3, filename:"photo3"],
+      [io: l15p4, filename:"photo4"],
+      [io: l15p5, filename:"photo5"]
+    )
+
+    l16p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing16/photo1.webp")
+    l16p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing16/photo2.webp")
+    l16p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing16/photo3.webp")
+    l16p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing16/photo4.webp")
+    l16p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing16/photo5.webp")
+
+    listing16.photos.attach(
+      [io: l16p1, filename:"photo1"],
+      [io: l16p2, filename:"photo2"],
+      [io: l16p3, filename:"photo3"],
+      [io: l16p4, filename:"photo4"],
+      [io: l16p5, filename:"photo5"]
+    )
+
+    l17p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing17/photo1.webp")
+    l17p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing17/photo2.webp")
+    l17p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing17/photo3.webp")
+    l17p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing17/photo4.webp")
+    l17p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing17/photo5.webp")
+
+    listing17.photos.attach(
+      [io: l17p1, filename:"photo1"],
+      [io: l17p2, filename:"photo2"],
+      [io: l17p3, filename:"photo3"],
+      [io: l17p4, filename:"photo4"],
+      [io: l17p5, filename:"photo5"]
+    )
+
+    l18p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing18/photo1.webp")
+    l18p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing18/photo2.webp")
+    l18p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing18/photo3.webp")
+    l18p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing18/photo4.webp")
+    l18p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing18/photo5.webp")
+
+    listing18.photos.attach(
+      [io: l18p1, filename:"photo1"],
+      [io: l18p2, filename:"photo2"],
+      [io: l18p3, filename:"photo3"],
+      [io: l18p4, filename:"photo4"],
+      [io: l18p5, filename:"photo5"]
+    )
+
     puts "Done!"
   end
 
-# user1.photo.attach(
-#   io: URI.open("https://thecozybnb-dev.s3.amazonaws.com/profile_icon.jpg"),
-#   filename: "profile_icon.jpg"
-# )
