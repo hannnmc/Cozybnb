@@ -27,7 +27,7 @@ ApplicationRecord.transaction do
     )
     user2 = User.create!(
       about: "",
-      email: 'Tammylove@fb.com', 
+      email: 'ilovecozybnb@fb.com', 
       password: 'password',
       first_name: 'Tammy',
       last_name: 'Pink',
@@ -81,6 +81,26 @@ ApplicationRecord.transaction do
       last_name: 'Cruzer',
       birth_date: '12/11/1994',
       phone_number: '1234567898'
+    )
+
+    user8 = User.create!(
+      about: "",
+      email: 'iheartgoogle@gmail.com', 
+      password: 'password',
+      first_name: 'Dan',
+      last_name: 'Brown',
+      birth_date: '12/12/1994',
+      phone_number: '1234567899'
+    )
+
+    user8 = User.create!(
+      about: "",
+      email: 'iheartgoogle@gmail.com', 
+      password: 'password',
+      first_name: 'Dan',
+      last_name: 'Brown',
+      birth_date: '12/12/1994',
+      phone_number: '1234567899'
     )
 
     user8 = User.create!(
@@ -383,6 +403,145 @@ ApplicationRecord.transaction do
       lng: -73.90491596080538
     })
 
+    listing13 = Listing.create!({
+      title: 'Budget Accommodation Beachside!',
+      description: "Charming ocean ave 1 bedroom/ 1 bath apartment right across from the beach. This location can not be beat and is unbelievable for the price!  
+      Please Note: This unit is located 2 floors above a bar/lounge that is noisy, especially on the weekends. This is quietest unit.",
+      price: Faker::Number.within(range: 300..600),
+      guests: 4,
+      bedrooms: 1,
+      beds: 2,
+      baths: 1,
+      address: '11 Sesame Dr.',
+      city: 'Santa Monica',
+      state: 'CA',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Apartment',
+      pets_allowed: false,
+      user_id: 8,
+      lat: 34.02683881156248, 
+      lng: -118.46187279554819
+    })
+
+    listing14 = Listing.create!({
+      title: 'Cozy Room at The Saxton, Downtown LA',
+      description: "A size up from our popular Lush room, this private room is a king or queen sized bed and more space. The Cozy gives you more options for DTLA skyline views or a higher floor, more work space and is an overall great base for exploring LA. ",
+      price: Faker::Number.within(range: 400..700),
+      guests: 2,
+      bedrooms: 1,
+      beds: 1,
+      baths: 1,
+      address: '44 Bingo Dr.',
+      city: 'Los Angeles',
+      state: 'CA',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Apartment',
+      pets_allowed: true,
+      user_id: 7,
+      lat: 34.05018824469852,
+      lng: -118.24813588149989
+    })
+
+    listing15 = Listing.create!({
+      title: 'Entire Family Mini Mansion by Venice & Santa Monica',
+      description: "Welcome! We call our fabulous two-story house a mini-mansion because of its beautiful location, spaciousness, and amenities. We are in the heart of Del Rey, a safe and quiet Los Angeles neighborhood nestled between Culver City, Marina Del Rey, and Playa Vista with easy access to Venice & Santa Monica.",
+      price: Faker::Number.within(range: 600..900),
+      guests: 8,
+      bedrooms: 4,
+      beds: 4,
+      baths: 2,
+      address: '1 Parking Ave.',
+      city: 'Los Angeles',
+      state: 'CA',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Entire home',
+      pets_allowed: true,
+      user_id: 6,
+      lat: 33.94619434798974, 
+      lng: -118.12962315183589
+    })
+
+    listing16 = Listing.create!({
+      title: 'Adorable Old Hollywood Inspired Guest House',
+      description: "Welcome to my old-Hollywood inspired home. This guest house sits on a large property with the main house. It's only fitting that an Old-Hollywood home would be right in the middle of the movie studio capital. Burbank is the home of big movie studios and a rich cultural society. Not too far from the party that is Hollywood, but tucked away enough for those who like the party to stop when it's bedtime. I'm so glad to share this space with you and I hope you enjoy it.",
+      price: Faker::Number.within(range: 400..600),
+      guests: 6,
+      bedrooms: 3,
+      beds: 3,
+      baths: 2,
+      address: '3 Fantasy Rd.',
+      city: 'Burbank',
+      state: 'CA',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: false,
+      dedicated_workspace: true,
+      prop_type: 'Entire home',
+      pets_allowed: true,
+      user_id: 5,
+      lat: 34.16275077048792, 
+      lng: -118.32024371978297
+    })
+
+    listing17 = Listing.create!({
+      title: 'Bright, Spacious Home in West LA',
+      description: "Perfect home for remote work/traveler looking to stay in LA. Located in Culver City, just 4 miles from Venice Beach/Marina del Rey, 15 min from SoFi Stadium, and a short walk to restaurants and Sony Pictures.",
+      price: Faker::Number.within(range: 300..400),
+      guests: 4,
+      bedrooms: 2,
+      beds: 2,
+      baths: 1,
+      address: '31 Taco Dr.',
+      city: 'Culver City',
+      state: 'CA',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Entire home',
+      pets_allowed: true,
+      user_id: 6,
+      lat: 34.0105369475833, 
+      lng: -118.39661176073247
+    })
+
+    listing18 = Listing.create!({
+      title: 'Private Guest Suite in Woodlands Retreat',
+      description: "This private guest suite is approximately 400 sq ft in a quiet neighborhood with a private bathroom and a small kitchenette that offers a coffee maker, toaster, mini refrigerator and microwave. It also has it's own private entrance with private patio and BBQ area. Easy access to free parking. We're located in the foothills surrounded by California Oaks, deer and other wildlife. There's a hiking trail a few steps away with beautiful views of the mountains.",
+      price: Faker::Number.within(range: 300..500),
+      guests: 2,
+      bedrooms: 1,
+      beds: 1,
+      baths: 1,
+      address: '44 Wildland Blvd.',
+      city: 'Glendale',
+      state: 'CA',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Entire home',
+      pets_allowed: true,
+      user_id: 7,
+      lat: 34.194269371895714, 
+      lng: -118.22741802345197
+    })
+
     puts "Creating reviews..."
 
     review1 = Review.create!({
@@ -406,7 +565,7 @@ ApplicationRecord.transaction do
       location: 5,
       checkin: 4,
       value: 5,
-      body: "Just when you think you know all there is to know about New York there’s another area to surprise you. Great views.",
+      body: "Just when you think you know all there is to know about New York there's another area to surprise you. Great views.",
       listing_id: 1,
       user_id: 2
     })
@@ -419,7 +578,7 @@ ApplicationRecord.transaction do
       location: 5,
       checkin: 5,
       value: 5,
-      body: "This place was so amazing. The views were incredible and the location was impeccable. I will stay here anytime. I’m back in New York. This place was so amazing. And the communication from the host was great. I would even say excellent.",
+      body: "This place was so amazing. The views were incredible and the location was impeccable. I will stay here anytime. I'm back in New York. This place was so amazing. And the communication from the host was great. I would even say excellent.",
       listing_id: 10,
       user_id: 3
     })
