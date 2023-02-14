@@ -6,6 +6,9 @@
 ## Background
 <a href='https://cozy-bnb.herokuapp.com' alt=''>Cozybnb</a> is a pixel-perfect clone of Airbnb with interactive features such as viewing and managing listings,  booking reservations, and writing reviews, built with JavaScript and a React/Redux front-end with a Rails back-end.  Cozybnb features full user authentication where users can create an account, login with an existing account, or continue with a Demo user. Utilizing Flexbox CSS styling and Media Query, the application is also fully web-responsive and is optimized for screens of any size.  
 
+#### <a href='https://cozy-bnb.herokuapp.com' alt=''>>>Live-Site<<</a>
+
+
 ## Technologies
 - React.js - frontend components
 - Redux.js - frontend state management
@@ -36,7 +39,9 @@ Star-rating review system.
 UI optimized for any screen size including mobile.
 
 ## Filtering listings
+<div align="center">
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/filtering.gif' alt='' />
+</div>
 Filter listings by minimum and maximum pricing with super low latency.
 
 ## Code snippets
