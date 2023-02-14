@@ -32,17 +32,17 @@ Reserved dates are blocked for new reservations.
 <div align="center">
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/leave_review.gif' alt='' />
 </div>
-Star-rating review system.
-
-## Web-Responsive Design
-<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/responsiveness.gif' alt='' />
-UI optimized for any screen size including mobile.
+Star-rating review system.\
 
 ## Filtering listings
 <div align="center">
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/filtering.gif' alt='' />
 </div>
 Filter listings by minimum and maximum pricing with super low latency.
+
+## Web-Responsive Design
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/responsiveness.gif' alt='' />
+UI optimized for any screen size including mobile.
 
 ## Code snippets
 
