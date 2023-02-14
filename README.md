@@ -16,7 +16,9 @@
 - <a href='https://projects.wojtekmaj.pl/react-calendar/' target="_blank" rel="noopener noreferrer"> React-Calendar API </a>
 
 ## Make a new reservation
+<div align="center">
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/new_reservation.gif' alt='' />
+</div>
 Reserve a new trip or delete an existing reservation.
 
 ## Reserved dates
@@ -24,8 +26,10 @@ Reserve a new trip or delete an existing reservation.
 Reserved dates are blocked for new reservations.
 
 ## Write or delete reviews
+<div align="center">
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/leave_review.gif' alt='' />
-Utilizing a star-rating review system.
+</div>
+Star-rating review system.
 
 ## Web-Responsive Design
 <img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/responsiveness.gif' alt='' />
