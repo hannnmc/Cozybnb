@@ -59,3 +59,6 @@ Improvised reservation confirmation pop-up animation by utilizing 3 perfectly ti
 
 ## Future directions
 - More listing filters
+
+## Credits
+- Original design by Airbnb. This is merely a clone project with zero intentions of infringing copy rights.
