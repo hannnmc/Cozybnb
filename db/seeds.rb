@@ -848,7 +848,7 @@ ApplicationRecord.transaction do
       value: 5,
       body: 'Perfect!',
       listing_id: 16,
-      user_id: 7
+      user_id: 5
     })
        
        
