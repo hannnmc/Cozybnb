@@ -183,9 +183,9 @@ function ListingEditForm({listing, setShowListingEdit}) {
       </header>
 
       <div className="signup-div">
-        <form onSubmit={handleSubmit}>
+        <form className='listing-edit-form' onSubmit={handleSubmit}>
 
-          <div className="input-div">
+          <div className="input-div firstname-signup">
             <input
               maxLength="73"
               className="firstname-input"
@@ -196,7 +196,7 @@ function ListingEditForm({listing, setShowListingEdit}) {
             />
             <span className="fn-floating-label new-listing-title">Title</span>
           </div>
-          <div>
+          <div className='listing-edit-top2'>
             <div className='new-dropdown'>
               <div className='proptype-input'>
                 <select
@@ -253,7 +253,7 @@ function ListingEditForm({listing, setShowListingEdit}) {
                 </select>
               </div>
             </div>
-            <div className="input-div">
+            <div className="input-div listing-edit-inputdiv">
               <input
               className="address-input"
                 maxLength="50"

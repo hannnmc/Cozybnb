@@ -325,9 +325,30 @@ input:not(:focus):valid ~ .ps-floating-label{
 }
 
 @media (max-width: 570px) {
-    .login-modal {
-        width: 100%;
+    #modal-content {
+        width: 98vw !important;
+        margin-bottom: 48px;
     }
+    .login-modal {
+        width: 98vw;
+    }
+    .signup-modal {
+        width: 98vw;
+    }
+    .input-div {
+        width: 95%;
+    }
+    .signup-div>form>button{
+        width: 100%;
+        margin-top: 8px;
+    }
+    .agree-message {
+        flex-wrap: wrap;
+    }
+    .agree-message>span:last-child{
+        margin: 0;
+    }
+
 }
 
 @media (max-width: 570px) {

@@ -539,3 +539,37 @@ input:not(:focus):valid ~ .night-floating-label{
     top: 4px;
     font-size: 14px;
 }
+
+@media (max-width: 570px) {
+    .new-dropdown {
+        width: calc(100% + 1px); 
+    }
+    .new-dropdown > div{
+        width: 25% !important;
+    }
+    .firstname-signup {
+        width: 100% !important;
+    }
+    .firstname-signup>input {
+        width: 100% !important;
+        padding-left: 0;
+        padding-right: 0;
+        text-indent: 11px;
+    }
+    .listing-edit-top2 {
+        width: 100%;
+    }
+    .listing-edit-inputdiv {
+        width: 100% !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .listing-edit-inputdiv > input{
+        width: 100% !important;
+        padding-left: 0;
+        padding-right: 0;
+        text-indent: 11px;
+    }
+
+    
+}
