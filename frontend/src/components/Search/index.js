@@ -3,7 +3,8 @@ import GooglePlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-goo
 import React, { useState } from 'react';
 
 const Search = ({setLatitude, setLongitude}) => {
-    
+    let regex = /\/listings\/[0-9]+/i;
+    let regex2 = /\/profile/i;
     const [value, setValue] = useState(null);
 
     if (value) {
@@ -16,7 +17,9 @@ const Search = ({setLatitude, setLongitude}) => {
     }
 
     return (
-        <div className='search-bar'>
+        <div className='search-bar'
+        style={regex2.test(window.location.pathname) || regex.test(window.location.pathname) ? {} : {display:'flex'} }
+        >
             <GooglePlacesAutocomplete
             apiKey={process.env.REACT_APP_MAPS_API_KEY}
             selectProps={{

@@ -6,7 +6,7 @@ import './LoginForm.css';
 
 function LoginDropDown({setShowLoginModal,showLoginModal,setLoginMessage}) {
   const [showSignupModal, setShowSignupModal] = useState(false);
-
+  let regex = /\/listings\/[0-9]+/i;
   const toggleMenu = () => {
     setMenu(open => !open);
   };
@@ -25,7 +25,8 @@ function LoginDropDown({setShowLoginModal,showLoginModal,setLoginMessage}) {
 
   return (
     <>
-      <button className='profile-button' onClick={toggleMenu}>
+      <button className='profile-button' onClick={toggleMenu} 
+      >
         <svg className='profile-burger' width={16} height={16} viewBox="0 0 32 32" fill={'#222222'} stroke={'#222222'} strokeWidth={3}>
           <g fill="none" fillRule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g>
         </svg>
