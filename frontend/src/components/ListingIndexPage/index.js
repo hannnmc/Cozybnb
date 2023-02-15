@@ -44,7 +44,6 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
        ))
        if (bounds) {
         const boundsArray = bounds.split(',');
-        console.log(boundsArray)
         setListingsArray(listings.filter(listing => 
           listing.price >= minPrice &&
           listing.price <= maxPrice &&

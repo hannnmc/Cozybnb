@@ -157,7 +157,7 @@ function ListingEditForm({listing, setShowListingEdit}) {
   const mapEventHandlers = useMemo(() => ({
     // click: event => {
     //   const search = new URLSearchParams(event.latLng.toJSON()).toString();
-    //   console.log(event.latLng.toJSON())
+    //   console.log(event.latLng.toJSON()) 
     // },
     idle: map => setBounds(map.getBounds().toUrlValue())
   }), [history]);
