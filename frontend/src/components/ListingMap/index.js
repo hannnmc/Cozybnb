@@ -36,8 +36,6 @@ function ListingMap({
   }, [mapRef, map, mapOptions, lat, lng]);
 
   useEffect(() => {
-    console.log(lat,lng)
-
     if (map) {
       const position = {lat: lat, lng: lng, zoom: 13}
       map.setCenter(position);
