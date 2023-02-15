@@ -113,11 +113,14 @@ function SignUpForm(props) {
             />
             <span className="su-password-floating-label">Password</span>
           </div>
-          <div className="agree-message">By selecting 
-          <span className="bold">  Agree and continue</span>, I agree to Cozybnb's 
-          <span className="bold"><a href="https://github.com/hannnmc/Cozybnb" target="_blank" rel="noopener noreferrer">Term of Service</a>.
+          <div className="agree-message">
+            <span>By selecting</span> 
+            <span className="bold">  Agree and continue</span>
+            <span>, I agree to Cozybnb's</span> 
+            <span className="bold"><a href="https://github.com/hannnmc/Cozybnb" target="_blank" rel="noopener noreferrer">Term of Service</a>.
           </span>
-           </div>
+          
+          </div>
           {/* <a href="https://www.linkedin.com/in/hanchen28/" target="_blank" rel="noopener noreferrer">LinkedIn</a> */}
           
           <ul className="error-message">
