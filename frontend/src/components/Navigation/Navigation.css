@@ -158,6 +158,13 @@ a {
   }
 }
 
+@media (max-width: 580px) {
+  .profile-button {
+    margin-left: 32px;
+    margin-right: -12px;
+  }
+}
+
 
 .alert-login {
   position: fixed;

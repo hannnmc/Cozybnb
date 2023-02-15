@@ -1,5 +1,5 @@
 .search-bar {
-    display: flex;
+    display: none;
     position: relative;
     width: 352px;
     height: 48px;
@@ -104,7 +104,7 @@
         padding-left: 14px !important;
         width: 160px !important;
     }
-    .home-box {
+    .logo-text {
         display: none;
     }
 }
