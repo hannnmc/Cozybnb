@@ -572,26 +572,27 @@ input:not(:focus):valid ~ .night-floating-label{
     }
     select:focus ~ .bedrooms-floating-label,
     select:not(:focus):valid ~ .bedrooms-floating-label{
-        left: 123px;
+        /* left: 123px; */
+        left: 31%;
     }
     select:focus ~ .beds-floating-label,
     select:not(:focus):valid ~ .beds-floating-label{
-        left: 210px;
+        left: 54%;
     }
     select:focus ~ .bathrooms-floating-label,
     select:not(:focus):valid ~ .bathrooms-floating-label{
-        left: 293px;
+        left: 77%;
     }
     input:focus ~ .price-floating-label,
     input:not(:focus):valid ~ .price-floating-label{
-        left: 48px;
+        left: 12%;
     }
     input:focus ~ .night-floating-label,
     input:not(:focus):valid ~ .night-floating-label{ 
-        left: 108px;
+        left: 28%;
     }
     .new-price-input {
-        text-indent: -48px;
+        text-indent: -31%;
     }
     .lat-input {
         font-size: 10px;
@@ -600,15 +601,15 @@ input:not(:focus):valid ~ .night-floating-label{
         font-size: 10px;
     }
     .lngtext{ 
-        left: 94px;
+        left: 54%;
     }
     .new-checkboxes>div {
         display: flex;
         flex-direction: column;
     }
-    
     .new-checkboxes>div>label {
         height: 32px;
         margin-right: 14px;
+        text-align: center;
     }
 }
