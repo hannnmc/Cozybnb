@@ -6,6 +6,8 @@ import './ListingMap.css';
 function ListingMap({ 
   lat,
   lng,
+  setNewListingLat,
+  setNewListingLng,
   listings, 
   selectedListing,
   mapOptions = {}, 
@@ -16,7 +18,9 @@ function ListingMap({
   const mapRef = useRef(null);
   const markers = useRef({});
   const history = useHistory();
-
+  let center = null;
+  if (map) center = map.getCenter().toJSON();
+  
   useEffect(() => {
     if (!map) {
       setMap(new window.google.maps.Map(mapRef.current, {
@@ -49,9 +53,13 @@ function ListingMap({
         event, 
         (...args) => handler(...args, map)
         ));
+        if (setNewListingLat && setNewListingLng) {
+          setNewListingLat(map.getCenter().toJSON().lat);
+          setNewListingLng(map.getCenter().toJSON().lng);
+        }
         return () => listeners.forEach(window.google.maps.event.removeListener);
       }
-    }, [map, mapEventHandlers]);
+    }, [map, mapEventHandlers, center]);
 
 
   // Update map markers whenever `listings` changes
