@@ -327,7 +327,7 @@ input:not(:focus):valid ~ .ps-floating-label{
 @media (max-width: 570px) {
     #modal-content {
         width: 98vw !important;
-        margin-bottom: 48px;
+        /* margin-bottom: 48px; */
     }
     .login-modal {
         width: 98vw;
