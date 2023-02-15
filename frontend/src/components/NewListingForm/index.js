@@ -518,8 +518,8 @@ function NewListingForm(props) {
             <div><i className="fa-solid fa-location-dot"></i></div>
             <ListingMap
                       // listings={[listing]}
-                      setLat={setLat}
-                      setLng={setLng}
+                      setNewListingLat={setLat}
+                      setNewListingLng={setLng}
                       mapEventHandlers={mapEventHandlers}
                       mapOptions={{ 
                       center: { lat, lng }, 
