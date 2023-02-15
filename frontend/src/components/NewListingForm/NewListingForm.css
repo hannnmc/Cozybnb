@@ -612,4 +612,30 @@ input:not(:focus):valid ~ .night-floating-label{
         margin-right: 14px;
         text-align: center;
     }
+    .guests-floating-label {
+        left: 10%;    
+    }
+    .bedrooms-floating-label {
+        left: 30%;
+    }
+    .beds-floating-label {
+        left: 55%;
+    }
+    .bathrooms-floating-label {
+        left: 75%;
+    }
+    .new-listing-title {
+        width: 100% !important;
+    }
+    .new-listing-title-input {
+        padding-left: 0 !important;
+        padding-right: 0;
+        text-indent: 12px;
+    }
+    .new-address-input {
+        margin-top: -2px;
+    }
+    .new-address-input:focus {
+        margin-top: -1px !important;
+    }
 }

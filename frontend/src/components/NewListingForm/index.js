@@ -188,16 +188,16 @@ function NewListingForm(props) {
       <div className="signup-div">
         <form onSubmit={handleSubmit}>
 
-          <div className="input-div">
+          <div className="input-div new-listing-title">
             <input
               maxLength="73"
-              className="firstname-input"
+              className="firstname-input new-listing-title-input"
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
             />
-            <span className="fn-floating-label new-listing-title">Title</span>
+            <span className="fn-floating-label">Title</span>
           </div>
           <div>
             <div className='new-dropdown'>
@@ -256,9 +256,9 @@ function NewListingForm(props) {
                 </select>
               </div>
             </div>
-            <div className="input-div">
+            <div className="input-div new-listing-title">
               <input
-              className="address-input"
+              className="address-input new-listing-title-input new-address-input"
                 maxLength="50"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}

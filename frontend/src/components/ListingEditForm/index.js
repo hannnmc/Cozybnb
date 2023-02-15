@@ -194,7 +194,7 @@ function ListingEditForm({listing, setShowListingEdit}) {
               onChange={(e) => setTitle(e.target.value)}
               required
             />
-            <span className="fn-floating-label new-listing-title">Title</span>
+            <span className="fn-floating-label">Title</span>
           </div>
           <div className='listing-edit-top2'>
             <div className='new-dropdown'>
