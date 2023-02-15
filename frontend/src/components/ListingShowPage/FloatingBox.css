@@ -380,7 +380,7 @@ input.floating-end-date[type="date"]::-webkit-calendar-picker-indicator {
     }
     .mobile-res-footer {
         display: flex;
-        z-index: 500;
+        z-index: 69;
     }
     .res-success-modal1 {
         width: 100vw;

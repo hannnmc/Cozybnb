@@ -570,6 +570,36 @@ input:not(:focus):valid ~ .night-floating-label{
         padding-right: 0;
         text-indent: 11px;
     }
-
-    
+    select:focus ~ .bedrooms-floating-label,
+    select:not(:focus):valid ~ .bedrooms-floating-label{
+        left: 123px;
+    }
+    select:focus ~ .beds-floating-label,
+    select:not(:focus):valid ~ .beds-floating-label{
+        left: 210px;
+    }
+    select:focus ~ .bathrooms-floating-label,
+    select:not(:focus):valid ~ .bathrooms-floating-label{
+        left: 293px;
+    }
+    input:focus ~ .price-floating-label,
+    input:not(:focus):valid ~ .price-floating-label{
+        left: 48px;
+    }
+    input:focus ~ .night-floating-label,
+    input:not(:focus):valid ~ .night-floating-label{ 
+        left: 108px;
+    }
+    .new-price-input {
+        text-indent: -48px;
+    }
+    .lat-input {
+        font-size: 10px;
+    }
+    .lng-input {
+        font-size: 10px;
+    }
+    .lngtext{ 
+        left: 94px;
+    }
 }
