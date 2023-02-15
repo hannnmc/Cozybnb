@@ -602,4 +602,13 @@ input:not(:focus):valid ~ .night-floating-label{
     .lngtext{ 
         left: 94px;
     }
+    .new-checkboxes>div {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .new-checkboxes>div>label {
+        height: 32px;
+        margin-right: 14px;
+    }
 }
