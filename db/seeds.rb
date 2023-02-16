@@ -522,6 +522,100 @@ ApplicationRecord.transaction do
       lng: -118.22741802345197
     })
 
+    listing19 = Listing.create!({
+      title: 'Cozy Ballard studio High ceiling & movie projecter',
+      description: "Welcome to BallardStudio—This cozy, high-ceiling, WA themed private studio has everything you need to relax in comfort. Be in the perfect location to unwind AND have fun. 18 mins away from Seattle, 10 mins away from all the great breweries, restaurants, and parks. Studio offers a wall projector for a movie night. Working from a 'getaway' home? We have fast internet! Step outside for relaxing walks around Ballard neighborhood.",
+      price: Faker::Number.within(range: 300..500),
+      guests: 2,
+      bedrooms: 1,
+      beds: 1,
+      baths: 1,
+      address: '99 Donovan Dr.',
+      city: 'Seattle',
+      state: 'WA',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Entire home',
+      pets_allowed: false,
+      user_id: 5,
+      lat: 47.61149258065121,
+      lng: -122.33608272398926
+    })
+
+    listing20 = Listing.create!({
+      title: 'Evans Sweet Suite Clean and Cozy',
+      description: "Well-appointed micro-studio with kitchenette, ensuite bathroom with modern design, thoughtful decor, and eco-built using reclaimed materials. Located within a purposefully designed large home with a shared kitchen, work area, and laundry. Situated within walking distance to downtown Ballard and all the great restaurants, shops, grocery stores, and activities this vibrant community offers.",
+      price: Faker::Number.within(range: 300..500),
+      guests: 2,
+      bedrooms: 1,
+      beds: 1,
+      baths: 1,
+      address: '55 Destiny Blvd',
+      city: 'Seattle',
+      state: 'Washington',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Apartment',
+      pets_allowed: true,
+      user_id: 6,
+      lat: 47.60282164608269, 
+      lng: -122.33240818753997 
+    })
+
+    listing21 = Listing.create!({
+      title: 'Private Guest Suite in Woodlands Retreat',
+      description: "One block from beautiful Alki Beach Park, this elegant and open studio apartment is custom decorated by J&K Design Co. It's peaceful and quiet, with fantastic restaurants and pubs, sandy beaches, and stunning sunsets just a short stroll from your door. Easy access to the city center puts all of Seattle's top attractions at your fingertips, making the Alki Beach Oasis the the perfect getaway. ",
+      price: Faker::Number.within(range: 300..600),
+      guests: 2,
+      bedrooms: 1,
+      beds: 1,
+      baths: 1,
+      address: '33 Famous Dr.',
+      city: 'Seattle',
+      state: 'WA',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Entire home',
+      pets_allowed: true,
+      user_id: 7,
+      lat: 47.60378515424158, 
+      lng: -122.3301626374876 
+    })
+
+    listing22 = Listing.create!({
+      title: 'Private Guest Suite in Woodlands Retreat',
+      description: "Set in Georgetown, the apartment occupies a renovated turn-of-the-century building in a walkable residential quadrant dotted with home gardens. It's a 10-minute walk away from the area's industrial core, which offers many great restaurants and bars.",
+      price: Faker::Number.within(range: 300..500),
+      guests: 4,
+      bedrooms: 2,
+      beds: 2,
+      baths: 1,
+      address: '21 Industrial Rd.',
+      city: 'Seattle',
+      state: 'WA',
+      country: 'United States',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Entire home',
+      pets_allowed: true,
+      user_id: 8,
+      lat: 47.61741001221371, 
+      lng: -122.3471063333371
+    })
+
+
+
     puts "Creating reviews..."
 
     review1 = Review.create!({
@@ -850,6 +944,79 @@ ApplicationRecord.transaction do
       listing_id: 16,
       user_id: 5
     })
+
+    review26 = Review.create!({
+      rating: 4.83,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 4,
+      checkin: 5,
+      value: 5,
+      body: 'Fantastic stay and amazing value!',
+      listing_id: 19,
+      user_id: 2
+    })
+    review27 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Would recommend this place to anyone looking for a clean and quiet stay. Perfect little place!',
+      listing_id: 20,
+      user_id: 3
+    })
+    review28 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Perfect!',
+      listing_id: 21,
+      user_id: 4
+    })
+    review29 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Absolutely gorgeous place! Would definitely come back here!',
+      listing_id: 22,
+      user_id: 1
+    })
+    review30 = Review.create!({
+      rating: 4.83,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 4,
+      body: 'Walking distance to amazing local shops and restaurants!',
+      listing_id: 19,
+      user_id: 8
+    })
+    review31 = Review.create!({
+      rating: 5,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      checkin: 5,
+      value: 5,
+      body: 'Stunning view and super cozy!',
+      listing_id: 20,
+      user_id: 7
+    })
        
        
     puts "Attaching photos..."
@@ -1119,6 +1286,62 @@ ApplicationRecord.transaction do
       [io: l18p3, filename:"photo3"],
       [io: l18p4, filename:"photo4"],
       [io: l18p5, filename:"photo5"]
+    )
+
+    l19p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing19/photo1.webp")
+    l19p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing19/photo2.webp")
+    l19p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing19/photo3.webp")
+    l19p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing19/photo4.webp")
+    l19p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing19/photo5.webp")
+
+    listing19.photos.attach(
+      [io: l19p1, filename:"photo1"],
+      [io: l19p2, filename:"photo2"],
+      [io: l19p3, filename:"photo3"],
+      [io: l19p4, filename:"photo4"],
+      [io: l19p5, filename:"photo5"]
+    )
+
+    l20p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing20/photo1.webp")
+    l20p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing20/photo2.webp")
+    l20p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing20/photo3.webp")
+    l20p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing20/photo4.webp")
+    l20p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing20/photo5.webp")
+
+    listing20.photos.attach(
+      [io: l20p1, filename:"photo1"],
+      [io: l20p2, filename:"photo2"],
+      [io: l20p3, filename:"photo3"],
+      [io: l20p4, filename:"photo4"],
+      [io: l20p5, filename:"photo5"]
+    )
+
+    l21p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing21/photo1.webp")
+    l21p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing21/photo2.webp")
+    l21p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing21/photo3.webp")
+    l21p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing21/photo4.webp")
+    l21p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing21/photo5.webp")
+
+    listing21.photos.attach(
+      [io: l21p1, filename:"photo1"],
+      [io: l21p2, filename:"photo2"],
+      [io: l21p3, filename:"photo3"],
+      [io: l21p4, filename:"photo4"],
+      [io: l21p5, filename:"photo5"]
+    )
+
+    l22p1 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing22/photo1.webp")
+    l22p2 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing22/photo2.webp")
+    l22p3 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing22/photo3.webp")
+    l22p4 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing22/photo4.webp")
+    l22p5 = URI.open("https://thecozybnb-seed.s3.amazonaws.com/listing22/photo5.webp")
+
+    listing22.photos.attach(
+      [io: l22p1, filename:"photo1"],
+      [io: l22p2, filename:"photo2"],
+      [io: l22p3, filename:"photo3"],
+      [io: l22p4, filename:"photo4"],
+      [io: l22p5, filename:"photo5"]
     )
 
     puts "Done!"
