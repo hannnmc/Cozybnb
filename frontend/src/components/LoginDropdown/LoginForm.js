@@ -38,7 +38,7 @@ function LoginForm(props) {
   const loginFacebookUser = (e) => {
     setLoginMessage(true);
     return dispatch(sessionActions.login({    
-      email: 'Tammylove@fb.com', 
+      email: 'ilovecozybnb@fb.com', 
       password: 'password'
     }));
   };
