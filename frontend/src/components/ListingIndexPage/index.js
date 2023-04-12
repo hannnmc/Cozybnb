@@ -43,20 +43,30 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
        listing.price <= maxPrice 
        ))
        if (bounds) {
-        const boundsArray = bounds.split(',');
+         const boundsArray = bounds.split(',');
+         for(let i = 0; i< boundsArray.length; i++) {
+          boundsArray[i] = parseFloat(boundsArray[i])
+         };
         setListingsArray(listings.filter(listing => 
           listing.price >= minPrice &&
-          listing.price <= maxPrice &&
-          listing.lat > boundsArray[0] && 
-          listing.lat < boundsArray[2] &&
-          listing.lng > boundsArray[1] && 
-          listing.lng < boundsArray[3]
+          listing.price <= maxPrice 
+          &&
+          listing.lat > boundsArray[0] - .5 && 
+          listing.lat < boundsArray[2] + .5 &&
+          listing.lng > boundsArray[1] - .5 && 
+          listing.lng < boundsArray[3] + .5
           ))
       }
   }, [minPrice, maxPrice, listingLength, bounds]);
 
+  
   const mapEventHandlers = useMemo(() => ({
-    idle: map => setBounds(map.getBounds().toUrlValue())
+    idle: map => {
+      const urlBounds = map.getBounds().toUrlValue();
+      if (urlBounds.split(',')[0] !== 'NaN') {
+        setBounds(urlBounds);
+      }
+    }
   }), [history]);
 
   if(listings.length === 0) return null;
