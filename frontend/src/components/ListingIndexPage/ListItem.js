@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-function ListItem({ listing, isHighlighted, setSelectedListing }) {
+function ListItem({ listing, listings, isHighlighted, setSelectedListing }) {
 
   const { title, photoUrls, price, beds, description } = listing;
   const history = useHistory(); 
@@ -21,7 +21,7 @@ function ListItem({ listing, isHighlighted, setSelectedListing }) {
 
   return (
     <div
-      className={"listing-box" + (isHighlighted ? " highlighted" : "")}
+      className={`listing-box${listings.length % 2 === 1 && listings.length > 1 ? ' uneven-listings' : ''}` + (isHighlighted ? " highlighted" : "") }
       onClick={() => history.push(`/listings/${listing.id}`)}
       onMouseEnter={() => setSelectedListing(listing.id)}
       onMouseLeave={() => setSelectedListing(null)}
