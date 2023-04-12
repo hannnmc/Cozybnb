@@ -44,17 +44,20 @@ function ListingIndexPage({lat, lng, setLat, setLng}) {
        ))
        if (bounds) {
          const boundsArray = bounds.split(',');
+         console.log(boundsArray)
          for(let i = 0; i< boundsArray.length; i++) {
           boundsArray[i] = parseFloat(boundsArray[i])
          };
+         const latWindow = boundsArray[2] - boundsArray[0];
+         const lngWindow = boundsArray[3] - boundsArray[1];
         setListingsArray(listings.filter(listing => 
           listing.price >= minPrice &&
           listing.price <= maxPrice 
           &&
-          listing.lat > boundsArray[0] - .5 && 
-          listing.lat < boundsArray[2] + .5 &&
-          listing.lng > boundsArray[1] - .5 && 
-          listing.lng < boundsArray[3] + .5
+          listing.lat > boundsArray[0] - latWindow/3 && 
+          listing.lat < boundsArray[2] + latWindow/3 &&
+          listing.lng > boundsArray[1] - lngWindow/3 && 
+          listing.lng < boundsArray[3] + lngWindow/3
           ))
       }
   }, [minPrice, maxPrice, listingLength, bounds]);
