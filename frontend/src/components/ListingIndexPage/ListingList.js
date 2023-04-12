@@ -11,6 +11,7 @@ function ListingList({ listings, minPrice, maxPrice, bounds, selectedListing, se
             <ListItem
               key={listing.id}
               listing={listing}
+              listings={listings}
               isHighlighted={selectedListing === listing.id}
               setSelectedListing={setSelectedListing}
             />

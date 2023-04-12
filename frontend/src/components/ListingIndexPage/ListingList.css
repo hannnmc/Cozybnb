@@ -55,6 +55,10 @@
     max-width: 720px;
 }
 
+.uneven-listings:last-child {
+    margin-right: 48.1%;
+}
+
 .listing-image-box {
     display: flex;
     justify-content: center;
