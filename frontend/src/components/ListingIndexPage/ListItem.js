@@ -21,7 +21,7 @@ function ListItem({ listing, listings, isHighlighted, setSelectedListing }) {
 
   return (
     <div
-      className={`listing-box${listings.length % 2 === 1 && listings.length > 1 ? ' uneven-listings' : ''}` + (isHighlighted ? " highlighted" : "") }
+      className={`listing-box${listings.length % 2 === 1 ? ' uneven-listings' : ''}` + (isHighlighted ? " highlighted" : "") }
       onClick={() => history.push(`/listings/${listing.id}`)}
       onMouseEnter={() => setSelectedListing(listing.id)}
       onMouseLeave={() => setSelectedListing(null)}

@@ -232,6 +232,9 @@
         width: 87.5%;
         max-width: 481px;
     }
+    .uneven-listings:last-child {
+        margin-right: 0;
+    }    
 }
 
 @media (max-width:950px) {
