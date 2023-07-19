@@ -21,8 +21,22 @@ function ListingMap({
   let center = null;
   if (map) center = map.getCenter().toJSON();
   
+  // useEffect(() => {
+  //   if (!map) {
+  //     setMap(new window.google.maps.Map(mapRef.current, {
+  //       center: new window.google.maps.LatLng(lat, lng), 
+  //       zoom: 13,
+  //       mapId: "49aa6f67e21bd8eb",
+  //       gestureHandling: "greedy",
+  //       clickableIcons: false,
+  //       disableDefaultUI: true,
+  //       ...mapOptions,
+  //     }));
+  //   }
+  // }, [mapRef, map, mapOptions, lat, lng]);
+
   useEffect(() => {
-    if (!map) {
+    if (!map && window.google && window.google.maps) {
       setMap(new window.google.maps.Map(mapRef.current, {
         center: new window.google.maps.LatLng(lat, lng), 
         zoom: 13,
