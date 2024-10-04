@@ -6,22 +6,25 @@ import './LoginForm.css';
 
 function LoginDropDown({setShowLoginModal,showLoginModal,setLoginMessage}) {
   const [showSignupModal, setShowSignupModal] = useState(false);
+  const [menu, setMenu] = useState(false);
   let regex = /\/listings\/[0-9]+/i;
   const toggleMenu = () => {
     setMenu(open => !open);
   };
-  const [menu, setMenu] = useState(false);
 
   useEffect(() => {
     if (!menu) return;
-
-    const closeMenu = () => {
+  
+    const closeMenu = (event) => {
+      // Check if click happened outside the dropdown and the button
+      if (event.target.closest('.profile-dropdown') || event.target.closest('.profile-button')) return;
       setMenu(false);
     };
-
+  
     document.addEventListener('click', closeMenu);
-    return () => document.removeEventListener("click", closeMenu);
+    return () => document.removeEventListener('click', closeMenu);
   }, [menu]);
+  
 
   return (
     <>

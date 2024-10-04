@@ -12,6 +12,7 @@ import * as listingActions from "./store/listings"
 import * as userActions from "./store/users";
 import * as reservationActions from "./store/reservations";
 import * as reviewActions from "./store/reviews";
+import { createRoot } from 'react-dom/client';
 
 const store = configureStore();
 
@@ -37,12 +38,14 @@ function Root() {
   );
 }
 
+const container = document.getElementById('root');
+const root = createRoot(container); // Use createRoot from React 18
+
 const renderApplication = () => {
-  ReactDOM.render(
+  root.render(
     <React.StrictMode>
       <Root />
     </React.StrictMode>,
-    document.getElementById('root')
   );
 }
 
