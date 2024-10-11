@@ -19,7 +19,7 @@ function ListingMap({
   const markers = useRef({});
   const history = useHistory();
   let center = null;
-  if (map) center = map.getCenter().toJSON();
+  if (map && map.getCenter()) center = map.getCenter().toJSON();
   
   useEffect(() => {
     if (!map && window.google && window.google.maps) {
